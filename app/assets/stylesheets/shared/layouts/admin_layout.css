@@ -1,0 +1,89 @@
+/* admin layout, estilos generales */
+.admin-layout {
+  display: flex;
+  flex-direction: column;
+  min-height: 100vh;
+  background-color: var(--background, #f4f4f4);
+  font-family: var(--font-sans);
+  color: black;
+  width: 100%;
+  background-color: aqua;
+}
+
+.admin-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  background: var(--primary, #222);
+  color: var(--text-light, #fff);
+  padding: 1rem;
+  position: sticky;
+  top: 0;
+  width: 100%;
+  z-index: 100;
+}
+
+.admin-header h1 {
+  font-size: var(--text-lg);
+}
+
+.admin-header nav a {
+  color: var(--text-light, #fff);
+  text-decoration: none;
+  margin-left: 1rem;
+  font-size: var(--text-md);
+  transition: color 0.3s ease;
+}
+
+.admin-header nav a:hover{
+  color: var(--accent, #ff6b6b);
+}
+
+.admin-header h1:hover {
+  color: var(--accent, #ff6b6b);
+
+}
+
+#admin-main {
+  flex: 1;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: 2rem;
+  background-color: #ff6b6b;
+  width: 100%;
+  height: fit-content;
+  
+}
+
+.admin-container {
+  width: 90%;
+  max-width: 600px;
+  background: var(--background-light, #fff);
+  padding: 2rem;
+  border-radius: var(--rounded-lg);
+  box-shadow: var(--shadow-md);
+}
+
+
+/* Mobile-First: Ajustes generales */
+@media (min-width: 768px) {
+  .admin-container {
+    max-width: 800px;
+  }
+}
+
+@media (min-width: 1024px) {
+  .admin-container {
+    max-width: 900px;
+  }
+}
+
+.admin-footer {
+  text-align: center;
+  padding: 1rem;
+  background: var(--primary, #222);
+  color: var(--text-light, #fff);
+}
+
+

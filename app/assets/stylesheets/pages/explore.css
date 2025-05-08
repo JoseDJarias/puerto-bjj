@@ -1,0 +1,30 @@
+.explore-container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    width: 100%;
+    overflow: hidden; 
+}
+
+/* Section 01: Academia de Artes Marciales */
+.explore-section-1 {
+
+}
+
+/* 🖥️ Pantallas Pequeñas */
+
+
+/* 🔹 Secciones siguientes */
+.explore-section-1
+.explore-section-2,
+.explore-section-3,
+.explore-section-4,
+.explore-section-5,
+.explore-section-6,
+.explore-section-7 {
+    width: 100%;
+    min-height: 250px; /* Asegura que haya suficiente espacio */
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}

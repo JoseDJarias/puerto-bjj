@@ -1,0 +1,198 @@
+.footer {
+    width: 100%;
+    background-color: #111;
+    color: #fff;
+    padding: 2rem 1rem;
+    font-style: oblique;
+    position: relative;
+    top: 100rem;
+  }
+  
+  .footer-container {
+    display: flex;
+    flex-direction: column;
+    gap: 1.5rem;
+  }
+
+  .footer-first-box{
+    height: fit-content;
+  }
+  
+  /* Sección 1: Logo */
+  .footer-logo {
+    text-align: left;
+    padding-left: 1rem;
+    font-size: 1.5rem;
+    font-weight: bold;
+    margin-bottom: 3rem;
+  }
+  
+  /* Sección 2: Redes Sociales */
+  .footer-social {
+    text-align: left;
+    padding-left: 1rem;
+    margin-bottom: 2rem;
+  }
+  
+  .footer-social-icons {
+    display: flex;
+    gap: 1rem;
+  }
+  
+  .footer-social-title, .footer-find-title{
+    margin-bottom: 1rem;
+    font-size: 20px;
+    font-weight:lighter;
+    font-style: oblique;
+    font-family: monospace;
+    
+  }
+
+  /* Sección 3: Encuéntranos (Find Us) */
+  .footer-find-us {
+    text-align: left;
+    padding-left: 1rem;
+  }
+  
+  .footer-find-icons {
+    display: flex;
+    gap: 1rem;
+  }
+  
+  /* Sección 4: Futuros enlaces en dos cajas */
+  .footer-links {
+    display: flex;
+    flex-direction:row;
+    gap: 8rem;
+    margin-top: 2rem;
+  }
+
+  .footer-links-left, .footer-links-right {
+      padding-left: 1rem;
+      margin: 0rem 0 2rem 0;
+  }
+    
+  .footer-links-right-title, .footer-links-left-title{
+    margin-bottom: 1rem;
+    color: #777;
+    font-size: x-large;  
+  }
+    
+  .footer-links a {
+    color: #aaa;
+    text-decoration: none;
+    font-size: 0.9rem;
+  }
+  
+  .footer-links a:hover {
+    color: #fff;
+  }
+  
+  /* Sección 5: Centrada y a lo ancho */
+  .footer-extra {
+    text-align: center;
+    font-size: 0.8rem;
+    color: #777;
+    padding-top: 1rem;
+    border-top: 1px solid #222;
+  }
+
+/* 📍 Tablets (pantallas aun mas peuqes) */
+@media (max-width: 390px)  {
+  .footer-container{
+    align-items: center;
+    text-align: center;
+  }
+
+  .footer-title{
+    position: relative;
+    left: 1rem;
+  }
+
+  .footer-social-title{
+    position: relative;
+    left: 1.5rem;
+  }
+
+  .footer-find-icons, .footer-social-icons{
+    justify-content: center;
+  }
+
+  .footer-first-box{
+    margin: 0 au;
+
+  }
+  .footer-links {
+    display: block;
+  }
+
+  
+}
+
+/* 📍 Tablets (pantallas medianas) */
+@media (min-width: 768px)  {
+    .footer-first-box { grid-area: myLeftArea; }
+    .footer-second-box { grid-area: myRightArea; }
+    .footer-extra-box  { grid-area: myExtraArea; justify-content: center; }
+
+    .footer-container {
+      display: grid;
+      grid-template-rows: auto ;
+      grid-template-areas: 
+        "myLeftArea myRightArea"
+        "myExtraArea myExtraArea ";
+      grid-gap: 10px;
+      row-gap: 5rem;
+
+    }
+
+    .footer-first-box {
+      width: 50%;
+    }
+
+    .footer-social {
+        margin-bottom: 3rem;
+      }
+  
+    .footer-second-box {
+      width: 100%;
+      padding-left: 5rem;
+    }
+
+    .footer-links{    
+        margin-top: 0rem;
+        gap: 6rem;
+    }
+  
+    .footer-extra-box {
+      width: 100%;
+    }
+  }
+  
+/* 🖥️ Pantallas Grandes */
+@media (min-width: 1024px) {
+    .footer-container {
+      /* Reutilizamos el Grid de tablets pero aumentamos los espacios */
+      row-gap: 6rem; /* Más separación */
+      column-gap: 4rem; /* Espacio extra entre columnas */
+      padding-top: 0.5rem;
+    }
+  
+    .footer-first-box {
+        margin: 0 4rem;
+    }
+  
+    .footer-second-box {
+      width: 100%;
+      justify-content: flex-end; /* Alineamos mejor la caja de enlaces */
+    }
+  
+    .footer-links {
+      gap: 8rem;
+    }
+  
+    .footer-extra-box {
+      text-align: center;
+      padding-top: 2rem; /* Más espacio superior */
+    }
+  }

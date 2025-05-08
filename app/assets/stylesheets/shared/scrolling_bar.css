@@ -1,0 +1,44 @@
+.scrolling-bar {
+  width: 100%;
+  max-width: 100%;
+  overflow: hidden;
+  white-space: nowrap;
+  padding: 10px 0;
+  height: 3rem;
+  /* background-color:rgb(230, 219, 234);*/
+  background-color: whitesmoke;
+  position: relative; /* Asegurar que el contenido esté contenido dentro de este div */
+}
+
+.scrolling-content {
+  display: inline-block;
+  min-width: 100%;
+  font-size: 1.3rem;
+  font-weight: bold;
+  color: black;
+  position: absolute;
+  will-change: transform;
+  left: 0; /* Asegurar que empiece desde la izquierda */
+  transform: translateX(0); /* En lugar de left, usar transform */
+}
+
+/* Small Screens (< 768px) */
+@media (max-width: 767px) {
+  .scrolling-content {
+    transform: translateX(20rem); /* Ajusta el desplazamiento para pantallas pequeñas */
+  }
+}
+
+/* Medium Screens (768px - 1023px) */
+@media (min-width: 768px) {
+  .scrolling-content {
+      transform: translateX(20rem);
+  }
+}
+
+/* Large Screens (≥1024px) */
+@media (min-width: 1024px) {
+  .scrolling-content {
+      transform: translateX(40rem);
+  }
+}
