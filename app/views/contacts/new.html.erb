@@ -1,4 +1,28 @@
-<div>
-  <h1 class="font-bold text-4xl">Contacts#new</h1>
-  <p>Find me in app/views/contacts/new.html.erb</p>
+<h2 class="text-xl font-bold mb-4">Contáctanos</h2>
+
+<div class="mb-8">
+  <p><strong>Teléfono:</strong> +506 8888-8888</p>
+  <p><strong>Email:</strong> info@puertobjj.com</p>
+  <p><strong>Ubicación:</strong> San José, Costa Rica</p>
 </div>
+
+<%= form_with model: @contact_message, url: contactanos_path, method: :post, data: { turbo: true }, class: "grid gap-4" do |f| %>
+  <div>
+    <%= f.label :name, "Nombre" %>
+    <%= f.text_field :name, class: "input w-full" %>
+  </div>
+
+  <div>
+    <%= f.label :email, "Correo" %>
+    <%= f.email_field :email, class: "input w-full" %>
+  </div>
+
+  <div>
+    <%= f.label :message, "Mensaje" %>
+    <%= f.text_area :message, class: "input w-full", rows: 5 %>
+  </div>
+
+  <div>
+    <%= f.submit "Enviar mensaje", class: "button" %>
+  </div>
+<% end %>

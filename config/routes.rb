@@ -1,7 +1,5 @@
 Rails.application.routes.draw do
-  get "contacts/new"
-  get "contacts/create"
-  root "pages#home"
+  root "pages#explore"
 
   get "/acerca-de-nosotros", to: "pages#about"
   get "/galeria", to: "pages#gallery"
@@ -12,6 +10,12 @@ Rails.application.routes.draw do
 
   resource :session
   resources :passwords, param: :token
+
+  # //Admin routes
+  namespace :admin do
+    resources :contact_messages, only: [:index, :show]
+  end
+
 
   # Reveal health status on /up that returns 200 if the app boots with no exceptions, otherwise 500.
   # Can be used by load balancers and uptime monitors to verify that the app is live.
