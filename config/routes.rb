@@ -6,6 +6,10 @@ Rails.application.routes.draw do
   get "/acerca-de-nosotros", to: "pages#about"
   get "/galeria", to: "pages#gallery"
   get "/horarios", to: "pages#horarios"
+
+  get "/contactanos", to: "contacts#new"
+  post "/contactanos", to: "contacts#create"
+
   resource :session
   resources :passwords, param: :token
 
