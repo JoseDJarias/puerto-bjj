@@ -15,7 +15,7 @@ Rails.application.routes.draw do
   namespace :admin do
     get "contact_messages/index"
     get "contact_messages/show"
-    resources :contact_messages, only: [:index, :show]
+    resources :contact_messages, only: [ :index, :show ]
   end
 
 

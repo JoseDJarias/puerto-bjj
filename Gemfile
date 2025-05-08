@@ -44,5 +44,4 @@ group :test do
 end
 
 gem "css-zero", "~> 1.1"
-gem "authentication"
 gem "lucide-rails"

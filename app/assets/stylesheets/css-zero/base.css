@@ -67,12 +67,14 @@
 html {
   scroll-behavior: smooth;
   width: 100%;
+  height: fit-content;
 }
 
 body {
   background-color: var(--color-bg);
   color: var(--color-text);
-  font-synthesis-weight: none;
+  font-synthesis-weight
+  : none;
   overscroll-behavior: none;
   text-rendering: optimizeLegibility;
 }

@@ -1,4 +1,5 @@
 class ContactsController < ApplicationController
+  allow_unauthenticated_access
   def new
     @contact_message = ContactMessage.new
   end

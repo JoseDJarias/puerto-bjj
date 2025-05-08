@@ -2,6 +2,7 @@ module Authentication
   extend ActiveSupport::Concern
 
   included do
+    puts "Entrre en el included"
     before_action :require_authentication
     helper_method :authenticated?
   end
@@ -18,6 +19,7 @@ module Authentication
     end
 
     def require_authentication
+      puts "Entrre en el require"
       resume_session || request_authentication
     end
 
