@@ -1,4 +1,6 @@
 Rails.application.routes.draw do
+  get "contacts/new"
+  get "contacts/create"
   root "pages#home"
 
   get "/acerca-de-nosotros", to: "pages#about"
