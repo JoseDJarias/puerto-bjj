@@ -1,6 +1,9 @@
 Rails.application.routes.draw do
-  root "home#explore"
-  get "home/explore"
+  root "pages#home"
+
+  get "/acerca-de-nosotros", to: "pages#about"
+  get "/galeria", to: "pages#gallery"
+  get "/horarios", to: "pages#horarios"
   resource :session
   resources :passwords, param: :token
 
