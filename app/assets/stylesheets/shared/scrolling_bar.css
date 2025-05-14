@@ -5,8 +5,8 @@
   white-space: nowrap;
   padding: 10px 0;
   height: 3rem;
+  background-color: black;
   /* background-color:rgb(230, 219, 234);*/
-  background-color: whitesmoke;
   position: relative; /* Asegurar que el contenido esté contenido dentro de este div */
 }
 
@@ -15,7 +15,7 @@
   min-width: 100%;
   font-size: 1.3rem;
   font-weight: bold;
-  color: black;
+  color: whitesmoke;
   position: absolute;
   will-change: transform;
   left: 0; /* Asegurar que empiece desde la izquierda */

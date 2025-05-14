@@ -1,28 +1,42 @@
-<h2 class="text-xl font-bold mb-4">Contáctanos</h2>
+<h2 class="text-xl text-center font-bold mb-4">Contáctanos</h2>
 
-<div class="mb-8">
+<div class="mb-8 text-center text-gray-600 text-sm">
   <p><strong>Teléfono:</strong> +506 8888-8888</p>
   <p><strong>Email:</strong> info@puertobjj.com</p>
-  <p><strong>Ubicación:</strong> San José, Costa Rica</p>
+  <p><strong>Ubicación:</strong> Puntarenas, Costa Rica</p>
 </div>
 
-<%= form_with model: @contact_message, url: contactanos_path, method: :post, data: { turbo: true }, class: "grid gap-4" do |f| %>
-  <div>
-    <%= f.label :name, "Nombre" %>
-    <%= f.text_field :name, class: "input w-full" %>
-  </div>
+<div class="flex justify-center">
+  <div class="w-full max-i-full" style="inline-size: 80%; max-inline-size: 90%; @media (min-width: 40rem) { max-inline-size: 30rem; }">
+    <%= form_with model: @contact_message, url: contactanos_path, method: :post, data: { turbo: true, controller: "contact-form"}, class: "grid gap-4" do |f| %>
+       <div>
+          <%= f.label :name, "Nombre" %>
+          <%= f.text_field :name,
+            class: "input w-full",
+            data: { "contact-form-target": "name", action: "input->contact-form#validate" } %>
+        </div>
 
-  <div>
-    <%= f.label :email, "Correo" %>
-    <%= f.email_field :email, class: "input w-full" %>
-  </div>
+        <div>
+          <%= f.label :email, "Correo" %>
+          <%= f.email_field :email,
+                class: "input w-full",
+                data: { "contact-form-target": "email", action: "input->contact-form#validate" } %>
+        </div>
 
-  <div>
-    <%= f.label :message, "Mensaje" %>
-    <%= f.text_area :message, class: "input w-full", rows: 5 %>
-  </div>
+        <div>
+          <%= f.label :message, "Mensaje" %>
+          <%= f.text_area :message,
+                class: "input w-full",
+                rows: 5,
+                data: { "contact-form-target": "message", action: "input->contact-form#validate" } %>
+        </div>
 
-  <div>
-    <%= f.submit "Enviar mensaje", class: "button" %>
+        <div>
+          <%= f.submit "Enviar mensaje",
+                class: "btn btn-positive",
+                data: { "contact-form-target": "submit" },
+                disabled: true %>
+        </div>
+    <% end %>
   </div>
-<% end %>
+</div>
