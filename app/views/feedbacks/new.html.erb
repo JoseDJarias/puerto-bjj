@@ -1,0 +1,12 @@
+<h2 class="text-xl text-center m-">Dejanos un feedback</h2>
+<h3 class="text-xl text-center ">Apreciamos tu opinion!</h3>
+
+<div class="mb-8 text-center text-gray-600 text-sm font-bold">
+  <p><strong>Teléfono:</strong> +506 8888-8888</p>
+  <p><strong>Email:</strong> info@puertobjj.com</p>
+  <p><strong>Ubicación:</strong> Puntarenas, Costa Rica</p>
+</div>
+
+<div id="feedback_form">
+  <%= render partial: "form", locals: { feedback_message: @feedback_message } %>
+</div>

@@ -5,8 +5,8 @@ Rails.application.routes.draw do
   get "/galeria", to: "pages#gallery"
   get "/horarios", to: "pages#horarios"
 
-  get "/contactanos", to: "contacts#new"
-  post "/contactanos", to: "contacts#create"
+  get "/feedback", to: "feedbacks#new"
+  post "/feedback", to: "feedbacks#create"
 
   resource :session
   resources :passwords, param: :token

@@ -18,4 +18,6 @@
     color: black;
   }
 
- 
+ .btn-cursor-grab-style{
+  cursor: grab;
+ }
