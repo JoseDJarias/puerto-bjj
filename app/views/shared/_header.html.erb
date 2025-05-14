@@ -1,13 +1,14 @@
 <header class="styled-header flex justify-between items-center p-6">
   <!-- Left Side -->
-  <div class="text-lg text-black font-bold mi-10">PuertoBJJ</div>
+  <%= link_to "Home", root_path, class: "text-lg text-black font-bold mi-8"%>
+
 
   <!-- Center (Only for large screens) -->
-  <div class="show@lg flex gap">
-    <div class="min-w-24 min-h-8 bg-black text-black flex items-center justify-center rounded p-4">Catalogo !</div>
-    <div class="min-w-24 min-h-8 bg-black text-black flex items-center justify-center rounded p-4">Contactanos</div>
-    <div class="min-w-24 min-h-8 bg-black text-black flex items-center justify-center rounded p-4">Feedback </div>
-    <div class="min-w-24 min-h-8 bg-black text-black flex items-center justify-center rounded p-4">Clases </div>
+  <div class="show@lg flex gap center-box">
+    <div class="min-w-24 min-h-8 text-black flex items-center justify-center rounded p-4">Catalogo !</div>
+    <%= link_to "Feedback", contactanos_path, class: "min-w-24 min-h-8 bg-black text-black flex items-center justify-center rounded p-4"%>
+    <div class="min-w-24 min-h-8 text-black flex items-center justify-center rounded p-4">Clases </div>
+    <div class="min-w-24 min-h-8 text-black flex items-center justify-center rounded p-4">Galeria </div>
   </div>
 
   <!-- Right Side -->
