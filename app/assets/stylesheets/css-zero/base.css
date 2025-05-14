@@ -84,5 +84,6 @@ body {
 }
 
 ::selection {
-  background-color: var(--color-selected);
+  background-color: #dbeafe; /* azul claro */
+  color: #1e3a8a; /* azul oscuro para contraste */
 }
