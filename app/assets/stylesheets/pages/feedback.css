@@ -1,0 +1,25 @@
+/* Mobile y tablet: ancho completo */
+.btn-submit-feedback {
+    inline-size: 100%;
+    margin-block-start: var(--size-6);
+  }
+  
+  .btn-submit-feedback .btn {
+    inline-size: 100%;
+    max-inline-size: 100%;
+  }
+  
+  /* Desktop: desde 1024px (64rem) en adelante */
+  @media (min-width: 64rem) {
+    .btn-submit-feedback {
+      display: flex;
+      justify-content: center;
+      margin-inline: var(--size-10); /* margen lateral */
+    }
+  
+    .btn-submit-feedback .btn {
+      inline-size: 24rem; /* botón más ancho en desktop */
+      max-inline-size: 100%;
+    }
+  }
+  

@@ -17,17 +17,16 @@
         </div>
 
         <div class="flex flex-col p-3 gap-half">
-          <%= f.label :message, "Mensaje" %>
+          <%= f.label :message, "Comentario" %>
           <%= f.text_area :message,
                 class: "input w-full",
                 rows: 5,
                 data: { "contact-form-target": "message", action: "input->contact-form#validate" } %>
         </div>
 
-        <div class="p-4">
-          <%= f.submit "Enviar mensaje",
+        <div class="btn-submit-feedback">
+          <%= f.submit "Enviar comentario",
                 class: "btn",
-                style:  "cursor:grab",
                 data: { "contact-form-target": "submit" },
                 disabled: true %>
         </div>
