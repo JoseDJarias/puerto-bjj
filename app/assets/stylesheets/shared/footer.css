@@ -95,8 +95,8 @@
     border-top: 1px solid #222;
   }
 
-/* 📍 Tablets (pantallas aun mas peuqes) */
-@media (max-width: 390px)  {
+/* 📍 Small Devices */
+@media (max-width: 440px)  {
   .footer-container{
     align-items: center;
     text-align: center;
@@ -127,6 +127,23 @@
   
 }
 
+/* 📱 Intermedio (500px a 767px) */
+@media (min-width: 440px) and (max-width: 767px) {
+  .footer-first-box{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+  }
+  .footer-links {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-around;
+    gap: 2rem;
+    padding: 0 2rem;
+  }
+
+}
+
 /* 📍 Tablets (pantallas medianas) */
 @media (min-width: 768px)  {
     .footer-first-box { grid-area: myLeftArea; }
@@ -139,9 +156,8 @@
       grid-template-areas: 
         "myLeftArea myRightArea"
         "myExtraArea myExtraArea ";
-      grid-gap: 10px;
-      row-gap: 5rem;
-
+      row-gap: 3rem;
+      padding: 0 1rem;
     }
 
     .footer-first-box {
@@ -182,7 +198,7 @@
   
     .footer-second-box {
       width: 100%;
-      justify-content: flex-end; /* Alineamos mejor la caja de enlaces */
+      justify-content: flex-end;
     }
   
     .footer-links {
@@ -191,5 +207,9 @@
   
     .footer-extra-box {
       text-align: center;
+    }
+
+    .footer-title, .footer-social-title, .footer-links-left-title, .footer-links-left-title, .footer-links-right-title {
+      font-size: x-large;
     }
   }
