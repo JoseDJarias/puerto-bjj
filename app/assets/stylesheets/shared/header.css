@@ -11,8 +11,21 @@
     box-shadow: 0px 6px 12px rgba(255, 255, 255, 0.7);
   }
 
-      /* Large Screens (≥1024px) */
+  .btn-home{
+    font-size: large;
+  }
+  /* Medium Screens (≥768px) */
+  @media (min-width: 768px) {
+    .btn-home {
+      font-size: x-large;
+    }
+  }
+
+  /* Large Screens (≥1024px) */
   @media (min-width: 1024px) {
+    .btn-home {
+      font-size: x-large;
+    }
     .menu-icon {
       margin: 0 2rem 0 30rem;
     }
