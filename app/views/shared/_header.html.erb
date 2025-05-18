@@ -1,18 +1,42 @@
-<header class="styled-header flex justify-between items-center p-6">
-  <!-- Left Side -->
-  <%= link_to "Home", root_path, class: "text-lg text-black font-bold mi-8"%>
+<header>
+  <div  class="styled-header flex justify-between items-center p-6">
+    <!-- Left Side -->
+    <%= link_to "Home", root_path, class: "font-bold mi-8"%>
 
+    <!-- Center (Only for large screens) -->
+    <div class="show@lg flex gap center-box">
+      <div class="rounded p-4">Catalogo !</div>
+      <%= link_to "Feedback", feedback_path, class: "min-w-24 min-h-8 text-black flex items-center justify-center rounded p-4"%>
+      <div class="rounded p-4">Clases </div>
+      <div class="rounded p-4">Galeria </div>
+    </div>
+    
+    <!-- Right Side -->
+    <div class="mi-6">
+      
+      <!-- 👇 Hamburgues menu only mobile and tablet -->
+      <div class="hide@lg"
+           data-controller="mobile-menu"
+           data-action="click->mobile-menu#toggle"
+           data-mobile-menu-target="trigger"
+           data-menu-id="mobile-menu">
+        <%= lucide_icon('align-justify') %>
+      </div>
 
-  <!-- Center (Only for large screens) -->
-  <div class="show@lg flex gap center-box">
-    <div class="min-w-24 min-h-8 text-black flex items-center justify-center rounded p-4">Catalogo !</div>
-    <%= link_to "Feedback", feedback_path, class: "min-w-24 min-h-8 bg-black text-black flex items-center justify-center rounded p-4"%>
-    <div class="min-w-24 min-h-8 text-black flex items-center justify-center rounded p-4">Clases </div>
-    <div class="min-w-24 min-h-8 text-black flex items-center justify-center rounded p-4">Galeria </div>
+      <!-- 👇 Logo for desktop -->
+      <div class="show@lg">
+        <!-- Aquí podés meter tu logo o lo que necesites -->
+        <div class="text-xl font-bold text-black">LOGO</div>
+      </div>
+
+    </div>
   </div>
 
-  <!-- Right Side -->
-  <div class="mi-6">
-    <%= lucide_icon('align-justify', class: 'w-6 h-6 text-black') %>
+  <!-- Navbar mobile -->
+  <div id="mobile-menu" class="hidden fixed inset-0 bg-surface z-50 p-6">
+    <nav class="flex flex-col text-base gap">
+      <%= link_to "Inicio", root_path, class: "hover:underline" %>
+      <%= link_to "Feedback", feedback_path, class: "hover:underline"%>
+    </nav>
   </div>
 </header>

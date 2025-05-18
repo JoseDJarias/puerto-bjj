@@ -26,8 +26,8 @@
 
   @media (prefers-color-scheme: dark) {
     /* Abstractions */
-    --color-bg: var(--zinc-950);
-    --color-text: white;
+    --color-bg: white;
+    --color-text: black;
     --color-text-reversed: black;
     --color-text-subtle: var(--zinc-400);
     --color-link: var(--blue-400);
@@ -86,4 +86,44 @@ body {
 ::selection {
   background-color: #dbeafe; /* azul claro */
   color: #1e3a8a; /* azul oscuro para contraste */
+}
+
+.hidden {
+  display: none !important;
+}
+
+.bg-surface {
+  background-color: var(--color-bg);
+}
+
+.bg-primary {
+  background-color: var(--color-primary);
+}
+
+.bg-positive {
+  background-color: var(--color-positive);
+}
+
+.bg-negative {
+  background-color: var(--color-negative);
+}
+
+.bg-border {
+  background-color: var(--color-border);
+}
+
+.bg-border-light {
+  background-color: var(--color-border-light);
+}
+
+.text-surface {
+  color: var(--color-text);
+}
+
+.text-reversed {
+  color: var(--color-text-reversed);
+}
+
+.text-subtle {
+  color: var(--color-text-subtle);
 }
