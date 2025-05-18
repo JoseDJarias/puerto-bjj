@@ -9,15 +9,6 @@
  * Consider organizing styles into separate files for maintainability.
  */
 
- #main{
-   color: black;
-    max-height: 100%;
- }
-
- .text-black {
-    color: black;
-  }
-
  .btn-cursor-grab-style{
   cursor: grab;
  }

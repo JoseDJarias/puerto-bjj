@@ -4,8 +4,6 @@
     color: #fff;
     padding: 2rem 1rem;
     font-style: oblique;
-    position: relative;
-    top: 9rem;
   }
   
   .footer-container {
@@ -193,6 +191,5 @@
   
     .footer-extra-box {
       text-align: center;
-      padding-top: 2rem; /* Más espacio superior */
     }
   }

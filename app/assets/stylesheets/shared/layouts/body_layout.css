@@ -1,7 +1,6 @@
 .body-layout{
         display: flex;
         flex-direction: column;
-        min-height: 100vh; /* Asegura que el layout ocupe toda la pantalla */
         font-family: var(--font-sans);
         background-color: var(--background,#f8f9fa); 
   }
