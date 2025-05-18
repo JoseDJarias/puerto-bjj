@@ -3,13 +3,19 @@
     <!-- Left Side -->
     <%= link_to "Home", root_path, class: "font-bold mi-8"%>
 
-    <!-- Center (Only for large screens) -->
+    <!-- Center Navigation (Only for large screens) -->
     <div class="show@lg flex gap center-box">
       <div class="rounded p-4">Catalogo !</div>
       <%= link_to "Feedback", feedback_path, class: "min-w-24 min-h-8 text-black flex items-center justify-center rounded p-4"%>
       <div class="rounded p-4">Clases </div>
       <div class="rounded p-4">Galeria </div>
     </div>
+    
+    <!-- 👇 Center Logo for mobile and tablets -->
+    <div class="hide@lg">
+      <div class="text-xl font-bold">LOGO</div>
+    </div>
+
     
     <!-- Right Side -->
     <div class="mi-6">
@@ -25,8 +31,7 @@
 
       <!-- 👇 Logo for desktop -->
       <div class="show@lg">
-        <!-- Aquí podés meter tu logo o lo que necesites -->
-        <div class="text-xl font-bold text-black">LOGO</div>
+        <div class="text-xl font-bold">LOGO</div>
       </div>
 
     </div>
