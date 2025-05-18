@@ -1,12 +1,12 @@
 <header>
   <div  class="styled-header flex justify-between items-center p-6">
     <!-- Left Side -->
-    <%= link_to "Home", root_path, class: "btn-home font-bold mi-6"%>
+    <%= link_to "Home", root_path, class: "btn-home font-semibold mi-6"%>
 
     <!-- Center Navigation (Only for large screens) -->
     <div class="show@lg flex gap center-box">
       <div class="rounded p-4">Catalogo !</div>
-      <%= link_to "Feedback", feedback_path, class: "min-w-24 min-h-8 text-black flex items-center justify-center rounded p-4"%>
+      <%= link_to "Feedback", feedback_path, class: "rounded p-4"%>
       <div class="rounded p-4">Clases </div>
       <div class="rounded p-4">Galeria </div>
     </div>
@@ -21,7 +21,7 @@
     <div class="mi-6">
       
       <!-- 👇 Hamburgues menu only mobile and tablet -->
-      <div class="hide@lg"
+      <div class="hide@lg cursor-grab"
            data-controller="mobile-menu"
            data-action="click->mobile-menu#toggle"
            data-mobile-menu-target="trigger"

@@ -126,3 +126,7 @@ body {
 .text-subtle {
   color: var(--color-text-subtle);
 }
+
+.cursor-grab{
+  cursor: grab;
+}

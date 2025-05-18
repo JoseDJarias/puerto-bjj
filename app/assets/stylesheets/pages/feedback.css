@@ -8,6 +8,7 @@
   .btn-submit-feedback .btn {
     inline-size: 100%;
     max-inline-size: 100%;
+    cursor: grab;
   }
   
   /* Desktop: desde 1024px (64rem) en adelante */

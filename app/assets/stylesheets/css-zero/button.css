@@ -97,3 +97,17 @@
     position: absolute;
   }
 }
+
+.btn--animated {
+  transition: background-color 0.3s ease, transform 0.2s ease, box-shadow 0.2s ease;
+}
+
+.btn--animated:not(:disabled):hover {
+  transform: scale(1.02);
+  box-shadow: 0 0.25rem 0.75rem rgba(0, 0, 0, 0.15); /* sombra suave */
+  cursor: pointer;
+}
+
+.btn--animated:not(:disabled):active {
+  transform: scale(0.97);
+}
