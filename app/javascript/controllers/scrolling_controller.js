@@ -28,11 +28,11 @@ export default class extends Controller {
     const screenWidth = window.innerWidth
 
     if (screenWidth < 768) {
-      return 250 // Para móviles, más cerca de la izquierda
+      return 300 // Para móviles, más cerca de la izquierda
     } else if (screenWidth >= 768 && screenWidth < 1024) {
-      return 400 // Para tablets
+      return 800 // Para tablets
     } else {
-      return 500 // Para pantallas grandes
+      return 600 // Para pantallas grandes
     }
   }
 }
