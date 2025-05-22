@@ -45,7 +45,7 @@
 }
 
 /* 🔹 Secciones siguientes */
-@media (min-width: 910px) {
+@media (min-width: 768px) {
     /* Contenedor padre (por ejemplo, “explore-section-1”) */
     .explore-section-1 {
       display: flex; /* (o “grid”) para que los hijos se distribuyan a la par */
