@@ -7,12 +7,42 @@
 }
 
 /* Section 01: Academia de Artes Marciales */
-.explore-section-1 {
+.hero-title-container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    padding: 2rem 1rem;
+    }
 
+.hero-title {
+    font-size: clamp(2rem, 6vw, 4rem); /* Responsive */
+    font-weight: var(--font-bold);
+    color: var(--color-text);
+    max-inline-size: 40ch;
+    line-height: 1.2;
+    margin: 0 auto;
+}
+/* Carousel Style*/
+
+.carousel-track {
+    display: flex;
+    transition: transform 0.5s ease-in-out;
+    will-change: transform;
 }
 
-/* 🖥️ Pantallas Pequeñas */
+.carousel-item {
+    flex: 0 0 100%;
+    width: 100%;
+    height: auto;
+}
 
+.carousel-item img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    display: block;
+}
 
 /* 🔹 Secciones siguientes */
 .explore-section-1
