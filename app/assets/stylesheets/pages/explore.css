@@ -45,3 +45,22 @@
 }
 
 /* 🔹 Secciones siguientes */
+@media (min-width: 910px) {
+    /* Contenedor padre (por ejemplo, “explore-section-1”) */
+    .explore-section-1 {
+      display: flex; /* (o “grid”) para que los hijos se distribuyan a la par */
+      flex-direction: row; /* (o “row-reverse”) para que el título esté a la izquierda y el carousel a la derecha */
+      align-items: center; /* (opcional) centra verticalmente */
+    }
+  
+    /* Caja del título (por ejemplo, “hero-title-container”) */
+    .hero-title-container {
+      flex: 40%; /* (o un ancho fijo, por ejemplo, “width: 40%;”) */
+    }
+  
+    /* Caja del carousel (por ejemplo, “carousel-container”) */
+    .carousel-container {
+      flex: 60%; /* (o un ancho fijo, por ejemplo, “width: 60%;”) */
+      overflow: hidden; /* (o “position: relative;”) para que el slide se “corte” dentro de su propio bloque y no se desborde */
+    }
+  }
