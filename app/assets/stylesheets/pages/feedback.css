@@ -11,17 +11,69 @@
     cursor: grab;
   }
   
-  /* Desktop: desde 1024px (64rem) en adelante */
-  @media (min-width: 64rem) {
-    .btn-submit-feedback {
-      display: flex;
-      justify-content: center;
-      margin-inline: var(--size-10); /* margen lateral */
-    }
-  
-    .btn-submit-feedback .btn {
-      inline-size: 24rem; /* botón más ancho en desktop */
-      max-inline-size: 100%;
-    }
+/* iPad Pro y tablets grandes */
+@media screen and (min-width: 834px) and (min-height: 1194px) {
+  #feedback_container {
+    margin: 5rem auto;
   }
+
+}
   
+/* Desktop: desde 1024px (64rem) en adelante */
+@media (min-width: 64rem) {
+  .btn-submit-feedback {
+    display: flex;
+    justify-content: center;
+    margin-inline: var(--size-10); /* margen lateral */
+  }
+
+  .btn-submit-feedback .btn {
+    inline-size: 24rem; /* botón más ancho en desktop */
+    max-inline-size: 100%;
+  }
+}
+  
+/* Create turbo stream style */
+.create-feedback-container {
+  height: max-content;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+
+.create-feedback-container h2 {
+  font-size: 1.7rem;
+}
+
+.create-feedback-container p {
+  font-size: 1.2rem;
+  margin-bottom: 2rem;
+}
+
+/* Pantallas medianas */
+@media screen and (min-width: 920px) {
+  .create-feedback-container h2 {
+    font-size: 2rem;
+  }
+
+  .create-feedback-container p {
+    font-size: 1.5rem;
+    margin-bottom: 3rem;
+  }
+}
+
+@media screen and (min-height: 900px) {
+  .create-feedback-container {
+    min-height: 61vh;
+  }
+  .create-feedback-container h2 {
+    font-size: 3.5rem;
+    margin-bottom: 1.5rem;
+  }
+
+  .create-feedback-container p {
+    font-size: 2.5rem;
+    margin-bottom: 4rem;
+  }
+}

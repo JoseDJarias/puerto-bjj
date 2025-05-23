@@ -8,6 +8,23 @@
   font-size: var(--input-font-size, var(--text-sm));
   inline-size: var(--input-inline-size, var(--size-full));
   padding: var(--input-padding, .375rem .75rem);
+  color: var(--color-text);
+
+  /* Estilos para campos autocompletados */
+  &:-webkit-autofill {
+    -webkit-appearance: none;
+    -webkit-text-fill-color: var(--color-text) !important;
+    box-shadow: 0 0 0 30px var(--input-background, var(--color-surface, #f8f9fa)) inset !important;
+    transition: background-color 5000s ease-in-out 0s;
+    caret-color: var(--color-text);
+  }
+
+  &:-webkit-autofill:hover,
+  &:-webkit-autofill:focus,
+  &:-webkit-autofill:active {
+    -webkit-text-fill-color: var(--color-text) !important;
+    box-shadow: 0 0 0 30px var(--input-background, var(--color-surface, #f8f9fa)) inset !important;
+  }
 
   &:is(textarea[rows=auto]) {
     field-sizing: content;
