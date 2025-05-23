@@ -1,4 +1,3 @@
-
 <div class="flex justify-center">
   <div class="w-full" style="inline-size: 80%; max-inline-size: 90%; @media (min-width: 40rem) { max-inline-size: 30rem; }">
     <%= form_with model: feedback_message, url: feedback_path, method: :post, data: { turbo: true, controller: "contact-form"}, class: "grid gap-4" do |f| %>
@@ -6,6 +5,7 @@
           <%= f.label :name, "Nombre" %>
           <%= f.text_field :name,
             class: "input w-full",
+            placeholder: "Ingresa tu nombre",
             data: { "contact-form-target": "name", action: "input->contact-form#validate" } %>
         </div>
 
@@ -13,6 +13,7 @@
           <%= f.label :email, "Correo" %>
           <%= f.email_field :email,
                 class: "input w-full",
+                placeholder: "ejemplo@correo.com",
                 data: { "contact-form-target": "email", action: "input->contact-form#validate" } %>
         </div>
 
@@ -21,6 +22,7 @@
           <%= f.text_area :message,
                 class: "input w-full",
                 rows: 5,
+                placeholder: "Escribe tu comentario aquí...",
                 data: { "contact-form-target": "message", action: "input->contact-form#validate" } %>
         </div>
 
