@@ -25,6 +25,16 @@
                 placeholder: "Escribe tu comentario aquí...",
                 data: { "feedback-form-target": "message", action: "input->feedback-form#validate" } %>
         </div>
+        
+        <p class="text-sm text-center mb-2" data-feedback-form-target="infoMessage">
+          <span class="inline-flex items-center flex-wrap justify-center">
+            <%= lucide_icon "info", class: "mb-2" %>
+            <span>
+              Todos los campos son requeridos. 
+              <span>El botón se habilitará cuando completes todos los campos correctamente.</span>
+            </span>
+          </span>
+        </p>
 
         <div class="btn-submit-feedback">
           <%= f.submit "Enviar comentario",
@@ -32,6 +42,7 @@
                 data: { "feedback-form-target": "submit" },
                 disabled: true %>
         </div>
+
     <% end %>
   </div>
 </div>

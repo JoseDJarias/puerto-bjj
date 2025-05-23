@@ -1,8 +1,10 @@
-<div class="flex flex-col items-center p-2 gap" style="margin:2rem;">
-  <h2 class="text-xl text-center">Dejanos un feedback</h2>
-  <h3 class="text-xl text-center">Apreciamos tu opinion!</h3>
-</div>
+<div id="feedback_container">
+  <div class="flex flex-col items-center gap" style="margin:1rem;">
+    <h2 class="text-xl text-center">Dejanos un feedback</h2>
+    <h3 class="text-xl text-center">Apreciamos tu opinion!</h3>
+  </div>
 
-<div id="feedback_form">
-  <%= render partial: "form", locals: { feedback_message: @feedback_message } %>
+  <div id="feedback_form">
+   <%= render partial: "form", locals: { feedback_message: @feedback_message } %>
+  </div>
 </div>

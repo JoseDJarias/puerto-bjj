@@ -1,7 +1,7 @@
 import { Controller } from "@hotwired/stimulus"
 
 export default class extends Controller {
-  static targets = ["name", "email", "message", "submit"]
+  static targets = ["name", "email", "message", "submit", "infoMessage"]
 
   connect() {
     this.validate()
@@ -14,5 +14,10 @@ export default class extends Controller {
 
     const isValid = nameValid && emailValid && messageValid
     this.submitTarget.disabled = !isValid
+    
+    // Controlar la visibilidad del mensaje informativo
+    if (this.hasInfoMessageTarget) {
+      this.infoMessageTarget.classList.toggle('hidden', isValid)
+    }
   }
 } 
