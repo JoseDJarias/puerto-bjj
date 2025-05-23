@@ -15,4 +15,4 @@ export default class extends Controller {
     const isValid = nameValid && emailValid && messageValid
     this.submitTarget.disabled = !isValid
   }
-}
+} 

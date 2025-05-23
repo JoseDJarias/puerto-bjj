@@ -1,12 +1,12 @@
 <div class="flex justify-center">
   <div class="w-full" style="inline-size: 80%; max-inline-size: 90%; @media (min-width: 40rem) { max-inline-size: 30rem; }">
-    <%= form_with model: feedback_message, url: feedback_path, method: :post, data: { turbo: true, controller: "contact-form"}, class: "grid gap-4" do |f| %>
+    <%= form_with model: feedback_message, url: feedback_path, method: :post, data: { turbo: true, controller: "feedback-form"}, class: "grid gap-4" do |f| %>
        <div class="flex flex-col p-2 gap-half">
           <%= f.label :name, "Nombre" %>
           <%= f.text_field :name,
             class: "input w-full",
             placeholder: "Ingresa tu nombre",
-            data: { "contact-form-target": "name", action: "input->contact-form#validate" } %>
+            data: { "feedback-form-target": "name", action: "input->feedback-form#validate" } %>
         </div>
 
         <div class="flex flex-col p-2 gap-half">
@@ -14,7 +14,7 @@
           <%= f.email_field :email,
                 class: "input w-full",
                 placeholder: "ejemplo@correo.com",
-                data: { "contact-form-target": "email", action: "input->contact-form#validate" } %>
+                data: { "feedback-form-target": "email", action: "input->feedback-form#validate" } %>
         </div>
 
         <div class="flex flex-col p-3 gap-half">
@@ -23,13 +23,13 @@
                 class: "input w-full",
                 rows: 5,
                 placeholder: "Escribe tu comentario aquí...",
-                data: { "contact-form-target": "message", action: "input->contact-form#validate" } %>
+                data: { "feedback-form-target": "message", action: "input->feedback-form#validate" } %>
         </div>
 
         <div class="btn-submit-feedback">
           <%= f.submit "Enviar comentario",
                 class: "btn btn--positive btn--animated",
-                data: { "contact-form-target": "submit" },
+                data: { "feedback-form-target": "submit" },
                 disabled: true %>
         </div>
     <% end %>
