@@ -1,0 +1,68 @@
+<div class="container">
+  <header class="header">
+    <div class="header__actions">
+      <%= link_to "← Volver", admin_feedback_messages_path, class: "btn btn--secondary" %>
+    </div>
+    <h1 class="header__title">Detalles del Mensaje</h1>
+  </header>
+
+  <div class="card">
+    <div class="card__content">
+      <dl class="description-list">
+        <div class="description-list__item">
+          <dt>ID</dt>
+          <dd><%= @message.id %></dd>
+        </div>
+
+        <div class="description-list__item">
+          <dt>Nombre</dt>
+          <dd><%= @message.name %></dd>
+        </div>
+
+        <div class="description-list__item">
+          <dt>Email</dt>
+          <dd><%= @message.email %></dd>
+        </div>
+
+        <div class="description-list__item">
+          <dt>Fecha de Envío</dt>
+          <dd><%= @message.created_at.strftime("%d/%m/%Y %H:%M") %></dd>
+        </div>
+
+        <div class="description-list__item">
+          <dt>Mensaje</dt>
+          <dd class="message-content"><%= @message.message %></dd>
+        </div>
+      </dl>
+    </div>
+  </div>
+</div>
+
+<style>
+  .description-list {
+    display: grid;
+    gap: var(--size-4);
+  }
+
+  .description-list__item {
+    display: grid;
+    gap: var(--size-2);
+  }
+
+  .description-list__item dt {
+    font-weight: var(--font-semibold);
+    color: var(--color-text-alt);
+  }
+
+  .message-content {
+    white-space: pre-wrap;
+    background-color: var(--color-surface-alt);
+    padding: var(--size-4);
+    border-radius: var(--rounded-md);
+    margin-block-start: var(--size-2);
+  }
+
+  .header__actions {
+    margin-block-end: var(--size-4);
+  }
+</style>

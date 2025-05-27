@@ -1,0 +1,44 @@
+<div class="admin-dashboard">
+  <h1 class="text-2xl font-bold mb-6">Panel Administrativo</h1>
+
+  <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 mb-8">
+    <!-- Tarjeta de Feedback -->
+    <div class="rounded-lg shadow p-6">
+      <div class="flex items-center justify-between mb-4">
+        <h2 class="text-xl font-semibold">Mensajes de Feedback</h2>
+        <span class="text-3xl font-bold text-blue-600"><%= @feedback_count %></span>
+      </div>
+      <p class="text-gray-600 mb-4">Total de mensajes recibidos</p>
+      <%= link_to "Ver todos los mensajes", admin_feedback_messages_path, 
+          class: "inline-block bg-blue-600 text-white px-4 py-2 rounded hover:bg-blue-700 transition-colors" %>
+    </div>
+
+    <!-- Aquí podemos agregar más tarjetas para otras secciones administrativas -->
+  </div>
+
+  <!-- Sección de Feedback Reciente -->
+  <div class="rounded-lg shadow p-6">
+    <h2 class="text-xl font-semibold mb-4">Feedback Reciente</h2>
+    <% if @recent_feedbacks.any? %>
+      <div class="space-y-4">
+        <% @recent_feedbacks.each do |feedback| %>
+          <div class="border-b pb-4 last:border-b-0">
+            <div class="flex justify-between items-start">
+              <div>
+                <p class="font-medium"><%= feedback.name %></p>
+                <p class="text-sm text-gray-600"><%= truncate(feedback.message, length: 100) %></p>
+                <p class="text-xs text-gray-500 mt-1">
+                  <%= l(feedback.created_at, format: :short) %>
+                </p>
+              </div>
+              <%= link_to "Ver", admin_feedback_message_path(feedback), 
+                  class: "text-blue-600 hover:text-blue-800 text-sm" %>
+            </div>
+          </div>
+        <% end %>
+      </div>
+    <% else %>
+      <p class="text-gray-600">No hay mensajes de feedback recientes</p>
+    <% end %>
+  </div>
+</div> 

@@ -1,0 +1,9 @@
+<div id="admin-header">
+  <header class="admin-header">
+  <h1><%= link_to "Panel de Administración", admin_root_path, class: "hover:text-blue-600 transition-colors" %></h1>
+  <nav>
+    <%= button_to "Cerrar sesión", session_path, method: :delete, data: { turbo_method: :delete, turbo_confirm: "¿Seguro que quieres cerrar sesión?" }, class: "logout-button" %>
+  </nav>
+  </header>
+
+</div>

@@ -1,0 +1,73 @@
+<%# Vista de tabla para mensajes de feedback %>
+<div class="container">
+  <header class="header">
+    <h1 class="header__title">Mensajes de Feedback</h1>
+  </header>
+
+  <div class="table-container">
+    <table class="table">
+      <thead>
+        <tr>
+          <th>ID</th>
+          <th>Nombre</th>
+          <th>Email</th>
+          <th>Mensaje</th>
+          <th>Fecha</th>
+          <th>Acciones</th>
+        </tr>
+      </thead>
+      <tbody>
+        <% @messages.each do |message| %>
+          <tr>
+            <td><%= message.id %></td>
+            <td><%= message.name %></td>
+            <td><%= message.email %></td>
+            <td><%= truncate(message.message, length: 50) %></td>
+            <td><%= message.created_at.strftime("%d/%m/%Y %H:%M") %></td>
+            <td>
+              <%= link_to "Ver", admin_feedback_message_path(message), class: "btn btn--primary btn--sm" %>
+            </td>
+          </tr>
+        <% end %>
+      </tbody>
+    </table>
+  </div>
+</div>
+
+<%# Estilos específicos para la tabla %>
+<style>
+  .table-container {
+    margin: var(--size-4) 0;
+    overflow-x: auto;
+    border-radius: var(--rounded-lg);
+    box-shadow: var(--shadow-md);
+  }
+
+  .table {
+    inline-size: 100%;
+    border-collapse: collapse;
+    background-color: var(--color-surface);
+  }
+
+  .table th,
+  .table td {
+    padding: var(--size-3);
+    text-align: start;
+    border-block-end: 1px solid var(--color-border);
+  }
+
+  .table th {
+    background-color: var(--color-surface-alt);
+    font-weight: var(--font-semibold);
+    color: var(--color-text-alt);
+  }
+
+  .table tbody tr:hover {
+    background-color: var(--color-surface-hover);
+  }
+
+  .btn--sm {
+    padding: var(--size-2) var(--size-3);
+    font-size: var(--text-sm);
+  }
+</style>

@@ -11,10 +11,9 @@ Rails.application.routes.draw do
   resource :session
   resources :passwords, param: :token
 
-  # //Admin routes
+  # Admin routes
   namespace :admin do
-    get "contact_messages/index"
-    get "contact_messages/show"
-    resources :contact_messages, only: [ :index, :show ]
+    root to: "dashboard#index"  # Esto hace que el dashboard sea la página principal del área admin
+    resources :feedback_messages, only: [:index, :show]
   end
 end
