@@ -45,3 +45,8 @@ end
 
 gem "css-zero", "~> 1.1"
 gem "lucide-rails"
+
+# Pagination
+gem "kaminari-core"
+gem "kaminari-activerecord"
+gem "kaminari-actionview"
