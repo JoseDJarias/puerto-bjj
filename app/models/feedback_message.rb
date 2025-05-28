@@ -1,4 +1,9 @@
 class FeedbackMessage < ApplicationRecord
+  include Searchable
+  
+  # Definir los campos buscables
+  searchable_by :name, :email, :message
+  
   VALID_EMAIL_REGEX = URI::MailTo::EMAIL_REGEXP
 
   validates :name, presence: true, length: { maximum: 50, message: "El nombre muy largo (máximo 20 caracteres)" }

@@ -2,7 +2,11 @@ class Admin::FeedbackMessagesController < Admin::BaseController
   def index
     @per_page = params.fetch(:per_page, 10).to_i
     @per_page = 10 unless [5, 10, 20, 50].include?(@per_page)
-    @messages = FeedbackMessage.order(created_at: :desc).page(params[:page]).per(@per_page)
+    
+    @messages = FeedbackMessage.order(created_at: :desc)
+                             .search(params[:q])
+                             .page(params[:page])
+                             .per(@per_page)
   end
 
   def show
