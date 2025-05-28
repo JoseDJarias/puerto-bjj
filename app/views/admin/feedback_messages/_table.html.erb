@@ -1,0 +1,127 @@
+<%# Table partial for feedback messages %>
+<div class="table-container" id="feedback-messages-table" data-controller="check-all">
+  <%= form_tag batch_destroy_admin_feedback_messages_path, 
+      method: :delete, 
+      data: { 
+        turbo_confirm: "¿Estás seguro de eliminar los mensajes seleccionados?",
+        turbo_frame: "_top",
+        check_all_target: "form"
+      } do %>
+    
+    <div class="flex flex-col gap-4 mb-4">
+      <%# Global selection %>
+      <div class="flex items-center justify-between p-4 bg-surface-alt rounded-lg">
+        <div class="flex items-center gap-4">
+          <div class="flex items-center gap-2">
+            <%= check_box_tag :select_all_global, nil, false, 
+                class: "checkbox", 
+                data: { 
+                  action: "check-all#selectAllGlobal",
+                  check_all_target: "selectAllGlobal"
+                } %>
+            <%= label_tag :select_all_global, "Seleccionar todos los registros", class: "text-sm font-medium" %>
+          </div>
+          <span class="text-sm text-gray-600">
+            Total: <%= FeedbackMessage.count %> mensajes
+          </span>
+        </div>
+
+        <div class="flex items-center gap-2" data-check-all-target="globalActions" style="display: none;">
+          <span class="text-sm text-gray-600" data-check-all-target="globalSelectionCount"></span>
+          <%= button_tag type: "submit", 
+              class: "btn btn--danger btn--sm",
+              data: { check_all_target: "globalSubmitButton" } do %>
+            <%= lucide_icon "trash-2", class: "w-4 h-4" %>
+            <span>Eliminar todos los seleccionados</span>
+          <% end %>
+        </div>
+      </div>
+
+      <%# Page selection %>
+      <div class="flex items-center justify-between">
+        <div class="flex items-center gap-2">
+          <%= check_box_tag :check_all, nil, false, 
+              class: "checkbox", 
+              data: { 
+                action: "check-all#check",
+                check_all_target: "dependee"
+              } %>
+          <%= label_tag :check_all, "Seleccionar todos en esta página", class: "text-sm" %>
+        </div>
+
+        <div class="flex items-center gap-2" data-check-all-target="batchActions" style="display: none;">
+          <span class="text-sm text-gray-600" data-check-all-target="selectionCount"></span>
+          <%= button_tag type: "submit", 
+              class: "btn btn--danger btn--sm",
+              data: { check_all_target: "submitButton" } do %>
+            <%= lucide_icon "trash-2", class: "w-4 h-4" %>
+            <span>Eliminar seleccionados de esta página</span>
+          <% end %>
+        </div>
+      </div>
+    </div>
+
+    <%# Hidden field for global selection %>
+    <%= hidden_field_tag :select_all_global_ids, "", data: { check_all_target: "globalIds" } %>
+
+    <table class="table">
+      <thead>
+        <tr>
+          <th class="w-12"></th>
+          <th>ID</th>
+          <th>Nombre</th>
+          <th>Email</th>
+          <th>Mensaje</th>
+          <th>Fecha</th>
+          <th>Acciones</th>
+        </tr>
+      </thead>
+      <tbody>
+        <% messages.each do |message| %>
+          <tr id="<%= dom_id(message) %>">
+            <td>
+              <%= check_box_tag "message_ids[]", message.id, false,
+                  class: "checkbox",
+                  data: { 
+                    action: "check-all#check",
+                    check_all_target: "dependant"
+                  } %>
+            </td>
+            <td><%= message.id %></td>
+            <td><%= message.name %></td>
+            <td><%= message.email %></td>
+            <td><%= truncate(message.message, length: 50) %></td>
+            <td><%= message.created_at.strftime("%d/%m/%Y %H:%M") %></td>
+            <td>
+              <div class="flex gap-2">
+                <%= link_to admin_feedback_message_path(message), class: "btn btn--primary btn--sm" do %>
+                  <%= lucide_icon "eye", class: "w-4 h-4" %>
+                  <span class="sr-only">Ver</span>
+                <% end %>
+                <%= button_to admin_feedback_message_path(message), 
+                    method: :delete,
+                    class: "btn btn--danger btn--sm",
+                    form: { 
+                      data: { 
+                        turbo_confirm: "¿Estás seguro de eliminar este mensaje?",
+                        turbo_frame: "_top"
+                      } 
+                    } do %>
+                  <%= lucide_icon "trash-2", class: "w-4 h-4" %>
+                  <span class="sr-only">Eliminar</span>
+                <% end %>
+              </div>
+            </td>
+          </tr>
+        <% end %>
+      </tbody>
+    </table>
+  <% end %>
+</div>
+
+<%# Estilos para los checkboxes %>
+<style>
+  .checkbox {
+    @apply w-4 h-4 rounded border-gray-300 text-primary-600 focus:ring-primary-500;
+  }
+</style> 

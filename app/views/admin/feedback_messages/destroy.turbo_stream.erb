@@ -1,0 +1,8 @@
+<%= turbo_stream.remove @message %>
+<%= turbo_stream.update "flash-messages" do %>
+  <div class="flash-message flash-message--success mb-4" 
+       data-controller="removals" 
+       data-action="animationend->removals#remove">
+    Mensaje eliminado exitosamente
+  </div>
+<% end %> 
