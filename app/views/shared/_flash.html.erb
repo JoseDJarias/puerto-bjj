@@ -1,8 +1,9 @@
 <%# Flash messages partial %>
 <% flash.each do |type, message| %>
-  <div class="flash-message flash-message--<%= type %> mb-4" 
+  <div class="flash flash--<%= type %> mb-4" 
        data-controller="removals" 
-       data-action="animationend->removals#remove">
+       data-action="animationend->removals#remove"
+       role="alert">
     <%= message %>
   </div>
 <% end %> 

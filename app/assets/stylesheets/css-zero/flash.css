@@ -1,10 +1,11 @@
 .flash {
   align-items: center;
   animation: appear-then-fade 4s 300ms both;
-  backdrop-filter: var(--blur-sm) var(--contrast-75);
-  background-color: var(--flash-background, rgb(from var(--color-text) r g b / .65));
-  border-radius: var(--rounded-full);
-  color: var(--flash-color, var(--color-text-reversed));
+  backdrop-filter: var(--blur-sm);
+  background-color: var(--flash-background, var(--color-surface-alt));
+  border: 1px solid var(--flash-border, var(--color-border));
+  border-radius: var(--rounded-md);
+  color: var(--flash-color, var(--color-text));
   column-gap: var(--size-2);
   display: flex;
   font-size: var(--text-fluid-base);
@@ -13,8 +14,9 @@
   margin-block-start: var(--flash-position, var(--size-4));
   margin-inline: auto;
   min-block-size: var(--size-11);
-  padding: var(--size-1) var(--size-4);
+  padding: var(--size-2) var(--size-4);
   text-align: center;
+  box-shadow: var(--shadow-sm);
 
   [data-turbo-preview] & {
     display: none;
@@ -24,11 +26,25 @@
 .flash--positive {
   --flash-background: var(--color-positive);
   --flash-color: white;
+  --flash-border: var(--color-positive-dark);
 }
 
 .flash--negative {
   --flash-background: var(--color-negative);
   --flash-color: white;
+  --flash-border: var(--color-negative-dark);
+}
+
+.flash--notice {
+  --flash-background: var(--color-primary);
+  --flash-color: white;
+  --flash-border: var(--color-primary-dark);
+}
+
+.flash--alert {
+  --flash-background: var(--color-error);
+  --flash-color: white;
+  --flash-border: var(--color-error-dark);
 }
 
 .flash--extended {
