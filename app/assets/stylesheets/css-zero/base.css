@@ -111,10 +111,10 @@ body {
   background-color: var(--color-border);
 }
 
-.bg-border-light {
-  background-color: var(--color-border-light);
-}
+.bg-admin-main{
+  background-color: #0e6b9d;
 
+}
 .text-surface {
   color: var(--color-text);
 }

@@ -76,7 +76,7 @@ export default class extends Controller {
     const totalCount = this.dependantTargets.length
 
     if (checkedCount > 0) {
-      this.selectionCountTarget.textContent = `${checkedCount} de ${totalCount} seleccionados en esta página`
+      this.selectionCountTarget.textContent = ` ${checkedCount} de ${totalCount} seleccionados en esta página`
       this.batchActionsTarget.style.display = "flex"
       this.submitButtonTarget.textContent = `Eliminar`
     } else {

@@ -8,28 +8,28 @@
         check_all_target: "form"
       } do %>
     
-    <div class="flex flex-col gap-4 mb-4">
+    <div class="flex flex-col mb-4">
+     <span class="p-4 rounded bg-admin-main">
+            Total: <%= FeedbackMessage.count %> comentarios
+          </span>
       <%# Global selection %>
       <div class="flex items-center justify-between p-4 bg-surface-alt rounded-lg">
-        <div class="flex items-center gap-4">
-          <div class="flex items-center gap-2">
+        <div class="flex items-center gap">
+          <div class="flex items-center gap">
             <%= check_box_tag :select_all_global, nil, false, 
                 class: "checkbox", 
                 data: { 
                   action: "check-all#selectAllGlobal",
                   check_all_target: "selectAllGlobal"
                 } %>
-            <%= label_tag :select_all_global, "Seleccionar todos los registros", class: "text-sm font-medium" %>
+            <%= label_tag :select_all_global, "Seleccionar todos los registros", class: "" %>
           </div>
-          <span class="text-sm text-gray-600">
-            Total: <%= FeedbackMessage.count %> mensajes
-          </span>
         </div>
 
-        <div class="flex items-center gap-2" data-check-all-target="globalActions" style="display: none;">
-          <span class="text-sm text-gray-600" data-check-all-target="globalSelectionCount"></span>
+        <div class="flex items-center " data-check-all-target="globalActions" style="display: none;">
+          <span class="text-sm " data-check-all-target="globalSelectionCount"></span>
           <%= button_tag type: "submit", 
-              class: "btn btn--danger btn--sm",
+              class: "btn btn--sm",
               data: { check_all_target: "globalSubmitButton" } do %>
             <%= lucide_icon "trash-2", class: "w-4 h-4" %>
             <span>Eliminar todos los seleccionados</span>
@@ -38,15 +38,15 @@
       </div>
 
       <%# Page selection %>
-      <div class="flex items-center justify-between">
-        <div class="flex items-center gap-2">
+      <div class="flex items-center justify-between p-4">
+        <div class="flex items-center gap">
           <%= check_box_tag :check_all, nil, false, 
               class: "checkbox", 
               data: { 
                 action: "check-all#check",
                 check_all_target: "dependee"
               } %>
-          <%= label_tag :check_all, "Seleccionar todos en esta página", class: "text-sm" %>
+          <%= label_tag :check_all, "Seleccionar todos en esta página", class: "" %>
         </div>
 
         <div class="flex items-center gap-2" data-check-all-target="batchActions" style="display: none;">

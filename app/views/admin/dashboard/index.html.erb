@@ -1,16 +1,15 @@
 <div class="admin-dashboard">
   <h1 class="text-2xl font-bold mb-6">Panel Administrativo</h1>
 
-  <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 mb-8">
+  <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3">
     <!-- Tarjeta de Feedback -->
     <div class="rounded-lg shadow p-6">
       <div class="flex items-center justify-between mb-4">
-        <h2 class="text-xl font-semibold">Mensajes de Feedback</h2>
-        <span class="text-3xl font-bold text-blue-600"><%= @feedback_count %></span>
+        <h2 class="text-xl font-semibold">Feedback</h2>
       </div>
-      <p class="text-gray-600 mb-4">Total de mensajes recibidos</p>
-      <%= link_to "Ver todos los mensajes", admin_feedback_messages_path, 
-          class: "inline-block bg-blue-600 text-white px-4 py-2 rounded hover:bg-blue-700 transition-colors" %>
+      <p class="mb-4 text-xl">Total de comentarios recibidos: <%= @feedback_count %></p>
+      <%= link_to "Ver todos los comentarios", admin_feedback_messages_path, 
+          class: "inline-block rounded hover:bg-blue-700 btn" %>
     </div>
 
     <!-- Aquí podemos agregar más tarjetas para otras secciones administrativas -->
@@ -20,25 +19,153 @@
   <div class="rounded-lg shadow p-6">
     <h2 class="text-xl font-semibold mb-4">Feedback Reciente</h2>
     <% if @recent_feedbacks.any? %>
-      <div class="space-y-4">
+      <div class="flex flex-col gap">
         <% @recent_feedbacks.each do |feedback| %>
-          <div class="border-b pb-4 last:border-b-0">
-            <div class="flex justify-between items-start">
-              <div>
-                <p class="font-medium"><%= feedback.name %></p>
-                <p class="text-sm text-gray-600"><%= truncate(feedback.message, length: 100) %></p>
-                <p class="text-xs text-gray-500 mt-1">
+          <div class="feedback-item">
+            <div class="feedback-content">
+              <%# Header con nombre y fecha %>
+              <div class="feedback-header">
+                <div class="feedback-name">
+                  <%= lucide_icon "user", class: "w-4 h-4" %>
+                  <span><%= feedback.name %></span>
+                </div>
+                <time class="feedback-date" datetime="<%= feedback.created_at.iso8601 %>">
+                  <%= lucide_icon "clock", class: "w-4 h-4" %>
                   <%= l(feedback.created_at, format: :short) %>
-                </p>
+                </time>
               </div>
-              <%= link_to "Ver", admin_feedback_message_path(feedback), 
-                  class: "text-blue-600 hover:text-blue-800 text-sm" %>
+
+              <%# Mensaje %>
+              <div class="feedback-message">
+                <%= lucide_icon "message-square", class: "w-4 h-4" %>
+                <p><%= truncate(feedback.message, length: 100) %></p>
+              </div>
+
+              <%# Acción %>
+              <div class="feedback-action">
+                <%= link_to admin_feedback_message_path(feedback), 
+                    class: "feedback-link" do %>
+                  <%= lucide_icon "eye", class: "w-4 h-4" %>
+                  <span class="feedback-link-text">Ver detalles</span>
+                <% end %>
+              </div>
             </div>
           </div>
         <% end %>
       </div>
     <% else %>
-      <p class="text-gray-600">No hay mensajes de feedback recientes</p>
+      <p class="text-muted">No hay mensajes de feedback recientes</p>
     <% end %>
   </div>
-</div> 
+</div>
+
+<%# Estilos para la sección de feedback reciente %>
+<style>
+  .feedback-item {
+    background-color: var(--color-surface);
+    border: 1px solid var(--color-border);
+    border-radius: var(--rounded-md);
+    padding: var(--size-4);
+    transition: transform 0.2s ease, box-shadow 0.2s ease;
+  }
+
+  .feedback-item:hover {
+    transform: translateY(-2px);
+    box-shadow: var(--shadow-sm);
+  }
+
+  .feedback-content {
+    display: flex;
+    flex-direction: column;
+    gap: var(--size-3);
+  }
+
+  .feedback-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+  }
+
+  .feedback-name {
+    display: flex;
+    align-items: center;
+    gap: var(--size-2);
+    font-weight: var(--font-medium);
+    color: var(--color-text);
+  }
+
+  .feedback-date {
+    display: flex;
+    align-items: center;
+    gap: var(--size-2);
+    font-size: var(--text-sm);
+    color: var(--color-text-muted);
+  }
+
+  .feedback-message {
+    display: flex;
+    gap: var(--size-3);
+    color: var(--color-text);
+    font-size: var(--text-base);
+    line-height: 1.5;
+  }
+
+  .feedback-message p {
+    flex: 1;
+  }
+
+  .feedback-action {
+    display: flex;
+    justify-content: flex-end;
+    margin-block-start: var(--size-2);
+  }
+
+  .feedback-link {
+    display: inline-flex;
+    align-items: center;
+    gap: var(--size-2);
+    padding: var(--size-2) var(--size-3);
+    background-color: var(--color-surface-alt);
+    color: var(--color-text);
+    font-size: var(--text-sm);
+    font-weight: var(--font-medium);
+    border: 1px solid var(--color-border);
+    border-radius: var(--rounded-md);
+    text-decoration: none;
+    transition: all 0.2s ease;
+  }
+
+  .feedback-link:hover {
+    background-color: var(--color-surface-hover);
+    border-color: var(--color-border-hover);
+    transform: translateY(-1px);
+  }
+
+  .feedback-link:active {
+    transform: translateY(0);
+  }
+
+  .feedback-link svg {
+    color: var(--color-text-muted);
+  }
+
+  .feedback-link:hover svg {
+    color: var(--color-text);
+  }
+
+  .feedback-link-text {
+    font-size: var(--text-sm);
+    font-weight: var(--font-medium);
+  }
+
+  /* Estilos para los iconos */
+  .feedback-name svg,
+  .feedback-date svg,
+  .feedback-message svg {
+    color: var(--color-text-muted);
+  }
+
+  .feedback-item:hover .feedback-name svg {
+    color: var(--color-primary);
+  }
+</style> 

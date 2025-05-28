@@ -1,20 +1,10 @@
 <%# Main container for feedback messages %>
 <div class="container mx-auto px-4 py-8">
   <div class="flex flex-col gap mb-6">
-    <%# Primera fila: Título y selector de registros por página %>
+    <%# Primera fila: Título  %>
     <div class="flex justify-between items-center">
       <h1 class="text-2xl font-bold">Mensajes de Contacto</h1>
-      
-      <div class="flex items-center ">
-        <span class="text-sm ">Mostrar:</span>
-        <div class="flex gap">
-          <% [5, 10, 20, 50].each do |per_page| %>
-            <%= link_to per_page, 
-                admin_feedback_messages_path(per_page: per_page, page: 1, q: params[:q]), 
-                class: "btn btn--sm #{@per_page == per_page ? 'btn--primary' : 'btn--secondary'}" %>
-          <% end %>
-        </div>
-      </div>
+    
     </div>
 
     <%# Segunda fila: Barra de búsqueda %>
@@ -68,9 +58,23 @@
   <%# Render the table partial %>
   <%= render "table", messages: @messages %>
 
+    
+  <div class="flex items-center gap">
+    <span class="text-sm ">Mostrar:</span>
+    <div class="flex gap">
+      <% [5, 10, 20, 50].each do |per_page| %>
+        <%= link_to per_page, 
+            admin_feedback_messages_path(per_page: per_page, page: 1, q: params[:q]), 
+            class: "btn btn--sm #{@per_page == per_page ? 'btn--positive' : 'btn--plain'}" %>
+      <% end %>
+    </div>
+  </div>
+
   <%# Pagination %>
   <div class="mt-4 flex justify-center">
-    <%= paginate @messages %>
+    <div class="pagination-wrapper">
+      <%= paginate @messages %>
+    </div>
   </div>
 </div>
 
@@ -168,19 +172,72 @@
   }
 
   /* Estilos para la paginación */
+  .pagination-wrapper {
+    display: flex;
+    align-items: center;
+    gap: var(--size-2);
+  }
+
   .pagination {
-    @apply flex items-center gap-2;
+    display: flex;
+    align-items: center;
+    gap: var(--size-2);
   }
 
   .pagination .page {
-    @apply btn btn--sm btn--secondary;
+    min-inline-size: var(--size-8);
+    block-size: var(--size-8);
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    padding: var(--size-2);
+    border: 1px solid var(--color-border);
+    border-radius: var(--rounded-md);
+    background-color: var(--color-surface);
+    color: var(--color-text);
+    text-decoration: none;
+  }
+
+  .pagination .page:hover {
+    background-color: var(--color-surface-hover);
   }
 
   .pagination .current {
-    @apply btn btn--sm btn--primary;
+    background-color: var(--color-primary);
+    color: var(--color-surface);
+    border-color: var(--color-primary);
+  }
+
+  .pagination .prev,
+  .pagination .next {
+    min-inline-size: var(--size-8);
+    block-size: var(--size-8);
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    padding: var(--size-2);
+    border: 1px solid var(--color-border);
+    border-radius: var(--rounded-md);
+    background-color: var(--color-surface);
+    color: var(--color-text);
+    text-decoration: none;
+  }
+
+  .pagination .prev:hover,
+  .pagination .next:hover {
+    background-color: var(--color-surface-hover);
   }
 
   .pagination .disabled {
-    @apply btn btn--sm btn--secondary opacity-50 cursor-not-allowed;
+    opacity: 0.5;
+    cursor: not-allowed;
+    pointer-events: none;
+  }
+
+  .pagination .gap {
+    display: inline-flex;
+    align-items: center;
+    padding: var(--size-2);
+    color: var(--color-text-muted);
   }
 </style>

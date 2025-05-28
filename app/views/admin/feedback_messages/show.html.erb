@@ -1,68 +1,209 @@
-<div class="container">
-  <header class="header">
-    <div class="header__actions">
-      <%= link_to "← Volver", admin_feedback_messages_path, class: "btn btn--secondary" %>
+<%# Contenedor principal %>
+<div class="feedback-detail">
+  <%# Encabezado con navegación %>
+  <div class="feedback-header">
+    <div class="feedback-nav">
+      <%= link_to admin_feedback_messages_path, class: "back-link" do %>
+        <%= lucide_icon "arrow-left", class: "w-4 h-4" %>
+        <span>Volver a mensajes</span>
+      <% end %>
     </div>
-    <h1 class="header__title">Detalles del Mensaje</h1>
-  </header>
+    <div class="feedback-actions">
+      <%= button_to admin_feedback_message_path(@message), 
+          method: :delete,
+          class: "delete-button",
+          form: { data: { turbo: false } },
+          data: { 
+            turbo_confirm: "¿Estás seguro de eliminar este mensaje?"
+          } do %>
+        <%= lucide_icon "trash-2", class: "w-4 h-4" %>
+        <span>Eliminar</span>
+      <% end %>
+    </div>
+  </div>
 
-  <div class="card">
-    <div class="card__content">
-      <dl class="description-list">
-        <div class="description-list__item">
-          <dt>ID</dt>
-          <dd><%= @message.id %></dd>
+  <%# Tarjeta de detalle %>
+  <div class="feedback-card">
+    <%# Información del remitente %>
+    <div class="sender-info">
+      <div class="sender-header">
+        <div class="sender-name">
+          <%= lucide_icon "user", class: "w-5 h-5" %>
+          <h1><%= @message.name %></h1>
         </div>
+        <time class="message-date" datetime="<%= @message.created_at.iso8601 %>">
+          <%= lucide_icon "clock", class: "w-4 h-4" %>
+          <%= l(@message.created_at, format: :long) %>
+        </time>
+      </div>
+      <div class="sender-email">
+        <%= lucide_icon "mail", class: "w-4 h-4" %>
+          <%= @message.email %>
+        </a>
+      </div>
+    </div>
 
-        <div class="description-list__item">
-          <dt>Nombre</dt>
-          <dd><%= @message.name %></dd>
-        </div>
-
-        <div class="description-list__item">
-          <dt>Email</dt>
-          <dd><%= @message.email %></dd>
-        </div>
-
-        <div class="description-list__item">
-          <dt>Fecha de Envío</dt>
-          <dd><%= @message.created_at.strftime("%d/%m/%Y %H:%M") %></dd>
-        </div>
-
-        <div class="description-list__item">
-          <dt>Mensaje</dt>
-          <dd class="message-content"><%= @message.message %></dd>
-        </div>
-      </dl>
+    <%# Contenido del mensaje %>
+    <div class="message-content">
+      <div class="message-header">
+        <%= lucide_icon "message-square", class: "w-5 h-5" %>
+        <h2>Mensaje</h2>
+      </div>
+      <div class="message-text">
+        <%= simple_format @message.message %>
+      </div>
     </div>
   </div>
 </div>
 
+<%# Estilos %>
 <style>
-  .description-list {
-    display: grid;
-    gap: var(--size-4);
+  .feedback-detail {
+    max-inline-size: 800px;
+    margin-inline: auto;
+    padding: var(--size-6);
   }
 
-  .description-list__item {
-    display: grid;
+  .feedback-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-block-end: var(--size-6);
+  }
+
+  .back-link {
+    display: inline-flex;
+    align-items: center;
     gap: var(--size-2);
+    padding: var(--size-2) var(--size-3);
+    color: var(--color-text);
+    font-size: var(--text-sm);
+    font-weight: var(--font-medium);
+    text-decoration: none;
+    border-radius: var(--rounded-md);
+    transition: all 0.2s ease;
   }
 
-  .description-list__item dt {
-    font-weight: var(--font-semibold);
-    color: var(--color-text-alt);
+  .back-link:hover {
+    background-color: var(--color-surface-hover);
+  }
+
+  .delete-button {
+    display: inline-flex;
+    align-items: center;
+    gap: var(--size-2);
+    padding: var(--size-2) var(--size-3);
+    background-color: var(--color-error);
+    color: var(--color-surface);
+    font-size: var(--text-sm);
+    font-weight: var(--font-medium);
+    border: none;
+    border-radius: var(--rounded-md);
+    cursor: pointer;
+    transition: all 0.2s ease;
+  }
+
+  .delete-button:hover {
+    background-color: var(--color-error-hover);
+  }
+
+  .feedback-card {
+    background-color: var(--color-surface);
+    border: 1px solid var(--color-border);
+    border-radius: var(--rounded-lg);
+    padding: var(--size-6);
+    box-shadow: var(--shadow-sm);
+  }
+
+  .sender-info {
+    margin-block-end: var(--size-6);
+    padding-block-end: var(--size-6);
+    border-block-end: 1px solid var(--color-border);
+  }
+
+  .sender-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-block-end: var(--size-4);
+  }
+
+  .sender-name {
+    display: flex;
+    align-items: center;
+    gap: var(--size-3);
+  }
+
+  .sender-name h1 {
+    font-size: var(--text-2xl);
+    font-weight: var(--font-bold);
+    color: var(--color-text);
+  }
+
+  .message-date {
+    display: flex;
+    align-items: center;
+    gap: var(--size-2);
+    font-size: var(--text-sm);
+    color: var(--color-text-muted);
+  }
+
+  .sender-email {
+    display: flex;
+    align-items: center;
+    gap: var(--size-2);
+    color: var(--color-text-muted);
+  }
+
+  .email-link {
+    color: var(--color-primary);
+    text-decoration: none;
+  }
+
+  .email-link:hover {
+    text-decoration: underline;
   }
 
   .message-content {
-    white-space: pre-wrap;
-    background-color: var(--color-surface-alt);
-    padding: var(--size-4);
-    border-radius: var(--rounded-md);
-    margin-block-start: var(--size-2);
+    display: flex;
+    flex-direction: column;
+    gap: var(--size-2);
   }
 
-  .header__actions {
-    margin-block-end: var(--size-4);
+  .message-header {
+    display: flex;
+    align-items: center;
+    gap: var(--size-3);
+  }
+
+  .message-header h2 {
+    font-size: var(--text-lg);
+    font-weight: var(--font-semibold);
+    color: var(--color-text);
+  }
+
+  .message-text {
+    font-size: var(--text-base);
+    line-height: 1.6;
+    color: var(--color-text);
+    white-space: pre-wrap;
+  }
+
+  /* Estilos para los iconos */
+  .sender-name svg,
+  .message-header svg {
+    color: var(--color-text-muted);
+  }
+
+  .sender-email svg {
+    color: var(--color-text-muted);
+  }
+
+  .back-link svg {
+    color: var(--color-text-muted);
+  }
+
+  .delete-button svg {
+    color: var(--color-surface);
   }
 </style>

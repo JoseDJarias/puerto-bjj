@@ -18,7 +18,7 @@ class Admin::FeedbackMessagesController < Admin::BaseController
     @message.destroy
 
     respond_to do |format|
-      format.turbo_stream
+      format.turbo_stream { redirect_to admin_feedback_messages_path, notice: "Mensaje eliminado exitosamente" }
       format.html { redirect_to admin_feedback_messages_path, notice: "Mensaje eliminado exitosamente" }
     end
   end
