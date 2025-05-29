@@ -10,6 +10,4 @@ class PagesController < ApplicationController
   def horarios
   end
 
-  def gallery
-  end
 end

@@ -1,13 +1,14 @@
 require "test_helper"
 
-class Admin::ContactMessagesControllerTest < ActionDispatch::IntegrationTest
+class Admin::FeedbackMessagesControllerTest < ActionDispatch::IntegrationTest
   test "should get index" do
-    get admin_contact_messages_index_url
+    get admin_feedback_messages_url
     assert_response :success
   end
 
   test "should get show" do
-    get admin_contact_messages_show_url
+    feedback_message = feedback_messages(:one)
+    get admin_feedback_message_url(feedback_message)
     assert_response :success
   end
 end
