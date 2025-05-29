@@ -1,10 +1,47 @@
-<div id="feedback_container">
-  <div class="flex flex-col items-center gap" style="margin:1rem;">
-    <h2 class="text-xl text-center">Dejanos un feedback</h2>
-    <h3 class="text-xl text-center">Apreciamos tu opinion!</h3>
+<%# Contenedor principal %>
+<div id="feedback_container" class="feedback-page">
+  <%# Sección informativa %>
+  <div class="feedback-info-section">
+    <div class="feedback-info-content">
+      <div class="feedback-info-icon">
+        <%= lucide_icon "message-square", class: "w-12 h-12" %>
+      </div>
+      <h2 class="feedback-info-title">Tu opinión es valiosa</h2>
+      <div class="feedback-info-cards">
+        <div class="feedback-info-card">
+          <div class="feedback-info-card-icon">
+            <%= lucide_icon "heart", class: "w-6 h-6" %>
+          </div>
+          <h3>Mejora Continua</h3>
+          <p>Tu feedback nos ayuda a mejorar nuestras clases y servicios para ofrecerte la mejor experiencia.</p>
+        </div>
+        <div class="feedback-info-card">
+          <div class="feedback-info-card-icon">
+            <%= lucide_icon "users", class: "w-6 h-6" %>
+          </div>
+          <h3>Comunidad</h3>
+          <p>Juntos construimos una comunidad más fuerte y un ambiente de entrenamiento óptimo.</p>
+        </div>
+        <div class="feedback-info-card">
+          <div class="feedback-info-card-icon">
+            <%= lucide_icon "shield", class: "w-6 h-6" %>
+          </div>
+          <h3>Confidencialidad</h3>
+          <p>Tus comentarios son tratados con total confidencialidad y respeto.</p>
+        </div>
+      </div>
+    </div>
   </div>
 
-  <div id="feedback_form">
-   <%= render partial: "form", locals: { feedback_message: @feedback_message } %>
+  <%# Formulario de feedback %>
+  <div class="feedback-form-section">
+    <div class="feedback-form-container">
+      <h2 class="feedback-form-title">Dejanos tu feedback</h2>
+      <p class="feedback-form-subtitle">Apreciamos tu opinión y nos ayuda a mejorar 🥋</p>
+      
+      <div id="feedback_form">
+        <%= render partial: "form", locals: { feedback_message: @feedback_message } %>
+      </div>
+    </div>
   </div>
 </div>
