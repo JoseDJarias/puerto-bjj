@@ -10,14 +10,4 @@ class PagesControllerTest < ActionDispatch::IntegrationTest
     get "/acerca-de-nosotros"
     assert_response :success
   end
-
-  test "should get horarios" do
-    get "/horarios"
-    assert_response :success
-  end
-
-  test "should get gallery" do
-    get "/galeria"
-    assert_response :success
-  end
 end

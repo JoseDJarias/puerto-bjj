@@ -1,6 +1,10 @@
 require "test_helper"
 
 class Admin::FeedbackMessagesControllerTest < ActionDispatch::IntegrationTest
+  setup do
+    sign_in_as_admin
+  end
+
   test "should get index" do
     get admin_feedback_messages_url
     assert_response :success
