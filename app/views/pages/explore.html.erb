@@ -17,29 +17,305 @@
         -->
       </div>
     </div>
-
+    <!--
     <div class="explore-section-2">
       <h1 class="font-bold text-4xl text-black m-10 p-10">Catalogo</h1>
     </div>
-
+    -->
     <div class="explore-section-3">
-     <h1 class="font-bold text-4xl text-black m-10 p-10">Kids</h1>
+      <div class="kids-container">
+        <!-- Header Section -->
+        <div class="kids-header">
+          <h2 class="kids-title">Programa Kids</h2>
+          <p class="kids-subtitle">Desarrollando confianza y disciplina a través del Jiu-Jitsu</p>
+        </div>
+
+        <!-- Content Grid -->
+        <div class="kids-grid">
+          <!-- Card 1: Beneficios -->
+          <div class="kids-card">
+            <div class="kids-card-icon">
+              <%= lucide_icon "star", class: "w-8 h-8" %>
+            </div>
+            <h3 class="kids-card-title">Beneficios</h3>
+            <ul class="kids-card-list">
+              <li>Desarrollo de confianza</li>
+              <li>Mejora de la coordinación</li>
+              <li>Disciplina y respeto</li>
+              <li>Actividad física divertida</li>
+            </ul>
+          </div>
+
+          <!-- Card 2: Edades -->
+          <div class="kids-card">
+            <div class="kids-card-icon">
+              <%= lucide_icon "users", class: "w-8 h-8" %>
+            </div>
+            <h3 class="kids-card-title ">Edades</h3>
+            <ul class="kids-card-list ">
+              <li>Kids 1: 5-8 años</li>
+              <li>Kids 2: 9-13 años</li>
+            </ul>
+          </div>
+
+          <!-- Card 3: Horarios -->
+          <div class="kids-card">
+            <div class="kids-card-icon">
+              <%= lucide_icon "clock", class: "w-8 h-8" %>
+            </div>
+            <h3 class="kids-card-title">Horarios</h3>
+            <ul class="kids-card-list">
+              <li>Lunes: 5:00 PM - 6:00 PM</li>
+              <li>Sábado: 9:30 AM - 10:30 AM</li>
+            </ul>
+          </div>
+        </div>
+
+        <!-- CTA Section -->
+        <div class="kids-cta">
+          <p class="kids-cta-text">¡Únete a nuestra familia de pequeños guerreros!</p>
+        </div>
+      </div>
     </div>
 
-    <div class="explore-section-4">
-      <h1 class="font-bold text-4xl text-black m-10 p-10">Feedback</h1>
+    <!-- Social Media Links -->
+    <div class="contact-social gap">
+      <h3 class="contact-social-title">Nuestra comunidad es la mejor parte de Puerto Jiu-Jitsu</h3>
+      <h4 class="contact-social-title">Síguenos en redes sociales</h4>
+      <p class="contact-social-subtitle">Mantente al día con nuestras últimas noticias, eventos y actualizaciones</p>
+      <div class="social-links">
+        <%= link_to "https://www.facebook.com/puertojiujitsu/", target: "_blank", class: "social-link" do %>
+          <%= lucide_icon "facebook", class: "w-6 h-6" %>
+          <span>Facebook</span>
+        <% end %>
+        <%= link_to "https://www.instagram.com/puertojiujitsu/", target: "_blank", class: "social-link" do %>
+          <%= lucide_icon "instagram", class: "w-6 h-6" %>
+          <span>Instagram</span>
+        <% end %>
+        <%= link_to "https://wa.me/50672026863?text=Hola,%20me%20gustaría%20obtener%20información%20sobre%20las%20clases%20de%20Jiu-Jitsu", target: "_blank", class: "social-link" do %>
+          <%= lucide_icon "message-circle", class: "w-6 h-6" %>
+          <span>WhatsApp</span>
+        <% end %>
+      </div>
     </div>
+
 
     <div class="explore-section-5">
-      <h1 class="font-bold text-4xl text-black m-10 p-10">Horarios</h1>
+      <div class="schedule-container">
+        <!-- Header Section -->
+        <div class="schedule-header">
+          <h2 class="schedule-title">Horarios de Clases</h2>
+          <p class="schedule-subtitle">Encuentra el horario perfecto para tu entrenamiento</p>
+        </div>
+
+        <!-- Schedule Grid -->
+        <div class="schedule-grid">
+          <!-- Combined Schedule Card -->
+          <div class="schedule-card">
+            <div class="schedule-card-header">
+              <%= lucide_icon "calendar", class: "w-8 h-8" %>
+              <h3 class="schedule-card-title">Horarios de Clases</h3>
+            </div>
+            <div class="schedule-card-content">
+              <!-- Kids Schedule -->
+              <div class="schedule-group">
+                <h4 class="schedule-group-title">
+                  <%= lucide_icon "users", class: "w-5 h-5 inline-block mr-2" %>
+                  Programa Kids (5-13 años)
+                </h4>
+                <ul class="schedule-list">
+                  <li>
+                    <span class="schedule-days">Lunes</span>
+                    <span class="schedule-time">5:00 PM</span>
+                  </li>
+                  <li>
+                    <span class="schedule-days">Sabado</span>
+                    <span class="schedule-time">9:30 AM</span>
+                  </li>
+                </ul>
+              </div>
+
+              <!-- Adults Schedule -->
+              <div class="schedule-group">
+                <h4 class="schedule-group-title">
+                  <%= lucide_icon "dumbbell", class: "w-5 h-5 inline-block mr-2" %>
+                  Programa Adultos
+                </h4>
+                
+                <!-- Jiu-Jitsu No Gi -->
+                <div class="schedule-subgroup">
+                  <h5 class="schedule-subgroup-title">Jiu-Jitsu No Gi</h5>
+                  <ul class="schedule-list">
+                    <li>
+                      <span class="schedule-days">Lunes</span>
+                      <span class="schedule-time">12:00 PM</span>
+                    </li>
+                    <li>
+                      <span class="schedule-days">Martes</span>
+                      <span class="schedule-time">12:00 PM y 6:00 PM</span>
+                    </li>
+                    <li>
+                      <span class="schedule-days">Jueves</span>
+                      <span class="schedule-time">6:30 PM</span>
+                    </li>
+                    <li>
+                      <span class="schedule-days">Viernes</span>
+                      <span class="schedule-time">12:00 PM</span>
+                    </li>
+                    <li>
+                      <span class="schedule-days">Sábado</span>
+                      <span class="schedule-time">12:00 PM (Open Mat)</span>
+                    </li>
+                  </ul>
+                </div>
+
+                <!-- Jiu-Jitsu con Kimono -->
+                <div class="schedule-subgroup">
+                  <h5 class="schedule-subgroup-title">Jiu-Jitsu con Kimono</h5>
+                  <ul class="schedule-list">
+                    <li>
+                      <span class="schedule-days">Lunes y Viernes</span>
+                      <span class="schedule-time">6:30 PM</span>
+                    </li>
+                    <li>
+                      <span class="schedule-days">Miércoles</span>
+                      <span class="schedule-time">12:00 PM y 6:30 PM</span>
+                    </li>
+                  </ul>
+                </div>
+
+                <!-- Boxeo -->
+                <div class="schedule-subgroup">
+                  <h5 class="schedule-subgroup-title">Boxeo</h5>
+                  <ul class="schedule-list">
+                    <li>
+                      <span class="schedule-days">Martes y Miércoles</span>
+                      <span class="schedule-time">11:00 AM</span>
+                    </li>
+                    <li>
+                      <span class="schedule-days">Miércoles y Viernes</span>
+                      <span class="schedule-time">4:30 PM</span>
+                    </li>
+                    <li>
+                      <span class="schedule-days">Sábado</span>
+                      <span class="schedule-time">11:00 AM</span>
+                    </li>
+                  </ul>
+                </div>
+
+                <!-- MMA -->
+                <div class="schedule-subgroup">
+                  <h5 class="schedule-subgroup-title">MMA</h5>
+                  <ul class="schedule-list">
+                    <li>
+                      <span class="schedule-days">Martes</span>
+                      <span class="schedule-time">5:00 PM</span>
+                    </li>
+                  </ul>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <!-- Additional Info -->
+        <div class="schedule-info">
+          <div class="schedule-info-card">
+            <%= lucide_icon "info", class: "w-6 h-6" %>
+            <p>Las clases tienen una duración de 60-90 minutos. Llega 15 minutos antes para calentar.</p>
+          </div>
+          <div class="schedule-info-card">
+            <%= lucide_icon "calendar", class: "w-6 h-6" %>
+            <p>Consulta nuestro calendario para clases especiales y eventos.</p>
+          </div>
+        </div>
+      </div>
     </div>
 
+    <!--
     <div class="explore-section-6">
       <h1 class="font-bold text-4xl text-black m-10 p-10">Galeria</h1>
     </div>
+    -->
 
     <div class="explore-section-7">
-      <h1 class="font-bold text-4xl text-black m-10 p-10"> Contactanos</h1>
+      <div class="contact-container">
+        <!-- Header Section -->
+        <div class="contact-header">
+          <h2 class="contact-title">Contáctanos</h2>
+          <p class="contact-subtitle">Estamos aquí para responder todas tus preguntas y escuchar tus comentarios</p>
+        </div>
+
+        <div class="contact-content">
+          <!-- Contact Info Cards -->
+          <div class="contact-info">
+            <div class="contact-card">
+              <div class="contact-card-icon">
+                <%= lucide_icon "map-pin", class: "w-8 h-8" %>
+              </div>
+              <h3 class="contact-card-title">Ubicación</h3>
+              <p class="contact-card-text">Gimnasio In Line, Puntarenas, Costa Rica</p>
+              <%= link_to "https://www.google.com/maps/place/Gimnasio+In+Line/@9.9831961,-84.7348988,17z/data=!3m1!4b1!4m6!3m5!1s0x8fa031a7c3d77b43:0x934fb6fd5800c8dc!8m2!3d9.9831908!4d-84.7323239!16s%2Fg%2F11g6nbwflh?entry=ttu", 
+                  target: "_blank", 
+                  class: "contact-card-link" do %>
+                <div class="flex items-center gap-2">
+                  <%= lucide_icon "map", class: "w-4 h-4" %>
+                  <span>Ver en Google Maps</span>
+                </div>
+              <% end %>
+            </div>
+
+            <div class="contact-card">
+              <div class="contact-card-icon">
+                <%= lucide_icon "phone", class: "w-8 h-8" %>
+              </div>
+              <h3 class="contact-card-title">WhatsApp</h3>
+              <p class="contact-card-text">+506 7202-6863</p>
+              <%= link_to "https://wa.me/50672026863?text=Hola,%20me%20gustaría%20obtener%20información%20sobre%20las%20clases%20de%20Jiu-Jitsu", 
+                  target: "_blank", 
+                  class: "contact-card-link" do %>
+                <div class="flex items-center gap-2">
+                  <%= lucide_icon "message-circle", class: "w-4 h-4" %>
+                  <span>Chatear en WhatsApp</span>
+                </div>
+              <% end %>
+            </div>
+
+            <div class="contact-card">
+              <div class="contact-card-icon">
+                <%= lucide_icon "mail", class: "w-8 h-8" %>
+              </div>
+              <h3 class="contact-card-title">Email</h3>
+              <p class="contact-card-text">info@puertobjj.com</p>
+              <%= link_to "Enviar email", "mailto:info@puertobjj.com", class: "contact-card-link" %>
+            </div>
+
+            <div class="contact-card">
+              <div class="contact-card-icon">
+                <%= lucide_icon "clock", class: "w-8 h-8" %>
+              </div>
+              <h3 class="contact-card-title">Horario de Atención</h3>
+              <p class="contact-card-text">Lunes a Viernes: 8:00 AM - 9:00 PM</p>
+              <p class="contact-card-text">Sábados: 9:00 AM - 5:00 PM</p>
+            </div>
+          </div>
+
+          <!-- Feedback CTA Section -->
+          <div class="contact-feedback-cta">
+            <div class="feedback-cta-content">
+              <div class="feedback-cta-icon">
+                <%= lucide_icon "message-square", class: "w-12 h-12" %>
+              </div>
+              <h3 class="feedback-cta-title">¿Tienes algo que decirnos?</h3>
+              <p class="feedback-cta-text">Tu opinión es muy importante para nosotros. Comparte tus comentarios, sugerencias o preguntas a través de nuestro formulario de feedback.</p>
+              <%= link_to feedback_path, class: "feedback-cta-button" do %>
+                <%= lucide_icon "send", class: "w-5 h-5" %>
+                <span>Enviar Feedback</span>
+              <% end %>
+            </div>
+          </div>
+        </div>
+      </div>
     </div>
 
 

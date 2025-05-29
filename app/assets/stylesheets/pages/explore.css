@@ -4,6 +4,7 @@
     align-items: center;
     width: 100%;
     overflow: hidden; 
+    max-height:fit-content;
 }
 
 /* Section 01: Academia de Artes Marciales */
@@ -44,23 +45,123 @@
     display: block;
 }
 
-/* 🔹 Secciones siguientes */
+/* Tablet Adjustments */
 @media (min-width: 768px) {
-    /* Contenedor padre (por ejemplo, “explore-section-1”) */
+  .explore-section-1 {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+  }
+
+  .hero-title-container {
+    flex: 40%;
+    height: 100%;
+  }
+
+  .carousel-container {
+    flex: 60%;
+    overflow: hidden;
+    max-height: 1100px;
+  }
+
+  .carousel-track {
+    height: 1100px;
+  }
+
+  .carousel-item {
+    height: 100%;
+  }
+
+  .carousel-item img {
+    height: 100%;
+    object-fit: cover;
+  }
+}
+
+/* iPad Pro Adjustments */
+@media (min-width: 1024px) and (min-height: 1300px) {
+  .explore-section-1 {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    min-height: 1300px;
+  }
+
+  .hero-title-container {
+    flex: 40%;
+    height: 100%;
+    padding: var(--size-16);
+  }
+
+  .hero-title {
+    font-size: clamp(2.5rem, 4vw, 3.5rem);
+  }
+
+  .carousel-container {
+    flex: 60%;
+    overflow: hidden;
+    max-height: 1300px;
+  }
+
+  .carousel-track {
+    height: 1300px;
+  }
+
+  .carousel-item {
+    height: 100%;
+  }
+
+  .carousel-item img {
+    height: 100%;
+    object-fit: cover;
+  }
+}
+
+/* 🔹 Secciones siguientes */
+@media (min-width: 1024px) {
+    /* Contenedor padre (por ejemplo, "explore-section-1") */
     .explore-section-1 {
-      display: flex; /* (o “grid”) para que los hijos se distribuyan a la par */
-      flex-direction: row; /* (o “row-reverse”) para que el título esté a la izquierda y el carousel a la derecha */
+      display: flex; /* (o "grid") para que los hijos se distribuyan a la par */
+      flex-direction: row; /* (o "row-reverse") para que el título esté a la izquierda y el carousel a la derecha */
       align-items: center; /* (opcional) centra verticalmente */
     }
   
-    /* Caja del título (por ejemplo, “hero-title-container”) */
+    /* Caja del título (por ejemplo, "hero-title-container") */
     .hero-title-container {
-      flex: 40%; /* (o un ancho fijo, por ejemplo, “width: 40%;”) */
+      flex: 40%; /* (o un ancho fijo, por ejemplo, "width: 40%;") */
+      height: 100%;
     }
   
-    /* Caja del carousel (por ejemplo, “carousel-container”) */
+    /* Caja del carousel (por ejemplo, "carousel-container") */
     .carousel-container {
-      flex: 60%; /* (o un ancho fijo, por ejemplo, “width: 60%;”) */
-      overflow: hidden; /* (o “position: relative;”) para que el slide se “corte” dentro de su propio bloque y no se desborde */
+      flex: 60%; /* (o un ancho fijo, por ejemplo, "width: 60%;") */
+      overflow: hidden; /* (o "position: relative;") para que el slide se "corte" dentro de su propio bloque y no se desborde */
+      max-height: 800px;
     }
+
+    .carousel-track{
+      height: 800px;
+    }
+    .carousel-item{
+      height: 100%;
+    }
+    .carousel-item img {
+      height: 100%;
+      object-fit: cover;
+    }
+}
+
+/* iPad Pro Specific */
+@media (min-width: 1024px) and (min-height: 1300px) and (max-width: 1366px) {
+  .explore-section-1 {
+    min-height: 1300px;
   }
+
+  .carousel-container {
+    max-height: 1300px;
+  }
+
+  .carousel-track {
+    height: 1300px;
+  }
+}
