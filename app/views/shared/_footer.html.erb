@@ -10,8 +10,15 @@
       <div class="footer-social">
         <p class="footer-social-title">Siguenos</p>
         <div class="footer-social-icons">
-          <a href="#" aria-label="Instagram"><%= lucide_icon "instagram" %></a>
-          <a href="#" aria-label="Facebook"><%= lucide_icon "facebook" %></a>
+          <%= link_to "https://www.instagram.com/puertojiujitsu/", target: "_blank", rel: "noopener noreferrer", aria_label: "Instagram" do %>
+            <%= lucide_icon "instagram" %>
+          <% end %>
+          <%= link_to "https://www.facebook.com/puertojiujitsu/", target: "_blank", rel: "noopener noreferrer", aria_label: "Facebook" do %>
+            <%= lucide_icon "facebook" %>
+          <% end %>
+          <%= link_to "https://wa.me/50672026863?text=Hola,%20me%20gustaría%20obtener%20información%20sobre%20las%20clases%20de%20Jiu-Jitsu", target: "_blank", rel: "noopener noreferrer", aria_label: "WhatsApp" do %>
+            <%= lucide_icon "message-circle" %>
+          <% end %>
         </div>
       </div>
 
@@ -19,8 +26,12 @@
       <div class="footer-find-us">
         <p class="footer-find-title">Encuentranos</p>
         <div class="footer-find-icons">
-          <a href="#" aria-label="Google Maps"><%= lucide_icon "map-pin" %></a>
-          <a href="#" aria-label="Waze"><%= lucide_icon "navigation" %></a>
+          <%= link_to "https://www.google.com/maps/place/Gimnasio+In+Line/@9.9831961,-84.7348988,17z/data=!3m1!4b1!4m6!3m5!1s0x8fa031a7c3d77b43:0x934fb6fd5800c8dc!8m2!3d9.9831908!4d-84.7323239!16s%2Fg%2F11g6nbwflh?entry=ttu", target: "_blank", rel: "noopener noreferrer", aria_label: "Google Maps" do %>
+            <%= lucide_icon "map-pin" %>
+          <% end %>
+          <%= link_to "https://ul.waze.com/ul?venue_id=180420708.1804010470.13727243&overview=yes&utm_campaign=default&utm_source=waze_website&utm_medium=lm_share_location", target: "_blank", rel: "noopener noreferrer", aria_label: "Waze" do %>
+            <%= lucide_icon "navigation" %>
+          <% end %>
         </div>
       </div>
     </div>
@@ -30,11 +41,11 @@
       <div class="footer-links">
         <div class="footer-links-left">
           <p class="footer-links-left-title">Academia</p>
-          <a href="#">Enlace largo con más texto</a>
+          <%= link_to "Sobre Nosotros", "/acerca-de-nosotros", class: "footer-link" %>
         </div>
         <div class="footer-links-right">
           <p class="footer-links-right-title">Descubre</p>
-          <a href="#">Enlace corto</a>
+          <%= link_to "Feedback", feedback_path, class: "footer-link" %>
         </div>
       </div>
     </div>

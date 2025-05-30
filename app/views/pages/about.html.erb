@@ -1,4 +1,90 @@
-<div>
-  <h1 class="font-bold text-4xl">Pages#about</h1>
-  <p>Find me in app/views/pages/about.html.erb</p>
+<div class="about-container">
+  <!-- Hero Section -->
+  <div class="about-hero">
+    <div class="about-hero-content">
+      <h1 class="about-hero-title">Sobre Nosotros</h1>
+      <p class="about-hero-subtitle">Conoce más sobre PuertoBJJ y nuestra misión</p>
+    </div>
+  </div>
+
+  <!-- Historia Section -->
+  <div class="about-section">
+    <div class="about-section-content">
+      <div class="about-section-icon">
+        <%= lucide_icon "history", class: "w-12 h-12" %>
+      </div>
+      <h2 class="about-section-title">Nuestra Historia</h2>
+      <p class="about-section-text">
+        PuertoBJJ nació con la visión de crear un espacio donde el arte del Jiu-Jitsu Brasileño 
+        pudiera florecer en Puntarenas. Fundada por apasionados del deporte, nuestra academia 
+        se ha convertido en un centro de excelencia para el aprendizaje y desarrollo de las 
+        artes marciales.
+      </p>
+    </div>
+  </div>
+
+  <!-- Misión y Valores -->
+  <div class="about-section about-section-alt">
+    <div class="about-section-content">
+      <div class="about-section-icon">
+        <%= lucide_icon "target", class: "w-12 h-12" %>
+      </div>
+      <h2 class="about-section-title">Misión</h2>
+      <p class="about-section-text">
+        Nuestra misión es promover el desarrollo personal y físico a través del Jiu-Jitsu, 
+        creando una comunidad inclusiva donde cada estudiante pueda alcanzar su máximo potencial 
+        tanto en el tatami como en la vida.
+      </p>
+
+      <div class="about-values">
+        <div class="about-value-card">
+          <div class="about-value-icon">
+            <%= lucide_icon "users", class: "w-8 h-8" %>
+          </div>
+          <h3>Comunidad</h3>
+          <p>Construimos una familia unida por el respeto y la pasión por las artes marciales.</p>
+        </div>
+
+        <div class="about-value-card">
+          <div class="about-value-icon">
+            <%= lucide_icon "award", class: "w-8 h-8" %>
+          </div>
+          <h3>Excelencia</h3>
+          <p>Buscamos la excelencia en cada aspecto de nuestro entrenamiento y enseñanza.</p>
+        </div>
+
+        <div class="about-value-card">
+          <div class="about-value-icon">
+            <%= lucide_icon "heart", class: "w-8 h-8" %>
+          </div>
+          <h3>Respeto</h3>
+          <p>Fomentamos el respeto mutuo, la disciplina y la humildad en cada clase.</p>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- Instructores -->
+  <div class="about-section">
+    <div class="about-section-content">
+      <div class="about-section-icon">
+        <%= lucide_icon "graduation-cap", class: "w-12 h-12" %>
+      </div>
+      <h2 class="about-section-title">Nuestros Instructores</h2>
+      <p class="about-section-text">
+        Contamos con un equipo de instructores altamente calificados y apasionados, 
+        comprometidos con la excelencia en la enseñanza y el desarrollo de nuestros estudiantes.
+      </p>
+      <!-- Aquí podríamos agregar una sección de cards con los instructores -->
+    </div>
+  </div>
+
+  <!-- CTA Section -->
+  <div class="about-cta">
+    <div class="about-cta-content">
+      <h2 class="about-cta-title">¿Listo para comenzar tu viaje?</h2>
+      <p class="about-cta-text">Únete a nuestra comunidad y descubre el poder transformador del Jiu-Jitsu.</p>
+    
+    </div>
+  </div>
 </div>
