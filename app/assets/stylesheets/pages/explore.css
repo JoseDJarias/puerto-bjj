@@ -97,11 +97,11 @@
     .carousel-container {
       flex: 60%; /* (o un ancho fijo, por ejemplo, "width: 60%;") */
       overflow: hidden; /* (o "position: relative;") para que el slide se "corte" dentro de su propio bloque y no se desborde */
-      max-height: 800px;
+      max-height: 10000px;
     }
 
     .carousel-track{
-      height: 800px;
+      height: 1000px;
     }
     .carousel-item{
       height: 100%;
@@ -124,5 +124,92 @@
 
   .carousel-track {
     height: 1300px;
+  }
+}
+
+/* Laptops (1024px - 1440px) */
+@media (min-width: 1024px) and (max-width: 1440px) and (min-height: 768px) {
+  .explore-section-1 {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    min-height: 1000px;
+  }
+
+  .hero-title-container {
+    flex: 40%;
+    height: 100%;
+    padding: var(--size-16);
+  }
+
+  .carousel-container {
+    flex: 60%;
+    max-height: 1000px;
+  }
+
+  .carousel-track {
+    height: 1000px;
+  }
+}
+
+/* Laptops L y dispositivos grandes (1440px - 1920px) */
+@media (min-width: 1440px) and (max-width: 1920px) {
+  .explore-section-1 {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    min-height: 900px;
+  }
+
+  .hero-title-container {
+    flex: 40%;
+    height: 100%;
+    padding: var(--size-24);
+  }
+
+  .hero-title {
+    font-style: oblique;
+    font-size: 4rem;
+    line-height: 1.4;
+  }  
+
+  .carousel-container {
+    flex: 60%;
+    max-height: 900px;
+  }
+
+  .carousel-track {
+    height: 900px;
+  }
+}
+
+/* Pantallas muy grandes (1920px+) */
+@media (min-width: 1920px) {
+  .explore-section-1 {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    min-height: 1500px;
+   }
+
+  .hero-title-container {
+    flex: 40%;
+    height: 100%;
+    padding: var(--size-32);
+  }
+
+  .hero-title {
+    font-style: oblique;
+    font-size: 5rem;
+    line-height: 1.8;
+  } 
+
+  .carousel-container {
+    flex: 60%;
+    max-height: 1500px;
+  }
+
+  .carousel-track {
+    height: 1500px;
   }
 }
