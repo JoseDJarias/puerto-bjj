@@ -157,6 +157,12 @@
   }
 }
 
+@media (min-width: 1024px) {
+  .wa-text {
+    margin-top: 1.3rem;
+  }
+}
+
 /* Feedback CTA Section */
 .contact-feedback-cta {
   background: var(--color-surface);
@@ -344,73 +350,3 @@
     justify-content: center;
   }
 }
-
-/* Success Message */
-.contact-success-message {
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  text-align: center;
-  padding: var(--size-6);
-  gap: var(--size-4);
-}
-
-.success-icon {
-  color: rgb(43, 194, 245);
-  background: rgb(145, 223, 249);
-  width: 64px;
-  height: 64px;
-  border-radius: var(--rounded-full);
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  animation: scaleIn 0.5s ease-out forwards;
-}
-
-.contact-success-message h4 {
-  font-size: 1.5rem;
-  font-weight: var(--font-semibold);
-  color: var(--color-text);
-  margin: 0;
-  animation: fadeInUp 0.5s ease-out forwards;
-}
-
-.contact-success-message p {
-  color: var(--color-text-subtle);
-  margin: 0;
-  font-size: 0.875rem;
-  line-height: 1.5;
-  animation: fadeInUp 0.5s ease-out forwards;
-  animation-delay: 0.2s;
-}
-
-.contact-success-message .contact-submit-button {
-  animation: fadeInUp 0.5s ease-out forwards;
-  animation-delay: 0.4s;
-}
-
-@keyframes scaleIn {
-  from {
-    transform: scale(0);
-    opacity: 0;
-  }
-  to {
-    transform: scale(1);
-    opacity: 1;
-  }
-}
-
-/* Form Button with Icon */
-.contact-submit-button {
-  display: inline-flex;
-  align-items: center;
-  gap: var(--size-2);
-}
-
-.contact-submit-button svg {
-  transition: transform 0.3s ease;
-}
-
-.contact-submit-button:hover svg {
-  transform: translateX(4px);
-} 
