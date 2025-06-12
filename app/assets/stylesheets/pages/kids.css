@@ -239,12 +239,12 @@
 }
 
 .kids-card-list {
-  display: flex;
-  flex-direction: column;
-  align-items: center;
+  display: block;
+  margin: 0 auto;
+  text-align: left;
+  max-width: 320px;
+  padding-left: 1.5rem;
   list-style: none;
-  padding: 0;
-  margin: 0;
 }
 
 .kids-card-list li {
@@ -332,4 +332,25 @@
 
 .kids-card:nth-child(3) {
   animation-delay: 0.6s;
+}
+
+.kids-card-subtitle {
+  display: block;
+  margin: 1.5rem auto 0 auto;
+  padding: 0.5rem 1.25rem;
+  background: linear-gradient(90deg, #e0f7fa 0%, #fff 100%);
+  color: #2d8cff;
+  font-size: 1.05rem;
+  font-weight: 600;
+  border-radius: 0.75rem;
+  box-shadow: 0 2px 8px 0 rgba(45, 140, 255, 0.08);
+  letter-spacing: 0.2px;
+  text-align: center;
+  max-width: 90%;
+}
+
+@media (min-width: 768px) {
+  .kids-card-subtitle {
+    display: none;
+  }
 } 
