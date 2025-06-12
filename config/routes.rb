@@ -1,4 +1,5 @@
 Rails.application.routes.draw do
+  draw(:default) # Carga las rutas por defecto de Rails (incluyendo Active Storage)
   get "up" => "rails/health#show", as: :rails_health_check
 
   root "pages#explore"
