@@ -1,5 +1,5 @@
 class Admin::MediaItemsController < Admin::BaseController
-  before_action :set_media_item, only: [:show, :edit, :update, :destroy]
+  before_action :set_media_item, only: [ :show, :edit, :update, :destroy ]
 
   # GET /admin/media_items
   def index
@@ -24,7 +24,7 @@ class Admin::MediaItemsController < Admin::BaseController
     @media_item = MediaItem.new(media_item_params)
 
     if @media_item.save
-      redirect_to admin_media_items_path, notice: 'Media item was successfully created.'
+      redirect_to admin_media_items_path, notice: "Media item was successfully created."
     else
       render :new, status: :unprocessable_entity
     end
@@ -33,7 +33,7 @@ class Admin::MediaItemsController < Admin::BaseController
   # PATCH/PUT /admin/media_items/1
   def update
     if @media_item.update(media_item_params)
-      redirect_to admin_media_items_path, notice: 'Media item was successfully updated.'
+      redirect_to admin_media_items_path, notice: "Media item was successfully updated."
     else
       render :edit, status: :unprocessable_entity
     end
@@ -42,7 +42,7 @@ class Admin::MediaItemsController < Admin::BaseController
   # DELETE /admin/media_items/1
   def destroy
     @media_item.destroy
-    redirect_to admin_media_items_path, notice: 'Media item was successfully destroyed.'
+    redirect_to admin_media_items_path, notice: "Media item was successfully destroyed."
   end
 
   private
