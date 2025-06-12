@@ -287,7 +287,10 @@
               </div>
               <h3 class="contact-card-title">Email</h3>
               <p class="contact-card-text">infopuertobjj@gmail.com</p>
-              <%= link_to "Enviar email", "mailto:infopuertobjj@gmail.com", class: "contact-card-link" %>
+              <%= link_to "mailto:infopuertobjj@gmail.com", class: "contact-card-link" do %>
+                <%= lucide_icon "mail", class: "w-5 h-5 mr-2" %>
+                Enviar email
+              <% end %>
             </div>
 
             <div class="contact-card">
