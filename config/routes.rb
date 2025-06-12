@@ -19,5 +19,6 @@ Rails.application.routes.draw do
         delete :batch_destroy
       end
     end
+    resources :media_items
   end
 end

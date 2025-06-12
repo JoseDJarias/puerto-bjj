@@ -1,0 +1,50 @@
+<div class="w-full">
+  <div class="flex justify-between items-center mb-6">
+    <h1 class="text-2xl font-bold">Media Library</h1>
+    <%= link_to "Upload New Item", new_admin_media_item_path, class: "btn" %>
+  </div>
+
+  <div class="">
+    <table class="">
+      <thead class="">
+        <tr>
+          <th scope="col" class="">Preview</th>
+          <th scope="col" class="">Title</th>
+          <th scope="col" class="">Category</th>
+          <th scope="col" class="">Uploaded On</th>
+          <th scope="col" class="">
+            <span class="sr-only">Actions</span>
+          </th>
+        </tr>
+      </thead>
+      <tbody class="">
+        <% @media_items.each do |media_item| %>
+          <tr id="<%= dom_id media_item %>">
+            <td class="">
+              <% if media_item.file.attached? && media_item.file.image? %>
+                <%= image_tag media_item.file.representation(resize_to_limit: [100, 100]), class: "" %>
+              <% else %>
+                <span class="">No preview</span>
+              <% end %>
+            </td>
+            <td class="">
+              <div class=""><%= media_item.title %></div>
+            </td>
+            <td class="">
+              <span class="">
+                <%= media_item.category.presence || "Uncategorized" %>
+              </span>
+            </td>
+            <td class="">
+              <%= media_item.created_at.strftime("%b %d, %Y") %>
+            </td>
+            <td class="">
+              <%= link_to "Edit", edit_admin_media_item_path(media_item), class: "text-indigo-600 hover:text-indigo-900" %>
+              <%= button_to "Delete", admin_media_item_path(media_item), method: :delete, class: "text-red-600 hover:text-red-900", form: { data: { turbo_confirm: 'Are you sure?' } } %>
+            </td>
+          </tr>
+        <% end %>
+      </tbody>
+    </table>
+  </div>
+</div> 
