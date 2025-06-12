@@ -44,9 +44,14 @@ group :test do
 end
 
 gem "css-zero", "~> 1.1"
+
+gem "image_processing"
+
 gem "lucide-rails"
 
 # Pagination
 gem "kaminari-core"
 gem "kaminari-activerecord"
 gem "kaminari-actionview"
+
+
