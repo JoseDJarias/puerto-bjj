@@ -5,11 +5,7 @@
       </div>
       <div data-controller="carousel" class="carousel-container">
         <div data-carousel-target="slides" class="carousel-track">
-          <% @carousel_items.each do |item| %>
-            <div class="carousel-item">
-              <%= image_tag item.file, alt: item.title, class: "" %>
-            </div>
-          <% end %>
+       
         </div>
         <!-- Botones de navegación por el momento los vamos a skipear
         <button data-action="click->carousel#prev" class="absolute top-1/2 left-2 transform -translate-y-1/2 bg-black text-white p-2 rounded">←</button>
