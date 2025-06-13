@@ -55,4 +55,4 @@ class Admin::MediaItemsController < Admin::BaseController
     def media_item_params
       params.require(:media_item).permit(:title, :description, :category, :file)
     end
-end 
+end

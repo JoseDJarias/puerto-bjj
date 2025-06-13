@@ -53,5 +53,3 @@ gem "lucide-rails"
 gem "kaminari-core"
 gem "kaminari-activerecord"
 gem "kaminari-actionview"
-
-
