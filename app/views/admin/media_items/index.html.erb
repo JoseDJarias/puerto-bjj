@@ -22,7 +22,7 @@
           <tr id="<%= dom_id media_item %>">
             <td class="">
               <% if media_item.file.attached? && media_item.file.image? %>
-                <%= image_tag media_item.file.representation(resize_to_limit: [100, 100]), class: "" %>
+                <%= image_tag media_item.file, class: "" %>
               <% else %>
                 <span class="">No preview</span>
               <% end %>
