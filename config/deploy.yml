@@ -23,6 +23,14 @@ servers:
 #
 # Note: If using Cloudflare, set encryption mode in SSL/TLS setting to "Full" to enable CF-to-app encryption.
 
+proxy:
+  ssl:
+    enabled: true
+    certresolver: letsencrypt
+    domains:
+      - puertojiujitsu.com
+      - www.puertojiujitsu.com  
+
 # Credentials for your image host.
 registry:
   # Specify the registry server, if you're not using Docker Hub
