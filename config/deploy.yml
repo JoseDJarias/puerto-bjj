@@ -23,6 +23,12 @@ servers:
 #
 # Note: If using Cloudflare, set encryption mode in SSL/TLS setting to "Full" to enable CF-to-app encryption.
 
+proxy:
+  args:
+    - "--certificatesresolvers.letsencrypt.acme.email=arias_da044@hotmail.com"
+    - "--certificatesresolvers.letsencrypt.acme.storage=/letsencrypt/acme.json"
+    - "--certificatesresolvers.letsencrypt.acme.httpchallenge.entrypoint=web"
+
 # Credentials for your image host.
 registry:
   # Specify the registry server, if you're not using Docker Hub
