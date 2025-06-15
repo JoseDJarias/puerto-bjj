@@ -20,6 +20,9 @@ servers:
 
 proxy:
   ssl: true
+  hosts:
+    - puertojiujitsu.com
+    - www.puertojiujitsu.com
 
 # Credentials for your image host.
 registry:
