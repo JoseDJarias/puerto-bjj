@@ -17,7 +17,7 @@ gem "solid_cache"
 gem "solid_queue"
 gem "solid_cable"
 
-gem "bootsnap", require: false
+gem "bootsnap", ">= 1.10.0", require: false
 
 gem "kamal", require: false
 
@@ -26,7 +26,7 @@ gem "thruster", require: false
 # gem "image_processing", "~> 1.2"
 
 group :development, :test do
-  gem "debug", platforms: %i[ mri windows ], require: "debug/prelude"
+  gem "debug", ">= 1.0.0"
 
   gem "brakeman", require: false
 
@@ -36,11 +36,18 @@ end
 group :development do
   gem "web-console"
   gem "hotwire-spark"
+  gem "rack-mini-profiler"
+  gem "overcommit", ">= 0.58.0", require: false
+  gem "rubocop", ">= 1.25.0", require: false
+  gem "solargraph", ">= 0.40.3", require: false
+  gem "yard", ">= 0.9.26"
 end
 
 group :test do
   gem "capybara"
   gem "selenium-webdriver"
+  gem "fabrication"
+  gem "webmock"
 end
 
 gem "css-zero", "~> 1.1"
@@ -53,3 +60,5 @@ gem "lucide-rails"
 gem "kaminari-core"
 gem "kaminari-activerecord"
 gem "kaminari-actionview"
+
+gem "sitemap_generator", "~> 6.3.0"
