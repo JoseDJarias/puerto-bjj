@@ -1,6 +1,6 @@
 # Set the host name for URL creation
 SitemapGenerator::Sitemap.default_host = "https://www.puertojiujitsu.com"
-SitemapGenerator::Sitemap.public_path = Rails.root.join('public', 'assets')
+SitemapGenerator::Sitemap.public_path = Rails.root.join('public')
 
 SitemapGenerator::Sitemap.create do
   # Put links creation logic here.
