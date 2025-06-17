@@ -32,13 +32,13 @@
     will-change: transform;
 }
 
-.carousel-item {
+.carousel-slide {
     flex: 0 0 100%;
     width: 100%;
     height: auto;
 }
 
-.carousel-item img {
+.carousel-image {
     width: 100%;
     height: 100%;
     object-fit: cover;
@@ -68,11 +68,11 @@
     height: 1000px;
   }
 
-  .carousel-item {
+  .carousel-slide {
     height: 100%;
   }
 
-  .carousel-item img {
+  .carousel-image {
     height: 100%;
     object-fit: cover;
   }
@@ -103,10 +103,10 @@
     .carousel-track{
       height: 1000px;
     }
-    .carousel-item{
+    .carousel-slide{
       height: 100%;
     }
-    .carousel-item img {
+    .carousel-image {
       height: 100%;
       object-fit: cover;
     }
