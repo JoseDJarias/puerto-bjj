@@ -25,6 +25,6 @@ SitemapGenerator::Sitemap.create do
   #     add article_path(article), :lastmod => article.updated_at
   #   end
 
-  add acerca_de_nosotros_path, priority: 0.7, changefreq: 'monthly'
-  add feedback_path, priority: 0.6, changefreq: 'yearly'
+  add acerca_de_nosotros_path, priority: 0.7, changefreq: "monthly"
+  add feedback_path, priority: 0.6, changefreq: "yearly"
 end
