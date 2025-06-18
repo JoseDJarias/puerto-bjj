@@ -63,12 +63,13 @@
   .kids-card {
     padding: var(--size-8);
     min-height: 400px;
-    width: 20rem;
-    flex: 0 0 20rem;
+    width: 100%;
+    max-width: 25rem;
+    flex: 1 1 100%;
   }
 
   .kids-card:nth-child(3) {
-    margin-top: var(--size-10);
+    margin-top: 0;
   }
 }
 
