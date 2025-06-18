@@ -352,4 +352,17 @@
   .kids-card-subtitle {
     display: none;
   }
+}
+
+/* Estilos para la imagen de la sección Kids */
+.kids-home-image-container {
+  text-align: center;
+}
+
+.kids-home-image {
+  width: 100%;
+  max-width: 48rem; /* 768px */
+  border-radius: var(--rounded-lg);
+  box-shadow: var(--shadow-md);
+  margin: 0 auto;
 } 
