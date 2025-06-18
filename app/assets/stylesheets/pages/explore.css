@@ -238,12 +238,16 @@
    ======================================================================== */
 
 /* Smoothcomp Section Styles */
+.explore-section-6 {
+  margin-bottom: var(--size-6);
+}
 
 .smoothcomp-container {
   width: 100%;
   padding: var(--size-16) var(--size-4);
   background: #f8f9fa; /* Consistent background */
 }
+
 
 .smoothcomp-header {
   text-align: center;
@@ -273,6 +277,7 @@
   max-width: 56rem; /* 896px */
   margin: 0 auto;
   text-align: center;
+  transition: max-width 0.3s ease; /* Transición suave */
 }
 
 .smoothcomp-stats {
@@ -318,7 +323,7 @@
 }
 
 .smoothcomp-cta {
-  margin-top: var(--size-8);
+  margin-top: var(--size-12);
 }
 
 .btn-smoothcomp {
@@ -336,4 +341,60 @@
   background: #333333;
   transform: translateY(-2px);
   box-shadow: var(--shadow-sm);
+}
+
+@media (min-width: 768px) {
+  .explore-section-6 {
+    margin-bottom: var(--size-12);
+  }
+  .smoothcomp-container {
+    width: 50rem;
+    padding: var(--size-24) var(--size-12); /* Aumento de padding para tablets y superior */
+  }
+  .btn-smoothcomp {
+    font-size: x-large;
+  }
+}
+/* Ajustes para pantallas grandes (Laptops) */
+@media (min-width: 1024px) {
+  .smoothcomp-card {
+    max-width: 64rem; /* 1024px */
+    padding: var(--size-10);
+  }
+  .btn-smoothcomp {
+    font-size: x-large;
+  }
+}
+
+/* Ajustes para pantallas muy grandes (Desktops) */
+@media (min-width: 1440px) {
+  .smoothcomp-container {
+    width: 80rem;
+  }
+  .smoothcomp-card {
+    padding: var(--size-12);
+    font-size: x-large;
+  }
+
+  .stat-number {
+    font-size: 3.5rem; /* Hacemos los números más grandes */
+  }
+  .stat-label {
+    font-size: x-large;
+  }
+}
+
+/* Ajustes para pantallas 4K y ultra anchas */
+@media (min-width: 1920px) {
+  .smoothcomp-container {
+    width: 80rem;
+  }
+  .smoothcomp-card {
+    max-width: 100rem; /* 1408px */
+    padding: var(--size-14);
+    font-size: xx-large;
+  }
+  .stat-item {
+    gap: var(--size-4);
+  }
 }
