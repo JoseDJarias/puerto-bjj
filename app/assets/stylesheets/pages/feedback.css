@@ -137,7 +137,6 @@
   .btn-submit-feedback {
     display: flex;
     justify-content: center;
-    margin-inline: var(--size-10);
   }
 
   .btn-submit-feedback .btn {
