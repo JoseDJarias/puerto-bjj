@@ -3,7 +3,10 @@
     <div class="footer-first-box">
       <!-- Sección 1: Logo y Nombre de la Academia -->
       <div class="footer-logo">
-        <span class="footer-title">PuertoBJJ</span>
+        <span class="footer-title">Puerto Jiu-Jitsu</span>
+        <span>  
+          <%= image_tag 'home/logo.svg', alt: 'Puerto Jiu-Jitsu Logo', class: 'footer-title-logo' %>
+        </span>
       </div>
       
       <!-- Sección 2: Redes sociales -->
@@ -41,11 +44,11 @@
       <div class="footer-links">
         <div class="footer-links-left">
           <p class="footer-links-left-title">Academia</p>
-          <%= link_to "Sobre Nosotros", "/acerca-de-nosotros", class: "footer-link" %>
+          <%= link_to "Sobre Nosotros", "/acerca-de-nosotros", class: "" %>
         </div>
         <div class="footer-links-right">
           <p class="footer-links-right-title">Descubre</p>
-          <%= link_to "Feedback", feedback_path, class: "footer-link" %>
+          <%= link_to "Feedback", feedback_path, class: "" %>
         </div>
       </div>
     </div>

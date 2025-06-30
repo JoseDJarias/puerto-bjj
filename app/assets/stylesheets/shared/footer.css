@@ -16,6 +16,12 @@
     height: fit-content;
   }
   
+  .footer-title-logo {
+    height: 200px;
+    width: auto;
+    margin: 0 auto;
+  }
+
   /* Sección 1: Logo */
   .footer-logo {
     text-align: left;
@@ -38,13 +44,12 @@
     justify-content: center;
   }
   
-  .footer-social-title, .footer-find-title{
+  .footer-title, .footer-social-title, .footer-find-title{
     margin-bottom: 1rem;
     font-size: 20px;
     font-weight:lighter;
     font-style: oblique;
     font-family: monospace;
-    
   }
 
   /* Sección 3: Encuéntranos (Find Us) */
@@ -214,7 +219,21 @@
       text-align: center;
     }
 
-    .footer-title, .footer-social-title, .footer-links-left-title, .footer-links-left-title, .footer-links-right-title {
-      font-size: x-large;
+    .footer-links-left-title,
+    .footer-links-right-title {
+      margin-bottom: 2rem;
+    }
+
+    .footer-title,
+    .footer-social-title,
+    .footer-find-title,
+    .footer-links-left-title,
+    .footer-links-right-title{
+      font-size: xx-large;
+    }
+
+    .footer-links-left a,
+    .footer-links-right a {
+      font-size: large;
     }
   }
