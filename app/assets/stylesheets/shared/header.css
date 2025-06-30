@@ -1,7 +1,10 @@
 .styled-header {
+    padding-top: 1rem;
+    padding-bottom: 1rem;
     border-bottom: 1px solid white; /* Borde inferior blanco */
     box-shadow: 0px 4px 10px rgba(255, 255, 255, 0.5); /* Resalta sin que parezca un rectángulo */
     z-index: 1000; /* Asegura que siempre esté encima */
+    transition: padding 0.3s ease;
   }
   
   /* Efecto de iluminación sutil al hacer scroll */
@@ -29,4 +32,25 @@
       margin: 0 2rem 0 30rem;
     }
   }
+  
+/* Logo Styles */
+.header-logo-image {
+  height: 80px; /* Aumentamos la altura del logo */
+  width: auto; /* El ancho se ajusta automáticamente */
+}
+  
+/* Social Icon Styles */
+.header-social-link {
+  padding: 0.5rem; /* Añade un área de click más grande */
+}
+
+.header-social-link svg {
+  color: var(--color-text);
+  transition: all 0.2s ease-in-out;
+}
+
+.header-social-link:hover svg {
+  color: var(--color-positive);
+  transform: scale(1.2) translateY(-2px); /* Efecto más pronunciado */
+}
   

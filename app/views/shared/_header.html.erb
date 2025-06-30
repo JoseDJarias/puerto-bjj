@@ -1,7 +1,11 @@
 <header>
   <div  class="styled-header flex justify-between items-center p-6">
-    <!-- Left Side -->
-    <%= link_to "Home", root_path, class: "btn-home font-semibold mi-6"%>
+    <!-- Left Side: Conditional Home Link / Logo -->
+    <div class="header-left">
+      <%= link_to root_path, class: "header-logo" do %>
+        <%= image_tag 'home/logo.svg', alt: 'Puerto Jiu-Jitsu Logo', class: 'header-logo-image' %>
+      <% end %>
+    </div>
 
     <!-- Center Navigation (Only for large screens) -->
     <div class="show@lg flex gap center-box text-xl">
@@ -14,17 +18,28 @@
     <div class="mi-6">
       
       <!-- 👇 Hamburgues menu only mobile and tablet -->
-      <div class="hide@lg cursor-grab"
+      <div class="hide@lg cursor-grab ham-menu"
            data-controller="mobile-menu"
            data-action="click->mobile-menu#toggle"
            data-mobile-menu-target="trigger"
            data-menu-id="mobile-menu">
-        <%= lucide_icon('align-justify') %>
+        <%= lucide_icon('align-justify', width: 35, height: 35) %>
       </div>
 
-      <!-- 👇 Logo for desktop -->
-      <div class="show@lg">
-        <div class="text-xl font-bold">LOGO</div>
+      <!-- Social Icons for desktop -->
+      <div class="show@lg flex items-center gap-6">
+        <%= link_to "https://www.facebook.com/puertojiujitsu/", target: "_blank", class: "header-social-link", aria: { label: "Facebook" } do %>
+          <%= lucide_icon "facebook", class: "w-8 h-8" %>
+        <% end %>
+        <%= link_to "https://www.instagram.com/puertojiujitsu/", target: "_blank", class: "header-social-link", aria: { label: "Instagram" } do %>
+          <%= lucide_icon "instagram", class: "w-8 h-8" %>
+        <% end %>
+        <%= link_to "https://wa.me/50672026863", target: "_blank", class: "header-social-link", aria: { label: "WhatsApp" } do %>
+          <%= lucide_icon "message-circle", class: "w-8 h-8" %>
+        <% end %>
+        <%= link_to "https://www.google.com/maps/place/Gimnasio+In+Line/@9.9831961,-84.7348988,17z", target: "_blank", class: "header-social-link", aria: { label: "Google Maps" } do %>
+          <%= lucide_icon "map-pin", class: "w-8 h-8" %>
+        <% end %>
       </div>
 
     </div>
