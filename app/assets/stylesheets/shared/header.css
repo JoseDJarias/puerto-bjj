@@ -54,3 +54,16 @@
   transform: scale(1.2) translateY(-2px); /* Efecto más pronunciado */
 }
   
+/* Center Navigation Fix for Large Screens */
+@media (min-width: 1024px) {
+  .styled-header {
+    position: relative; /* Needed for absolute positioning of children */
+  }
+
+  .center-box {
+    position: absolute;
+    left: 50%;
+    transform: translateX(-50%);
+  }
+}
+  

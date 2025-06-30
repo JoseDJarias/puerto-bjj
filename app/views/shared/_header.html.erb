@@ -7,31 +7,32 @@
       <% end %>
     </div>
 
-    <!-- Center Navigation (Only for large screens) -->
-    <div class="show@lg flex gap center-box text-xl">
-      <%= link_to "Feedback", feedback_path, class: "rounded p-4"%>
-      <%= link_to "Sobre Nosotros", "/acerca-de-nosotros", class: "rounded p-4"%>
-    </div>
-
-    
-    <!-- Right Side -->
-    <div class="mi-6">
-      
-      <!-- 👇 Hamburgues menu only mobile and tablet -->
-      <div class="hide@lg cursor-grab ham-menu"
-           data-controller="mobile-menu"
-           data-action="click->mobile-menu#toggle"
-           data-mobile-menu-target="trigger"
-           data-menu-id="mobile-menu">
-        <%= lucide_icon('align-justify', width: 35, height: 35) %>
+    <!-- Right side container for nav and social icons -->
+    <div class="flex items-center gap-12">
+      <!-- Center Navigation (Only for large screens) -->
+      <div class="show@lg flex gap center-box text-xl">
+        <%= link_to "Feedback", feedback_path, class: "rounded p-4"%>
+        <%= link_to "Sobre Nosotros", "/acerca-de-nosotros", class: "rounded p-4"%>
       </div>
 
-      <!-- Social Icons for desktop -->
-      <div class="show@lg flex items-center gap-6">
-        <%= link_to "https://www.facebook.com/puertojiujitsu/", target: "_blank", class: "header-social-link", aria: { label: "Facebook" } do %>
-          <%= lucide_icon "facebook", class: "w-8 h-8" %>
-        <% end %>
-        <%= link_to "https://www.instagram.com/puertojiujitsu/", target: "_blank", class: "header-social-link", aria: { label: "Instagram" } do %>
+      <!-- Right Side -->
+      <div class="mi-6">
+        
+        <!-- 👇 Hamburgues menu only mobile and tablet -->
+        <div class="hide@lg cursor-grab ham-menu"
+             data-controller="mobile-menu"
+             data-action="click->mobile-menu#toggle"
+             data-mobile-menu-target="trigger"
+             data-menu-id="mobile-menu">
+          <%= lucide_icon('align-justify', width: 35, height: 35) %>
+        </div>
+
+        <!-- Social Icons for desktop -->
+        <div class="show@lg flex items-center gap-6">
+          <%= link_to "https://www.facebook.com/puertojiujitsu/", target: "_blank", class: "header-social-link", aria: { label: "Facebook" } do %>
+            <%= lucide_icon "facebook", class: "w-8 h-8" %>
+          <% end %>
+          <%= link_to "https://www.instagram.com/puertojiujitsu/", target: "_blank", class: "header-social-link", aria: { label: "Instagram" } do %>
           <%= lucide_icon "instagram", class: "w-8 h-8" %>
         <% end %>
         <%= link_to "https://wa.me/50672026863", target: "_blank", class: "header-social-link", aria: { label: "WhatsApp" } do %>
