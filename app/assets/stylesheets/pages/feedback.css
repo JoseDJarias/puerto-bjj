@@ -132,11 +132,6 @@
 }
 
 /* Media Queries */
-@media screen and (min-width: 834px) and (min-height: 1194px) {
-  #feedback_container {
-    margin: 5rem auto;
-  }
-}
 
 @media (min-width: 64rem) {
   .btn-submit-feedback {
