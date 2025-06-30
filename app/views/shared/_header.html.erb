@@ -1,30 +1,28 @@
 <header>
-  <div  class="styled-header flex justify-between items-center p-6">
-    <!-- Left Side: Conditional Home Link / Logo -->
-    <div class="header-left">
+  <div class="styled-header flex justify-between items-center p-6">
+    <!-- Left Side: Logo (and a spacer to balance the social icons) -->
+    <div class="header-left flex items-center justify-start" style="flex: 1;">
       <%= link_to root_path, class: "header-logo" do %>
         <%= image_tag 'home/logo.svg', alt: 'Puerto Jiu-Jitsu Logo', class: 'header-logo-image' %>
       <% end %>
     </div>
 
-    <div class="flex items-center gap-12">
-      <!-- Center Navigation (Only for large screens) -->
-      <div class="show@lg flex gap center-box text-xl">
-        <%= link_to "Feedback", feedback_path, class: "rounded p-4"%>
-        <%= link_to "Sobre Nosotros", "/acerca-de-nosotros", class: "rounded p-4"%>
-      </div>
+    <!-- Center Navigation (Only for large screens) -->
+    <div class="show@lg flex-grow text-center text-xl">
+      <%= link_to "Feedback", feedback_path, class: "rounded p-4" %>
+      <%= link_to "Sobre Nosotros", "/acerca-de-nosotros", class: "rounded p-4" %>
+    </div>
 
-      <!-- Right Side -->
-      <div class="mi-6">
-        
-        <!-- 👇 Hamburgues menu only mobile and tablet -->
-        <div class="hide@lg cursor-grab ham-menu"
-             data-controller="mobile-menu"
-             data-action="click->mobile-menu#toggle"
-             data-mobile-menu-target="trigger"
-             data-menu-id="mobile-menu">
-          <%= lucide_icon('align-justify', width: 35, height: 35) %>
-        </div>
+    <!-- Right Side: Social Icons & Hamburger Menu -->
+    <div class="header-right flex items-center justify-end" style="flex: 1;">
+      <!-- Hamburger menu for mobile and tablet -->
+      <div class="hide@lg cursor-grab ham-menu"
+           data-controller="mobile-menu"
+           data-action="click->mobile-menu#toggle"
+           data-mobile-menu-target="trigger"
+           data-menu-id="mobile-menu">
+        <%= lucide_icon('align-justify', width: 35, height: 35) %>
+      </div>
 
         <!-- Social Icons for desktop -->
         <div class="show@lg flex items-center gap-6">
@@ -41,15 +39,14 @@
           <%= lucide_icon "map-pin", class: "w-8 h-8" %>
         <% end %>
       </div>
-
     </div>
   </div>
 
-  <!-- Navbar mobile -->
-  <div id="mobile-menu" class="hidden fixed inset-0 bg-surface z-50 p-6">
+  <!-- Mobile Navbar -->
+  <div id="mobile-menu" class="mobile-menu-overlay hidden fixed inset-0 bg-surface p-6">
     <nav class="flex flex-col text-base gap">
       <%= link_to "Inicio", root_path, class: "hover:underline" %>
-      <%= link_to "Feedback", feedback_path, class: "hover:underline"%>
+      <%= link_to "Feedback", feedback_path, class: "hover:underline" %>
       <%= link_to "Sobre Nosotros", "/acerca-de-nosotros", class: "hover:underline" %>
     </nav>
   </div>
