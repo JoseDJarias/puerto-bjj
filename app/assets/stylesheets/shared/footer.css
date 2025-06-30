@@ -16,21 +16,21 @@
     height: fit-content;
   }
   
-  .footer-title-logo {
-    height: 200px;
-    width: auto;
-    margin: 0 auto;
-  }
 
   /* Sección 1: Logo */
   .footer-logo {
     text-align: left;
     padding-left: 1rem;
-    font-size: 1.5rem;
     font-weight: bold;
-    margin-bottom: 3rem;
+    margin-bottom: 2rem;
   }
   
+  .footer-title-logo {
+    height: 200px;
+    width: auto;
+    margin: 1.5rem auto;
+    font-size: 2rem;
+  }
   /* Sección 2: Redes Sociales */
   .footer-social {
     text-align: left;
@@ -46,7 +46,7 @@
   
   .footer-title, .footer-social-title, .footer-find-title{
     margin-bottom: 1rem;
-    font-size: 20px;
+    font-size: 1.8rem;
     font-weight:lighter;
     font-style: oblique;
     font-family: monospace;
@@ -80,13 +80,13 @@
   .footer-links-right-title, .footer-links-left-title{
     margin-bottom: 1rem;
     color: #777;
-    font-size: x-large;  
+    font-size: 1.8rem;  
   }
     
   .footer-links a {
     color: #aaa;
     text-decoration: none;
-    font-size: 0.9rem;
+    font-size: 1.2rem;
   }
   
   .footer-links a:hover {
@@ -109,14 +109,11 @@
     text-align: center;
   }
 
-  .footer-title{
-    position: relative;
-    left: 1rem;
-  }
-
-  .footer-social-title{
-    position: relative;
-    left: 1.5rem;
+  .footer-logo,
+  .footer-social,
+  .footer-find-us {
+    text-align: center;
+    padding-left: 0;
   }
 
   .footer-find-icons, .footer-social-icons{
@@ -124,7 +121,7 @@
   }
 
   .footer-first-box{
-    margin: 0 au;
+    margin: 0 auto;
 
   }
   .footer-links {
@@ -167,8 +164,16 @@
       padding: 0 1rem;
     }
 
+    .footer-title-logo {
+      margin: 0 auto;
+    }
+
     .footer-first-box {
       width: 50%;
+    }
+
+    .footer-title, .footer-social-title, .footer-find-title{
+      font-size: 1.5rem;
     }
 
     .footer-first-box {
@@ -180,7 +185,7 @@
   
     .footer-second-box {
       width: 100%;
-      padding-left: 5rem;
+      padding-left: 3rem;
     }
 
     .footer-links{    
@@ -202,6 +207,10 @@
       padding-top: 0.5rem;
     }
   
+    .footer-title-logo {
+      height: 250px;
+    }
+
     .footer-first-box {
         margin: 0 4rem;
     }
