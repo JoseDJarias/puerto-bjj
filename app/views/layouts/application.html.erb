@@ -3,6 +3,17 @@
   <head>
     <title><%= content_for(:title) || "Puerto Bjj" %></title>
     <meta name="viewport" content="width=device-width,initial-scale=1">
+    
+    <%# SEO Meta Tags %>
+    <meta name="description" content="<%= content_for(:description) || 'Academia de Jiu-Jitsu Brasileño, Boxeo y MMA en Puntarenas, Costa Rica. Únete a nuestra comunidad y aprende de los mejores.' %>">
+    <link rel="canonical" href="<%= content_for(:canonical_url) || request.original_url %>" />
+
+    <%# Open Graph / Facebook Meta Tags %>
+    <meta property="og:type" content="website">
+    <meta property="og:url" content="<%= content_for(:canonical_url) || request.original_url %>">
+    <meta property="og:title" content="<%= content_for(:title) || 'Puerto Bjj' %>">
+    <meta property="og:description" content="<%= content_for(:description) || 'Academia de Jiu-Jitsu Brasileño, Boxeo y MMA en Puntarenas, Costa Rica.' %>">
+    <meta property="og:image" content="<%= content_for(:og_image) || image_url('home/og-image.png') %>"> <%# Asegúrate de tener una imagen en app/assets/images/home/og-image.png %>
     <meta name="apple-mobile-web-app-capable" content="yes">
     <meta name="mobile-web-app-capable" content="yes">
     <%= csrf_meta_tags %>
