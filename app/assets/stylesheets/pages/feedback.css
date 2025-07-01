@@ -3,6 +3,8 @@
     inline-size: 100%;
     margin-block-start: var(--size-6);
     margin-bottom: 2rem;
+    position: relative;
+    z-index: 10;
   }
   
   .btn-submit-feedback .btn {
