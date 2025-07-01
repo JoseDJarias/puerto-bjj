@@ -44,7 +44,6 @@
     object-fit: cover;
     display: block;
 }
-
 /* Default state: banner is hidden on desktop */
 .explore-mobile-banner {
   display: none;
@@ -146,25 +145,6 @@
     .carousel-image {
       height: 100%;
       object-fit: cover;
-    }
-
-    /* Reordenamiento de cards de Kids para pantallas grandes (Grid) */
-    .kids-grid {
-      display: grid;
-      grid-template-columns: repeat(3, 1fr); /* 3 columnas de igual tamaño */
-      gap: 1.5rem; /* Espacio entre tarjetas, puedes ajustarlo */
-    }
-
-    .beneficios-card {
-      order: 2; /* Centro */
-    }
-
-    .edades-card {
-      order: 1; /* Izquierda */
-    }
-
-    .horarios-card {
-      order: 3; /* Derecha */
     }
 
     .smoothcomp-card {
@@ -298,9 +278,6 @@
   }
   .stat-item {
     gap: var(--size-4);
-  }
-  .kids-subtitle{
-    font-size: 2rem;
   }
   .contact-social{
     height: 50vh;
