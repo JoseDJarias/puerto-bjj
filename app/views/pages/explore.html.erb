@@ -27,68 +27,37 @@
     </div>
     -->
     <div class="explore-section-3">
-      <div class="kids-container">
-        <!-- Header Section -->
-        <div class="kids-header">
-          <h2 class="kids-title">Programa Kids</h2>
-          <p class="kids-subtitle">Desarrollando confianza y disciplina a través del Jiu-Jitsu</p>
-        </div>
-
-        <!-- Content Grid -->
-        <div class="kids-grid">
-          <!-- Card 1: Beneficios -->
-          <div class="kids-card beneficios-card">
-            <div class="kids-card-icon">
-              <%= lucide_icon "star", class: "w-8 h-8" %>
-            </div>
-            <h3 class="kids-card-title">Beneficios</h3>
-            <ul class="kids-card-list">
-              <li>Desarrollo de confianza</li>
-              <li>Mejora de la coordinación</li>
-              <li>Disciplina y respeto</li>
-              <li>Actividad física</li>
-              <li>Mejora en el estado físico y mental</li>
-              <li>Adquisición y desarrollo de valores</li>
-            </ul>
-            <!-- Subtitulo al final de card -->
-            <p class="kids-card-subtitle hide@md">Todo en un ambiente sano y divertido</p>
+        <!-- New Programs Promo Section -->
+        <div class="programs-promo-section">
+          <div class="programs-promo-header">
+            <h2 class="promo-section-title">Info Sobre Nuestros Programas</h2>
           </div>
-
-          <!-- Card 2: Edades -->
-          <div class="kids-card edades-card">
-            <div class="kids-card-icon">
-              <%= lucide_icon "users", class: "w-8 h-8" %>
+          <div class="programs-promo-grid">
+            <!-- Kids Card -->
+            <div class="program-card">
+              <div class="program-card-icon">
+                <%= lucide_icon "shield", class: "w-10 h-10" %>
+              </div>
+              <h3 class="program-card-title">Programa Kids</h3>
+              <p class="program-card-text">
+                Un ambiente seguro y divertido donde los más pequeños forjan su carácter, confianza y amistades para toda la vida.
+              </p>
+              <%= link_to "Clickea este boton para conocer más", kids_program_path, class: "btn btn--primary" %>
             </div>
-            <h3 class="kids-card-title ">Edades</h3>
-            <ul class="kids-card-list ">
-              <li>Kids 1: de 5-8 años</li>
-              <li>Kids 2: de 9-13 años</li>
-            </ul>
-          </div>
 
-          <!-- Card 3: Horarios -->
-          <div class="kids-card horarios-card">
-            <div class="kids-card-icon">
-              <%= lucide_icon "clock", class: "w-8 h-8" %>
+            <!-- All Programs Card -->
+            <div class="program-card">
+              <div class="program-card-icon">
+                <%= lucide_icon "swords", class: "w-10 h-10" %>
+              </div>
+              <h3 class="program-card-title">Programas para Adultos</h3>
+              <p class="program-card-text">
+                Descubre todas las disciplinas que ofrecemos, desde Jiu-Jitsu (Gi & No-Gi) y Boxeo hasta MMA. Un camino para cada guerrero.
+              </p>
+              <%= link_to "Ver Todos (Próximamente)", "#", class: "btn btn--primary", disabled: true %>
             </div>
-            <h3 class="kids-card-title">Horarios Kids</h3>
-            <ul class="kids-card-list">
-              <li>Lunes: 5:00 PM - 6:00 PM</li>
-              <li>Sábado: 9:30 AM - 10:30 AM</li>
-            </ul>
           </div>
         </div>
-
-        <!-- CTA Section -->
-        <div class="kids-cta">
-          <p class="kids-cta-text">¡Únete a nuestra programa de pequeños guerreros - futuros campeones!</p>
-        </div>
-
-        <!-- Kids Home Photo -->
-        <div class="kids-home-image-container">
-          <%= image_tag 'home/kids-home-photo.jpeg', alt: 'Kids en Puerto BJJ', class: 'kids-home-image' %>
-        </div>
-      </div>
     </div>
 
     <!-- Social Media Links -->
