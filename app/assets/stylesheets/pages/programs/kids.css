@@ -187,24 +187,6 @@
   margin-right: 0.5rem;
 }
 
-/* 5. CTA Section */
-.kids-cta {
-  background: var(--color-primary-kids);
-  color: white;
-  text-align: center;
-  padding: 4rem 1rem;
-}
-
-.cta-title {
-  font-size: 2.5rem;
-  font-weight: bold;
-  margin-bottom: 1rem;
-}
-
-.cta-subtitle {
-  font-size: 1.2rem;
-  margin-bottom: 2rem;
-}
 
 /* Responsive adjustments */
 @media (min-width: 768px) {
