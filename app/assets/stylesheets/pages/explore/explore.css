@@ -51,7 +51,7 @@
 }
 
 /* Mobile-only styles (screens up to 767px wide) */
-@media (max-width: 767px) {
+
   .explore-mobile-banner {
     display: block; /* Make it visible on mobile */
     width: 100%;
@@ -64,7 +64,7 @@
     height: 100%;
     object-fit:contain; /* This makes the image cover the container without distortion */
   }
-} 
+
 
 /* Tablet Adjustments */
 @media (min-width: 768px) {
