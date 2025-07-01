@@ -65,197 +65,6 @@
     object-fit:contain; /* This makes the image cover the container without distortion */
   }
 
-/* Tablet Adjustments */
-@media (min-width: 768px) {
-  .explore-section-1 {
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-  }
-
-  .hero-title-container {
-    flex: 40%;
-    height: 100%;
-  }
-
-  .carousel-container {
-    flex: 60%;
-    overflow: hidden;
-    max-height: 1000px;
-  }
-
-  .carousel-track {
-    height: 1000px;
-  }
-
-  .carousel-slide {
-    height: 100%;
-  }
-
-  .carousel-image {
-    height: 100%;
-    object-fit: cover;
-  }
-
-  .explore-mobile-banner {
-    height: 100vh; /* 60% of the viewport height - a nice, tall banner */
-  }
-}
-
-/* 🔹 Secciones siguientes */
-@media (min-width: 1024px) {
-    /* Contenedor padre (por ejemplo, "explore-section-1") */
-    .explore-section-1 {
-      display: flex; /* (o "grid") para que los hijos se distribuyan a la par */
-      flex-direction: column; /* (o "row-reverse") para que el título esté a la izquierda y el carousel a la derecha */
-      align-items: center; /* (opcional) centra verticalmente */
-    }
-  
-    /* Caja del título (por ejemplo, "hero-title-container") */
-    .hero-title-container {
-      flex: 40%; /* (o un ancho fijo, por ejemplo, "width: 40%;") */
-      height: 100%;
-    }
-  
-    /* Caja del carousel (por ejemplo, "carousel-container") */
-    .carousel-container {
-      flex: 60%; /* (o un ancho fijo, por ejemplo, "width: 60%;") */
-      overflow: hidden; /* (o "position: relative;") para que el slide se "corte" dentro de su propio bloque y no se desborde */
-      max-height: 10000px;
-    }
-
-    .carousel-track{
-      height: 1000px;
-    }
-    .carousel-slide{
-      height: 100%;
-    }
-    .carousel-image {
-      height: 100%;
-      object-fit: cover;
-    }
-
-    /* Reordenamiento de cards de Kids para pantallas grandes (Grid) */
-    .kids-grid {
-      display: grid;
-      grid-template-columns: repeat(3, 1fr); /* 3 columnas de igual tamaño */
-      gap: 1.5rem; /* Espacio entre tarjetas, puedes ajustarlo */
-    }
-
-    .beneficios-card {
-      order: 2; /* Centro */
-    }
-
-    .edades-card {
-      order: 1; /* Izquierda */
-    }
-
-    .horarios-card {
-      order: 3; /* Derecha */
-    }
-}
-
-/* iPad Pro Specific */
-@media (min-width: 1024px) and (min-height: 1300px) and (max-width: 1366px) {
-  .explore-section-1 {
-    min-height: 1300px;
-  }
-
-  .carousel-container {
-    max-height: 1300px;
-  }
-
-  .carousel-track {
-    height: 1300px;
-  }
-}
-
-/* Laptops (1024px - 1440px) */
-@media (min-width: 1024px) and (max-width: 1440px) and (min-height: 768px) {
-  .explore-section-1 {
-    display: flex;
-    flex-direction: row;
-    align-items: center;
-    min-height: 1000px;
-  }
-
-  .hero-title-container {
-    flex: 40%;
-    height: 100%;
-    padding: var(--size-16);
-  }
-
-  .carousel-container {
-    flex: 60%;
-    max-height: 1000px;
-  }
-
-  .carousel-track {
-    height: 1000px;
-  }
-}
-
-/* Laptops L y dispositivos grandes (1440px - 1920px) */
-@media (min-width: 1440px) and (max-width: 1920px) {
-  .explore-section-1 {
-    display: flex;
-    flex-direction: row;
-    align-items: center;
-    min-height: 900px;
-  }
-
-  .hero-title-container {
-    flex: 40%;
-    height: 100%;
-    padding: var(--size-24);
-  }
-
-  .hero-title {
-    font-style: oblique;
-    font-size: 4rem;
-    line-height: 1.4;
-  }  
-
-  .carousel-container {
-    flex: 60%;
-    max-height: 900px;
-  }
-
-  .carousel-track {
-    height: 900px;
-  }
-}
-
-/* Pantallas muy grandes (1920px+) */
-@media (min-width: 1920px) {
-  .explore-section-1 {
-    display: flex;
-    flex-direction: row;
-    align-items: center;
-    min-height: 1500px;
-   }
-
-  .hero-title-container {
-    flex: 40%;
-    height: 100%;
-    padding: var(--size-32);
-  }
-
-  .hero-title {
-    font-style: oblique;
-    font-size: 5rem;
-    line-height: 1.8;
-  } 
-
-  .carousel-container {
-    flex: 60%;
-    max-height: 1500px;
-  }
-
-  .carousel-track {
-    height: 1500px;
-  }
-}
 
 /* ========================================================================
    Smoothcomp Section
@@ -367,41 +176,6 @@
   box-shadow: var(--shadow-sm);
 }
 
-@media (min-width: 768px) {
-  .explore-section-6 {
-    margin-bottom: var(--size-12);
-  }
-  .smoothcomp-container {
-    width: 50rem;
-    padding: var(--size-24) var(--size-12); /* Aumento de padding para tablets y superior */
-  }
-  .btn-smoothcomp {
-    font-size: x-large;
-  }
-}
-/* Ajustes para pantallas grandes (Laptops) */
-@media (min-width: 1024px) {
-  .smoothcomp-card {
-    max-width: 64rem; /* 1024px */
-    padding: var(--size-10);
-  }
-  .btn-smoothcomp {
-    font-size: x-large;
-  }
-  .contact-social{
-    height: 700px;
-  }
-  .contact-social-title{
-    font-size: 2rem;
-  }
-  .contact-social-subtitle, .social-links a{
-    font-size: 1.5rem;
-  }
-  .contact-social-subtitle{
-    margin-bottom: 4rem;
-  }
-}
-
 /* Ajustes para pantallas muy grandes (Desktops) */
 @media (min-width: 1440px) {
   .smoothcomp-container {
@@ -417,11 +191,234 @@
   .stat-label {
     font-size: x-large;
   }
+}
+/* ========================================================================
+   Smoothcomp Section
+   ======================================================================== */
 
+   /*
+   Medias querys for explore.css
+   */
+/* Tablet Adjustments */
+@media (min-width: 768px) {
+  .explore-section-1 {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+  }
+
+  .hero-title-container {
+    flex: 40%;
+    height: 100%;
+  }
+
+  .carousel-container {
+    flex: 60%;
+    overflow: hidden;
+    max-height: 1000px;
+  }
+
+  .carousel-track {
+    height: 1000px;
+  }
+
+  .carousel-slide {
+    height: 100%;
+  }
+
+  .carousel-image {
+    height: 100%;
+    object-fit: cover;
+  }
+
+  .explore-mobile-banner {
+    height: 100vh; /* 60% of the viewport height - a nice, tall banner */
+  }
+  .explore-section-6 {
+    margin-bottom: var(--size-12);
+  }
+  .smoothcomp-container {
+    width: 50rem;
+    padding: var(--size-24) var(--size-12); /* Aumento de padding para tablets y superior */
+  }
+  .btn-smoothcomp {
+    font-size: x-large;
+  }
 }
 
-/* Ajustes para pantallas 4K y ultra anchas */
+/* 🔹 Secciones siguientes */
+@media (min-width: 1024px) {
+    /* Contenedor padre (por ejemplo, "explore-section-1") */
+    .explore-section-1 {
+      display: flex; /* (o "grid") para que los hijos se distribuyan a la par */
+      flex-direction: column; /* (o "row-reverse") para que el título esté a la izquierda y el carousel a la derecha */
+      align-items: center; /* (opcional) centra verticalmente */
+    }
+  
+    /* Caja del título (por ejemplo, "hero-title-container") */
+    .hero-title-container {
+      flex: 40%; /* (o un ancho fijo, por ejemplo, "width: 40%;") */
+      height: 100%;
+    }
+  
+    /* Caja del carousel (por ejemplo, "carousel-container") */
+    .carousel-container {
+      flex: 60%; /* (o un ancho fijo, por ejemplo, "width: 60%;") */
+      overflow: hidden; /* (o "position: relative;") para que el slide se "corte" dentro de su propio bloque y no se desborde */
+      max-height: 10000px;
+    }
+
+    .carousel-track{
+      height: 1000px;
+    }
+    .carousel-slide{
+      height: 100%;
+    }
+    .carousel-image {
+      height: 100%;
+      object-fit: cover;
+    }
+
+    /* Reordenamiento de cards de Kids para pantallas grandes (Grid) */
+    .kids-grid {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr); /* 3 columnas de igual tamaño */
+      gap: 1.5rem; /* Espacio entre tarjetas, puedes ajustarlo */
+    }
+
+    .beneficios-card {
+      order: 2; /* Centro */
+    }
+
+    .edades-card {
+      order: 1; /* Izquierda */
+    }
+
+    .horarios-card {
+      order: 3; /* Derecha */
+    }
+
+    .smoothcomp-card {
+      max-width: 64rem; /* 1024px */
+      padding: var(--size-10);
+    }
+    .btn-smoothcomp {
+      font-size: x-large;
+    }
+    .contact-social{
+      height: 700px;
+    }
+    .contact-social-title{
+      font-size: 2rem;
+    }
+    .contact-social-subtitle, .social-links a{
+      font-size: 1.5rem;
+    }
+    .contact-social-subtitle{
+      margin-bottom: 4rem;
+    }
+}
+
+/* iPad Pro Specific */
+@media (min-width: 1024px) and (min-height: 1300px) and (max-width: 1366px) {
+  .explore-section-1 {
+    min-height: 1300px;
+  }
+
+  .carousel-container {
+    max-height: 1300px;
+  }
+
+  .carousel-track {
+    height: 1300px;
+  }
+}
+
+/* Laptops (1024px - 1440px) */
+@media (min-width: 1024px) and (max-width: 1440px) and (min-height: 768px) {
+  .explore-section-1 {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    min-height: 1000px;
+  }
+
+  .hero-title-container {
+    flex: 40%;
+    height: 100%;
+    padding: var(--size-16);
+  }
+
+  .carousel-container {
+    flex: 60%;
+    max-height: 1000px;
+  }
+
+  .carousel-track {
+    height: 1000px;
+  }
+}
+
+/* Laptops L y dispositivos grandes (1440px - 1920px) */
+@media (min-width: 1440px) and (max-width: 1920px) {
+  .explore-section-1 {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    min-height: 900px;
+  }
+
+  .hero-title-container {
+    flex: 40%;
+    height: 100%;
+    padding: var(--size-24);
+  }
+
+  .hero-title {
+    font-style: oblique;
+    font-size: 4rem;
+    line-height: 1.4;
+  }  
+
+  .carousel-container {
+    flex: 60%;
+    max-height: 900px;
+  }
+
+  .carousel-track {
+    height: 900px;
+  }
+}
+
+/* Pantallas muy grandes (1920px+) */
 @media (min-width: 1920px) {
+  .explore-section-1 {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    min-height: 1500px;
+   }
+
+  .hero-title-container {
+    flex: 40%;
+    height: 100%;
+    padding: var(--size-32);
+  }
+
+  .hero-title {
+    font-style: oblique;
+    font-size: 5rem;
+    line-height: 1.8;
+  } 
+
+  .carousel-container {
+    flex: 60%;
+    max-height: 1500px;
+  }
+
+  .carousel-track {
+    height: 1500px;
+  }
   .smoothcomp-container {
     width: 80rem;
   }
@@ -432,6 +429,9 @@
   }
   .stat-item {
     gap: var(--size-4);
+  }
+  .kids-subtitle{
+    font-size: 2rem;
   }
   .contact-social{
     height: 50vh;
