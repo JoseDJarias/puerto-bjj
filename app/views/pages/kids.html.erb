@@ -1,0 +1,108 @@
+<div class="kids-program-page">
+  <!-- 1. Hero Section -->
+  <section class="kids-hero">
+    <div class="hero-content">
+      <h1 class="hero-title">Programa de Jiu-Jitsu para Niños</h1>
+      <p class="hero-subtitle">Forjando campeones dentro y fuera del tatami. Confianza, disciplina y respeto para la vida.</p>
+    </div>
+    <div class="hero-image">
+      <%= image_tag 'home/kids-home-photo.jpeg', alt: 'Niños entrenando Jiu-Jitsu en Puerto BJJ' %>
+    </div>
+  </section>
+
+  <!-- 2. Schedule and Age Group Section -->
+  <section class="kids-schedule">
+    <h2 class="section-title">Horarios y Grupos</h2>
+    <div class="schedule-details">
+      <div class="schedule-card">
+        <div class="schedule-age-groups">
+          <div class="age-group">
+            <span class="group-name">Kids I</span>
+            <span class="group-ages">(5-8 años)</span>
+          </div>
+          <div class="age-group">
+            <span class="group-name">Kids II</span>
+            <span class="group-ages">(9-13 años)</span>
+          </div>
+        </div>
+        <p class="schedule-common-note text-center text-lg">El siguiente horario aplica para ambos grupos.</p>
+        <ul class="schedule-list">
+          <li><%= lucide_icon "calendar", class: "schedule-icon" %> Lunes: 5:00 PM - 6:00 PM</li>
+          <li><%= lucide_icon "calendar", class: "schedule-icon" %> Sábado: 9:30 AM - 10:30 AM</li>
+        </ul>
+      </div>
+    </div>
+  </section>
+
+  <!-- 3. Benefits Section -->
+  <section class="kids-benefits">
+    <h2 class="section-title">Beneficios para tu Campeón</h2>
+    <div class="benefits-grid">
+      <div class="benefit-card">
+        <%= lucide_icon "shield", class: "benefit-icon" %>
+        <h3 class="benefit-title">Confianza y Autoestima</h3>
+        <p>Aprenderán a superar retos, construyendo una sólida confianza en sí mismos.</p>
+      </div>
+      <div class="benefit-card">
+        <%= lucide_icon "heart", class: "benefit-icon" %>
+        <h3 class="benefit-title">Disciplina y Respeto</h3>
+        <p>Inculcamos valores fundamentales que les servirán en la escuela y en la vida.</p>
+      </div>
+      <div class="benefit-card">
+        <%= lucide_icon "dumbbell", class: "benefit-icon" %>
+        <h3 class="benefit-title">Condición Física</h3>
+        <p>Mejorarán su coordinación, fuerza y agilidad en un ambiente divertido y seguro.</p>
+      </div>
+      <div class="benefit-card">
+        <%= lucide_icon "brain-circuit", class: "benefit-icon" %>
+        <h3 class="benefit-title">Salud Mental</h3>
+        <p>El Jiu-Jitsu reduce el estrés y la ansiedad, mejorando el enfoque y la claridad mental.</p>
+      </div>
+      <div class="benefit-card">
+        <%= lucide_icon "users", class: "benefit-icon" %>
+        <h3 class="benefit-title">Habilidades Sociales</h3>
+        <p>Harán nuevos amigos y aprenderán a trabajar en equipo y a apoyarse mutuamente.</p>
+      </div>
+    </div>
+  </section>
+
+  <!-- 4. Instructor Section -->
+  <section class="kids-instructor">
+    <div class="instructor-image">
+      <%# Placeholder for instructor photo %>
+      <%= image_tag 'https://via.placeholder.com/400x400.png?text=Foto+del+Instructor', alt: 'Instructor del programa Kids' %>
+    </div>
+    <div class="instructor-info">
+      <h2 class="section-title">Conoce a Nuestro Instructor</h2>
+      <p class="instructor-name">Kevin Matarrita Lara</p>
+      <p class="instructor-bio">
+        Con más de [X] años de experiencia en Jiu-Jitsu y una pasión por la enseñanza, 
+        nuestro instructor principal del programa Kids está certificado y dedicado a crear un ambiente 
+        de aprendizaje positivo y seguro. Su objetivo es inspirar a cada niño a alcanzar su máximo potencial.
+      </p>
+    </div>
+  </section>
+  <section class="kids-instructor">
+    <div class="instructor-image">
+      <%# Placeholder for instructor photo %>
+      <%= image_tag 'https://via.placeholder.com/400x400.png?text=Foto+del+Instructor', alt: 'Instructor del programa Kids' %>
+    </div>
+    <div class="instructor-info">
+      <h2 class="section-title">Conoce a Nuestro Instructor</h2>
+      <p class="instructor-name">Jose Daniel Arias</p>
+      <p class="instructor-bio">
+        Con más de [X] años de experiencia en Jiu-Jitsu y una pasión por la enseñanza, 
+        nuestro instructor principal del programa Kids está certificado y dedicado a crear un ambiente 
+        de aprendizaje positivo y seguro. Su objetivo es inspirar a cada niño a alcanzar su máximo potencial.
+      </p>
+    </div>
+  </section>
+
+
+  <!-- 5. Final Call to Action Section -->
+  <section class="kids-cta">
+    <h2 class="cta-title">¿Listos para empezar la aventura?</h2>
+    <p class="cta-subtitle">La primera clase es totalmente gratis. ¡No hay nada que perder!</p>
+    <%= link_to "¡Quiero mi Clase de Prueba!", "https://wa.me/50672026863?text=Hola,%20me%20gustaría%20obtener%20información%20sobre%20la%20clase%20de%20prueba%20para%20niños.", target: "_blank", class: "btn btn--primary btn--lg" %>
+  </section>
+</div> 
