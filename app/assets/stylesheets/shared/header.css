@@ -7,33 +7,16 @@
     transition: padding 0.3s ease;
   }
   
-  /* Efecto de iluminación sutil al hacer scroll */
-  .styled-header.scrolled {
-    border-bottom: 3px solid rgba(255, 255, 255, 0.8); /* Se hace más visible al bajar */
-    box-shadow: 0px 6px 12px rgba(255, 255, 255, 0.7);
-  }
+/* Efecto de iluminación sutil al hacer scroll */
+.styled-header.scrolled {
+  border-bottom: 3px solid rgba(255, 255, 255, 0.8); /* Se hace más visible al bajar */
+  box-shadow: 0px 6px 12px rgba(255, 255, 255, 0.7);
+}
 
-  .btn-home{
-    font-size: large;
-  }
-  /* Medium Screens (≥768px) */
-  @media (min-width: 768px) {
-    .btn-home {
-      font-size: x-large;
-    }
-  }
+.btn-home{
+  font-size: large;
+}
 
-  /* Large Screens (≥1024px) */
-  @media (min-width: 1024px) {
-    .btn-home {
-      font-size: x-large;
-    }
-    .menu-icon {
-      margin: 0 2rem 0 30rem;
-    }
-  }
-  
-/* Logo Styles */
 .header-logo-image {
   height: 80px; /* Aumentamos la altura del logo */
   width: auto; /* El ancho se ajusta automáticamente */
@@ -54,20 +37,32 @@
   transform: scale(1.2) translateY(-2px); /* Efecto más pronunciado */
 }
   
-/* Center Navigation Fix for Large Screens */
-@media (min-width: 1024px) {
-  .styled-header {
-    position: relative; /* Needed for absolute positioning of children */
-  }
-
-  .center-box {
-    position: absolute;
-    left: 50%;
-    transform: translateX(-50%);
-  }
-}
-
 .mobile-menu-overlay {
   z-index: 2000;
 }
   
+  /* Medium Screens (≥768px) */
+  @media (min-width: 768px) {
+    .btn-home {
+      font-size: x-large;
+    }
+  }
+
+  /* Large Screens (≥1024px) */
+  @media (min-width: 1024px) {
+    .btn-home {
+      font-size: x-large;
+    }
+    .menu-icon {
+      margin: 0 2rem 0 30rem;
+    }
+    .styled-header {
+      position: relative; /* Needed for absolute positioning of children */
+    }
+  
+    .center-box {
+      position: absolute;
+      left: 50%;
+      transform: translateX(-50%);
+    }
+  }
