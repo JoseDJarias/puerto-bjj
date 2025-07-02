@@ -31,6 +31,6 @@ export default class extends Controller {
   startAutoSlide() {
     this.interval = setInterval(() => {
       this.next()
-    }, 6000) // Cambia cada 3 segundos
+    }, 4000) // Cambia cada 4 segundos
   }
 }
