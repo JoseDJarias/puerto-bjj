@@ -10,20 +10,59 @@
 /* Section 01: Academia de Artes Marciales */
 .hero-title-container {
     display: flex;
+    flex-direction: column;
     justify-content: center;
     align-items: center;
     text-align: center;
-    padding: 2rem 1rem;
-    }
+    padding: 4rem 1.5rem;
+    background-color: var(--color-primary-light);
+    color: var(--color-text-reversed);
+    height: 90vh;
+}
 
 .hero-title {
-    font-size: clamp(2rem, 6vw, 4rem); /* Responsive */
-    font-weight: var(--font-bold);
-    color: var(--color-text);
-    max-inline-size: 40ch;
-    line-height: 1.2;
-    margin: 0 auto;
+    font-size: clamp(2.5rem, 8vw, 3.5rem);
+    font-weight: var(--font-black);
+    color: inherit;
+    line-height: 1.1;
+    margin: 0;
+    margin-bottom: 2rem;
 }
+
+.hero-title-academy{
+  font-size: clamp(2rem, 8vw, 2rem);
+  font-weight: var(--font-black);
+  color: inherit;
+  line-height: 1.1;
+  margin: 0;
+  margin-bottom: 2rem;
+}
+
+.hero-subtitle {
+    font-size: clamp(1.5rem, 4vw, 1.25rem);
+    font-weight: var(--font-regular);
+    color: inherit;
+    max-width: 45ch;
+    margin: 0;
+    margin-bottom: 1.5rem;
+    opacity: 0.85;
+}
+
+.hero-description {
+    font-size: clamp(1.3rem, 3vw, 1rem);
+    color: inherit;
+    max-width: 50ch;
+    margin: 0;
+    margin-bottom: 3rem;
+    opacity: 0.7;
+}
+
+.hero-button {
+    padding: 0.8rem 2rem;
+    font-size: 1rem;
+    border: 2px solid var(--color-text-reversed);
+}
+
 /* Carousel Style*/
 
 .carousel-track {
@@ -76,8 +115,27 @@
   }
 
   .hero-title-container {
-    flex: 40%;
-    height: 100%;
+    width: 100%;
+  }
+
+  .hero-title{
+    font-size: 5rem;
+  }
+
+  .hero-title-academy{
+    font-size: 3.5rem;
+  }
+
+  .hero-subtitle{
+    font-size: 2.4rem;
+  }
+
+  .hero-description{
+    font-size: 2rem;
+  }
+
+  .hero-button {
+    font-size: 1.5rem;
   }
 
   .carousel-container {
@@ -200,13 +258,15 @@
   .explore-section-1 {
     display: flex;
     flex-direction: row;
-    align-items: center;
-    min-height: 1000px;
+    align-items: stretch;
+    min-height: 900px;
   }
 
   .hero-title-container {
     flex: 40%;
-    height: 100%;
+    align-items: flex-start;
+    text-align: left;
+    height: auto;
     padding: var(--size-16);
   }
 
@@ -218,6 +278,26 @@
   .carousel-track {
     height: 1000px;
   }
+
+  .hero-title{
+    font-size: 3rem;
+  }
+
+  .hero-title-academy{
+    font-size: 2.3rem;
+  }
+
+  .hero-subtitle{
+    font-size: 1.8rem;
+  }
+
+  .hero-description{
+    font-size: 1.4rem;
+  }
+
+  .hero-button {
+    font-size: 1.5rem;
+  }
 }
 
 /* Laptops L y dispositivos grandes (1440px - 1920px) */
@@ -225,18 +305,19 @@
   .explore-section-1 {
     display: flex;
     flex-direction: row;
-    align-items: center;
+    align-items: stretch;
     min-height: 900px;
   }
 
   .hero-title-container {
     flex: 40%;
-    height: 100%;
+    align-items: flex-start;
+    text-align: left;
+    height: auto;
     padding: var(--size-24);
   }
 
   .hero-title {
-    font-style: oblique;
     font-size: 4rem;
     line-height: 1.4;
   }  
@@ -249,6 +330,27 @@
   .carousel-track {
     height: 900px;
   }
+
+
+  .hero-title{
+    font-size: 3.1rem;
+  }
+
+  .hero-title-academy{
+    font-size: 2.3rem;
+  }
+
+  .hero-subtitle{
+    font-size: 1.8rem;
+  }
+
+  .hero-description{
+    font-size: 1.4rem;
+  }
+
+  .hero-button {
+    font-size: 1.5rem;
+  }
 }
 
 /* Pantallas muy grandes (1920px+) */
@@ -256,18 +358,19 @@
   .explore-section-1 {
     display: flex;
     flex-direction: row;
-    align-items: center;
+    align-items: stretch;
     min-height: 1500px;
    }
 
   .hero-title-container {
     flex: 40%;
-    height: 100%;
+    align-items: flex-start;
+    text-align: left;
+    height: auto;
     padding: var(--size-32);
   }
 
   .hero-title {
-    font-style: oblique;
     font-size: 5rem;
     line-height: 1.8;
   } 
