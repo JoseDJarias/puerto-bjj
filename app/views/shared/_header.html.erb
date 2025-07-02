@@ -8,10 +8,25 @@
     </div>
 
     <!-- Center Navigation (Only for large screens) -->
-    <div class="show@md flex-grow text-center text-xl">
+    <div class="show@md flex-grow text-center text-xl flex justify-center items-center gap-4">
       <%= link_to "Home", root_path, class: "rounded p-4" %>
+
+      <!-- Programs Dropdown -->
+      <div class="header-dropdown" data-controller="dropdown">
+        <%= link_to programs_path, class: "rounded p-4 header-dropdown-trigger" do %>
+          <span>Programas</span>
+          <%= lucide_icon('chevron-down', size: 20, "data-action": "click->dropdown#toggle") %>
+        <% end %>
+        <div class="header-dropdown-menu hidden" data-dropdown-target="menu">
+        <!--
+          <%= link_to "Jiu-Jitsu (Gi/No-Gi)" %>
+          <%= link_to "Boxeo"%>
+          <%= link_to "MMA" %>
+        -->
+        <%= link_to "Todos los Programas", programs_path, class: "hover:underline" %>
+        <%= link_to "Programa de Niños", kids_program_path, class: "hover:underline" %>        </div>
+      </div>
       <%= link_to "Feedback", feedback_path, class: "rounded p-4" %>
-      <%= link_to "Sobre Nosotros", "/acerca-de-nosotros", class: "rounded p-4" %>
     </div>
 
     <!-- Right Side: Social Icons & Hamburger Menu -->
@@ -47,8 +62,10 @@
   <div id="mobile-menu" class="mobile-menu-overlay hidden fixed inset-0 bg-surface p-6">
     <nav class="flex flex-col text-base gap">
       <%= link_to "Inicio", root_path, class: "hover:underline" %>
+      <%= link_to "Todos los Programas", programs_path, class: "hover:underline" %>
+      <%= link_to "Programa de Niños", kids_program_path, class: "hover:underline" %>
       <%= link_to "Feedback", feedback_path, class: "hover:underline" %>
-      <%= link_to "Sobre Nosotros", "/acerca-de-nosotros", class: "hover:underline" %>
+      <%= link_to "Sobre Nosotros", acerca_de_nosotros_path, class: "hover:underline" %>
     </nav>
   </div>
 </header>

@@ -66,3 +66,72 @@
       transform: translateX(-50%);
     }
   }
+
+  /*
+ * Components: Header Dropdown
+ * Styles for the main navigation dropdown menus.
+*/
+.header-dropdown {
+  position: relative;
+}
+
+/* This is the container for the button and the icon */
+.header-dropdown-trigger {
+  display: flex;
+  align-items: center;
+  gap: 0.25rem;
+  transition: opacity 0.2s ease;
+}
+
+.header-dropdown-trigger:hover {
+  opacity: 0.8;
+}
+
+.header-dropdown-menu {
+  position: absolute;
+  top: 100%;
+  left: 50%;
+  transform: translateX(-50%);
+  z-index: 50;
+  margin-top: 1rem;
+  min-width: 240px;
+  background-color: var(--color-bg);
+  color: var(--color-text);
+  border: 1px solid var(--color-border);
+  border-radius: var(--rounded-lg);
+  box-shadow: var(--shadow-xl);
+  padding: 0.5rem;
+  opacity: 0;
+  visibility: hidden;
+  transform: translateX(-50%) translateY(10px);
+  transition: opacity 0.2s ease, transform 0.2s ease, visibility 0.2s;
+}
+
+/* Show on hover for desktop */
+@media (hover: hover) {
+  .header-dropdown:hover .header-dropdown-menu {
+    opacity: 1;
+    visibility: visible;
+    transform: translateX(-50%) translateY(0);
+  }
+}
+
+/* Show when toggled by Stimulus (for touch devices) */
+.header-dropdown-menu:not(.hidden) {
+  opacity: 1;
+  visibility: visible;
+  transform: translateX(-50%) translateY(0);
+}
+
+.header-dropdown-menu a {
+  display: block;
+  white-space: nowrap;
+  padding: 0.75rem 1rem;
+  border-radius: var(--rounded-md);
+  transition: background-color 0.1s ease;
+}
+
+.header-dropdown-menu a:hover {
+  background-color: var(--color-primary-light);
+  color: var(--color-primary);
+} 
