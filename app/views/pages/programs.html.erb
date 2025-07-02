@@ -8,7 +8,18 @@
   <!-- Programs Grid -->
   <section class="programs-grid-section">
     <div class="program-list">
-      <!-- Card 1: Jiu-Jitsu (Gi) -->
+      <!-- Card 1: Kids Program -->
+      <div class="program-list-card">
+        <div class="program-list-card__image">
+          <%= image_tag 'programs/kids1.jpg', alt: 'Clase de Jiu-Jitsu para niños' %>
+        </div>
+        <div class="program-list-card__content">
+          <h3 class="program-list-card__title">Programa para Niños</h3>
+          <p class="program-list-card__description">Confianza, disciplina y diversión. Un ambiente seguro para que los más pequeños forjen su carácter y hagan amigos.</p>
+          <%= link_to "Ver Detalles", kids_program_path, class: "btn" %>
+        </div>
+      </div>
+      <!-- Card 2: Jiu-Jitsu (Gi) -->
       <div class="program-list-card">
         <div class="program-list-card__image">
           <%= image_tag 'programs/gi1.jpg', alt: 'Clase de Jiu-Jitsu con Kimono' %>
@@ -20,7 +31,7 @@
         </div>
       </div>
 
-      <!-- Card 2: No-Gi Jiu-Jitsu -->
+      <!-- Card 3: No-Gi Jiu-Jitsu -->
       <div class="program-list-card">
         <div class="program-list-card__image">
           <%= image_tag 'programs/nogi1.jpg', alt: 'Clase de Jiu-Jitsu sin Kimono' %>
@@ -32,7 +43,7 @@
         </div>
       </div>
 
-      <!-- Card 3: Boxeo -->
+      <!-- Card 4: Boxeo -->
       <div class="program-list-card">
         <div class="program-list-card__image">
           <%= image_tag 'programs/boxeo1.jpg', alt: 'Clase de Boxeo' %>
@@ -44,7 +55,7 @@
         </div>
       </div>
 
-      <!-- Card 4: MMA -->
+      <!-- Card 5: MMA -->
       <div class="program-list-card">
         <div class="program-list-card__image">
           <%= image_tag 'programs/mma1.jpg', alt: 'Clase de Artes Marciales Mixtas' %>
@@ -53,18 +64,6 @@
           <h3 class="program-list-card__title">MMA (Artes Marciales Mixtas)</h3>
           <p class="program-list-card__description">La prueba definitiva. Combina lo mejor del grappling y el striking en un sistema de combate completo.</p>
           <a href="#" class="btn" disabled>Ver Detalles (Próximamente)</a>
-        </div>
-      </div>
-
-      <!-- Card 5: Kids Program -->
-      <div class="program-list-card">
-        <div class="program-list-card__image">
-          <%= image_tag 'programs/kids1.jpg', alt: 'Clase de Jiu-Jitsu para niños' %>
-        </div>
-        <div class="program-list-card__content">
-          <h3 class="program-list-card__title">Programa para Niños</h3>
-          <p class="program-list-card__description">Confianza, disciplina y diversión. Un ambiente seguro para que los más pequeños forjen su carácter y hagan amigos.</p>
-          <%= link_to "Ver Detalles", kids_program_path, class: "btn" %>
         </div>
       </div>
     </div>
