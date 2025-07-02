@@ -86,7 +86,7 @@
 
 .contact-card-icon {
   color: var(--color-primary);
-  background: rgb(145, 223, 249);
+  background-color: var(--color-primary-light);
   width: 48px;
   height: 48px;
   border-radius: var(--rounded-full);
@@ -185,7 +185,7 @@
 
 .feedback-cta-icon {
   color: var(--color-primary);
-  background: rgb(145, 223, 249);
+  background-color: var(--color-primary-light);
   width: 64px;
   height: 64px;
   border-radius: var(--rounded-full);
@@ -214,7 +214,7 @@
   display: inline-flex;
   align-items: center;
   gap: var(--size-2);
-  background: rgb(145, 223, 249);
+  background-color: var(--color-primary-light);
   color: black;
   padding: var(--size-3) var(--size-6);
   border-radius: var(--rounded-md);

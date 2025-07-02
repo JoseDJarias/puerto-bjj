@@ -61,7 +61,7 @@
 .about-section-icon {
   color: #000000;
   margin-bottom: 1.25rem;
-  background: var(--color-surface-alt);
+  background-color: var(--color-primary-light);
   width: 64px;
   height: 64px;
   border-radius: 50%;

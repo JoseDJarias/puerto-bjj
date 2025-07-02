@@ -45,16 +45,31 @@
   }
   
   .program-card-icon {
-    color: var(--color-primary);
-    margin-bottom: 1.5rem;
+    /* Shape & Layout */
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 80px;
+    height: 80px;
+    border-radius: 50%;
+    margin-bottom: 2rem;
+  
+    /* Colors */
+    background-color: var(--color-primary-light);
+    color: var(--color-text-reversed); /* White icon for better contrast */
+  
+    /* Icon Glyph */
+    font-size: 3rem;
+  
+    /* Effects */
     transition: all 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275);
-    text-shadow: 0 0 10px var(--color-primary); /* Icon glow */
+    box-shadow: 0 4px 10px rgba(0,0,0,0.2);
   }
   
   .program-card:hover .program-card-icon {
-    transform: scale(1.2) rotate(-5deg); /* A bit more playful */
-    color: var(--color-positive);
-    text-shadow: 0 0 20px var(--color-positive); /* Enhance glow on hover */
+    transform: scale(1.1) rotate(-5deg); /* Slightly bigger on hover */
+    filter: brightness(1.1);
+    box-shadow: 0 8px 20px rgba(0,0,0,0.3);
   }
   
   .program-card-title {
@@ -65,7 +80,6 @@
   }
   
   .program-card-text {
-    color: var(--color-text-muted);
     flex-grow: 1; /* Ensures the text takes up space, pushing button to bottom */
     margin-bottom: 2rem;
   }
@@ -97,7 +111,7 @@
   /* Hover effect ONLY for non-disabled buttons */
   .program-card .btn:not([disabled]):hover {
     transform: scale(1.05);
-    background-color: var(--color-positive);
+    background-color: var(--color-primary-light);
     border-color: var(--color-positive);
     box-shadow: 0 0 15px var(--color-positive);
     color: var(--color-surface);
@@ -124,7 +138,9 @@
     }
   
     .program-card-icon {
-      transform: scale(1.5); /* Bigger icon */
+      width: 110px;
+      height: 110px;
+      font-size: 4rem;
     }
   
     .program-card-title {
@@ -154,8 +170,9 @@
       gap: 4rem;
     }
     .program-card {
-      min-height: 600px;
+      min-height: 500px;
       padding: 3.5rem;
+      max-width: 1000px;
     }
     .program-card-title {
       font-size: 2rem;
