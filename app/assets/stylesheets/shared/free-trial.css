@@ -4,13 +4,22 @@
     padding: 4rem 1rem;
   }
   
-  .cta-title {
+  .free-trial-title {
     font-size: 2.5rem;
     font-weight: bold;
     margin-bottom: 1rem;
   }
   
-  .cta-subtitle {
+  .free-trial-subtitle {
     font-size: 1.2rem;
     margin-bottom: 2rem;
+  }
+
+  @media (min-width: 768px) {
+    .free-trial-cta{
+      background-color: rgb(252, 221, 182);
+    }
+    .free-trial-button a{
+      font-size: 1.2rem;
+    }
   }
