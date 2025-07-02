@@ -48,205 +48,6 @@
   margin: 0 auto var(--size-12);
 }
 
-@media (min-width: 768px) {
-  .schedule-grid {
-    grid-template-columns: 1fr;
-    gap: var(--size-10);
-    padding: var(--size-4) 0;
-  }
-
-  .schedule-card-header{
-    justify-content: center;
-  }
-}
-
-@media (min-width: 1024px) {
-  .schedule-container {
-    width: 100%;
-    max-width: 1200px;
-    padding: var(--size-16) var(--size-8);
-  }
-
-  .schedule-grid {
-    max-width: 900px;
-  }
-
-  .schedule-card {
-    padding: var(--size-10);
-  }
-
-  .schedule-card-header {
-    margin-bottom: var(--size-8);
-  }
-
-  .schedule-card-header svg {
-    width: 40px;
-    height: 40px;
-  }
-
-  .schedule-card-title {
-    font-size: 1.75rem;
-  }
-
-  .schedule-group-title {
-    font-size: 1.5rem;
-  }
-
-  .schedule-subgroup-title {
-    font-size: 1.25rem;
-  }
-
-  .schedule-list li {
-    font-size: 1.125rem;
-    padding: var(--size-3) 0;
-  }
-}
-
-/* Ultra Wide Screens */
-@media (min-width: 1536px) {
-  .schedule-container {
-    max-width: 1600px;
-    padding: var(--size-24) var(--size-16);
-  }
-
-  .schedule-header {
-    margin-bottom: var(--size-16);
-  }
-
-  .schedule-title {
-    font-size: clamp(2.5rem, 4vw, 3.5rem);
-    margin-bottom: var(--size-6);
-  }
-
-  .schedule-subtitle {
-    font-size: clamp(1.25rem, 2vw, 1.75rem);
-    max-width: 800px;
-  }
-
-  .schedule-grid {
-    max-width: 1200px;
-    gap: var(--size-24);
-    margin: var(--size-12) auto var(--size-24);
-  }
-
-  .schedule-card {
-    padding: var(--size-12);
-    min-height: 480px;
-  }
-
-  .schedule-card-header {
-    margin-bottom: var(--size-10);
-  }
-
-  .schedule-card-header svg {
-    width: 48px;
-    height: 48px;
-  }
-
-  .schedule-card-title {
-    font-size: 2rem;
-  }
-
-  .schedule-group-title {
-    font-size: 1.5rem;
-    margin-bottom: var(--size-6);
-  }
-
-  .schedule-list li {
-    font-size: 1.25rem;
-    padding: var(--size-4) 0;
-  }
-
-  .schedule-days {
-    font-size: 1.125rem;
-  }
-
-  .schedule-time {
-    font-size: 1.125rem;
-  }
-}
-
-/* Tablet and iPad Adjustments */
-@media (min-width: 768px) and (max-width: 1023px) {
-  .schedule-container {
-    padding: var(--size-8) var(--size-6);
-  }
-
-  .schedule-grid {
-    grid-template-columns: 1fr;
-    gap: var(--size-10);
-    padding: var(--size-4) 0;
-  }
-
-  .schedule-card {
-    min-height: auto;
-  }
-
-  .schedule-card-header {
-    padding: var(--size-8);
-  }
-
-  .schedule-card-header svg {
-    width: 40px;
-    height: 40px;
-  }
-
-  .schedule-card-title {
-    font-size: 1.75rem;
-  }
-
-  .schedule-card-content {
-    padding: var(--size-6);
-  }
-
-  .schedule-group {
-    margin-bottom: var(--size-6);
-    padding-bottom: var(--size-4);
-  }
-
-  .schedule-group-title {
-    font-size: 1.5rem;
-  }
-
-  .schedule-subgroup-title {
-    font-size: 1.25rem;
-  }
-
-  .schedule-list li {
-    font-size: 1.125rem;
-    padding: var(--size-3) 0;
-  }
-
-  .schedule-info {
-    margin-top: var(--size-12);
-    gap: var(--size-6);
-  }
-
-  .schedule-info-card {
-    padding: var(--size-6);
-  }
-
-  .schedule-info-card p {
-    font-size: 1rem;
-  }
-}
-
-/* iPad Air and Mini Specific */
-@media (min-width: 768px) and (max-width: 1023px) and (min-height: 1024px) {
-  .schedule-container {
-    padding: var(--size-8);
-  }
-
-  .schedule-card {
-    min-height: auto;
-    padding: var(--size-8);
-  }
-
-  .schedule-group {
-    margin-bottom: var(--size-8);
-    padding-bottom: var(--size-6);
-  }
-}
 
 /* Cards */
 .schedule-card {
@@ -361,65 +162,13 @@
   font-weight: var(--font-medium);
 }
 
-/* Media Queries */
-@media (min-width: 768px) {
-  .schedule-card-header {
-    justify-content: flex-start;
-  }
-
-  .schedule-card-title {
-    text-align: left;
-  }
-
-  .schedule-card-content {
-    text-align: left;
-  }
-
-  .schedule-group {
-    text-align: left;
-  }
-
-  .schedule-group-title {
-    text-align: left;
-  }
-
-  .schedule-list {
-    align-items: flex-start;
-  }
-
-  .schedule-list li {
-    align-items: flex-start;
-    max-width: none;
-  }
-
-  .schedule-days {
-    text-align: left;
-  }
-
-  .schedule-time {
-    text-align: left;
-  }
-}
-
-/* Additional Info */
-.schedule-info {
-  display: grid;
-  gap: var(--size-4);
-  margin-top: var(--size-8);
-}
-
-@media (min-width: 768px) {
-  .schedule-info {
-    grid-template-columns: repeat(2, 1fr);
-  }
-}
-
 .schedule-info-card {
   background: var(--color-surface-alt);
   padding: var(--size-4);
   border-radius: var(--rounded-lg);
   display: flex;
-  align-items: flex-start;
+  align-items: center;
+  text-align: center;
   gap: var(--size-3);
   border: 1px solid var(--color-border);
 }
@@ -473,4 +222,257 @@
   background: var(--color-surface);
   transform: translateY(-2px);
   box-shadow: var(--shadow-sm);
+}
+/* Additional Info */
+.schedule-info {
+  display: grid;
+  gap: var(--size-4);
+  margin-top: var(--size-8);
+}
+
+@media (min-width: 768px) {
+  .schedule-grid {
+    grid-template-columns: 1fr;
+    gap: var(--size-10);
+    padding: var(--size-4) 0;
+  }
+
+  .schedule-info {
+    grid-template-columns: repeat(2, 1fr);
+  }
+
+  .schedule-info-card{
+    min-height: 150px;
+  }
+
+  .schedule-card-title {
+    text-align: left;
+  }
+
+  .schedule-card-content {
+    text-align: left;
+  }
+
+  .schedule-group {
+    text-align: left;
+  }
+
+  .schedule-group-title {
+    text-align: left;
+  }
+
+  .schedule-list {
+    align-items: flex-start;
+  }
+
+  .schedule-list li {
+    align-items: flex-start;
+    max-width: none;
+  }
+
+  .schedule-days {
+    text-align: left;
+  }
+
+  .schedule-time {
+    text-align: left;
+  }
+}
+
+@media (min-width: 1024px) {
+  .schedule-container {
+    width: 100%;
+    max-width: 1200px;
+    padding: var(--size-16) var(--size-8);
+  }
+
+  .schedule-grid {
+    max-width: 900px;
+  }
+
+  .schedule-card {
+    padding: var(--size-10);
+  }
+
+  .schedule-card-header {
+    margin-bottom: var(--size-8);
+  }
+
+  .schedule-card-header svg {
+    width: 40px;
+    height: 40px;
+  }
+
+  .schedule-card-title {
+    font-size: 1.75rem;
+  }
+
+  .schedule-group-title {
+    font-size: 1.5rem;
+  }
+
+  .schedule-subgroup-title {
+    font-size: 1.25rem;
+  }
+
+  .schedule-list li {
+    font-size: 1.125rem;
+    padding: var(--size-3) 0;
+  }
+  .schedule-info-card{
+    height: 250px;
+  }
+  .schedule-info-card p{
+    font-size: 1.4rem;
+  }
+}
+
+/* Ultra Wide Screens */
+@media (min-width: 1536px) {
+  .schedule-container {
+    max-width: 1600px;
+    padding: var(--size-24) var(--size-16);
+  }
+
+  .schedule-header {
+    margin-bottom: var(--size-16);
+  }
+
+  .schedule-title {
+    font-size: clamp(2.5rem, 4vw, 3.5rem);
+    margin-bottom: var(--size-6);
+  }
+
+  .schedule-subtitle {
+    font-size: clamp(1.25rem, 2vw, 1.75rem);
+    max-width: 800px;
+  }
+
+  .schedule-grid {
+    max-width: 1200px;
+    gap: var(--size-24);
+    margin: var(--size-12) auto var(--size-24);
+  }
+
+  .schedule-card {
+    padding: var(--size-12);
+    min-height: 480px;
+  }
+
+  .schedule-card-header {
+    margin-bottom: var(--size-10);
+  }
+
+  .schedule-card-header svg {
+    width: 48px;
+    height: 48px;
+  }
+
+  .schedule-card-title {
+    font-size: 2rem;
+  }
+
+  .schedule-group-title {
+    font-size: 1.5rem;
+    margin-bottom: var(--size-6);
+  }
+
+  .schedule-list li {
+    font-size: 1.25rem;
+    padding: var(--size-4) 0;
+  }
+
+  .schedule-days {
+    font-size: 1.125rem;
+  }
+
+  .schedule-time {
+    font-size: 1.125rem;
+  }
+
+  .schedule-info-card p{
+    font-size: 1.8rem;
+  }
+}
+
+/* Tablet and iPad Adjustments */
+@media (min-width: 768px) and (max-width: 1023px) {
+  .schedule-container {
+    padding: var(--size-8) var(--size-6);
+  }
+
+  .schedule-grid {
+    grid-template-columns: 1fr;
+    gap: var(--size-10);
+    padding: var(--size-4) 0;
+  }
+
+  .schedule-card {
+    min-height: auto;
+  }
+
+  .schedule-card-header {
+    padding: var(--size-8);
+  }
+
+  .schedule-card-header svg {
+    width: 40px;
+    height: 40px;
+  }
+
+  .schedule-card-title {
+    font-size: 1.75rem;
+  }
+
+  .schedule-card-content {
+    padding: var(--size-6);
+  }
+
+  .schedule-group {
+    margin-bottom: var(--size-6);
+    padding-bottom: var(--size-4);
+  }
+
+  .schedule-group-title {
+    font-size: 1.5rem;
+  }
+
+  .schedule-subgroup-title {
+    font-size: 1.25rem;
+  }
+
+  .schedule-list li {
+    font-size: 1.125rem;
+    padding: var(--size-3) 0;
+  }
+
+  .schedule-info {
+    margin-top: var(--size-12);
+    gap: var(--size-6);
+  }
+
+  .schedule-info-card {
+    padding: var(--size-6);
+  }
+
+  .schedule-info-card p {
+    font-size: 1.2rem;
+  }
+}
+
+/* iPad Air and Mini Specific */
+@media (min-width: 768px) and (max-width: 1023px) and (min-height: 1024px) {
+  .schedule-container {
+    padding: var(--size-8);
+  }
+
+  .schedule-card {
+    min-height: auto;
+    padding: var(--size-8);
+  }
+
+  .schedule-group {
+    margin-bottom: var(--size-8);
+    padding-bottom: var(--size-6);
+  }
 }
