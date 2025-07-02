@@ -291,11 +291,11 @@
   }
 
   .schedule-title{
-    font-size: 3rem;
+    font-size: 2.2rem;
   }
 
   .schedule-subtitle{
-    font-size: 2.3rem;
+    font-size: 1.5rem;
   }
   .schedule-card {
     padding: var(--size-10);
