@@ -5,7 +5,7 @@ Rails.application.routes.draw do
 
   get "/acerca-de-nosotros", to: "pages#about"
 
-  #Programs routes
+  # Programs routes
   get "programas/kids", to: "pages#kids", as: :kids_program
   get "programas", to: "pages#programs", as: :programs
 
