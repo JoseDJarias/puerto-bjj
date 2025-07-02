@@ -1,6 +1,5 @@
 .free-trial-cta {
-    background: var(--color-primary-kids);
-    color: white;
+    background: var(--color-primary-light);
     text-align: center;
     padding: 4rem 1rem;
   }
