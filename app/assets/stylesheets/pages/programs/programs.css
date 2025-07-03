@@ -4,6 +4,7 @@
 */
 
 .programs-page-container {
+  background-color: var(--color-primary-light);
   width: 100%;
 }
 
