@@ -61,8 +61,6 @@ Rails.application.configure do
   # Set this to true and configure the email server for immediate delivery to raise delivery errors.
   # config.action_mailer.raise_delivery_errors = false
 
-  config.action_controller.default_url_options = { host: "https://www.puertojiujitsu.com" }
-
   # Set host to be used by links generated in mailer templates.
   config.action_mailer.default_url_options = { host: "https://www.puertojiujitsu.com" }
 
@@ -92,5 +90,5 @@ Rails.application.configure do
   ]
   #
   # Skip DNS rebinding protection for the default health check endpoint.
-  # config.host_authorization = { exclude: ->(request) { request.path == "/up" } }
+  config.host_authorization = { exclude: ->(request) { request.path == "/up" } }
 end
