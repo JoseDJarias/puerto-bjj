@@ -41,7 +41,7 @@
       height: 180px;
     }
     .header-logo-image {
-      height: 150px; /* Aumentamos la altura del logo */
+      height: 120px; /* Aumentamos la altura del logo */
       width: auto; /* El ancho se ajusta automáticamente */
     }
     .ham-menu svg{
