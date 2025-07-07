@@ -11,25 +11,24 @@
 .hero-title-container {
     display: flex;
     flex-direction: column;
-    justify-content: center;
     align-items: center;
     text-align: center;
-    padding: 4rem 1.5rem;
+    padding: 3rem 1.5rem;
     color: var(--color-text-reversed);
-    height: 90vh;
+    height: 88vh;
 }
 
 .hero-title {
-    font-size: clamp(2.5rem, 8vw, 3.5rem);
+    font-size: clamp(2.8rem, 5vw + 1rem, 4rem);
     font-weight: var(--font-black);
     color: inherit;
-    line-height: 1.1;
+    line-height: 1.2;
     margin: 0;
-    margin-bottom: 2rem;
+    margin-bottom: 1rem;
 }
 
 .hero-title-academy{
-  font-size: clamp(2rem, 8vw, 2rem);
+  font-size: clamp(2rem, 2.5vw + 0.5rem, 3rem);
   font-weight: var(--font-black);
   color: inherit;
   line-height: 1.1;
@@ -38,28 +37,55 @@
 }
 
 .hero-subtitle {
-    font-size: clamp(1.5rem, 4vw, 1.25rem);
+    font-size: clamp(1.8rem, 2.5vw + 0.75rem, 2.5rem);
     font-weight: var(--font-regular);
     color: inherit;
     max-width: 45ch;
     margin: 0;
-    margin-bottom: 1.5rem;
+    margin-bottom: 3rem;
     opacity: 0.85;
 }
 
 .hero-description {
-    font-size: clamp(1.3rem, 3vw, 1rem);
+    font-size: clamp(1.6rem, 2vw + 0.5rem, 1.5rem);
     color: inherit;
     max-width: 50ch;
     margin: 0;
-    margin-bottom: 2rem;
     opacity: 0.7;
+}
+
+.hero-location{
+  font-size: clamp(1.6rem, 2vw + 0.5rem, 1.5rem);
+    color: inherit;
+    max-width: 50ch;
+    opacity: 0.7;
+    margin-top: 1rem;
+}
+
+.hero-icons {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 1.5rem;
+  margin-top: 1rem;
+  margin-bottom: 3rem;
+}
+
+.hero-icons a {
+  color: var(--color-text-reversed);
+  transition: transform 0.2s ease-in-out;
+}
+
+.hero-icons a:hover {
+  transform: scale(1.15); /* A nice little bounce effect */
 }
 
 .hero-button {
     padding: 0.8rem 2rem;
-    font-size: 1rem;
+    font-size: clamp(1.3rem, 2vw + 0.5rem, 1.5rem);
     border: 2px solid var(--color-text-reversed);
+    /* Elegant shadow for mobile devices */
+    box-shadow: 0 15px 6px -1px rgba(0, 0, 0, 0.1), 0 2px 4px -2px rgba(0, 0, 0, 0.1);
 }
 
 /* Small mobile devices */
@@ -67,26 +93,24 @@
   .hero-title-container {
     padding: 3rem 1rem;
     height: auto;
-    min-height: 85vh;
   }
   .hero-title {
-    font-size: clamp(2rem, 8vw, 2.5rem);
+    font-size: clamp(2.4rem, 5vw + 1rem, 4rem);
     margin-bottom: 1.5rem;
   }
   .hero-title-academy {
-    font-size: clamp(1.5rem, 6vw, 1.8rem);
     margin-bottom: 1.5rem;
   }
   .hero-subtitle {
-    font-size: clamp(1.1rem, 4vw, 1.2rem);
+    /* Font size handled by clamp in base class */
   }
   .hero-description {
-    font-size: clamp(0.9rem, 3vw, 1rem);
     margin-bottom: 2rem;
   }
   .hero-button {
     padding: 0.7rem 1.5rem;
-    font-size: 0.9rem;
+    font-size: clamp(1.6rem, 2vw + 0.5rem, 1.5rem);
+    /* The shadow from the base class applies here */
   }
 }
 
@@ -130,6 +154,71 @@
     object-fit:contain; /* This makes the image cover the container without distortion */
   }
 
+
+/* Social Media Section */
+.contact-social {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  width: 100%;
+  height: auto;
+  padding: var(--size-8) var(--size-4);
+  text-align: center;
+  border-top: 1px dashed var(--color-border);
+  border-bottom: 1px dashed var(--color-border);
+}
+
+.contact-social-title {
+  font-size: 1.25rem;
+  font-weight: var(--font-semibold);
+  color: var(--color-text);
+  margin-bottom: var(--size-2);
+}
+
+.contact-social-subtitle {
+  color: var(--color-text-subtle);
+  font-size: 0.875rem;
+  margin-bottom: var(--size-4);
+}
+
+.social-links {
+  display: flex;
+  justify-content: center;
+  gap: var(--size-4);
+  flex-wrap: wrap;
+}
+
+.social-link {
+  display: inline-flex;
+  align-items: center;
+  gap: var(--size-2);
+  padding: var(--size-2) var(--size-4);
+  background: var(--color-surface);
+  border: 1px solid var(--color-border);
+  border-radius: var(--rounded-full);
+  color: var(--color-text);
+  text-decoration: none;
+  font-weight: var(--font-medium);
+  transition: all 0.3s ease;
+}
+
+.social-link:hover {
+  background: rgb(145, 223, 249);
+  color: black;
+  transform: translateY(-2px);
+  box-shadow: var(--shadow-sm);
+}
+
+.social-link svg {
+  transition: transform 0.3s ease;
+}
+
+.social-link:hover svg {
+  transform: scale(1.1);
+}
+/* End of Social Media Section */
+
 /*
   Medias querys for explore.css
 */
@@ -146,23 +235,35 @@
   }
 
   .hero-title{
-    font-size: 3.5rem;
+    /* Font size handled by clamp in base class */
+    margin-bottom: 1.5rem;
+    font-size: clamp(4rem, 5vw + 1rem, 4rem);
+
   }
 
   .hero-title-academy{
-    font-size: 3rem;
+    /* Font size handled by clamp in base class */
+    margin-bottom: 5rem;
+    font-size: clamp(3rem, 2.5vw + 0.5rem, 3rem);
   }
 
   .hero-subtitle{
-    font-size: 2.4rem;
+    /* Font size handled by clamp in base class */
+    margin-bottom: 2.6rem;
+    font-size: clamp(2.4rem, 2.5vw + 0.75rem, 2.5rem);
   }
 
   .hero-description{
-    font-size: 2rem;
+    /* Font size handled by clamp in base class */
+    font-size: clamp(1.8rem, 2vw + 0.5rem, 1.5rem);
   }
 
+  .hero-location{
+    margin-top: 4.5rem;
+  }
   .hero-button {
     font-size: 1.5rem;
+    box-shadow: none; /* Remove shadow on larger screens */
   }
 
   .carousel-container {
@@ -218,28 +319,32 @@
       display: flex; /* (o "grid") para que los hijos se distribuyan a la par */
       flex-direction: column; /* (o "row-reverse") para que el título esté a la izquierda y el carousel a la derecha */
       align-items: center; /* (opcional) centra verticalmente */
+      height: 1500px;
     }
   
     /* Caja del título (por ejemplo, "hero-title-container") */
     .hero-title-container {
-      height: 90vh;
+      height: 900px;
     }
+
+    .hero-title{
+      font-size: clamp(4rem, 5vw + 1rem, 4rem);
+    }
+
 
     .carousel-container{
       overflow: hidden;
       margin: 0 auto;
-      max-height: 1000px;
+      height: 700px;
+      width: 1200px;
     }
 
-    .carousel-track{
-      height: 1000px;
-    }
     .carousel-slide{
-      padding: 4rem;
       height: 100%;
     }
+
     .carousel-image {
-      height: 100%;
+      height: 70%;
       object-fit: contain;
     }
 
@@ -266,24 +371,20 @@
   .explore-section-1 {
   }
 
-  .carousel-track {
-    height: 1000px;
-  }
-
   .hero-title{
-    font-size: 3rem;
+    /* Font size handled by clamp in base class */
   }
 
   .hero-title-academy{
-    font-size: 2.3rem;
+    /* Font size handled by clamp in base class */
   }
 
   .hero-subtitle{
-    font-size: 1.8rem;
+    /* Font size handled by clamp in base class */
   }
 
   .hero-description{
-    font-size: 1.4rem;
+    /* Font size handled by clamp in base class */
   }
 
   .hero-button {
@@ -293,14 +394,6 @@
 
 /* iPad Pro Specific */
 @media (min-width: 1024px) and (min-height: 1300px) and (max-width: 1366px) {
-  .carousel-container {
-    max-height: 1100px;
-  }
-
-  .carousel-track {
-    height: 1000px;
-  }
-
   .hero-title-container{
     height: 40vh;
   }
@@ -317,30 +410,20 @@
    padding: var(--size-24);
   }
 
-  .hero-title {
-    font-size: 4rem;
-    line-height: 1.4;
-  }  
-
-  .carousel-track {
-    height: 900px;
-  }
-
-
   .hero-title{
-    font-size: 3.1rem;
+    /* Font size handled by clamp in base class */
   }
 
   .hero-title-academy{
-    font-size: 2.3rem;
+    /* Font size handled by clamp in base class */
   }
 
   .hero-subtitle{
-    font-size: 1.8rem;
+    /* Font size handled by clamp in base class */
   }
 
   .hero-description{
-    font-size: 1.4rem;
+    /* Font size handled by clamp in base class */
   }
 
   .hero-button {
@@ -355,14 +438,12 @@
   }
 
   .hero-title {
-    font-size: 5rem;
     line-height: 1.8;
   } 
   .carousel-track{
     height: 1000px;
   }
   .carousel-slide{
-    padding: 4rem;
     height: 100%;
   }
   .carousel-image {
@@ -370,12 +451,6 @@
     object-fit: contain;
   }
 
-  .carousel-container{
-    max-height: fit-content;
-  }
-  .carousel-track {
-    height: 1500px;
-  }
   .smoothcomp-container {
     width: 80rem;
   }
@@ -406,16 +481,15 @@
     padding: 3rem 1.5rem;
   }
   .hero-title {
-    font-size: 2.5rem;
+    /* Font size handled by clamp in base class */
   }
   .hero-title-academy {
-    font-size: 2rem;
+    /* Font size handled by clamp in base class */
   }
   .hero-subtitle {
-    font-size: 1.5rem;
+    /* Font size handled by clamp in base class */
   }
   .hero-description {
-    font-size: 1.1rem;
     margin-bottom: 2rem;
   }
   .hero-button {

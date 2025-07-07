@@ -1,6 +1,5 @@
 .styled-header {
-    padding-top: 1rem;
-    padding-bottom: 1rem;
+    height: 200px;
     border-bottom: 1px solid white; /* Borde inferior blanco */
     box-shadow: 0px 4px 10px rgba(255, 255, 255, 0.5); /* Resalta sin que parezca un rectángulo */
     z-index: 1000; /* Asegura que siempre esté encima */
@@ -13,12 +12,8 @@
   box-shadow: 0px 6px 12px rgba(255, 255, 255, 0.7);
 }
 
-.btn-home{
-  font-size: large;
-}
-
 .header-logo-image {
-  height: 80px; /* Aumentamos la altura del logo */
+  height: 140px; /* Aumentamos la altura del logo */
   width: auto; /* El ancho se ajusta automáticamente */
 }
   
@@ -40,19 +35,32 @@
 .mobile-menu-overlay {
   z-index: 2000;
 }
+
+  @media (max-width: 425px){
+    .styled-header{
+      height: 180px;
+    }
+    .header-logo-image {
+      height: 150px; /* Aumentamos la altura del logo */
+      width: auto; /* El ancho se ajusta automáticamente */
+    }
+    .ham-menu svg{
+      width: 40px;
+      height: 40px;
+    }
+
+  }
   
   /* Medium Screens (≥768px) */
   @media (min-width: 768px) {
-    .btn-home {
-      font-size: x-large;
+    .center-navigation a, .mobile-menu-overlay-nav a{
+      font-size: 1.4rem;
     }
+
   }
 
   /* Large Screens (≥1024px) */
   @media (min-width: 1024px) {
-    .btn-home {
-      font-size: x-large;
-    }
     .menu-icon {
       margin: 0 2rem 0 30rem;
     }
@@ -67,10 +75,12 @@
     }
   }
 
-  /*
+/* 
+*********************************************
  * Components: Header Dropdown
  * Styles for the main navigation dropdown menus.
-*/
+ *********************************************
+*/ 
 .header-dropdown {
   position: relative;
 }

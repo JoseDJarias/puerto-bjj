@@ -29,15 +29,15 @@
   text-align: center;
 }
 
-.hero-content .hero-title {
-  font-size: 3rem;
+.hero-content .hero-title-kids {
+  font-size: 2rem;
   font-weight: 900;
   line-height: 1.2;
   margin-bottom: 1rem;
 }
 
-.hero-content .hero-subtitle {
-  font-size: 1.2rem;
+.hero-content .hero-subtitle-kids {
+  font-size: 1.4rem;
   color: #555;
   margin-bottom: 2rem;
   max-width: 600px;
@@ -161,85 +161,25 @@
   height: 450px;
 }
 
-.schedule-card-title {
-  font-size: 1.75rem;
-  font-weight: bold;
-  border-bottom: 2px solid var(--color-primary-light);
-  padding-bottom: 0.5rem;
-  margin-bottom: 1rem;
-}
-
-.schedule-list {
+.schedule-list-kids {
   list-style: none;
   padding: 1rem;
+  display: flex;
+  flex-direction: column;
 }
 
-.schedule-list li {
+.schedule-list-kids li {
   display: flex;
   align-items: center;
-  font-size: 1.1rem;
   margin-bottom: 0.5rem;
 }
 
 .schedule-icon {
   color: var(--color-primary-light);
-  margin-right: 0.5rem;
+  margin-right: 1rem;
+  width: 30px;
+  height: 30px;
 }
-
-
-/* Responsive adjustments */
-@media (min-width: 768px) {
-  .kids-hero {
-    grid-template-columns: 1fr; /* Force single column */
-    padding: 4rem 2rem;
-    text-align: center;
-  }
-
-  .hero-content {
-    order: 1; /* Text comes first */
-    margin-bottom: 3rem; /* Space between text and image */
-  }
-
-  .hero-content .hero-title {
-    font-size: 4rem;
-  }
-
-  .hero-content .hero-subtitle {
-    font-size: 1.5rem;
-  }
-  
-  .hero-image {
-    order: 2; /* Image comes second */
-    width: 100%;
-    max-width: 1000px; /* Limit image width for very large screens */
-    margin: 0 auto; /* Center the image container */
-  }
-
-  .hero-image img {
-    width: 100%;
-    max-height: 800px; /* Give it a substantial but not excessive height */
-    object-fit: contain;
-    border-radius: var(--rounded-xl); /* Even more rounded corners */
-  }
-
-  .kids-instructor {
-    grid-template-columns: 1fr 2fr;
-    gap: 4rem;
-    text-align: left;
-  }
-  
-  .instructor-image img {
-    margin: 0;
-  }
-  
-  .instructor-info {
-    text-align: left;
-  }
-  
-  .instructor-name {
-    margin-top: 0;
-  }
-} 
 
 .schedule-age-groups {
   display: flex;
@@ -277,3 +217,98 @@
   margin-top: -0.5rem;
   margin-bottom: 1rem;
 } 
+
+
+/* Responsive adjustments */
+@media (min-width: 768px) {
+  .kids-hero {
+    grid-template-columns: 1fr; /* Force single column */
+    padding: 4rem 2rem;
+    text-align: center;
+  }
+
+  .hero-content {
+    order: 1; /* Text comes first */
+  }
+
+  .hero-content .hero-title-kids {
+    font-size: 3rem;
+    margin-bottom: 2rem;
+  }
+
+  .hero-content .hero-subtitle-kids {
+    font-size: 2rem;
+  }
+  
+  .hero-image {
+    order: 2; /* Image comes second */
+    width: 100%;
+    max-width: 1000px; /* Limit image width for very large screens */
+    margin: 0 auto; /* Center the image container */
+  }
+
+  .hero-image img {
+    width: 100%;
+    max-height: 800px; /* Give it a substantial but not excessive height */
+    object-fit: contain;
+    border-radius: var(--rounded-xl); /* Even more rounded corners */
+  }
+
+  .group-ages {
+    font-size: 2rem;
+    color: var(--color-text-muted);
+  }
+  
+  .schedule-common-note {
+    font-size: 2rem; 
+  }
+  .schedule-list-kids{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+  }
+
+  .schedule-list-kids li{
+    font-size: 2rem; 
+  }
+
+  .benefit-title{
+    font-size: 2rem;
+  }
+  .benefit-text, .instructor-bio{
+    font-size: 1.5rem;
+  }
+
+  .kids-instructor {
+    grid-template-columns: 1fr 2fr;
+    gap: 4rem;
+    text-align: left;
+  }
+  
+  .instructor-image img {
+    margin: 0;
+  }
+  
+  .instructor-info {
+    text-align: left;
+  }
+  
+  .instructor-name {
+    margin-top: 0;
+  }
+} 
+
+@media (min-width: 1024px) {
+  .hero-content .hero-title-kids {
+    font-size: 3.5rem;
+    margin-bottom: 2rem;
+  }
+
+  .hero-content .hero-subtitle-kids {
+    font-size: 2.5rem;
+  }
+
+  .kids-instructor{
+    gap: 0;
+  }
+}

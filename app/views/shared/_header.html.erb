@@ -1,5 +1,5 @@
 <header>
-  <div class="styled-header flex justify-between items-center p-6">
+  <div class="styled-header flex justify-between items-center">
     <!-- Left Side: Logo (and a spacer to balance the social icons) -->
     <div class="header-left flex items-center justify-start mi-6" style="flex: 1;">
       <%= link_to root_path, class: "header-logo" do %>
@@ -8,7 +8,7 @@
     </div>
 
     <!-- Center Navigation (Only for large screens) -->
-    <div class="show@md flex-grow text-center text-xl flex justify-center items-center gap-4">
+    <div class="show@md flex-grow text-center text-xl flex justify-center items-center gap-4 center-navigation">
       <%= link_to "Home", root_path, class: "rounded p-4" %>
 
       <!-- Programs Dropdown -->
@@ -30,14 +30,14 @@
     </div>
 
     <!-- Right Side: Social Icons & Hamburger Menu -->
-    <div class="header-right flex items-center justify-end" style="flex: 1;">
+    <div class="header-right flex items-center justify-end mi-8" style="flex: 1;">
       <!-- Hamburger menu for mobile and tablet -->
       <div class="hide@lg cursor-grab ham-menu"
            data-controller="mobile-menu"
            data-action="click->mobile-menu#toggle"
            data-mobile-menu-target="trigger"
            data-menu-id="mobile-menu">
-        <%= lucide_icon('align-justify', width: 35, height: 35) %>
+        <%= lucide_icon('align-justify', width: 50, height: 50) %>
       </div>
 
         <!-- Social Icons for desktop -->
@@ -60,7 +60,7 @@
 
   <!-- Mobile Navbar -->
   <div id="mobile-menu" class="mobile-menu-overlay hidden fixed inset-0 bg-surface p-6">
-    <nav class="flex flex-col text-base gap">
+    <nav class="flex flex-col text-base gap mobile-menu-overlay-nav">
       <%= link_to "Inicio", root_path, class: "hover:underline" %>
       <%= link_to "Todos los Programas", programs_path, class: "hover:underline" %>
       <%= link_to "Programa de Niños", kids_program_path, class: "hover:underline" %>

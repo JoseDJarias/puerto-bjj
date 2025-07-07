@@ -6,9 +6,21 @@
         <p class="hero-subtitle">Jiu-Jitsu, Boxeo, MMA y más.</p>
         <p class="hero-description">
           ¡Tu batalla diaria, para forjar un gran destino!
+
         </p>
         <p class="hero-description">
           Disciplina, carácter y confianza en un ambiente de respeto y valores.
+        </p>
+        <p class="hero-location">
+          El Roble, Puntarenas, Costa Rica
+        </p>
+        <p class="hero-icons">
+          <%= link_to "https://www.google.com/maps/place/Gimnasio+In+Line/@9.9831961,-84.7348988,17z/data=!3m1!4b1!4m6!3m5!1s0x8fa031a7c3d77b43:0x934fb6fd5800c8dc!8m2!3d9.9831908!4d-84.7323239!16s%2Fg%2F11g6nbwflh?entry=ttu", target: "_blank", rel: "noopener noreferrer", aria_label: "Google Maps" do %>
+            <%= lucide_icon "map-pin", size: 40 %>
+          <% end %>
+          <%= link_to "https://ul.waze.com/ul?venue_id=180420708.1804010470.13727243&overview=yes&utm_campaign=default&utm_source=waze_website&utm_medium=lm_share_location", target: "_blank", rel: "noopener noreferrer", aria_label: "Waze" do %>
+            <%= lucide_icon "navigation", size: 40 %>
+          <% end %>
         </p>
         <%= link_to "¡Conócenos mejor!", acerca_de_nosotros_path, class: "btn btn--primary hero-button" %>
       </div>
@@ -215,11 +227,9 @@
         <!-- Additional Info -->
         <div class="schedule-info">
           <div class="schedule-info-card">
-            <%= lucide_icon "info", class: "w-6 h-6" %>
             <p class="schedule-info-card-text">Las clases tienen una duración de 60-90 minutos. Llega 15 minutos antes para calentar.</p>
           </div>
           <div class="schedule-info-card">
-            <%= lucide_icon "calendar", class: "w-6 h-6" %>
             <p class="schedule-info-card-text">Consulta nuestro calendario para clases especiales y eventos.</p>
           </div>
         </div>

@@ -28,7 +28,7 @@
   }
   
   .smoothcomp-subtitle {
-    font-size: clamp(1rem, 3vw, 1.25rem);
+    font-size: clamp(1.8rem, 3vw, 1.25rem);
     color: var(--color-text-subtle);
     max-width: 600px;
     margin: 0 auto;
