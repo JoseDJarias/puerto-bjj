@@ -145,6 +145,10 @@
     inline-size: 24rem;
     max-inline-size: 100%;
   }
+
+  .feedback-info-title {
+    font-size: 2.5rem;
+  }
 }
 
 
