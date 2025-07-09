@@ -66,12 +66,20 @@
     }
     .styled-header {
       position: relative; /* Needed for absolute positioning of children */
+      height: 150px;
     }
   
     .center-box {
       position: absolute;
       left: 50%;
       transform: translateX(-50%);
+    }
+  }
+
+  @media (min-width: 1600px) {
+    .styled-header {
+      position: relative; /* Needed for absolute positioning of children */
+      height: 200px;
     }
   }
 
