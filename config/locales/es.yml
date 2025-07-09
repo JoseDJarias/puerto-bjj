@@ -14,3 +14,4 @@ es:
   time:
     formats:
       short: "%d de %b, %H:%M"  
+      long: "%d de %B de %Y, %H:%M"
