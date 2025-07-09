@@ -24,8 +24,9 @@
     <%# Enable PWA manifest for installable apps (make sure to enable in config/routes.rb too!) %>
     <%#= tag.link rel: "manifest", href: pwa_manifest_path(format: :json) %>
 
-    <link rel="icon" href="<%= asset_path('home/logo.png') %>" type="image/png">
-    <link rel="apple-touch-icon" href="<%= asset_path('home/logo.png') %>">
+    <link rel="icon" type="image/png" href="<%= image_path('home/logo.png') %>">
+    <link rel="apple-touch-icon" href="<%= image_path('home/logo.png') %>">
+
     <%#= tag.meta name: "theme-color", content: pwa.theme_color %>
     <%#= tag.meta name: "background-color", content: pwa.background_color %>
 
