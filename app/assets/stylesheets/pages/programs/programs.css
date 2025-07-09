@@ -118,4 +118,13 @@
     .programs-grid-section {
         padding: 5rem 2rem;
     }
+    .programs-subtitle{
+      font-size: clamp(1.6rem, 1rem, 2.5rem);
+    }
+} 
+
+@media (min-width: 1024px) {
+  .programs-subtitle{
+    font-size: clamp(1.8rem, 1rem, 2.5rem);
+  }
 } 
