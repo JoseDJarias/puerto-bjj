@@ -11,3 +11,6 @@ es:
     telephone: "+50672026863" # ¡Usa tu teléfono real!
     opening_hours: "Mo,Tu,We,Th,Fr 10:00-20:30" # Formato: Días y horas
     price_range: "$"
+  time:
+    formats:
+      short: "%d de %b, %H:%M"  
