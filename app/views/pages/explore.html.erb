@@ -1,3 +1,7 @@
+<% content_for :structured_data do %>
+  <%= render 'shared/structured_data' %>
+<% end %>
+
 <div class="explore-container" >
     <div class="explore-section-1">
       <div class="hero-title-container">
@@ -27,13 +31,13 @@
       <div data-controller="carousel" class="carousel-container">
         <div data-carousel-target="slides" class="carousel-track">
           <div class="carousel-slide">
-            <%= image_tag 'home/test.jpeg', class: 'carousel-image' %>
+            <%= image_tag 'home/jiujitsu-gi.jpeg', class: 'carousel-image' %>
           </div>
           <div class="carousel-slide">
-            <%= image_tag 'home/test2.jpeg', class: 'carousel-image' %>
+            <%= image_tag 'home/jiujitsu-nogi.jpeg', class: 'carousel-image' %>
           </div>
           <div class="carousel-slide">
-            <%= image_tag 'home/test3.jpeg', class: 'carousel-image' %>
+            <%= image_tag 'home/brazilian-jiujitsu.jpeg', class: 'carousel-image' %>
           </div>
         </div>
         <!-- Botones de navegación por el momento los vamos a skipear

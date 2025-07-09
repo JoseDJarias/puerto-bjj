@@ -29,6 +29,8 @@
     <%#= tag.meta name: "theme-color", content: pwa.theme_color %>
     <%#= tag.meta name: "background-color", content: pwa.background_color %>
 
+    <%= yield :structured_data %>
+
     <%= stylesheet_link_tag "css-zero/reset", "data-turbo-track": "reload" %>
     <%= stylesheet_link_tag "css-zero/variables", "data-turbo-track": "reload" %>
     <%= stylesheet_link_tag :app, "data-turbo-track": "reload" %>

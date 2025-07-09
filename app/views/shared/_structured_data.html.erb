@@ -1,0 +1,42 @@
+<%# app/views/shared/_structured_data.html.erb %>
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "SportsActivityLocation",
+  "name": "<%= t('dojo.name') %>",
+  "description": "<%= t('dojo.description') %>",
+  "url": "<%= root_url %>",
+  "telephone": "<%= t('dojo.telephone') %>",
+  "image": [
+    "<%= image_url('logo.png') %>",
+    "<%= image_url('jiujitsu-gi.jpeg') %>"
+   ],
+  "address": {
+    "@type": "PostalAddress",
+    "streetAddress": "<%= t('dojo.street_address') %>",
+    "addressLocality": "<%= t('dojo.locality') %>",
+    "addressRegion": "<%= t('dojo.region') %>",
+    "postalCode": "<%= t('dojo.postal_code') %>",
+    "addressCountry": "<%= t('dojo.country') %>"
+  },
+  "geo": {
+    "@type": "GeoCoordinates",
+    "latitude": 9.983279609766788,
+    "longitude":-84.73233646793233
+  },
+  "openingHoursSpecification": {
+    "@type": "OpeningHoursSpecification",
+    "dayOfWeek": [
+      "Monday",
+      "Tuesday",
+      "Wednesday",
+      "Thursday",
+      "Friday"
+    ],
+    "opens": "17:00",
+    "closes": "21:00"
+  }
+}
+</script>
+
+, 

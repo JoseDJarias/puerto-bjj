@@ -1,0 +1,12 @@
+# config/locales/es.yml
+es:
+  dojo:
+    name: "Puerto Jiu Jitsu"
+    description: "Academia de Jiu Jitsu Brasileño en El Roble, Puntarenas. Clases para principiantes, avanzados y niños."
+    street_address: "150 metros este de la Foto Salazar" # O la dirección más exacta que tengas
+    locality: "El Roble"
+    region: "Puntarenas"
+    postal_code: "60115"
+    country: "CR"
+    telephone: "+50672026863" # ¡Usa tu teléfono real!
+    opening_hours: "Mo,Tu,We,Th,Fr 10:00-20:30" # Formato: Días y horas
