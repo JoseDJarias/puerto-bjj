@@ -1,11 +1,40 @@
 .styled-header {
-    height: 200px;
+    height: 120px;
     border-bottom: 1px solid white; /* Borde inferior blanco */
     box-shadow: 0px 4px 10px rgba(255, 255, 255, 0.5); /* Resalta sin que parezca un rectángulo */
     z-index: 1000; /* Asegura que siempre esté encima */
     transition: padding 0.3s ease;
   }
   
+/* Fixed Hide/show animation for sticky header - works on all screen sizes */
+.styled-header {
+  position: fixed !important;
+  top: 0;
+  left: 0;
+  right: 0;
+  width: 100vw;
+  max-width: 100vw;
+  z-index: 1000;
+  transition: transform 0.35s cubic-bezier(0.4, 0, 0.2, 1), background 0.3s, height 0.3s;
+  will-change: transform;
+  background-color: var(--color-bg);
+}
+
+.header--hidden {
+  transform: translateY(-100%);
+  pointer-events: none;
+}
+
+/* When visible, reset transform */
+.styled-header:not(.header--hidden) {
+  transform: translateY(0);
+}
+
+/* Add top padding to your main content to prevent it from being hidden under the fixed header */
+#main {
+  padding-top: 150px; /* Adjust to match your header height */
+}
+
 /* Efecto de iluminación sutil al hacer scroll */
 .styled-header.scrolled {
   border-bottom: 3px solid rgba(255, 255, 255, 0.8); /* Se hace más visible al bajar */
@@ -13,7 +42,7 @@
 }
 
 .header-logo-image {
-  height: 140px; /* Aumentamos la altura del logo */
+  height: 80px; /* Aumentamos la altura del logo */
   width: auto; /* El ancho se ajusta automáticamente */
 }
   
@@ -33,20 +62,21 @@
 }
   
 .mobile-menu-overlay {
+  margin-top: 75px;
   z-index: 2000;
 }
 
   @media (max-width: 425px){
     .styled-header{
-      height: 180px;
+      height: 100px;
     }
     .header-logo-image {
-      height: 120px; /* Aumentamos la altura del logo */
+      height: 80px; /* Aumentamos la altura del logo */
       width: auto; /* El ancho se ajusta automáticamente */
     }
     .ham-menu svg{
-      width: 40px;
-      height: 40px;
+      width: 30px;
+      height: 30px;
     }
 
   }
