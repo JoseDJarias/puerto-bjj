@@ -27,8 +27,8 @@
 
   @media (prefers-color-scheme: dark) {
     /* Abstractions */
-    --color-bg: black;
-    --color-text: white;
+    --color-bg: white;
+    --color-text: black;
     --color-text-reversed: black;
     --color-text-subtle: var(--zinc-400);
     --color-link: var(--blue-400);
