@@ -402,6 +402,9 @@
 
 /* Pantallas muy grandes (1920px+) */
 @media (min-width: 1920px) {
+  .explore-section-1 {
+    height: 2000px;
+  }
   .programs-promo-section{
     padding: 4rem 2rem;
   }
@@ -435,10 +438,10 @@
     height: 50vh;
   }
   .contact-social-title{
-    font-size: 4rem;
+    font-size: 3rem;
   }
   .contact-social-subtitle, .social-links a{
-    font-size: 3rem;
+    font-size: 2rem;
   }
 }
 
