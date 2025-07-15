@@ -1,5 +1,7 @@
 <header>
-  <div class="styled-header flex justify-between items-center">
+  <div class="styled-header flex justify-between items-center"
+       data-controller="sticky-hide-header"
+       data-sticky-hide-header-target="header">
     <!-- Left Side: Logo (and a spacer to balance the social icons) -->
     <div class="header-left flex items-center justify-start mi-6" style="flex: 1;">
       <%= link_to root_path, class: "header-logo" do %>
