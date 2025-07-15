@@ -27,8 +27,8 @@
 
   @media (prefers-color-scheme: dark) {
     /* Abstractions */
-    --color-bg: white;
-    --color-text: black;
+    --color-bg: black;
+    --color-text: white;
     --color-text-reversed: black;
     --color-text-subtle: var(--zinc-400);
     --color-link: var(--blue-400);
@@ -116,17 +116,6 @@ body {
 .bg-admin-main{
   background-color: #0e6b9d;
 
-}
-.text-surface {
-  color: var(--color-text);
-}
-
-.text-reversed {
-  color: var(--color-text-reversed);
-}
-
-.text-subtle {
-  color: var(--color-text-subtle);
 }
 
 .cursor-grab{
