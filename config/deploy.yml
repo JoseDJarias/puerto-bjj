@@ -31,8 +31,7 @@ registry:
   username: daniel01ariasjaen
 
   # Always use an access token rather than real password when possible.
-  password:
-    secret: KAMAL_REGISTRY_PASSWORD
+  password: KAMAL_REGISTRY_PASSWORD
 
 # Inject ENV variables into containers (secrets come from .kamal/secrets).
 env:
