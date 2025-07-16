@@ -1,18 +1,4 @@
-/* Mobile y tablet: ancho completo */
-.btn-submit-feedback {
-    inline-size: 100%;
-    margin-block-start: var(--size-6);
-    margin-bottom: 2rem;
-    position: relative;
-    z-index: 10;
-  }
-  
-  .btn-submit-feedback .btn {
-    inline-size: 100%;
-    max-inline-size: 100%;
-    cursor: grab;
-  }
-  
+
 /* Feedback Page Layout */
 .feedback-page {
   max-width: 1200px;
@@ -133,6 +119,21 @@
   margin-bottom: 2rem;
 }
 
+/* Mobile y tablet: ancho completo */
+.btn-submit-feedback {
+  inline-size: 100%;
+  margin-block-start: var(--size-6);
+  margin-bottom: 2rem;
+  position: relative;
+  z-index: 10;
+}
+
+.btn-submit-feedback .btn {
+  inline-size: 100%;
+  max-inline-size: 100%;
+  cursor: grab;
+}
+
 /* Media Queries */
 
 @media (min-width: 64rem) {
@@ -167,5 +168,11 @@
 
   .feedback-form-section {
     padding: 1.5rem;
+  }
+}
+
+@media (min-width: 1600px) {
+  .feedback-page-container{
+    margin-top: 2rem;
   }
 }
