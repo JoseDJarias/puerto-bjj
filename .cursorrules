@@ -1,0 +1,80 @@
+# Puerto BJJ Project Rules
+
+## Technology Stack
+- Rails 8.0.2 with no-build approach (propshaft, importmap)
+- CSS-Zero (Laxaro Nixon) - NOT Tailwind CSS
+- Kamal 2.5.6 for deployment
+- Hetzner hosting (webhosting + server)
+- Stimulus for JavaScript interactions
+- Lucide Rails for icons
+- SQLite (dev) (prod)
+
+## CSS Guidelines
+- Use CSS-Zero variables: --color-bg, --color-text, --color-primary, --color-text-reversed
+- NEVER use Tailwind classes or utilities
+- Follow existing patterns in shared/header.css
+- Fix dark mode CSS variables in base.css (currently broken)
+- Mobile-first responsive design
+- Use CSS custom properties for theming
+
+## JavaScript Guidelines
+- Use Stimulus controllers for all interactivity
+- Follow existing patterns in app/javascript/controllers/
+- Maintain sticky header functionality (works on mobile, issues on desktop)
+- Clean up event listeners in disconnect() methods
+
+## Deployment Guidelines
+- Use Kamal 2.5.6 for deployment orchestration
+- Configure KAMAL_REGISTRY_PASSWORD in .kamal/secrets (currently has circular reference)
+- Use Docker Hub registry (daniel01ariasjaen/puerto-bjj)
+- Follow Hetzner hosting patterns
+- Test deployment with --verbose flag if issues arise
+
+## File Structure Conventions
+- CSS variables: app/assets/stylesheets/css-zero/base.css
+- Header styles: app/assets/stylesheets/shared/header.css
+- Deploy config: config/deploy.yml
+- Secrets: .kamal/secrets
+- Stimulus controllers: app/javascript/controllers/
+- Shared views: app/views/shared/
+
+## Known Issues to Address
+- Dark mode CSS variables incorrectly configured in base.css
+- Deploy requires proper KAMAL_REGISTRY_PASSWORD setup
+- White text appears on white background in some browsers/devices
+- Circular reference in .kamal/secrets file
+
+## Code Quality Standards
+- Use RuboCop for Ruby code formatting
+- Use Brakeman for security analysis
+- Follow Rails conventions for naming and structure
+- Write descriptive commit messages
+- Test on both mobile and desktop before deploying
+
+## Performance Considerations
+- Optimize images for web delivery
+- Use CSS transforms for animations (better performance)
+- Minimize JavaScript bundle size
+- Use passive event listeners where appropriate
+- Implement proper caching strategies
+
+## Security Guidelines
+- Never commit secrets or sensitive data
+- Use environment variables for configuration
+- Validate all user inputs
+- Follow Rails security best practices
+- Keep dependencies updated
+
+## Testing Requirements
+- Test sticky header on mobile and desktop
+- Verify CSS variables work in light and dark modes
+- Test deployment process before production
+- Validate responsive design across devices
+- Check for text contrast issues
+
+## Git Workflow
+- Use feature branches for new development
+- Test in staging environment before production
+- Write descriptive commit messages
+- Keep commits atomic and focused
+- Use pull requests for code review 
