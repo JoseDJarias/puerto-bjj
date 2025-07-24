@@ -1,13 +1,13 @@
-<% require "dotenv"; Dotenv.load(".env.staging") %>
-
 # Staging Configuration - Inherits from deploy.yml with overrides
 servers:
   web:
-    host: <%= ENV['DOMAIN'] %>
+    hosts:
+      - 5.161.77.124
 
 proxy:
   ssl: true
-  host: <%= ENV['DOMAIN'] %>  # Subdominio específico para staging
+  hosts:
+    - staging.puertojiujitsu.com  # Subdominio específico para staging
 
 env:
   secret:
