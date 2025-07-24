@@ -3,13 +3,11 @@
 # Staging Configuration - Inherits from deploy.yml with overrides
 servers:
   web:
-    hosts:
-      - <%= ENV['DOMAIN'] %>
+    host: <%= ENV['DOMAIN'] %>
 
 proxy:
   ssl: true
-    hosts:
-      - <%= ENV['DOMAIN'] %>  # Subdominio específico para staging
+  host: <%= ENV['DOMAIN'] %>  # Subdominio específico para staging
 
 env:
   secret:
