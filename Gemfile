@@ -62,3 +62,7 @@ gem "kaminari-activerecord"
 gem "kaminari-actionview"
 
 gem "sitemap_generator", "~> 6.3.0"
+
+gem "tailwindcss-ruby", "~> 4.1"
+
+gem "tailwindcss-rails", "~> 4.3"
