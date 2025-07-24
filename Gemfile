@@ -27,7 +27,6 @@ gem "thruster", require: false
 
 group :development, :test do
   gem "debug", ">= 1.0.0"
-
   gem "brakeman", require: false
 
   gem "rubocop-rails-omakase", require: false
@@ -55,6 +54,9 @@ gem "css-zero", "~> 1.1"
 gem "image_processing"
 
 gem "lucide-rails"
+
+# Environment variables management
+gem "dotenv-rails", "~> 3.1"
 
 # Pagination
 gem "kaminari-core"

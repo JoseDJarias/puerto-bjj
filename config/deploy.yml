@@ -1,3 +1,5 @@
+<% require "dotenv"; Dotenv.load(".env") %>
+
 # Name of your application. Used to uniquely configure containers.
 service: puerto_bjj
 
@@ -21,8 +23,8 @@ servers:
 proxy:
   ssl: true
   hosts:
-    - puertojiujitsu.com
-    - www.puertojiujitsu.com
+    - <%= ENV['DOMAIN'] %>
+    - www.<%= ENV['DOMAIN'] %>
 
 # Credentials for your image host.
 registry:
