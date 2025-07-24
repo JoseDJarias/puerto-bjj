@@ -8,8 +8,8 @@ servers:
 
 proxy:
   ssl: true
-  hosts:
-    - <%= ENV['DOMAIN'] %>  # Subdominio específico para staging
+    hosts:
+      - <%= ENV['DOMAIN'] %>  # Subdominio específico para staging
 
 env:
   secret:
