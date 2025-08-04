@@ -9,26 +9,10 @@
 
 /* Section 01: Academia de Artes Marciales */
 /* Hero styles moved to HeroSectionComponent */
+/* Carousel styles moved to CarouselComponent */
+/* Programs styles moved to Explore::ProgramsPromoComponent */
+/* Social Links styles moved to Explore::SocialLinksComponent */
 
-/* Carousel Style*/
-.carousel-track {
-    display: flex;
-    transition: transform 0.5s ease-in-out;
-    will-change: transform;
-}
-
-.carousel-slide {
-    flex: 0 0 100%;
-    width: 100%;
-    height: auto;
-}
-
-.carousel-image {
-    width: 100%;
-    height: 100%;
-    object-fit: cover;
-    display: block;
-}
 /* Default state: banner is hidden on desktop */
 .explore-mobile-banner {
   display: none;
@@ -49,81 +33,11 @@
     object-fit:contain; /* This makes the image cover the container without distortion */
   }
 
-
-/* Social Media Section */
-.contact-social {
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: center;
-  width: 100%;
-  height: auto;
-  padding: var(--size-8) var(--size-4);
-  text-align: center;
-  border-top: 1px dashed var(--color-border);
-  border-bottom: 1px dashed var(--color-border);
-}
-
-.contact-social-title {
-  font-size: 1.25rem;
-  font-weight: var(--font-semibold);
-  color: var(--color-text);
-  margin-bottom: var(--size-2);
-}
-
-.contact-social-subtitle {
-  color: var(--color-text-subtle);
-  font-size: 0.875rem;
-  margin-bottom: var(--size-4);
-}
-
-.social-links {
-  display: flex;
-  justify-content: center;
-  gap: var(--size-4);
-  flex-wrap: wrap;
-}
-
-.social-link {
-  display: inline-flex;
-  align-items: center;
-  gap: var(--size-2);
-  padding: var(--size-2) var(--size-4);
-  background: var(--color-surface);
-  border: 1px solid var(--color-border);
-  border-radius: var(--rounded-full);
-  color: var(--color-text);
-  text-decoration: none;
-  font-weight: var(--font-medium);
-  transition: all 0.3s ease;
-}
-
-.social-link:hover {
-  background: rgb(145, 223, 249);
-  color: black;
-  transform: translateY(-2px);
-  box-shadow: var(--shadow-sm);
-}
-
-.social-link svg {
-  transition: transform 0.3s ease;
-}
-
-.social-link:hover svg {
-  transform: scale(1.1);
-}
-/* End of Social Media Section */
-
-/*
-  Medias querys for explore.css
-*/
-
-/* Landscape Tablets with limited height */
+/* 🔹 Secciones siguientes */
 @media (min-width: 450px) and (max-width: 768px) {
   /* Hero styles moved to HeroSectionComponent */
 }
 
-/* Tablet Adjustments */
 @media (min-width: 768px) {
   .explore-section-1 {
     display: flex;
@@ -132,38 +46,8 @@
   }
 
   /* Hero styles moved to HeroSectionComponent */
+  /* Carousel styles moved to CarouselComponent */
 
-  .carousel-container {
-    flex: 60%;
-    overflow: hidden;
-    max-height: 1000px;
-  }
-
-  .carousel-track {
-    height: 1000px;
-  }
-
-  .carousel-slide {
-    height: 100%;
-  }
-
-  .carousel-image {
-    height: 100%;
-    object-fit: cover;
-  }
-
-  .contact-social{
-    height: 700px;
-  }
-  .contact-social-title{
-    font-size: 2rem;
-  }
-  .contact-social-subtitle, .social-links a{
-    font-size: 1.4rem;
-  }
-  .contact-social-subtitle{
-    margin-bottom: 4rem;
-  }
   .explore-mobile-banner {
     height: 100vh; /* 60% of the viewport height - a nice, tall banner */
   }
@@ -190,22 +74,7 @@
     }
   
     /* Hero styles moved to HeroSectionComponent */
-
-    .carousel-container{
-      overflow: hidden;
-      margin: 0 auto;
-      height: 700px;
-      width: 1200px;
-    }
-
-    .carousel-slide{
-      height: 100%;
-    }
-
-    .carousel-image {
-      height: 70%;
-      object-fit: contain;
-    }
+    /* Carousel styles moved to CarouselComponent */
 
     .smoothcomp-card {
       max-width: 64rem; /* 1024px */
@@ -213,15 +82,6 @@
     }
     .btn-smoothcomp {
       font-size: x-large;
-    }
-    .contact-social{
-      height: 700px;
-    }
-    .contact-social-title{
-      font-size: 2rem;
-    }
-    .contact-social-subtitle, .social-links a{
-      font-size: 1.5rem;
     }
 }
 
@@ -246,21 +106,9 @@
   .explore-section-1 {
     height: 2000px;
   }
-  .programs-promo-section{
-    padding: 4rem 2rem;
-  }
 
   /* Hero styles moved to HeroSectionComponent */
-  .carousel-track{
-    height: 1000px;
-  }
-  .carousel-slide{
-    height: 100%;
-  }
-  .carousel-image {
-    height: 100%;
-    object-fit: contain;
-  }
+  /* Carousel styles moved to CarouselComponent */
 
   .smoothcomp-container {
     width: 80rem;
@@ -272,15 +120,6 @@
   }
   .stat-item {
     gap: var(--size-4);
-  }
-  .contact-social{
-    height: 50vh;
-  }
-  .contact-social-title{
-    font-size: 3rem;
-  }
-  .contact-social-subtitle, .social-links a{
-    font-size: 2rem;
   }
 }
 
