@@ -4,11 +4,30 @@
 
 <div class="explore-container" >
     <div class="explore-section-1">
-      <% cache ['hero_section', 'v1', 'explore_page'] do %>
-        <%= render(Explore::HeroSectionComponent.new(
-          cta_href: acerca_de_nosotros_path
-        )) %>
-      <% end %>
+      <div class="hero-title-container">
+        <h1 class="hero-title">Puerto Jiu-Jitsu</h1>
+        <h2 class="hero-title-academy">Academia de Artes Marciales</h2>
+        <p class="hero-subtitle">Jiu-Jitsu, Boxeo, MMA y más.</p>
+        <p class="hero-description">
+          ¡Tu batalla diaria, para forjar un gran destino!
+
+        </p>
+        <p class="hero-description">
+          Disciplina, carácter y confianza en un ambiente de respeto y valores.
+        </p>
+        <p class="hero-location">
+          El Roble, Puntarenas, Costa Rica
+        </p>
+        <p class="hero-icons">
+          <%= link_to "https://www.google.com/maps/place/Gimnasio+In+Line/@9.9831961,-84.7348988,17z/data=!3m1!4b1!4m6!3m5!1s0x8fa031a7c3d77b43:0x934fb6fd5800c8dc!8m2!3d9.9831908!4d-84.7323239!16s%2Fg%2F11g6nbwflh?entry=ttu", target: "_blank", rel: "noopener noreferrer", aria_label: "Google Maps" do %>
+            <%= lucide_icon "map-pin", size: 40 %>
+          <% end %>
+          <%= link_to "https://ul.waze.com/ul?venue_id=180420708.1804010470.13727243&overview=yes&utm_campaign=default&utm_source=waze_website&utm_medium=lm_share_location", target: "_blank", rel: "noopener noreferrer", aria_label: "Waze" do %>
+            <%= lucide_icon "navigation", size: 40 %>
+          <% end %>
+        </p>
+        <%= link_to "¡Conócenos mejor!", acerca_de_nosotros_path, class: "btn btn--primary hero-button" %>
+      </div>
       <div data-controller="carousel" class="carousel-container">
         <div data-carousel-target="slides" class="carousel-track">
           <div class="carousel-slide">
@@ -48,11 +67,7 @@
               <p class="program-card-text">
                 Un ambiente seguro y divertido donde los más pequeños cultivan su carácter y confianza mientras crean amistades para toda la vida.
               </p>
-              <%= render(ButtonComponent.new(
-                variant: :primary,
-                text: "¡Quiero conocer más!",
-                href: kids_program_path
-              )) %>
+              <%= link_to "¡Quiero conocer más!", kids_program_path, class: "btn btn--primary" %>
             </div>
 
             <!-- All Programs Card -->
@@ -64,11 +79,7 @@
               <p class="program-card-text">
                 Descubre todas las disciplinas que ofrecemos, desde Jiu-Jitsu (Gi & No-Gi) y Boxeo hasta MMA.
               </p>
-              <%= render(ButtonComponent.new(
-                variant: :primary,
-                text: "Explorar Programas",
-                href: programs_path
-              )) %>
+              <%= link_to "Explorar Programas", programs_path, class: "btn btn--primary" %>
             </div>
           </div>
         </div>
@@ -80,27 +91,18 @@
       <h4 class="contact-social-title">Síguenos en redes sociales</h4>
       <p class="contact-social-subtitle">Mantente al día con nuestras últimas noticias, eventos y actualizaciones</p>
       <div class="social-links">
-        <%= render(ButtonComponent.new(
-          variant: :plain,
-          text: "Facebook",
-          href: "https://www.facebook.com/puertojiujitsu/",
-          icon: "facebook",
-          target: "_blank"
-        )) %>
-        <%= render(ButtonComponent.new(
-          variant: :plain,
-          text: "Instagram",
-          href: "https://www.instagram.com/puertojiujitsu/",
-          icon: "instagram",
-          target: "_blank"
-        )) %>
-        <%= render(ButtonComponent.new(
-          variant: :plain,
-          text: "WhatsApp",
-          href: "https://wa.me/50672026863?text=Hola,%20me%20gustaría%20obtener%20información%20sobre%20las%20clases%20de%20Jiu-Jitsu",
-          icon: "message-circle",
-          target: "_blank"
-        )) %>
+        <%= link_to "https://www.facebook.com/puertojiujitsu/", target: "_blank", class: "social-link" do %>
+          <%= lucide_icon "facebook", class: "w-6 h-6" %>
+          <span>Facebook</span>
+        <% end %>
+        <%= link_to "https://www.instagram.com/puertojiujitsu/", target: "_blank", class: "social-link" do %>
+          <%= lucide_icon "instagram", class: "w-6 h-6" %>
+          <span>Instagram</span>
+        <% end %>
+        <%= link_to "https://wa.me/50672026863?text=Hola,%20me%20gustaría%20obtener%20información%20sobre%20las%20clases%20de%20Jiu-Jitsu", target: "_blank", class: "social-link" do %>
+          <%= lucide_icon "message-circle", class: "w-6 h-6" %>
+          <span>WhatsApp</span>
+        <% end %>
       </div>
     </div>
 
@@ -265,12 +267,7 @@
             </div>
           </div>
           <div class="smoothcomp-cta">
-            <%= render(ButtonComponent.new(
-              variant: :secondary,
-              text: "Ver Perfil Completo en Smoothcomp",
-              href: "https://smoothcomp.com/es/club/25466?embedView=1",
-              target: "_blank"
-            )) %>
+            <%= link_to "Ver Perfil Completo en Smoothcomp", "https://smoothcomp.com/es/club/25466?embedView=1", target: "_blank", class: "btn-smoothcomp" %>
           </div>
         </div>
       </div>
@@ -299,13 +296,14 @@
               </div>
               <h3 class="contact-card-title">Ubicación</h3>
               <p class="contact-card-text">Gimnasio In Line, Puntarenas, Costa Rica</p>
-              <%= render(ButtonComponent.new(
-                variant: :plain,
-                text: "Ver en Google Maps",
-                href: "https://www.google.com/maps/place/Gimnasio+In+Line/@9.9831961,-84.7348988,17z/data=!3m1!4b1!4m6!3m5!1s0x8fa031a7c3d77b43:0x934fb6fd5800c8dc!8m2!3d9.9831908!4d-84.7323239!16s%2Fg%2F11g6nbwflh?entry=ttu",
-                icon: "map",
-                target: "_blank"
-              )) %>
+              <%= link_to "https://www.google.com/maps/place/Gimnasio+In+Line/@9.9831961,-84.7348988,17z/data=!3m1!4b1!4m6!3m5!1s0x8fa031a7c3d77b43:0x934fb6fd5800c8dc!8m2!3d9.9831908!4d-84.7323239!16s%2Fg%2F11g6nbwflh?entry=ttu", 
+                  target: "_blank", 
+                  class: "contact-card-link" do %>
+                <div class="flex items-center gap">
+                  <%= lucide_icon "map", class: "w-4 h-4" %>
+                  <span>Ver en Google Maps</span>
+                </div>
+              <% end %>
             </div>
 
             <div class="contact-card">
@@ -314,13 +312,14 @@
               </div>
               <h3 class="contact-card-title">WhatsApp</h3>
               <p class="contact-card-text">+506 7202-6863</p>
-              <%= render(ButtonComponent.new(
-                variant: :plain,
-                text: "Chatear en WhatsApp",
-                href: "https://wa.me/50672026863?text=Hola,%20me%20gustaría%20obtener%20información%20sobre%20las%20clases%20de%20Jiu-Jitsu",
-                icon: "message-circle",
-                target: "_blank"
-              )) %>
+              <%= link_to "https://wa.me/50672026863?text=Hola,%20me%20gustaría%20obtener%20información%20sobre%20las%20clases%20de%20Jiu-Jitsu", 
+                  target: "_blank", 
+                  class: "contact-card-link" do %>
+                <div class="flex items-center gap wa-text">
+                  <%= lucide_icon "message-circle", class: "w-4 h-4" %>
+                  <span class="">Chatear en WhatsApp</span>
+                </div>
+              <% end %>
             </div>
 
             <div class="contact-card">
@@ -329,12 +328,10 @@
               </div>
               <h3 class="contact-card-title">Email</h3>
               <p class="contact-card-text">infopuertobjj@gmail.com</p>
-              <%= render(ButtonComponent.new(
-                variant: :plain,
-                text: "Enviar email",
-                href: "mailto:infopuertobjj@gmail.com",
-                icon: "mail"
-              )) %>
+              <%= link_to "mailto:infopuertobjj@gmail.com", class: "contact-card-link" do %>
+                <%= lucide_icon "mail", class: "w-5 h-5 mr-2" %>
+                Enviar email
+              <% end %>
             </div>
 
             <div class="contact-card">
@@ -355,12 +352,10 @@
               </div>
               <h3 class="feedback-cta-title">¿Tienes algo que decirnos?</h3>
               <p class="feedback-cta-text">Tu opinión es muy importante para nosotros. Comparte tus comentarios, sugerencias o preguntas a través de nuestro formulario de feedback.</p>
-              <%= render(ButtonComponent.new(
-                variant: :primary,
-                text: "Enviar Feedback",
-                href: feedback_path,
-                icon: "send"
-              )) %>
+              <%= link_to feedback_path, class: "feedback-cta-button" do %>
+                <%= lucide_icon "send", class: "w-5 h-5" %>
+                <span>Enviar Feedback</span>
+              <% end %>
             </div>
           </div>
         </div>
