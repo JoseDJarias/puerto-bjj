@@ -1,22 +1,27 @@
 .flash {
   align-items: center;
   animation: appear-then-fade 4s 300ms both;
-  backdrop-filter: var(--blur-sm);
-  background-color: var(--flash-background, var(--color-surface-alt));
+  backdrop-filter: blur(4px);
+  background-color: var(--flash-background, var(--color-bg));
   border: 1px solid var(--flash-border, var(--color-border));
   border-radius: var(--rounded-md);
   color: var(--flash-color, var(--color-text));
   column-gap: var(--size-2);
   display: flex;
-  font-size: var(--text-fluid-base);
+  font-size: var(--text-base);
   justify-content: center;
-  line-height: var(--leading-none);
+  line-height: 1.5;
   margin-block-start: var(--flash-position, var(--size-4));
   margin-inline: auto;
   min-block-size: var(--size-11);
   padding: var(--size-2) var(--size-4);
   text-align: center;
   box-shadow: var(--shadow-sm);
+  position: fixed;
+  top: var(--size-4);
+  left: 50%;
+  transform: translateX(-50%);
+  z-index: 1000;
 
   [data-turbo-preview] & {
     display: none;
@@ -26,25 +31,37 @@
 .flash--positive {
   --flash-background: var(--color-positive);
   --flash-color: white;
-  --flash-border: var(--color-positive-dark);
+  --flash-border: var(--color-positive);
 }
 
 .flash--negative {
   --flash-background: var(--color-negative);
   --flash-color: white;
-  --flash-border: var(--color-negative-dark);
+  --flash-border: var(--color-negative);
 }
 
 .flash--notice {
   --flash-background: var(--color-primary);
-  --flash-color: white;
-  --flash-border: var(--color-primary-dark);
+  --flash-color: var(--color-text-reversed);
+  --flash-border: var(--color-primary);
 }
 
 .flash--alert {
-  --flash-background: var(--color-error);
+  --flash-background: var(--color-negative);
   --flash-color: white;
-  --flash-border: var(--color-error-dark);
+  --flash-border: var(--color-negative);
+}
+
+.flash--warning {
+  --flash-background: var(--yellow-600);
+  --flash-color: white;
+  --flash-border: var(--yellow-600);
+}
+
+.flash--info {
+  --flash-background: var(--blue-600);
+  --flash-color: white;
+  --flash-border: var(--blue-600);
 }
 
 .flash--extended {
@@ -52,12 +69,37 @@
   animation-duration: 12s;
 }
 
+/* Flash variants */
+.flash--sm {
+  font-size: var(--text-sm);
+  padding: var(--size-1) var(--size-3);
+  min-block-size: var(--size-8);
+}
+
+.flash--lg {
+  font-size: var(--text-lg);
+  padding: var(--size-3) var(--size-6);
+  min-block-size: var(--size-14);
+}
+
 @keyframes appear-then-fade {
-  0%, 100% { opacity: 0; }
-  5%, 60%  { opacity: 1; }
+  0%, 100% { 
+    opacity: 0; 
+    transform: translateX(-50%) translateY(-100%);
+  }
+  5%, 60% { 
+    opacity: 1; 
+    transform: translateX(-50%) translateY(0);
+  }
 }
 
 @keyframes appear-then-fade-extended {
-  0%, 100% { opacity: 0; }
-  2%, 90% { opacity: 1; }
+  0%, 100% { 
+    opacity: 0; 
+    transform: translateX(-50%) translateY(-100%);
+  }
+  2%, 90% { 
+    opacity: 1; 
+    transform: translateX(-50%) translateY(0);
+  }
 }
