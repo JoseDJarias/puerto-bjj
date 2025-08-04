@@ -13,7 +13,11 @@
           <article class="contact-card" role="article" aria-labelledby="contact-card-<%= index %>">
             <header class="contact-card-header">
               <div class="contact-card-icon">
-                <%= helpers.lucide_icon info[:icon], class: "w-8 h-8" %>
+                <%= render(IconComponent.new(
+                  name: info[:icon],
+                  size: :large,
+                  aria_label: "#{info[:title]} icon"
+                )) %>
               </div>
               <h4 id="contact-card-<%= index %>" class="contact-card-title"><%= info[:title] %></h4>
             </header>
@@ -47,7 +51,11 @@
       <h3 id="<%= feedback_cta_id %>" class="visually-hidden">Sección de feedback</h3>
       <div class="feedback-cta-content">
         <div class="feedback-cta-icon">
-          <%= helpers.lucide_icon @feedback_cta[:icon], class: "w-12 h-12" %>
+          <%= render(IconComponent.new(
+            name: @feedback_cta[:icon],
+            size: :xxl,
+            aria_label: "Feedback icon"
+          )) %>
         </div>
         <div class="feedback-cta-text">
           <h4 class="feedback-cta-title"><%= @feedback_cta[:title] %></h4>
