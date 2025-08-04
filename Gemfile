@@ -62,3 +62,5 @@ gem "kaminari-activerecord"
 gem "kaminari-actionview"
 
 gem "sitemap_generator", "~> 6.3.0"
+
+gem "view_component", "~> 4.0"
