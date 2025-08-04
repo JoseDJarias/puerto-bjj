@@ -1,0 +1,117 @@
+/* Spacing System - Mobile First Approach */
+
+/* Base component spacing */
+.component-spacing {
+  margin-bottom: var(--section-spacing-sm);
+}
+
+/* Responsive spacing */
+@media (min-width: 768px) {
+  .component-spacing {
+    margin-bottom: var(--section-spacing-md);
+  }
+}
+
+@media (min-width: 1024px) {
+  .component-spacing {
+    margin-bottom: var(--section-spacing-lg);
+  }
+}
+
+@media (min-width: 1280px) {
+  .component-spacing {
+    margin-bottom: var(--section-spacing-xl);
+  }
+}
+
+/* Section spacing variants */
+.section-spacing--xs {
+  margin-bottom: var(--section-spacing-xs);
+}
+
+.section-spacing--sm {
+  margin-bottom: var(--section-spacing-sm);
+}
+
+.section-spacing--md {
+  margin-bottom: var(--section-spacing-md);
+}
+
+.section-spacing--lg {
+  margin-bottom: var(--section-spacing-lg);
+}
+
+.section-spacing--xl {
+  margin-bottom: var(--section-spacing-xl);
+}
+
+.section-spacing--2xl {
+  margin-bottom: var(--section-spacing-2xl);
+}
+
+/* Responsive section spacing */
+@media (min-width: 768px) {
+  .section-spacing--xs {
+    margin-bottom: var(--section-spacing-sm);
+  }
+  
+  .section-spacing--sm {
+    margin-bottom: var(--section-spacing-md);
+  }
+  
+  .section-spacing--md {
+    margin-bottom: var(--section-spacing-lg);
+  }
+  
+  .section-spacing--lg {
+    margin-bottom: var(--section-spacing-xl);
+  }
+  
+  .section-spacing--xl {
+    margin-bottom: var(--section-spacing-2xl);
+  }
+}
+
+/* Container spacing for consistent padding */
+.container-spacing {
+  padding: var(--size-4);
+}
+
+@media (min-width: 768px) {
+  .container-spacing {
+    padding: var(--size-6);
+  }
+}
+
+@media (min-width: 1024px) {
+  .container-spacing {
+    padding: var(--size-8);
+  }
+}
+
+/* Text spacing utilities */
+.text-spacing--tight {
+  line-height: var(--line-height-tight);
+}
+
+.text-spacing--normal {
+  line-height: var(--line-height-normal);
+}
+
+.text-spacing--relaxed {
+  line-height: var(--line-height-relaxed);
+}
+
+/* Remove spacing utilities */
+.no-spacing {
+  margin: 0;
+  padding: 0;
+}
+
+.no-margin-bottom {
+  margin-bottom: 0;
+}
+
+.no-margin-top {
+  margin-top: 0;
+} 

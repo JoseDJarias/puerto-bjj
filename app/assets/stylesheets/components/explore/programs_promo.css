@@ -5,13 +5,14 @@
   flex-direction: column;
   align-items: center;
   width: 100%;
-  padding: var(--size-8) var(--size-4);
+  padding: var(--section-spacing-lg) var(--size-4);
   background: var(--color-bg);
+  /* Add component spacing */
 }
 
 .programs-promo-header {
   text-align: center;
-  margin-bottom: var(--size-8);
+  margin-bottom: var(--section-spacing-lg);
 }
 
 .promo-section-title {
@@ -19,6 +20,7 @@
   font-weight: var(--font-bold);
   color: var(--color-text);
   margin-bottom: var(--size-4);
+  line-height: var(--line-height-tight);
 }
 
 .programs-promo-grid {
@@ -71,18 +73,24 @@
   font-weight: var(--font-bold);
   color: var(--color-text);
   margin-bottom: var(--size-3);
+  line-height: var(--line-height-tight);
 }
 
 .program-card-text {
   font-size: var(--text-base);
   color: var(--color-text-subtle);
-  line-height: 1.6;
+  line-height: var(--line-height-normal);
   margin-bottom: var(--size-6);
   flex-grow: 1;
 }
 
-/* Responsive Design */
+/* Responsive Design - Mobile First */
 @media (min-width: 768px) {
+  .programs-promo-section {
+    padding: var(--section-spacing-xl) var(--size-6);
+    margin-bottom: var(--section-spacing-md);
+  }
+
   .programs-promo-grid {
     grid-template-columns: repeat(2, 1fr);
     gap: var(--size-8);
@@ -107,7 +115,8 @@
 
 @media (min-width: 1024px) {
   .programs-promo-section {
-    padding: var(--size-12) var(--size-6);
+    padding: var(--section-spacing-xl) var(--size-8);
+    margin-bottom: var(--section-spacing-lg);
   }
   
   .programs-promo-grid {
@@ -119,9 +128,16 @@
   }
 }
 
+@media (min-width: 1280px) {
+  .programs-promo-grid {
+    grid-template-columns: repeat(3, 1fr);
+    gap: var(--size-12);
+  }
+}
+
 @media (min-width: 1440px) {
   .programs-promo-section {
-    padding: var(--size-16) var(--size-8);
+    padding: var(--section-spacing-2xl) var(--size-8);
   }
   
   .promo-section-title {
@@ -139,11 +155,11 @@
 
 /* Accessibility */
 .program-card:focus-within {
-  outline: 2px solid var(--color-primary);
+  outline: 2px solid var(--color-selected-dark);
   outline-offset: 2px;
 }
 
-/* Reduced Motion */
+/* Accessibility improvements */
 @media (prefers-reduced-motion: reduce) {
   .program-card,
   .program-card-icon {
@@ -156,5 +172,15 @@
   
   .program-card:hover .program-card-icon {
     transform: none;
+  }
+}
+
+@media (prefers-contrast: high) {
+  .program-card {
+    border: 2px solid var(--color-border-dark);
+  }
+  
+  .program-card-icon {
+    border: 2px solid var(--color-primary);
   }
 } 

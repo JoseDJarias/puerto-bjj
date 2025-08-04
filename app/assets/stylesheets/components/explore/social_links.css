@@ -7,29 +7,32 @@
   justify-content: center;
   width: 100%;
   height: auto;
-  padding: var(--size-8) var(--size-4);
+  padding: var(--section-spacing-lg) var(--size-4);
   text-align: center;
   border-top: 1px dashed var(--color-border);
   border-bottom: 1px dashed var(--color-border);
   background: var(--color-bg);
+  /* Add component spacing */
+  margin-bottom: var(--section-spacing-sm);
 }
 
 .social-links-header {
-  margin-bottom: var(--size-6);
+  margin-bottom: var(--section-spacing-md);
 }
 
 .contact-social-title {
-  font-size: 1.25rem;
+  font-size: var(--text-xl);
   font-weight: var(--font-semibold);
   color: var(--color-text);
   margin-bottom: var(--size-2);
+  line-height: var(--line-height-tight);
 }
 
 .contact-social-subtitle {
   color: var(--color-text-subtle);
-  font-size: 0.875rem;
+  font-size: var(--text-sm);
   margin-bottom: var(--size-4);
-  line-height: 1.5;
+  line-height: var(--line-height-normal);
 }
 
 .social-links {
@@ -41,20 +44,21 @@
   max-width: 600px;
 }
 
-/* Responsive Design */
+/* Responsive Design - Mobile First */
 @media (min-width: 768px) {
   .contact-social {
     height: 700px;
-    padding: var(--size-12) var(--size-6);
+    padding: var(--section-spacing-xl) var(--size-6);
+    margin-bottom: var(--section-spacing-md);
   }
   
   .contact-social-title {
-    font-size: 2rem;
+    font-size: var(--text-2xl);
   }
   
   .contact-social-subtitle {
-    font-size: 1.4rem;
-    margin-bottom: 4rem;
+    font-size: var(--text-lg);
+    margin-bottom: var(--section-spacing-lg);
   }
   
   .social-links {
@@ -65,20 +69,27 @@
 @media (min-width: 1024px) {
   .contact-social {
     height: 700px;
+    margin-bottom: var(--section-spacing-lg);
   }
   
   .contact-social-title {
-    font-size: 2rem;
+    font-size: var(--text-2xl);
   }
   
   .contact-social-subtitle {
-    font-size: 1.5rem;
+    font-size: var(--text-xl);
+  }
+}
+
+@media (min-width: 1280px) {
+  .social-links {
+    gap: var(--size-8);
   }
 }
 
 @media (min-width: 1440px) {
   .contact-social {
-    padding: var(--size-16) var(--size-8);
+    padding: var(--section-spacing-2xl) var(--size-8);
   }
 }
 
@@ -88,11 +99,11 @@
   }
   
   .contact-social-title {
-    font-size: 3rem;
+    font-size: var(--text-4xl);
   }
   
   .contact-social-subtitle {
-    font-size: 2rem;
+    font-size: var(--text-2xl);
   }
   
   .social-links {
@@ -102,13 +113,20 @@
 
 /* Accessibility */
 .contact-social:focus-within {
-  outline: 2px solid var(--color-primary);
+  outline: 2px solid var(--color-selected-dark);
   outline-offset: 2px;
 }
 
-/* Reduced Motion */
+/* Accessibility improvements */
 @media (prefers-reduced-motion: reduce) {
   .social-links a {
     transition: none;
+  }
+}
+
+@media (prefers-contrast: high) {
+  .contact-social {
+    border-top: 2px solid var(--color-border-dark);
+    border-bottom: 2px solid var(--color-border-dark);
   }
 } 
