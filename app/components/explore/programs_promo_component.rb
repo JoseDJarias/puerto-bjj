@@ -1,5 +1,7 @@
 module Explore
   class ProgramsPromoComponent < ViewComponent::Base
+    include PathResolver
+
     def initialize(
       title: "Info sobre nuestros programas",
       programs: default_programs
@@ -27,20 +29,6 @@ module Explore
           cta_href: "programs_path"
         }
       ]
-    end
-
-    def resolve_path(path_string)
-      # Convert string path to actual Rails path helper
-      case path_string
-      when "kids_program_path"
-        kids_program_path
-      when "programs_path"
-        programs_path
-      else
-        path_string
-      end
-    rescue NoMethodError
-      "#" # Fallback if path doesn't exist
     end
   end
 end

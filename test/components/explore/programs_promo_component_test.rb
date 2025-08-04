@@ -113,6 +113,107 @@ class Explore::ProgramsPromoComponentTest < ViewComponent::TestCase
     assert_selector ".program-card-title", text: "Test Program"
   end
 
+  def test_path_resolver_works_correctly
+    # Test that the PathResolver correctly converts path strings to actual URLs
+    render_inline(Explore::ProgramsPromoComponent.new)
+
+    # The Kids Program CTA should have the correct resolved path
+    assert_selector "a[href='/programas/kids']", text: "¡Quiero conocer más!"
+
+    # The Adults Program CTA should have the correct resolved path
+    assert_selector "a[href='/programas']", text: "Explorar Programas"
+  end
+
+  def test_path_resolver_fallback_for_paths_ending_with_path
+    # Test that paths ending with _path get "#" as fallback
+    custom_programs = [
+      {
+        icon: "star",
+        title: "Test Program",
+        description: "Test description",
+        cta_text: "Test CTA",
+        cta_href: "fake_page_path" # This ends with _path but doesn't exist
+      }
+    ]
+
+    render_inline(Explore::ProgramsPromoComponent.new(programs: custom_programs))
+
+    # Should use "#" as fallback for paths ending with _path
+    assert_selector "a[href='#']", text: "Test CTA"
+  end
+
+  def test_path_resolver_preserves_external_urls
+    # Test that external URLs are preserved
+    custom_programs = [
+      {
+        icon: "star",
+        title: "Test Program",
+        description: "Test description",
+        cta_text: "External Link",
+        cta_href: "https://example.com"
+      }
+    ]
+
+    render_inline(Explore::ProgramsPromoComponent.new(programs: custom_programs))
+
+    # Should preserve external URLs
+    assert_selector "a[href='https://example.com']", text: "External Link"
+  end
+
+  def test_path_resolver_preserves_mailto_links
+    # Test that mailto links are preserved
+    custom_programs = [
+      {
+        icon: "mail",
+        title: "Test Program",
+        description: "Test description",
+        cta_text: "Send Email",
+        cta_href: "mailto:test@example.com"
+      }
+    ]
+
+    render_inline(Explore::ProgramsPromoComponent.new(programs: custom_programs))
+
+    # Should preserve mailto links
+    assert_selector "a[href='mailto:test@example.com']", text: "Send Email"
+  end
+
+  def test_path_resolver_preserves_tel_links
+    # Test that tel links are preserved
+    custom_programs = [
+      {
+        icon: "phone",
+        title: "Test Program",
+        description: "Test description",
+        cta_text: "Call Us",
+        cta_href: "tel:+1234567890"
+      }
+    ]
+
+    render_inline(Explore::ProgramsPromoComponent.new(programs: custom_programs))
+
+    # Should preserve tel links
+    assert_selector "a[href='tel:+1234567890']", text: "Call Us"
+  end
+
+  def test_path_resolver_fallback_for_arbitrary_strings
+    # Test that arbitrary strings get "#" as fallback
+    custom_programs = [
+      {
+        icon: "star",
+        title: "Test Program",
+        description: "Test description",
+        cta_text: "Test CTA",
+        cta_href: "random_string" # This doesn't end with _path
+      }
+    ]
+
+    render_inline(Explore::ProgramsPromoComponent.new(programs: custom_programs))
+
+    # Should use "#" as fallback for arbitrary strings
+    assert_selector "a[href='#']", text: "Test CTA"
+  end
+
   def test_renders_with_correct_css_classes
     render_inline(Explore::ProgramsPromoComponent.new)
 
