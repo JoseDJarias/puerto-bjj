@@ -2,169 +2,35 @@
   <%= render 'shared/structured_data' %>
 <% end %>
 
-<div class="explore-container" >
-    <div class="explore-section-1">
-      <%= render(Explore::HeroSectionComponent.new(
-        cta_href: acerca_de_nosotros_path
-      )) %>
-      <%= render(CarouselComponent.new(
-        images: [
-          { src: 'home/jiujitsu-gi.jpeg', alt: 'Jiu-Jitsu con Gi - Entrenamiento tradicional' },
-          { src: 'home/jiujitsu-nogi.jpeg', alt: 'Jiu-Jitsu No-Gi - Entrenamiento moderno' },
-          { src: 'home/brazilian-jiujitsu.jpeg', alt: 'Brazilian Jiu-Jitsu - Arte marcial completo' }
-        ],
-        auto_slide: true,
-        interval: 5000,
-        show_navigation: false,
-        show_indicators: false
-      )) %>
-    </div>
-    <!--
-    <div class="explore-section-2">
-      <h1 class="font-bold text-4xl text-black m-10 p-10">Catalogo</h1>
-    </div>
-    -->
-    <div class="explore-section-3">
-      <%= render(Explore::ProgramsPromoComponent.new) %>
-    </div>
-
-    <!-- Social Media Links -->
-    <%= render(Explore::SocialLinksComponent.new) %>
-
-    <div class="explore-mobile-banner">
-      <%= image_tag 'home/logo.jpg', alt: 'Puerto Jiu-Jitsu large logo banner', class: 'explore-banner-image' %>
-    </div>
-
-    <!-- Schedule Section -->
-    <%= render(Explore::ScheduleComponent.new) %>
-
-    <!-- Smoothcomp Section -->
-    <div class="explore-section-6">
-      <div class="smoothcomp-container">
-        <div class="smoothcomp-header">
-          <h2 class="smoothcomp-title">Nuestro Perfil Competitivo</h2>
-          <p class="smoothcomp-subtitle">Resultados y estadísticas de nuestro equipo en torneos oficiales.</p>
-        </div>
-
-        <div class="smoothcomp-card">
-          <div class="smoothcomp-stats">
-            <div class="stat-item">
-              <%= lucide_icon "award", class: "stat-icon gold" %>
-              <span class="stat-number">13</span>
-              <span class="stat-label">Oro</span>
-            </div>
-            <div class="stat-item">
-              <%= lucide_icon "award", class: "stat-icon silver" %>
-              <span class="stat-number">14</span>
-              <span class="stat-label">Plata</span>
-            </div>
-            <div class="stat-item">
-              <%= lucide_icon "award", class: "stat-icon bronze" %>
-              <span class="stat-number">10</span>
-              <span class="stat-label">Bronce</span>
-            </div>
-          </div>
-          <div class="smoothcomp-cta">
-            <%= render(ButtonComponent.new(
-              variant: :secondary,
-              text: "Ver Perfil Completo en Smoothcomp",
-              href: "https://smoothcomp.com/es/club/25466?embedView=1",
-              target: "_blank"
-            )) %>
-          </div>
-        </div>
-      </div>
-    </div>
-
-    <!--
-    <div class="explore-section-6">
-      <h1 class="font-bold text-4xl text-black m-10 p-10">Galeria</h1>
-    </div>
-    -->
-
-    <div class="explore-section-7">
-      <div class="contact-container">
-        <!-- Header Section -->
-        <div class="contact-header">
-          <h2 class="contact-title">Contáctanos</h2>
-          <p class="contact-subtitle">Responderemos todos tus consultas e inquietudes, escucharemos tus comentarios. Estamos aca para servirte y ser parte de tu crecimiento personal.</p>
-        </div>
-
-        <div class="contact-content">
-          <!-- Contact Info Cards -->
-          <div class="contact-info">
-            <div class="contact-card">
-              <div class="contact-card-icon">
-                <%= lucide_icon "map-pin", class: "w-8 h-8" %>
-              </div>
-              <h3 class="contact-card-title">Ubicación</h3>
-              <p class="contact-card-text">Gimnasio In Line, Puntarenas, Costa Rica</p>
-              <%= render(ButtonComponent.new(
-                variant: :plain,
-                text: "Ver en Google Maps",
-                href: "https://www.google.com/maps/place/Gimnasio+In+Line/@9.9831961,-84.7348988,17z/data=!3m1!4b1!4m6!3m5!1s0x8fa031a7c3d77b43:0x934fb6fd5800c8dc!8m2!3d9.9831908!4d-84.7323239!16s%2Fg%2F11g6nbwflh?entry=ttu",
-                icon: "map",
-                target: "_blank"
-              )) %>
-            </div>
-
-            <div class="contact-card">
-              <div class="contact-card-icon">
-                <%= lucide_icon "phone", class: "w-8 h-8" %>
-              </div>
-              <h3 class="contact-card-title">WhatsApp</h3>
-              <p class="contact-card-text">+506 7202-6863</p>
-              <%= render(ButtonComponent.new(
-                variant: :plain,
-                text: "Chatear en WhatsApp",
-                href: "https://wa.me/50672026863?text=Hola,%20me%20gustaría%20obtener%20información%20sobre%20las%20clases%20de%20Jiu-Jitsu",
-                icon: "message-circle",
-                target: "_blank"
-              )) %>
-            </div>
-
-            <div class="contact-card">
-              <div class="contact-card-icon">
-                <%= lucide_icon "mail", class: "w-8 h-8" %>
-              </div>
-              <h3 class="contact-card-title">Email</h3>
-              <p class="contact-card-text">infopuertobjj@gmail.com</p>
-              <%= render(ButtonComponent.new(
-                variant: :plain,
-                text: "Enviar email",
-                href: "mailto:infopuertobjj@gmail.com",
-                icon: "mail"
-              )) %>
-            </div>
-
-            <div class="contact-card">
-              <div class="contact-card-icon">
-                <%= lucide_icon "clock", class: "w-8 h-8" %>
-              </div>
-              <h3 class="contact-card-title">Horario de Atención</h3>
-              <p class="contact-card-text">Lunes a Viernes: 8:00 AM - 9:00 PM</p>
-              <p class="contact-card-text">Sábados: 9:00 AM - 5:00 PM</p>
-            </div>
-          </div>
-
-          <!-- Feedback CTA Section -->
-          <div class="contact-feedback-cta">
-            <div class="feedback-cta-content">
-              <div class="feedback-cta-icon">
-                <%= lucide_icon "message-square", class: "w-12 h-12" %>
-              </div>
-              <h3 class="feedback-cta-title">¿Tienes algo que decirnos?</h3>
-              <p class="feedback-cta-text">Tu opinión es muy importante para nosotros. Comparte tus comentarios, sugerencias o preguntas a través de nuestro formulario de feedback.</p>
-              <%= render(ButtonComponent.new(
-                variant: :primary,
-                text: "Enviar Feedback",
-                href: feedback_path,
-                icon: "send"
-              )) %>
-            </div>
-          </div>
-        </div>
-      </div>
-    </div>
+<div class="explore-container">
+  <!-- Hero Section Component -->
+  <%= render(Explore::HeroSectionComponent.new(
+    cta_href: acerca_de_nosotros_path
+  )) %>
+  <!-- Carousel Component -->
+  <%= render(CarouselComponent.new(
+    images: [
+      { src: 'home/jiujitsu-gi.jpeg', alt: 'Jiu-Jitsu con Gi - Entrenamiento tradicional' },
+      { src: 'home/jiujitsu-nogi.jpeg', alt: 'Jiu-Jitsu No-Gi - Entrenamiento moderno' },
+      { src: 'home/brazilian-jiujitsu.jpeg', alt: 'Brazilian Jiu-Jitsu - Arte marcial completo' }
+    ],
+    auto_slide: true,
+    interval: 5000,
+    show_navigation: false,
+    show_indicators: false
+  )) %>
+  <!-- Programs Promo Component -->
+  <%= render(Explore::ProgramsPromoComponent.new) %>
+  <!-- Social Links Component -->
+  <%= render(Explore::SocialLinksComponent.new) %>
+  <!-- Mobile Banner Component -->
+  <%= render(Explore::MobileBannerComponent.new) %>
+  <!-- Schedule Component -->
+  <%= render(Explore::ScheduleComponent.new) %>
+  <!-- Smoothcomp Component -->
+  <%= render(Explore::SmoothcompComponent.new) %>
+  <!-- Contact Component -->
+  <%= render(Explore::ContactComponent.new) %>
 </div>
-  <%= render "shared/free_trial" %>
+
+<%= render "shared/free_trial" %>

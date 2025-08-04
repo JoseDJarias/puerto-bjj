@@ -1,125 +1,20 @@
 .explore-container {
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    width: 100%;
-    overflow: hidden; 
-    max-height:fit-content;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  width: 100%;
+  overflow: hidden; 
+  max-height: fit-content;
 }
 
-/* Section 01: Academia de Artes Marciales */
-/* Hero styles moved to HeroSectionComponent */
-/* Carousel styles moved to CarouselComponent */
-/* Programs styles moved to Explore::ProgramsPromoComponent */
-/* Social Links styles moved to Explore::SocialLinksComponent */
-
-/* Default state: banner is hidden on desktop */
-.explore-mobile-banner {
-  display: none;
-}
-
-/* Mobile-only styles (screens up to 767px wide) */
-
-  .explore-mobile-banner {
-    display: block; /* Make it visible on mobile */
-    width: 100%;
-    height: 60vh; /* 60% of the viewport height - a nice, tall banner */
-    margin: 2rem 0; /* Add some vertical space around the banner */
-  }
-
-  .explore-banner-image {
-    width: 100%;
-    height: 100%;
-    object-fit:contain; /* This makes the image cover the container without distortion */
-  }
-
-/* 🔹 Secciones siguientes */
-@media (min-width: 450px) and (max-width: 768px) {
-  /* Hero styles moved to HeroSectionComponent */
-}
-
-@media (min-width: 768px) {
-  .explore-section-1 {
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-  }
-
-  /* Hero styles moved to HeroSectionComponent */
-  /* Carousel styles moved to CarouselComponent */
-
-  .explore-mobile-banner {
-    height: 100vh; /* 60% of the viewport height - a nice, tall banner */
-  }
-  .explore-section-6 {
-    margin-bottom: var(--size-12);
-  }
-  .smoothcomp-container {
-    width: 50rem;
-    padding: var(--size-24) var(--size-12); /* Aumento de padding para tablets y superior */
-  }
-  .btn-smoothcomp {
-    font-size: x-large;
-  }
-}
-
-/* 🔹 Secciones siguientes */
-@media (min-width: 1024px) {
-    /* Contenedor padre (por ejemplo, "explore-section-1") */
-    .explore-section-1 {
-      display: flex; /* (o "grid") para que los hijos se distribuyan a la par */
-      flex-direction: column; /* (o "row-reverse") para que el título esté a la izquierda y el carousel a la derecha */
-      align-items: center; /* (opcional) centra verticalmente */
-      height: 1500px;
-    }
-  
-    /* Hero styles moved to HeroSectionComponent */
-    /* Carousel styles moved to CarouselComponent */
-
-    .smoothcomp-card {
-      max-width: 64rem; /* 1024px */
-      padding: var(--size-10);
-    }
-    .btn-smoothcomp {
-      font-size: x-large;
-    }
-}
-
-
-/* iPad Pro Specific */
-@media (min-width: 1024px) and (min-height: 1300px) and (max-width: 1366px) {
-  /* Hero styles moved to HeroSectionComponent */
-}
-
-/* Laptops L y dispositivos grandes (1440px - 1920px) */
-@media (min-width: 1440px) and (max-width: 1920px) {
-  .explore-section-1 {
-    display: flex;
-    
-  }
-
-  /* Hero styles moved to HeroSectionComponent */
-}
-
-/* Pantallas muy grandes (1920px+) */
-@media (min-width: 1920px) {
-  .explore-section-1 {
-    height: 2000px;
-  }
-
-  /* Hero styles moved to HeroSectionComponent */
-  /* Carousel styles moved to CarouselComponent */
-
-  .smoothcomp-container {
-    width: 80rem;
-  }
-  .smoothcomp-card {
-    max-width: 100rem; /* 1408px */
-    padding: var(--size-14);
-    font-size: xx-large;
-  }
-  .stat-item {
-    gap: var(--size-4);
-  }
-}
+/* All component styles moved to their respective component files:
+ * - HeroSectionComponent styles moved to components/explore/hero_section.css
+ * - CarouselComponent styles moved to components/carousel.css
+ * - ProgramsPromoComponent styles moved to components/explore/programs_promo.css
+ * - SocialLinksComponent styles moved to components/explore/social_links.css
+ * - MobileBannerComponent styles moved to components/explore/mobile_banner.css
+ * - ScheduleComponent styles moved to components/explore/schedule.css
+ * - SmoothcompComponent styles moved to components/explore/smoothcomp.css
+ * - ContactComponent styles moved to components/explore/contact.css
+ */
 
