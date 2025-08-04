@@ -25,21 +25,26 @@ class Explore::SmoothcompComponentTest < ViewComponent::TestCase
   def test_renders_stats_with_correct_content
     render_inline(Explore::SmoothcompComponent.new)
 
-    # Gold medals
+    # Check for all 3 stats
     assert_selector ".stat-item", count: 3
+
+    # Gold medals
     assert_selector ".stat-number", text: "13"
     assert_selector ".stat-label", text: "Oro"
-    assert_selector ".stat-icon.gold"
+    assert_selector "[class*='text-gold']"
 
     # Silver medals
     assert_selector ".stat-number", text: "14"
     assert_selector ".stat-label", text: "Plata"
-    assert_selector ".stat-icon.silver"
+    assert_selector "[class*='text-silver']"
 
     # Bronze medals
     assert_selector ".stat-number", text: "10"
     assert_selector ".stat-label", text: "Bronce"
-    assert_selector ".stat-icon.bronze"
+    assert_selector "[class*='text-bronze']"
+
+    # Check for descriptive ARIA labels
+    assert_selector "[aria-label*='medallas']"
   end
 
   def test_renders_stats_summary_with_total
@@ -135,11 +140,12 @@ class Explore::SmoothcompComponentTest < ViewComponent::TestCase
   def test_renders_with_icons
     render_inline(Explore::SmoothcompComponent.new)
 
-    # Check that icons are rendered with correct classes
-    assert_selector ".stat-icon", count: 3
-    assert_selector ".stat-icon.gold"
-    assert_selector ".stat-icon.silver"
-    assert_selector ".stat-icon.bronze"
+    # Check that icons are rendered with IconComponent
+    assert_selector "svg", count: 3
+    assert_selector "[class*='text-gold']"
+    assert_selector "[class*='text-silver']"
+    assert_selector "[class*='text-bronze']"
+    assert_selector "[class*='icon-effect--medal']", count: 3
   end
 
   def test_renders_with_visually_hidden_elements
@@ -192,7 +198,6 @@ class Explore::SmoothcompComponentTest < ViewComponent::TestCase
     assert_selector ".stats-grid"
     assert_selector ".stat-item"
     assert_selector ".stat-icon-wrapper"
-    assert_selector ".stat-icon"
     assert_selector ".stat-content"
     assert_selector ".stat-number"
     assert_selector ".stat-label"

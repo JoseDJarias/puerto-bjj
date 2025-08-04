@@ -15,7 +15,14 @@
         <% @stats.each_with_index do |stat, index| %>
           <div class="stat-item" role="listitem">
             <div class="stat-icon-wrapper">
-              <%= helpers.lucide_icon stat[:icon], class: "stat-icon #{stat[:color_class]}" %>
+              <%= render(IconComponent.new(
+                name: stat[:icon],
+                size: :custom,
+                color: stat[:type],
+                effects: :medal,
+                class_name: "w-12 h-12",
+                aria_label: "#{stat[:count]} medallas de #{stat[:label].downcase}"
+              )) %>
             </div>
             <div class="stat-content">
               <span class="stat-number" aria-label="<%= stat[:count] %> medallas de <%= stat[:label].downcase %>">
