@@ -1,0 +1,48 @@
+<section class="hero-section" aria-labelledby="hero-title">
+  <!-- Structured Data for SEO -->
+  <script type="application/ld+json">
+    <%= raw structured_data.to_json %>
+  </script>
+
+  <div class="hero-content">
+    <header class="hero-header">
+      <h1 id="hero-title" class="hero-title"><%= @title %></h1>
+      <h2 class="hero-subtitle"><%= @subtitle %></h2>
+      <p class="hero-description"><%= @description %></p>
+      
+      <% @taglines.each do |tagline| %>
+        <p class="hero-description"><%= tagline %></p>
+      <% end %>
+      
+      <address class="hero-location">
+        <span class="location-text"><%= @location %></span>
+      </address>
+    </header>
+
+    <nav class="hero-location-links" role="group" aria-label="Enlaces de ubicación">
+      <% location_links.each do |link| %>
+        <%= render(ButtonComponent.new(
+          variant: :plain,
+          size: :icon,
+          href: link[:href],
+          icon: link[:icon],
+          target: "_blank",
+          rel: "noopener noreferrer",
+          "aria-label": link[:aria_label]
+        )) %>
+      <% end %>
+    </nav>
+
+    <% if @cta_href.present? %>
+      <div class="hero-cta">
+        <%= render(ButtonComponent.new(
+          variant: :primary,
+          size: :large,
+          text: @cta_text,
+          href: @cta_href,
+          animated: true
+        )) %>
+      </div>
+    <% end %>
+  </div>
+</section> 
