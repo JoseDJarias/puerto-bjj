@@ -1,0 +1,67 @@
+<section class="contact-container" aria-labelledby="contact-title">
+  <header class="contact-header">
+    <h2 id="contact-title" class="contact-title"><%= @title %></h2>
+    <p class="contact-subtitle"><%= @subtitle %></p>
+  </header>
+
+  <div class="contact-content">
+    <!-- Contact Info Cards -->
+    <div class="contact-info" role="region" aria-labelledby="<%= contact_info_id %>">
+      <h3 id="<%= contact_info_id %>" class="visually-hidden">Información de contacto</h3>
+      <div class="contact-cards-grid">
+        <% @contact_info.each_with_index do |info, index| %>
+          <article class="contact-card" role="article" aria-labelledby="contact-card-<%= index %>">
+            <header class="contact-card-header">
+              <div class="contact-card-icon">
+                <%= helpers.lucide_icon info[:icon], class: "w-8 h-8" %>
+              </div>
+              <h4 id="contact-card-<%= index %>" class="contact-card-title"><%= info[:title] %></h4>
+            </header>
+            
+            <div class="contact-card-content">
+              <p class="contact-card-text"><%= info[:text] %></p>
+              <% if info[:text_secondary].present? %>
+                <p class="contact-card-text-secondary"><%= info[:text_secondary] %></p>
+              <% end %>
+              
+              <% if info[:cta_text].present? %>
+                <div class="contact-card-cta">
+                  <%= render(ButtonComponent.new(
+                    variant: :plain,
+                    text: info[:cta_text],
+                    href: info[:cta_href],
+                    icon: info[:cta_icon],
+                    target: info[:target],
+                    rel: info[:rel]
+                  )) %>
+                </div>
+              <% end %>
+            </div>
+          </article>
+        <% end %>
+      </div>
+    </div>
+
+    <!-- Feedback CTA Section -->
+    <aside class="contact-feedback-cta" role="complementary" aria-labelledby="<%= feedback_cta_id %>">
+      <h3 id="<%= feedback_cta_id %>" class="visually-hidden">Sección de feedback</h3>
+      <div class="feedback-cta-content">
+        <div class="feedback-cta-icon">
+          <%= helpers.lucide_icon @feedback_cta[:icon], class: "w-12 h-12" %>
+        </div>
+        <div class="feedback-cta-text">
+          <h4 class="feedback-cta-title"><%= @feedback_cta[:title] %></h4>
+          <p class="feedback-cta-description"><%= @feedback_cta[:text] %></p>
+        </div>
+        <div class="feedback-cta-button">
+          <%= render(ButtonComponent.new(
+            variant: :primary,
+            text: @feedback_cta[:cta_text],
+            href: resolve_path(@feedback_cta[:cta_href]),
+            icon: @feedback_cta[:cta_icon]
+          )) %>
+        </div>
+      </div>
+    </aside>
+  </div>
+</section> 
