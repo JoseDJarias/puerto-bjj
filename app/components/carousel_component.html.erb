@@ -1,0 +1,35 @@
+<div class="carousel-container" <%= carousel_style.html_safe %> <%= data_attributes.map { |k, v| "#{k}=\"#{v}\"" }.join(" ").html_safe %>>
+  <div data-carousel-target="slides" class="carousel-track">
+    <% @images.each do |image| %>
+      <div class="carousel-slide">
+        <%= image_tag image[:src], 
+            class: 'carousel-image', 
+            alt: image[:alt] || 'Carousel image',
+            loading: 'lazy' %>
+      </div>
+    <% end %>
+  </div>
+
+  <% if @show_navigation && has_multiple_slides? %>
+    <button data-action="click->carousel#prev" class="carousel-nav carousel-nav--prev" aria-label="Previous slide">
+      <%= helpers.lucide_icon "chevron-left", class: "w-6 h-6" %>
+    </button>
+    <button data-action="click->carousel#next" class="carousel-nav carousel-nav--next" aria-label="Next slide">
+      <%= helpers.lucide_icon "chevron-right", class: "w-6 h-6" %>
+    </button>
+  <% end %>
+
+  <% if @show_indicators && has_multiple_slides? %>
+    <div class="carousel-indicators" role="tablist" aria-label="Carousel slides">
+      <% @images.each_with_index do |image, index| %>
+        <button data-action="click->carousel#goToSlide" 
+                data-carousel-slide-param="<%= index %>"
+                class="carousel-indicator <%= 'carousel-indicator--active' if index == 0 %>"
+                role="tab"
+                aria-label="Go to slide <%= index + 1 %>"
+                aria-selected="<%= index == 0 ? 'true' : 'false' %>">
+        </button>
+      <% end %>
+    </div>
+  <% end %>
+</div> 

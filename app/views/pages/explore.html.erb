@@ -7,23 +7,17 @@
       <%= render(Explore::HeroSectionComponent.new(
         cta_href: acerca_de_nosotros_path
       )) %>
-      <div data-controller="carousel" class="carousel-container">
-        <div data-carousel-target="slides" class="carousel-track">
-          <div class="carousel-slide">
-            <%= image_tag 'home/jiujitsu-gi.jpeg', class: 'carousel-image' %>
-          </div>
-          <div class="carousel-slide">
-            <%= image_tag 'home/jiujitsu-nogi.jpeg', class: 'carousel-image' %>
-          </div>
-          <div class="carousel-slide">
-            <%= image_tag 'home/brazilian-jiujitsu.jpeg', class: 'carousel-image' %>
-          </div>
-        </div>
-        <!-- Botones de navegación por el momento los vamos a skipear
-        <button data-action="click->carousel#prev" class="absolute top-1/2 left-2 transform -translate-y-1/2 bg-black text-white p-2 rounded">←</button>
-        <button data-action="click->carousel#next" class="absolute top-1/2 right-2 transform -translate-y-1/2 bg-black text-white p-2 rounded">→</button>
-        -->
-      </div>
+      <%= render(CarouselComponent.new(
+        images: [
+          { src: 'home/jiujitsu-gi.jpeg', alt: 'Jiu-Jitsu con Gi - Entrenamiento tradicional' },
+          { src: 'home/jiujitsu-nogi.jpeg', alt: 'Jiu-Jitsu No-Gi - Entrenamiento moderno' },
+          { src: 'home/brazilian-jiujitsu.jpeg', alt: 'Brazilian Jiu-Jitsu - Arte marcial completo' }
+        ],
+        auto_slide: true,
+        interval: 5000,
+        show_navigation: false,
+        show_indicators: false
+      )) %>
     </div>
     <!--
     <div class="explore-section-2">
@@ -31,210 +25,18 @@
     </div>
     -->
     <div class="explore-section-3">
-        <!-- New Programs Promo Section -->
-        <div class="programs-promo-section">
-          <div class="programs-promo-header">
-            <h2 class="promo-section-title">Info sobre nuestros programas</h2>
-          </div>
-          <div class="programs-promo-grid">
-            <!-- Kids Card -->
-            <div class="program-card">
-              <div class="program-card-icon">
-                <%= lucide_icon "shield", class: "w-10 h-10" %>
-              </div>
-              <h3 class="program-card-title">Programa Kids</h3>
-              <p class="program-card-text">
-                Un ambiente seguro y divertido donde los más pequeños cultivan su carácter y confianza mientras crean amistades para toda la vida.
-              </p>
-              <%= render(ButtonComponent.new(
-                variant: :primary,
-                text: "¡Quiero conocer más!",
-                href: kids_program_path
-              )) %>
-            </div>
-
-            <!-- All Programs Card -->
-            <div class="program-card">
-              <div class="program-card-icon">
-                <%= lucide_icon "swords", class: "w-10 h-10" %>
-              </div>
-              <h3 class="program-card-title">Programas para Adultos</h3>
-              <p class="program-card-text">
-                Descubre todas las disciplinas que ofrecemos, desde Jiu-Jitsu (Gi & No-Gi) y Boxeo hasta MMA.
-              </p>
-              <%= render(ButtonComponent.new(
-                variant: :primary,
-                text: "Explorar Programas",
-                href: programs_path
-              )) %>
-            </div>
-          </div>
-        </div>
+      <%= render(Explore::ProgramsPromoComponent.new) %>
     </div>
 
     <!-- Social Media Links -->
-    <div class="contact-social gap">
-      <h3 class="contact-social-title">Nuestra comunidad es la mejor parte de Puerto Jiu-Jitsu</h3>
-      <h4 class="contact-social-title">Síguenos en redes sociales</h4>
-      <p class="contact-social-subtitle">Mantente al día con nuestras últimas noticias, eventos y actualizaciones</p>
-      <div class="social-links">
-        <%= render(ButtonComponent.new(
-          variant: :plain,
-          text: "Facebook",
-          href: "https://www.facebook.com/puertojiujitsu/",
-          icon: "facebook",
-          target: "_blank"
-        )) %>
-        <%= render(ButtonComponent.new(
-          variant: :plain,
-          text: "Instagram",
-          href: "https://www.instagram.com/puertojiujitsu/",
-          icon: "instagram",
-          target: "_blank"
-        )) %>
-        <%= render(ButtonComponent.new(
-          variant: :plain,
-          text: "WhatsApp",
-          href: "https://wa.me/50672026863?text=Hola,%20me%20gustaría%20obtener%20información%20sobre%20las%20clases%20de%20Jiu-Jitsu",
-          icon: "message-circle",
-          target: "_blank"
-        )) %>
-      </div>
-    </div>
+    <%= render(Explore::SocialLinksComponent.new) %>
 
-    <!-- Mobile-only Image Banner -->
     <div class="explore-mobile-banner">
       <%= image_tag 'home/logo.jpg', alt: 'Puerto Jiu-Jitsu large logo banner', class: 'explore-banner-image' %>
     </div>
 
-    <div class="explore-section-5">
-      <div class="schedule-container">
-        <!-- Header Section -->
-        <div class="schedule-header">
-          <h2 class="schedule-title">Horarios de Clases</h2>
-          <p class="schedule-subtitle">Encuentra el horario perfecto para tu entrenamiento</p>
-        </div>
-
-        <!-- Schedule Grid -->
-        <div class="schedule-grid">
-          <!-- Combined Schedule Card -->
-          <div class="schedule-card">
-            <div class="schedule-card-header">
-              <%= lucide_icon "calendar", class: "w-8 h-8" %>
-            </div>
-            <div class="schedule-card-content">
-              <!-- Kids Schedule -->
-              <div class="schedule-group">
-                <h4 class="schedule-group-title">
-                  <%= lucide_icon "users", class: "w-5 h-5 inline-block mr-2" %>
-                  Programa Kids (5-13 años)
-                </h4>
-                <ul class="schedule-list">
-                  <li>
-                    <span class="schedule-days">Lunes</span>
-                    <span class="schedule-time">5:00 PM</span>
-                  </li>
-                  <li>
-                    <span class="schedule-days">Sabado</span>
-                    <span class="schedule-time">9:30 AM</span>
-                  </li>
-                </ul>
-              </div>
-
-              <!-- Adults Schedule -->
-              <div class="schedule-group">
-                <h4 class="schedule-group-title">
-                  <%= lucide_icon "dumbbell", class: "w-5 h-5 inline-block mr-2" %>
-                  Programa Adultos
-                </h4>
-                
-                <!-- Jiu-Jitsu No Gi -->
-                <div class="schedule-subgroup">
-                  <h5 class="schedule-subgroup-title">Jiu-Jitsu No Gi</h5>
-                  <ul class="schedule-list">
-                    <li>
-                      <span class="schedule-days">Lunes</span>
-                      <span class="schedule-time">12:00 PM</span>
-                    </li>
-                    <li>
-                      <span class="schedule-days">Martes</span>
-                      <span class="schedule-time">12:00 PM y 6:00 PM</span>
-                    </li>
-                    <li>
-                      <span class="schedule-days">Jueves</span>
-                      <span class="schedule-time">6:30 PM</span>
-                    </li>
-                    <li>
-                      <span class="schedule-days">Viernes</span>
-                      <span class="schedule-time">12:00 PM</span>
-                    </li>
-                    <li>
-                      <span class="schedule-days">Sábado</span>
-                      <span class="schedule-time">12:00 PM (Open Mat)</span>
-                    </li>
-                  </ul>
-                </div>
-
-                <!-- Jiu-Jitsu con Kimono -->
-                <div class="schedule-subgroup">
-                  <h5 class="schedule-subgroup-title">Jiu-Jitsu con Kimono</h5>
-                  <ul class="schedule-list">
-                    <li>
-                      <span class="schedule-days">Lunes y Viernes</span>
-                      <span class="schedule-time">6:30 PM</span>
-                    </li>
-                    <li>
-                      <span class="schedule-days">Miércoles</span>
-                      <span class="schedule-time">12:00 PM y 6:30 PM</span>
-                    </li>
-                  </ul>
-                </div>
-
-                <!-- Boxeo -->
-                <div class="schedule-subgroup">
-                  <h5 class="schedule-subgroup-title">Boxeo</h5>
-                  <ul class="schedule-list">
-                    <li>
-                      <span class="schedule-days">Martes y Miércoles</span>
-                      <span class="schedule-time">11:00 AM</span>
-                    </li>
-                    <li>
-                      <span class="schedule-days">Miércoles y Viernes</span>
-                      <span class="schedule-time">4:30 PM</span>
-                    </li>
-                    <li>
-                      <span class="schedule-days">Sábado</span>
-                      <span class="schedule-time">11:00 AM</span>
-                    </li>
-                  </ul>
-                </div>
-
-                <!-- MMA -->
-                <div class="schedule-subgroup">
-                  <h5 class="schedule-subgroup-title">MMA</h5>
-                  <ul class="schedule-list">
-                    <li>
-                      <span class="schedule-days">Martes</span>
-                      <span class="schedule-time">5:00 PM</span>
-                    </li>
-                  </ul>
-                </div>
-              </div>
-            </div>
-          </div>
-        </div>
-
-        <!-- Additional Info -->
-        <div class="schedule-info">
-          <div class="schedule-info-card">
-            <p class="schedule-info-card-text">Las clases tienen una duración de 60-90 minutos. Llega 15 minutos antes para calentar.</p>
-          </div>
-          <div class="schedule-info-card">
-            <p class="schedule-info-card-text">Consulta nuestro calendario para clases especiales y eventos.</p>
-          </div>
-        </div>
-      </div>
-    </div>
+    <!-- Schedule Section -->
+    <%= render(Explore::ScheduleComponent.new) %>
 
     <!-- Smoothcomp Section -->
     <div class="explore-section-6">
