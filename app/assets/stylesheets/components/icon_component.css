@@ -64,6 +64,31 @@
   color: currentColor;
 }
 
+/* Medal colors with special effects */
+.text-gold {
+  color: var(--color-gold) !important;
+  filter: drop-shadow(0 2px 4px rgba(251, 191, 36, 0.3));
+}
+
+.text-silver {
+  color: var(--color-silver) !important;
+  filter: drop-shadow(0 2px 4px rgba(156, 163, 175, 0.3));
+}
+
+.text-bronze {
+  color: var(--color-bronze) !important;
+  filter: drop-shadow(0 2px 4px rgba(217, 119, 6, 0.3));
+}
+
+/* Medal effects with hover animations */
+.icon-effect--medal {
+  transition: all 0.3s ease;
+}
+
+.icon-effect--medal:hover {
+  transform: scale(1.1);
+}
+
 /* Responsive icon sizes */
 @media (max-width: 768px) {
   .icon-component--responsive {
@@ -76,5 +101,34 @@
   .icon-component--responsive {
     width: var(--size-md, 1.5rem);
     height: var(--size-md, 1.5rem);
+  }
+}
+
+/* Accessibility improvements */
+@media (prefers-reduced-motion: reduce) {
+  .icon-effect--medal {
+    transition: none;
+  }
+  
+  .icon-effect--medal:hover {
+    transform: none;
+  }
+}
+
+/* High contrast mode support */
+@media (prefers-contrast: high) {
+  .icon-component--gold {
+    color: #d97706;
+    filter: none;
+  }
+  
+  .icon-component--silver {
+    color: #6b7280;
+    filter: none;
+  }
+  
+  .icon-component--bronze {
+    color: #b45309;
+    filter: none;
   }
 } 

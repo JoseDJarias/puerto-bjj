@@ -92,6 +92,24 @@ class IconComponentTest < ViewComponent::TestCase
     assert_selector "[class*='text-current']"
   end
 
+  def test_renders_icon_with_gold_color
+    render_inline(IconComponent.new(name: "award", color: :gold))
+
+    assert_selector "[class*='text-gold']"
+  end
+
+  def test_renders_icon_with_silver_color
+    render_inline(IconComponent.new(name: "award", color: :silver))
+
+    assert_selector "[class*='text-silver']"
+  end
+
+  def test_renders_icon_with_bronze_color
+    render_inline(IconComponent.new(name: "award", color: :bronze))
+
+    assert_selector "[class*='text-bronze']"
+  end
+
   def test_renders_icon_with_custom_color_string
     render_inline(IconComponent.new(name: "heart", color: "text-blue-500"))
 
@@ -141,6 +159,43 @@ class IconComponentTest < ViewComponent::TestCase
     assert_selector "[class*='w-16 h-16']"
   end
 
+  def test_renders_icon_with_custom_size_class_no_default
+    render_inline(IconComponent.new(
+      name: "heart",
+      size: :custom,
+      class_name: "w-20 h-20"
+    ))
+
+    assert_selector "[class*='w-20 h-20']"
+    assert_no_selector "[class*='w-6 h-6']" # Should not add default
+  end
+
+  def test_renders_icon_with_medal_effect
+    render_inline(IconComponent.new(
+      name: "award",
+      color: :gold,
+      effects: :medal
+    ))
+
+    assert_selector "[class*='text-gold']"
+    assert_selector "[class*='icon-effect--medal']"
+  end
+
+  def test_renders_icon_with_medal_effect_and_custom_size
+    render_inline(IconComponent.new(
+      name: "award",
+      size: :xxl,
+      color: :silver,
+      effects: :medal,
+      class_name: "mr-2"
+    ))
+
+    assert_selector "[class*='w-12 h-12']"
+    assert_selector "[class*='text-silver']"
+    assert_selector "[class*='icon-effect--medal']"
+    assert_selector "[class*='mr-2']"
+  end
+
   def test_renders_icon_with_invalid_size_falls_back_to_medium
     render_inline(IconComponent.new(name: "heart", size: :invalid))
 
@@ -153,13 +208,20 @@ class IconComponentTest < ViewComponent::TestCase
     assert_no_selector "[class*='text-invalid']"
   end
 
+  def test_renders_icon_with_invalid_effect_has_no_effect_class
+    render_inline(IconComponent.new(name: "heart", effects: :invalid))
+
+    assert_no_selector "[class*='icon-effect--invalid']"
+  end
+
   def test_renders_icon_with_all_attributes
     render_inline(IconComponent.new(
       name: "check",
       size: :xl,
       color: :success,
       class_name: "inline-block mr-2",
-      aria_label: "Success indicator"
+      aria_label: "Success indicator",
+      effects: :medal
     ))
 
     assert_selector "[class*='w-10 h-10']"
@@ -168,6 +230,7 @@ class IconComponentTest < ViewComponent::TestCase
     assert_selector "[class*='mr-2']"
     assert_selector "[aria-label='Success indicator']"
     assert_selector "[role='img']"
+    assert_selector "[class*='icon-effect--medal']"
   end
 
   def test_renders_icon_with_lucide_icon_helper
@@ -175,5 +238,20 @@ class IconComponentTest < ViewComponent::TestCase
 
     # Should use the lucide_icon helper
     assert_selector "svg"
+  end
+
+  def test_renders_icon_with_medal_colors_and_effects_combined
+    render_inline(IconComponent.new(
+      name: "award",
+      size: :xxl,
+      color: :bronze,
+      effects: :medal,
+      aria_label: "Bronze medal"
+    ))
+
+    assert_selector "[class*='w-12 h-12']"
+    assert_selector "[class*='text-bronze']"
+    assert_selector "[class*='icon-effect--medal']"
+    assert_selector "[aria-label='Bronze medal']"
   end
 end
