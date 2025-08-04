@@ -4,11 +4,9 @@
 
 <div class="explore-container" >
     <div class="explore-section-1">
-      <% cache ['hero_section', 'v1', 'explore_page'] do %>
-        <%= render(Explore::HeroSectionComponent.new(
-          cta_href: acerca_de_nosotros_path
-        )) %>
-      <% end %>
+      <%= render(Explore::HeroSectionComponent.new(
+        cta_href: acerca_de_nosotros_path
+      )) %>
       <div data-controller="carousel" class="carousel-container">
         <div data-carousel-target="slides" class="carousel-track">
           <div class="carousel-slide">

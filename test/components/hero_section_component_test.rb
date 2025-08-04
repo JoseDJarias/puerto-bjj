@@ -124,23 +124,4 @@ class Explore::HeroSectionComponentTest < ViewComponent::TestCase
     assert_selector "nav"
     assert_selector "address"
   end
-
-  def test_cache_key_generation
-    component = Explore::HeroSectionComponent.new(
-      title: "Test Title",
-      subtitle: "Test Subtitle",
-      cta_href: "/test"
-    )
-
-    cache_key = component.send(:cache_key)
-    assert_includes cache_key, "hero_section"
-    assert_includes cache_key, "v1"
-    assert_includes cache_key, "test-title"  # parameterize convierte "Test Title" a "test-title"
-    assert_includes cache_key, "test-subtitle"  # parameterize convierte "Test Subtitle" a "test-subtitle"
-  end
-
-  def test_cache_exists_method
-    component = Explore::HeroSectionComponent.new
-    assert_respond_to component, :cache_exists?
-  end
 end

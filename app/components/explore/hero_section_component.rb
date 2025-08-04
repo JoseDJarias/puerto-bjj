@@ -21,21 +21,7 @@ module Explore
       @taglines = taglines
     end
 
-    def cache_exists?
-      Rails.cache.exist?(cache_key)
-    end
-
     private
-
-    def cache_key
-      [
-        "hero_section",
-        "v1",
-        @title.parameterize,
-        @subtitle.parameterize,
-        @cta_href.present? ? "with_cta" : "no_cta"
-      ].compact.join("/")
-    end
 
     def location_links
       [
