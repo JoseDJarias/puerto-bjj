@@ -1,0 +1,114 @@
+/* Explore::SocialLinksComponent Styles */
+
+.contact-social {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  width: 100%;
+  height: auto;
+  padding: var(--size-8) var(--size-4);
+  text-align: center;
+  border-top: 1px dashed var(--color-border);
+  border-bottom: 1px dashed var(--color-border);
+  background: var(--color-bg);
+}
+
+.social-links-header {
+  margin-bottom: var(--size-6);
+}
+
+.contact-social-title {
+  font-size: 1.25rem;
+  font-weight: var(--font-semibold);
+  color: var(--color-text);
+  margin-bottom: var(--size-2);
+}
+
+.contact-social-subtitle {
+  color: var(--color-text-subtle);
+  font-size: 0.875rem;
+  margin-bottom: var(--size-4);
+  line-height: 1.5;
+}
+
+.social-links {
+  display: flex;
+  justify-content: center;
+  gap: var(--size-4);
+  flex-wrap: wrap;
+  width: 100%;
+  max-width: 600px;
+}
+
+/* Responsive Design */
+@media (min-width: 768px) {
+  .contact-social {
+    height: 700px;
+    padding: var(--size-12) var(--size-6);
+  }
+  
+  .contact-social-title {
+    font-size: 2rem;
+  }
+  
+  .contact-social-subtitle {
+    font-size: 1.4rem;
+    margin-bottom: 4rem;
+  }
+  
+  .social-links {
+    gap: var(--size-6);
+  }
+}
+
+@media (min-width: 1024px) {
+  .contact-social {
+    height: 700px;
+  }
+  
+  .contact-social-title {
+    font-size: 2rem;
+  }
+  
+  .contact-social-subtitle {
+    font-size: 1.5rem;
+  }
+}
+
+@media (min-width: 1440px) {
+  .contact-social {
+    padding: var(--size-16) var(--size-8);
+  }
+}
+
+@media (min-width: 1920px) {
+  .contact-social {
+    height: 50vh;
+  }
+  
+  .contact-social-title {
+    font-size: 3rem;
+  }
+  
+  .contact-social-subtitle {
+    font-size: 2rem;
+  }
+  
+  .social-links {
+    gap: var(--size-8);
+  }
+}
+
+/* Accessibility */
+.contact-social:focus-within {
+  outline: 2px solid var(--color-primary);
+  outline-offset: 2px;
+}
+
+/* Reduced Motion */
+@media (prefers-reduced-motion: reduce) {
+  .social-links a {
+    transition: none;
+  }
+} 
