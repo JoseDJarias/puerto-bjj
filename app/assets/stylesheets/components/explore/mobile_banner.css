@@ -1,0 +1,46 @@
+/* Explore::MobileBannerComponent Styles */
+
+.mobile-banner-container {
+  display: none; /* Hidden by default on desktop */
+  width: 100%;
+  height: 60vh; /* 60% of the viewport height - a nice, tall banner */
+  margin: 2rem 0; /* Add some vertical space around the banner */
+}
+
+.mobile-banner-container .explore-banner-image {
+  width: 100%;
+  height: 100%;
+  object-fit: contain; /* This makes the image cover the container without distortion */
+}
+
+/* Mobile-only styles (screens up to 767px wide) */
+@media (max-width: 767px) {
+  .mobile-banner-container {
+    display: block; /* Make it visible on mobile */
+  }
+}
+
+/* Responsive Design */
+@media (min-width: 768px) {
+  .mobile-banner-container {
+    height: 100vh; /* Full viewport height on tablets and up */
+  }
+}
+
+/* Accessibility */
+.visually-hidden {
+  position: absolute !important;
+  width: 1px !important;
+  height: 1px !important;
+  padding: 0 !important;
+  margin: -1px !important;
+  overflow: hidden !important;
+  clip: rect(0, 0, 0, 0) !important;
+  white-space: nowrap !important;
+  border: 0 !important;
+}
+
+.mobile-banner-container:focus-within {
+  outline: 2px solid var(--color-primary);
+  outline-offset: 2px;
+} 
