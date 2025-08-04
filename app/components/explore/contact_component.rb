@@ -1,5 +1,7 @@
 module Explore
   class ContactComponent < ViewComponent::Base
+    include PathResolver
+
     def initialize(
       title: "Contáctanos",
       subtitle: "Responderemos todos tus consultas e inquietudes, escucharemos tus comentarios. Estamos aca para servirte y ser parte de tu crecimiento personal.",
@@ -74,18 +76,6 @@ module Explore
 
     def feedback_cta_id
       "#{contact_id}_feedback"
-    end
-
-    def resolve_path(path_string)
-      # Convert string path to actual Rails path helper
-      case path_string
-      when "feedback_path"
-        feedback_path
-      else
-        path_string
-      end
-    rescue NoMethodError
-      "#" # Fallback if path doesn't exist
     end
   end
 end
