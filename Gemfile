@@ -28,7 +28,7 @@ gem "thruster", require: false
 group :development, :test do
   gem "debug", ">= 1.0.0"
 
-  gem "brakeman", require: false
+  gem "brakeman", "~> 7.1.0", require: false
 
   gem "rubocop-rails-omakase", require: false
 end
