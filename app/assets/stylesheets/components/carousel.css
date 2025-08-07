@@ -5,7 +5,7 @@
   width: 100%;
   overflow: hidden;
   border-radius: var(--rounded-lg);
-  box-shadow: var(--shadow-sm);
+  margin: 0 auto; /* Center the carousel */
 }
 
 .carousel-track {
@@ -32,8 +32,8 @@
   position: absolute;
   top: 50%;
   transform: translateY(-50%);
-  background: rgba(0, 0, 0, 0.7);
-  color: white;
+  background: var(--color-bg-dark);
+  color: var(--color-bg-secondary);
   border: none;
   border-radius: 50%;
   width: 3rem;
@@ -81,15 +81,15 @@
 }
 
 .carousel-indicator:hover {
-  background: rgba(255, 255, 255, 0.8);
+  background: var(--color-bg-secondary);
 }
 
 .carousel-indicator--active {
-  background: white;
+  background: var(--color-bg-secondary);
   transform: scale(1.2);
 }
 
-/* Responsive Design */
+/* Responsive Design - Mobile First */
 @media (max-width: 768px) {
   .carousel-nav {
     width: 2.5rem;
@@ -111,6 +111,32 @@
   .carousel-indicator {
     width: 0.5rem;
     height: 0.5rem;
+  }
+}
+
+
+/* Desktop adjustments */
+@media (min-width: 1024px) {
+  .carousel-container {
+    max-width: 1200px; /* Fixed max width for very large screens */
+    max-height: 800px; /* Fixed max height */
+  }
+  
+  .carousel-image {
+    object-fit:contain;
+    max-height: 800px;
+  }
+}
+
+/* Extra Large Desktop */
+@media (min-width: 1920px) {
+  .carousel-container {
+    max-width: 1400px;
+    max-height: 1000px;
+  }
+  
+  .carousel-image {
+    max-height: 1000px;
   }
 }
 
