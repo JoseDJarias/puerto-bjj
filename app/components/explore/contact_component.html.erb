@@ -50,13 +50,6 @@
     <aside class="contact-feedback-cta" role="complementary" aria-labelledby="<%= feedback_cta_id %>">
       <h3 id="<%= feedback_cta_id %>" class="visually-hidden">Sección de feedback</h3>
       <div class="feedback-cta-content">
-        <div class="feedback-cta-icon">
-          <%= render(IconComponent.new(
-            name: @feedback_cta[:icon],
-            size: :xxl,
-            aria_label: "Feedback icon"
-          )) %>
-        </div>
         <div class="feedback-cta-text">
           <h4 class="feedback-cta-title"><%= @feedback_cta[:title] %></h4>
           <p class="feedback-cta-description"><%= @feedback_cta[:text] %></p>

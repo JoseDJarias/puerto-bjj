@@ -6,7 +6,6 @@
   align-items: center;
   width: 100%;
   padding: var(--section-spacing-lg) var(--size-4);
-  background: var(--color-bg);
   /* Add component spacing */
   margin-bottom: var(--section-spacing-sm);
 }
@@ -27,7 +26,6 @@
 
 .contact-subtitle {
   font-size: var(--text-lg);
-  color: var(--color-text-subtle);
   line-height: var(--line-height-normal);
   margin: 0;
 }
@@ -52,13 +50,17 @@
 }
 
 .contact-card {
-  background: var(--color-surface);
+  background: var(--color-bg-secondary);
   border: 1px solid var(--color-border);
   border-radius: var(--rounded-xl);
   padding: var(--size-6);
-  transition: all 0.3s ease;
+  transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
   display: flex;
   flex-direction: column;
+  box-shadow: var(--shadow-sm);
+  position: relative;
+  overflow: hidden;
+  text-align: center; /* Center all content */
 }
 
 .contact-card:hover {
@@ -69,7 +71,8 @@
 
 .contact-card-header {
   display: flex;
-  align-items: center;
+  flex-direction: column; /* Stack icon and title vertically */
+  align-items: center; /* Center horizontally */
   gap: var(--size-3);
   margin-bottom: var(--size-4);
 }
@@ -80,16 +83,18 @@
   justify-content: center;
   width: 3rem;
   height: 3rem;
-  background: var(--color-primary);
+  background: var(--color-accent); /* Red background for icons */
   color: var(--color-text-reversed);
   border-radius: var(--rounded-lg);
   flex-shrink: 0;
-  transition: all 0.3s ease;
+  transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+  box-shadow: var(--shadow-sm);
 }
 
 .contact-card:hover .contact-card-icon {
-  transform: scale(1.1);
-  background: var(--color-primary-dark);
+  transform: scale(1.1) rotate(5deg);
+  background: var(--color-accent-light); /* Lighter red on hover */
+  box-shadow: var(--shadow-md);
 }
 
 .contact-card-title {
@@ -105,6 +110,8 @@
   display: flex;
   flex-direction: column;
   gap: var(--size-3);
+  align-items: center; /* Center content */
+  text-align: center; /* Center text */
 }
 
 .contact-card-text {
@@ -116,7 +123,6 @@
 
 .contact-card-text-secondary {
   font-size: var(--text-sm);
-  color: var(--color-text-subtle);
   margin: 0;
   line-height: var(--line-height-normal);
 }
@@ -148,6 +154,14 @@
   gap: var(--size-6);
 }
 
+.feedback-cta-text {
+  display: flex;
+  flex-direction: column;
+  gap: var(--size-3);
+  align-items: center; /* Center text content */
+  text-align: center; /* Center text */
+}
+
 .feedback-cta-icon {
   display: flex;
   align-items: center;
@@ -165,12 +179,6 @@
   background: var(--color-primary-dark);
 }
 
-.feedback-cta-text {
-  display: flex;
-  flex-direction: column;
-  gap: var(--size-3);
-}
-
 .feedback-cta-title {
   font-size: var(--text-xl);
   font-weight: var(--font-bold);
@@ -181,7 +189,6 @@
 
 .feedback-cta-description {
   font-size: var(--text-base);
-  color: var(--color-text-subtle);
   margin: 0;
   line-height: var(--line-height-normal);
 }
@@ -204,15 +211,15 @@
 }
 
 .contact-container:focus-within {
-  outline: 2px solid var(--color-selected-dark);
+  outline: 2px solid var(--color-selected-light);
   outline-offset: 2px;
 }
 
 /* Responsive Design - Mobile First */
 @media (min-width: 768px) {
   .contact-container {
-    padding: var(--section-spacing-xl) var(--size-6);
-    margin-bottom: var(--section-spacing-md);
+    padding: var(--section-spacing-md) var(--size-6); /* Reduced from xl to md */
+    margin-bottom: var(--section-spacing-sm); /* Reduced from md to sm */
   }
 
   .contact-title {
@@ -225,11 +232,11 @@
 
   .contact-cards-grid {
     grid-template-columns: repeat(2, 1fr);
-    gap: var(--size-8);
+    gap: var(--size-6); /* Reduced from 8 to 6 */
   }
 
   .contact-card {
-    padding: var(--size-8);
+    padding: var(--size-6); /* Reduced from 8 to 6 */
   }
 
   .contact-card-title {
@@ -241,7 +248,7 @@
   }
 
   .contact-feedback-cta {
-    padding: var(--size-12);
+    padding: var(--size-8); /* Reduced from 12 to 8 */
   }
 
   .feedback-cta-title {
@@ -255,8 +262,8 @@
 
 @media (min-width: 1024px) {
   .contact-container {
-    padding: var(--section-spacing-xl) var(--size-8);
-    margin-bottom: var(--section-spacing-lg);
+    padding: var(--section-spacing-lg) var(--size-8); /* Reduced from xl to lg */
+    margin-bottom: var(--section-spacing-md); /* Reduced from lg to md */
   }
 
   .contact-title {
@@ -264,12 +271,12 @@
   }
 
   .contact-cards-grid {
-    grid-template-columns: repeat(3, 1fr);
-    gap: var(--size-10);
+    grid-template-columns: repeat(2, 1fr); /* Changed from 3 to 2 columns */
+    gap: var(--size-8); /* Reduced from 10 to 8 */
   }
 
   .contact-card {
-    padding: var(--size-10);
+    padding: var(--size-8); /* Reduced from 10 to 8 */
   }
 
   .contact-card-title {
@@ -281,13 +288,11 @@
   }
 
   .contact-feedback-cta {
-    padding: var(--size-16);
+    padding: var(--size-12); /* Reduced from 16 to 12 */
   }
 
   .feedback-cta-content {
-    flex-direction: row;
-    text-align: left;
-    gap: var(--size-8);
+    gap: var(--size-6); /* Reduced from 8 to 6 */
   }
 
   .feedback-cta-text {
@@ -313,7 +318,7 @@
   }
 
   .contact-feedback-cta {
-    padding: var(--size-20);
+    padding: var(--section-spacing-2xl);
   }
 }
 
