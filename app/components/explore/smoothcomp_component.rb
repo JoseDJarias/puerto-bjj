@@ -42,10 +42,6 @@ module Explore
       ]
     end
 
-    def total_medals
-      @stats.sum { |stat| stat[:count] }
-    end
-
     def smoothcomp_id
       @smoothcomp_id ||= "smoothcomp_#{SecureRandom.hex(4)}"
     end

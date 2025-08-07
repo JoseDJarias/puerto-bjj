@@ -90,7 +90,6 @@ class Explore::SmoothcompComponentTest < ViewComponent::TestCase
     assert_selector ".stat-item", count: 2
     assert_selector ".stat-number", text: "5"
     assert_selector ".stat-number", text: "3"
-    assert_selector ".total-number", text: "8" # 5 + 3
   end
 
   def test_renders_with_semantic_html_structure
@@ -217,18 +216,6 @@ class Explore::SmoothcompComponentTest < ViewComponent::TestCase
 
     # Check that IDs are unique and properly formatted
     assert_selector "h4[id*='smoothcomp']"
-  end
-
-  def test_calculates_total_medals_correctly
-    custom_stats = [
-      { type: :gold, count: 10, label: "Oro", icon: "award", color_class: "gold" },
-      { type: :silver, count: 5, label: "Plata", icon: "award", color_class: "silver" },
-      { type: :bronze, count: 3, label: "Bronce", icon: "award", color_class: "bronze" }
-    ]
-
-    render_inline(Explore::SmoothcompComponent.new(stats: custom_stats))
-
-    assert_selector ".total-number", text: "18" # 10 + 5 + 3
   end
 
   def test_renders_with_grid_layout
