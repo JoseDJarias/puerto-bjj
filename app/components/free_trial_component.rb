@@ -20,7 +20,7 @@
 #     size: :large
 #   )) %>
 class FreeTrialComponent < ViewComponent::Base
-  attr_reader :title, :subtitle, :cta_text, :whatsapp_message, :variant, :size
+  attr_reader :title, :subtitle, :cta_text, :whatsapp_message, :variant, :size, :show_on
 
   def initialize(
     title: "¿Listos para empezar tu aventura?",
@@ -28,7 +28,8 @@ class FreeTrialComponent < ViewComponent::Base
     cta_text: "¡Quiero mi clase de prueba!",
     whatsapp_message: "Hola, me gustaría obtener información sobre las clases de Puerto Jiu Jitsu.",
     variant: :primary,
-    size: :medium
+    size: :medium,
+    show_on: :all
   )
     @title = title
     @subtitle = subtitle
@@ -36,6 +37,7 @@ class FreeTrialComponent < ViewComponent::Base
     @whatsapp_message = whatsapp_message
     @variant = variant
     @size = size
+    @show_on = show_on
   end
 
   private
@@ -53,7 +55,8 @@ class FreeTrialComponent < ViewComponent::Base
     [
       "free-trial-cta",
       "free-trial-cta--#{@variant}",
-      "free-trial-cta--#{@size}"
+      "free-trial-cta--#{@size}",
+      visibility_classes
     ].compact.join(" ")
   end
 
@@ -64,5 +67,22 @@ class FreeTrialComponent < ViewComponent::Base
       "btn--#{@variant}",
       "btn--#{@size}"
     ].compact.join(" ")
+  end
+
+  private
+
+  def visibility_classes
+    case @show_on
+    when :mobile_only
+      "free-trial-cta--mobile-only"
+    when :desktop_only
+      "free-trial-cta--desktop-only"
+    when :mobile_tablet
+      "free-trial-cta--mobile-tablet"
+    when :tablet_desktop
+      "free-trial-cta--tablet-desktop"
+    else
+      "" # :all - show everywhere
+    end
   end
 end

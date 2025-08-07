@@ -2,7 +2,7 @@
 .free-trial-cta {
   background: var(--color-primary-light);
   text-align: center;
-  padding: var(--size-16) var(--size-4);
+  padding: var(--section-spacing-lg) var(--section-spacing-xs);
   min-height: 300px;
   display: flex;
   flex-direction: column;
@@ -11,21 +11,20 @@
 }
 
 .free-trial-header {
-  margin-bottom: var(--size-8);
+  margin-bottom: var(--section-spacing-sm);
 }
 
 .free-trial-title {
   font-size: var(--text-4xl);
   font-weight: var(--font-bold);
-  margin-bottom: var(--size-4);
+  margin-bottom: var(--section-spacing-xs);
   color: var(--color-text);
   line-height: 1.2;
 }
 
 .free-trial-subtitle {
   font-size: var(--text-lg);
-  margin-bottom: var(--size-8);
-  color: var(--color-text-subtle);
+  margin-bottom: var(--section-spacing-sm);
   line-height: 1.5;
   max-width: 600px;
   margin-left: auto;
@@ -39,20 +38,7 @@
 }
 
 .free-trial-button {
-  display: inline-flex;
-  align-items: center;
-  justify-content: center;
-  gap: var(--size-3);
   min-height: 50px;
-  padding: var(--size-3) var(--size-6);
-  border-radius: var(--rounded-lg);
-  text-decoration: none;
-  font-weight: var(--font-semibold);
-  font-size: var(--text-lg);
-  transition: all 0.3s ease;
-  background: var(--color-primary);
-  color: var(--color-text-reversed);
-  border: 2px solid transparent;
 }
 
 .free-trial-button:hover {
@@ -118,7 +104,7 @@
 /* Responsive Design */
 @media (min-width: 768px) {
   .free-trial-cta {
-    padding: var(--size-24) var(--size-4);
+    width: 100%;
   }
 
   .free-trial-subtitle {
@@ -133,10 +119,6 @@
 }
 
 @media (min-width: 1024px) {
-  .free-trial-cta {
-    padding: var(--size-32) var(--size-8);
-  }
-
   .free-trial-title {
     font-size: var(--text-4xl);
   }
@@ -147,10 +129,6 @@
 }
 
 @media (min-width: 1440px) {
-  .free-trial-cta {
-    padding: var(--size-32) var(--size-8);
-  }
-
   .free-trial-button {
     width: 600px;
   }
@@ -181,6 +159,57 @@
 
 /* Focus styles for keyboard navigation */
 .free-trial-button:focus-visible {
-  outline: 3px solid var(--color-primary);
-  outline-offset: 3px;
+  outline: 2px solid var(--color-primary);
+  outline-offset: 2px;
+}
+
+/* Visibility classes for responsive display */
+.free-trial-cta--mobile-only {
+  display: block;
+}
+
+.free-trial-cta--desktop-only {
+  display: none;
+}
+
+.free-trial-cta--mobile-tablet {
+  display: block;
+}
+
+.free-trial-cta--tablet-desktop {
+  display: none;
+}
+
+/* Mobile only: hide on tablet and up */
+@media (min-width: 768px) {
+  .free-trial-cta--mobile-only {
+    display: none;
+  }
+  
+  .free-trial-cta--mobile-tablet {
+    display: block;
+  }
+  
+  .free-trial-cta--tablet-desktop {
+    display: block;
+  }
+}
+
+/* Desktop only: hide on mobile and tablet */
+@media (min-width: 1024px) {
+  .free-trial-cta--mobile-only {
+    display: none;
+  }
+  
+  .free-trial-cta--mobile-tablet {
+    display: none;
+  }
+  
+  .free-trial-cta--desktop-only {
+    display: block;
+  }
+  
+  .free-trial-cta--tablet-desktop {
+    display: block;
+  }
 } 
