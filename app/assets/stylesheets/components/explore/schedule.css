@@ -5,10 +5,9 @@
   flex-direction: column;
   align-items: center;
   width: 100%;
-  padding: var(--section-spacing-lg) var(--size-4);
-  background: var(--color-bg);
+  padding: var(--section-spacing-md) var(--size-4);
   /* Add component spacing */
-  margin-bottom: var(--section-spacing-sm);
+  margin-bottom: var(--section-spacing-xs);
 }
 
 .schedule-header {
@@ -27,7 +26,6 @@
 
 .schedule-subtitle {
   font-size: var(--text-lg);
-  color: var(--color-text-subtle);
   line-height: var(--line-height-normal);
   margin: 0;
 }
@@ -53,8 +51,8 @@
 }
 
 .schedule-card-header {
-  background: var(--color-primary);
-  color: var(--color-text-reversed);
+  background: var(--color-bg-dark); /* Dark background */
+  color: var(--color-text-reversed); /* White text */
   padding: var(--size-6);
   text-align: center;
 }
@@ -88,7 +86,7 @@
   color: var(--color-text);
   margin-bottom: var(--size-4);
   padding-bottom: var(--size-2);
-  border-bottom: 2px solid var(--color-primary);
+  border-bottom: 2px solid var(--color-accent); /* Warm color border */
   display: flex;
   align-items: center;
   gap: var(--size-2);
@@ -142,7 +140,7 @@
 
 .schedule-time {
   font-weight: var(--font-semibold);
-  color: var(--color-primary);
+  color: var(--color-text); /* Regular text color */
   line-height: var(--line-height-normal);
 }
 
@@ -159,8 +157,7 @@
 }
 
 .schedule-info-card {
-  background: var(--color-primary-light);
-  border: 1px solid var(--color-border);
+  border: 1px solid var(--color-accent);
   border-radius: var(--rounded-lg);
   padding: var(--size-4);
   text-align: center;
@@ -194,7 +191,7 @@
 }
 
 .schedule-container:focus-within {
-  outline: 2px solid var(--color-selected-dark);
+  outline: 2px solid var(--color-selected-light);
   outline-offset: 2px;
 }
 
@@ -202,7 +199,7 @@
 @media (min-width: 768px) {
   .schedule-container {
     padding: var(--section-spacing-xl) var(--size-6);
-    margin-bottom: var(--section-spacing-md);
+    margin-bottom: 0;
   }
 
   .schedule-title {
@@ -236,7 +233,7 @@
   }
 
   .schedule-info-card-text {
-    font-size: var(--text-base);
+    font-size: var(--text-xl);
   }
 }
 
@@ -265,7 +262,6 @@
 
 @media (min-width: 1280px) {
   .schedule-info-grid {
-    grid-template-columns: repeat(3, 1fr);
     gap: var(--size-8);
   }
 }
