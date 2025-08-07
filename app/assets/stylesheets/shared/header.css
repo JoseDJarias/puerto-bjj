@@ -31,9 +31,6 @@
 }
 
 /* Add top padding to your main content to prevent it from being hidden under the fixed header */
-#main {
-  padding-top: 150px; /* Adjust to match your header height */
-}
 
 /* Efecto de iluminación sutil al hacer scroll */
 .styled-header.scrolled {
