@@ -20,7 +20,7 @@
                 size: :custom,
                 color: stat[:type],
                 effects: :medal,
-                class_name: "w-12 h-12",
+                class_name: "stat-medal-icon",
                 aria_label: "#{stat[:count]} medallas de #{stat[:label].downcase}"
               )) %>
             </div>
@@ -46,7 +46,7 @@
 
     <footer class="smoothcomp-cta">
       <%= render(ButtonComponent.new(
-        variant: :secondary,
+        variant: :primary,
         text: @cta_text,
         href: @cta_href,
         target: "_blank",
