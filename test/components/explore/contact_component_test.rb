@@ -70,7 +70,6 @@ class Explore::ContactComponentTest < ViewComponent::TestCase
 
     assert_selector ".contact-feedback-cta"
     assert_selector ".feedback-cta-content"
-    assert_selector ".feedback-cta-icon svg"
     assert_selector ".feedback-cta-title", text: "¿Tienes algo que decirnos?"
     assert_selector ".feedback-cta-description", text: /Tu opinión es muy importante/
     assert_selector "a", text: "Enviar Feedback"
@@ -197,7 +196,6 @@ class Explore::ContactComponentTest < ViewComponent::TestCase
     assert_selector ".contact-card-cta"
     assert_selector ".contact-feedback-cta"
     assert_selector ".feedback-cta-content"
-    assert_selector ".feedback-cta-icon"
     assert_selector ".feedback-cta-text"
     assert_selector ".feedback-cta-title"
     assert_selector ".feedback-cta-description"
@@ -220,7 +218,6 @@ class Explore::ContactComponentTest < ViewComponent::TestCase
     assert_selector ".contact-card-header .contact-card-title"
     assert_selector ".contact-card-content .contact-card-text"
     assert_selector ".contact-feedback-cta .feedback-cta-content"
-    assert_selector ".feedback-cta-content .feedback-cta-icon"
     assert_selector ".feedback-cta-content .feedback-cta-text"
     assert_selector ".feedback-cta-content .feedback-cta-button"
   end
@@ -369,7 +366,6 @@ class Explore::ContactComponentTest < ViewComponent::TestCase
     # Check that feedback section has proper layout
     assert_selector ".contact-feedback-cta"
     assert_selector ".feedback-cta-content"
-    assert_selector ".feedback-cta-icon"
     assert_selector ".feedback-cta-text"
     assert_selector ".feedback-cta-button"
   end

@@ -70,18 +70,9 @@
 ## 🎨 Sistema de Colores
 ```css
 :root {
-  --color-bg: white;
-  --color-text: black;
-  --color-text-reversed: white;
-  --color-primary: var(--zinc-900);
-  --color-primary-light: rgb(145, 223, 249);
+  
 }
 ```
-
-## 🚨 Issues Críticos a Resolver
-1. **CSS Variables Dark Mode:** Corregir media query en base.css
-3. **Deploy Secrets:** Configurar correctamente KAMAL_REGISTRY_PASSWORD
-4. **Text Contrast:** Resolver problemas de texto blanco sobre blanco
 
 ## 📈 Próximas Mejoras
 - **Staging Environment:** Implementar ambiente de testing

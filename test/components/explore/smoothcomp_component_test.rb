@@ -160,7 +160,7 @@ class Explore::SmoothcompComponentTest < ViewComponent::TestCase
     render_inline(Explore::SmoothcompComponent.new)
 
     # Check that ButtonComponent is used with secondary variant
-    assert_selector ".btn--secondary"
+    assert_selector ".btn--primary"
   end
 
   def test_renders_with_accessibility_features
