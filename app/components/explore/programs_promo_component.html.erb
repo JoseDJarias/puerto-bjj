@@ -1,0 +1,33 @@
+<section class="programs-promo-section" aria-labelledby="programs-promo-title">
+  <div class="programs-promo-header">
+    <h2 id="programs-promo-title" class="promo-section-title"><%= @title %></h2>
+  </div>
+  
+  <div class="programs-promo-grid">
+    <% @programs.each_with_index do |program, index| %>
+      <article class="program-card" aria-labelledby="program-title-<%= index %>">
+        <div class="program-card-icon">
+          <%= render(IconComponent.new(
+            name: program[:icon],
+            size: :xl,
+            aria_label: "#{program[:title]} icon"
+          )) %>
+        </div>
+        
+        <h3 id="program-title-<%= index %>" class="program-card-title">
+          <%= program[:title] %>
+        </h3>
+        
+        <p class="program-card-text">
+          <%= program[:description] %>
+        </p>
+        
+        <%= render(ButtonComponent.new(
+          variant: :primary,
+          text: program[:cta_text],
+          href: resolve_path(program[:cta_href])
+        )) %>
+      </article>
+    <% end %>
+  </div>
+</section> 

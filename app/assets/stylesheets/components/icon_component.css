@@ -1,0 +1,134 @@
+/* Icon Component Styles */
+.icon-component {
+  display: inline-block;
+  vertical-align: middle;
+}
+
+/* Icon sizes using CSS-Zero variables */
+.icon-component--xs {
+  width: var(--size-xs, 1rem);
+  height: var(--size-xs, 1rem);
+}
+
+.icon-component--small {
+  width: var(--size-sm, 1.25rem);
+  height: var(--size-sm, 1.25rem);
+}
+
+.icon-component--medium {
+  width: var(--size-md, 1.5rem);
+  height: var(--size-md, 1.5rem);
+}
+
+.icon-component--large {
+  width: var(--size-lg, 2rem);
+  height: var(--size-lg, 2rem);
+}
+
+.icon-component--xl {
+  width: var(--size-xl, 2.5rem);
+  height: var(--size-xl, 2.5rem);
+}
+
+.icon-component--xxl {
+  width: var(--size-2xl, 3rem);
+  height: var(--size-2xl, 3rem);
+}
+
+/* Icon colors using CSS-Zero variables */
+.icon-component--primary {
+  color: var(--color-primary);
+}
+
+.icon-component--secondary {
+  color: var(--color-secondary);
+}
+
+.icon-component--success {
+  color: var(--color-success);
+}
+
+.icon-component--warning {
+  color: var(--color-warning);
+}
+
+.icon-component--error {
+  color: var(--color-error);
+}
+
+.icon-component--muted {
+  color: var(--color-muted);
+}
+
+.icon-component--current {
+  color: currentColor;
+}
+
+/* Medal colors with special effects */
+.text-gold {
+  color: var(--color-gold) !important;
+  filter: drop-shadow(0 2px 4px rgba(251, 191, 36, 0.3));
+}
+
+.text-silver {
+  color: var(--color-silver) !important;
+  filter: drop-shadow(0 2px 4px rgba(156, 163, 175, 0.3));
+}
+
+.text-bronze {
+  color: var(--color-bronze) !important;
+  filter: drop-shadow(0 2px 4px rgba(217, 119, 6, 0.3));
+}
+
+/* Medal effects with hover animations */
+.icon-effect--medal {
+  transition: all 0.3s ease;
+}
+
+.icon-effect--medal:hover {
+  transform: scale(1.1);
+}
+
+/* Responsive icon sizes */
+@media (max-width: 768px) {
+  .icon-component--responsive {
+    width: var(--size-sm, 1.25rem);
+    height: var(--size-sm, 1.25rem);
+  }
+}
+
+@media (min-width: 769px) {
+  .icon-component--responsive {
+    width: var(--size-md, 1.5rem);
+    height: var(--size-md, 1.5rem);
+  }
+}
+
+/* Accessibility improvements */
+@media (prefers-reduced-motion: reduce) {
+  .icon-effect--medal {
+    transition: none;
+  }
+  
+  .icon-effect--medal:hover {
+    transform: none;
+  }
+}
+
+/* High contrast mode support */
+@media (prefers-contrast: high) {
+  .icon-component--gold {
+    color: #d97706;
+    filter: none;
+  }
+  
+  .icon-component--silver {
+    color: #6b7280;
+    filter: none;
+  }
+  
+  .icon-component--bronze {
+    color: #b45309;
+    filter: none;
+  }
+} 

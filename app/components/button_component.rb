@@ -104,7 +104,21 @@ class ButtonComponent < ViewComponent::Base
     if @loading
       render_spinner
     else
-      helpers.lucide_icon(@icon, class: "#{icon_classes} #{icon_margin}")
+      render(IconComponent.new(
+        name: @icon,
+        size: button_icon_size,
+        class_name: icon_margin
+      ))
+    end
+  end
+
+  def button_icon_size
+    case @size
+    when :small then :xs
+    when :medium, :large then :small
+    when :xl then :medium
+    when :icon then :small
+    else :small
     end
   end
 

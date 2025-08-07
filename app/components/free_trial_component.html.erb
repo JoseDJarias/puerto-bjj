@@ -1,0 +1,29 @@
+<section class="<%= container_classes %>" aria-labelledby="<%= component_id %>-title">
+  <header class="free-trial-header">
+    <h2 id="<%= component_id %>-title" class="free-trial-title">
+      <%= @title %>
+    </h2>
+    <p class="free-trial-subtitle">
+      <%= @subtitle %>
+    </p>
+  </header>
+
+  <div class="free-trial-action">
+    <%= link_to whatsapp_url,
+        class: button_classes,
+        target: "_blank",
+        rel: "noopener noreferrer",
+        aria: { 
+          label: "Abrir WhatsApp para solicitar clase de prueba gratuita"
+        } do %>
+      <span class="free-trial-button-text">
+        <%= @cta_text %>
+      </span>
+      <%= render(IconComponent.new(
+        name: "mouse-pointer-click",
+        size: :medium,
+        aria_label: "Icono de clic"
+      )) %>
+    <% end %>
+  </div>
+</section> 

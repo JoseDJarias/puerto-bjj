@@ -1,0 +1,85 @@
+<section class="schedule-container" aria-labelledby="schedule-title">
+  <header class="schedule-header">
+    <h2 id="schedule-title" class="schedule-title"><%= @title %></h2>
+    <p class="schedule-subtitle"><%= @subtitle %></p>
+  </header>
+
+  <div class="schedule-grid">
+    <article class="schedule-card" role="article" aria-labelledby="schedule-card-title">
+      <header class="schedule-card-header">
+        <h3 id="schedule-card-title" class="schedule-card-title">
+          <%= render(IconComponent.new(
+            name: "calendar",
+            size: :large,
+            class_name: "mr-2"
+          )) %>
+          <span>Horarios de Entrenamiento</span>
+        </h3>
+      </header>
+      
+      <div class="schedule-card-content">
+        <!-- Kids Program Section -->
+        <section class="schedule-group" aria-labelledby="<%= kids_schedule_id %>">
+          <h4 id="<%= kids_schedule_id %>" class="schedule-group-title">
+            <%= render(IconComponent.new(
+              name: @schedule_data[:kids_program][:icon],
+              size: :small,
+              class_name: "inline-block mr-2"
+            )) %>
+            <%= @schedule_data[:kids_program][:name] %>
+          </h4>
+          
+          <dl class="schedule-list" role="list">
+            <% @schedule_data[:kids_program][:schedule].each do |session| %>
+              <div class="schedule-item" role="listitem">
+                <dt class="schedule-days"><%= session[:days] %></dt>
+                <dd class="schedule-time"><%= session[:time] %></dd>
+              </div>
+            <% end %>
+          </dl>
+        </section>
+
+        <!-- Adults Program Section -->
+        <section class="schedule-group" aria-labelledby="<%= adults_schedule_id %>">
+          <h4 id="<%= adults_schedule_id %>" class="schedule-group-title">
+            <%= render(IconComponent.new(
+              name: @schedule_data[:adults_program][:icon],
+              size: :small,
+              class_name: "inline-block mr-2"
+            )) %>
+            <%= @schedule_data[:adults_program][:name] %>
+          </h4>
+          
+          <% @schedule_data[:adults_program][:disciplines].each do |discipline_key, discipline| %>
+            <article class="schedule-subgroup" aria-labelledby="<%= discipline_schedule_id(discipline_key) %>">
+              <h5 id="<%= discipline_schedule_id(discipline_key) %>" class="schedule-subgroup-title">
+                <%= discipline[:name] %>
+              </h5>
+              
+              <dl class="schedule-list" role="list">
+                <% discipline[:schedule].each do |session| %>
+                  <div class="schedule-item" role="listitem">
+                    <dt class="schedule-days"><%= session[:days] %></dt>
+                    <dd class="schedule-time"><%= session[:time] %></dd>
+                  </div>
+                <% end %>
+              </dl>
+            </article>
+          <% end %>
+        </section>
+      </div>
+    </article>
+  </div>
+
+  <!-- Additional Information Section -->
+  <aside class="schedule-info" role="complementary" aria-labelledby="schedule-info-title">
+    <h3 id="schedule-info-title" class="visually-hidden">Información adicional</h3>
+    <div class="schedule-info-grid">
+      <% @additional_info.each_with_index do |info, index| %>
+        <div class="schedule-info-card" role="note">
+          <p class="schedule-info-card-text"><%= info %></p>
+        </div>
+      <% end %>
+    </div>
+  </aside>
+</section> 

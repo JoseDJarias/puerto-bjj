@@ -1,0 +1,159 @@
+/* CarouselComponent Styles */
+
+.carousel-container {
+  position: relative;
+  width: 100%;
+  overflow: hidden;
+  border-radius: var(--rounded-lg);
+  margin: 0 auto; /* Center the carousel */
+}
+
+.carousel-track {
+  display: flex;
+  transition: transform 0.5s ease-in-out;
+  will-change: transform;
+}
+
+.carousel-slide {
+  flex: 0 0 100%;
+  width: 100%;
+  height: auto;
+}
+
+.carousel-image {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  display: block;
+}
+
+/* Navigation Buttons */
+.carousel-nav {
+  position: absolute;
+  top: 50%;
+  transform: translateY(-50%);
+  background: var(--color-bg-dark);
+  color: var(--color-bg-secondary);
+  border: none;
+  border-radius: 50%;
+  width: 3rem;
+  height: 3rem;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  z-index: 10;
+}
+
+.carousel-nav:hover {
+  background: rgba(0, 0, 0, 0.9);
+  transform: translateY(-50%) scale(1.1);
+}
+
+.carousel-nav--prev {
+  left: 1rem;
+}
+
+.carousel-nav--next {
+  right: 1rem;
+}
+
+/* Indicators */
+.carousel-indicators {
+  position: absolute;
+  bottom: 1rem;
+  left: 50%;
+  transform: translateX(-50%);
+  display: flex;
+  gap: 0.5rem;
+  z-index: 10;
+}
+
+.carousel-indicator {
+  width: 0.75rem;
+  height: 0.75rem;
+  border-radius: 50%;
+  background: rgba(255, 255, 255, 0.5);
+  border: none;
+  cursor: pointer;
+  transition: all 0.3s ease;
+}
+
+.carousel-indicator:hover {
+  background: var(--color-bg-secondary);
+}
+
+.carousel-indicator--active {
+  background: var(--color-bg-secondary);
+  transform: scale(1.2);
+}
+
+/* Responsive Design - Mobile First */
+@media (max-width: 768px) {
+  .carousel-nav {
+    width: 2.5rem;
+    height: 2.5rem;
+  }
+  
+  .carousel-nav--prev {
+    left: 0.5rem;
+  }
+  
+  .carousel-nav--next {
+    right: 0.5rem;
+  }
+  
+  .carousel-indicators {
+    bottom: 0.5rem;
+  }
+  
+  .carousel-indicator {
+    width: 0.5rem;
+    height: 0.5rem;
+  }
+}
+
+
+/* Desktop adjustments */
+@media (min-width: 1024px) {
+  .carousel-container {
+    max-width: 1200px; /* Fixed max width for very large screens */
+    max-height: 800px; /* Fixed max height */
+  }
+  
+  .carousel-image {
+    object-fit:contain;
+    max-height: 800px;
+  }
+}
+
+/* Extra Large Desktop */
+@media (min-width: 1920px) {
+  .carousel-container {
+    max-width: 1400px;
+    max-height: 1000px;
+  }
+  
+  .carousel-image {
+    max-height: 1000px;
+  }
+}
+
+/* Accessibility */
+.carousel-nav:focus,
+.carousel-indicator:focus {
+  outline: 2px solid var(--color-primary);
+  outline-offset: 2px;
+}
+
+/* Reduced Motion */
+@media (prefers-reduced-motion: reduce) {
+  .carousel-track {
+    transition: none;
+  }
+  
+  .carousel-nav:hover {
+    transform: translateY(-50%);
+  }
+} 
