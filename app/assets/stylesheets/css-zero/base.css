@@ -1,31 +1,57 @@
 :root {
-  /* Abstractions */
-  --color-bg: white;
-  --color-text: black;
-  --color-text-reversed: white;
-  --color-text-subtle: var(--zinc-500);
-  --color-link: var(--blue-700);
-  --color-border-light: var(--zinc-100);
-  --color-border: var(--zinc-200);
-  --color-border-dark: var(--zinc-400);
-  --color-selected: var(--blue-100);
-  --color-selected-dark: var(--blue-300);
-  --color-highlight: var(--yellow-200);
-
-  /* Accent colors */
-  --color-primary: var(--zinc-900);
-  --color-primary-light: rgb(145, 223, 249);; /* Based on Kids page, similar to rose-600 */
-  --color-secondary: var(--zinc-100);
-  --color-negative: var(--red-600);
-  --color-positive: var(--green-600);
-
-  /* Semantic colors */
-  --color-success: var(--green-600);
-  --color-warning: var(--yellow-600);
-  --color-error: var(--red-600);
-  --color-muted: var(--zinc-500);
-
-  /* Medal colors */
+  /* Base Colors - Minimalist Foundation */
+  --color-bg: #ffffff;                    /* Pure white background */
+  --color-bg-secondary: #f8f9fa;          /* Very light gray for sections */
+  --color-bg-tertiary: #f1f3f4;           /* Light gray for cards */
+  --color-bg-dark: #1a1a1a;               /* Dark background for contrast */
+  --color-bg-gray: #bfc3cb;
+  
+  /* Text Colors - Perfect Contrast */
+  --color-text: #000000;                  /* Pure black for main text */
+  --color-text-secondary: #374151;        /* Dark gray for secondary text */
+  --color-text-muted: #6b7280;            /* Medium gray for muted text */
+  --color-text-reversed: #ffffff;         /* White text on dark backgrounds */
+  
+  /* Primary Brand Colors - Black & White */
+  --color-primary: #000000;               /* Pure black from logo */
+  --color-primary-light: #f5f5f4;         /* Subtle warm gray for backgrounds */
+  --color-primary-dark: #000000;          /* For emphasis */
+  
+  /* Accent Colors - Minimal Red Usage */
+  --color-accent: #dc2626;                /* */
+  --color-accent-light: #ef4444;          /* Lighter red for hover */
+  --color-accent-dark: #b91c1c;           /* Darker red for emphasis */
+  
+  /* Warm Colors - For Important CTAs */
+  --color-warm: #f59e0b;                  /* Warm orange for important CTAs */
+  --color-warm-light: #fbbf24;            /* Light warm for hover */
+  --color-warm-dark: #d97706;             /* Dark warm for emphasis */
+  --color-warm-subtle: #fef3c7;           /* Very light warm for backgrounds */
+  
+  /* Neutral Colors - Grays for UI */
+  --color-neutral: #374151;               /* Dark gray for secondary elements */
+  --color-neutral-light: #6b7280;         /* Medium gray for tertiary elements */
+  --color-neutral-subtle: #f3f4f6;        /* Very light gray for backgrounds */
+  
+  /* Border System - Clean and Subtle */
+  --color-border-light: #f3f4f6;          /* Very light borders */
+  --color-border: #e5e7eb;                /* Standard borders */
+  --color-border-dark: #d1d5db;           /* Darker borders */
+  --color-border-focus: #dc2626;          /* Focus state */
+  
+  /* Interactive States */
+  --color-selected: #fef2f2;              /* Very light red background */
+  --color-selected-light: #fecaca;        /* Light red background for focus states */
+  --color-hover: #f9fafb;                 /* Subtle hover state */
+  
+  /* Semantic Colors */
+  --color-success: #059669;               /* Green for success */
+  --color-warning: #d97706;               /* Orange for warnings */
+  --color-error: #dc2626;                 /* Red for errors */
+  --color-info: #2563eb;                  /* Blue for info */
+  --color-muted: #6b7280;                 /* Muted gray */
+  
+  /* Medal Colors - Keep existing */
   --color-gold: #fbbf24;
   --color-silver: #9ca3af;
   --color-bronze: #d97706;
