@@ -47,15 +47,6 @@ class Explore::SmoothcompComponentTest < ViewComponent::TestCase
     assert_selector "[aria-label*='medallas']"
   end
 
-  def test_renders_stats_summary_with_total
-    render_inline(Explore::SmoothcompComponent.new)
-
-    assert_selector ".stats-summary"
-    assert_selector ".stats-total"
-    assert_selector ".total-label", text: "Total de medallas:"
-    assert_selector ".total-number", text: "37" # 13 + 14 + 10
-  end
-
   def test_renders_cta_button
     render_inline(Explore::SmoothcompComponent.new)
 
@@ -201,10 +192,6 @@ class Explore::SmoothcompComponentTest < ViewComponent::TestCase
     assert_selector ".stat-content"
     assert_selector ".stat-number"
     assert_selector ".stat-label"
-    assert_selector ".stats-summary"
-    assert_selector ".stats-total"
-    assert_selector ".total-label"
-    assert_selector ".total-number"
     assert_selector ".smoothcomp-cta"
   end
 

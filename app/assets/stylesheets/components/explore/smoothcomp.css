@@ -116,36 +116,15 @@
   line-height: var(--line-height-normal);
 }
 
-.stats-summary {
-  text-align: center;
-  padding: var(--size-4);
-  background: var(--color-accent); /* Red background */
-  border-radius: var(--rounded-lg);
-  border: 1px solid var(--color-accent);
-  box-shadow: var(--shadow-sm);
-}
-
-.total-label {
-  font-size: var(--text-base);
-  color: var(--color-text-reversed); /* White text */
-  font-weight: var(--font-medium);
-}
-
-.total-number {
-  font-size: var(--text-xl);
-  font-weight: var(--font-bold);
-  color: var(--color-text-reversed); /* White text */
-}
-
 .smoothcomp-cta {
   text-align: center;
   margin-top: var(--size-6);
 }
 
 .smoothcomp-cta .btn {
-  width: 100%; /* Same width as stats-summary */
-  max-width: none; /* Remove any max-width constraints */
-  padding: var(--section-spacing-xs); /* Consistent padding with stats-summary */
+  width: 100%; 
+  max-width: none; 
+  padding: var(--section-spacing-xs); 
   transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
   border: 1px solid var(--color-bg-dark);
 }
@@ -208,13 +187,6 @@
     font-size: var(--text-base);
   }
 
-  .total-label {
-    font-size: var(--text-lg);
-  }
-
-  .total-number {
-    font-size: var(--text-2xl);
-  }
 }
 
 @media (min-width: 1024px) {
@@ -280,7 +252,4 @@
     border: 1px solid var(--color-border);
   }
 
-  .stats-summary {
-    border: 2px solid var(--color-border-dark);
-  }
 } 
