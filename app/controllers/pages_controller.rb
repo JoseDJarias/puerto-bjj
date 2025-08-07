@@ -1,7 +1,7 @@
 class PagesController < ApplicationController
   allow_unauthenticated_access
   def explore
-    puts "🚀 Hello World from STAGING! - #{Rails.env} environment"
+    puts "🚀 Hello World from - #{Rails.env} environment"
   end
 
   def about
