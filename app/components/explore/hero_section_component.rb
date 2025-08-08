@@ -3,7 +3,7 @@ module Explore
     def initialize(
       title: "Puerto Jiu-Jitsu",
       subtitle: "Academia de Artes Marciales",
-      description: "Jiu-Jitsu, Boxeo, MMA y más.",
+      description: "Jiu-Jitsu, Boxeo, MMA en Puntarenas",
       location: "El Roble, Puntarenas, Costa Rica",
       cta_text: "¡Conócenos mejor!",
       cta_href: nil,

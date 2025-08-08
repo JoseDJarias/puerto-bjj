@@ -42,16 +42,17 @@
 }
 
 .hero-description {
-  font-size: clamp(1.6rem, 2vw + 0.5rem, 1.5rem);
+  font-size: clamp(1.3rem, 2vw + 0.5rem, 1.5rem);
   color: inherit;
   max-width: 50ch;
   margin: 0;
+  padding: 0.5rem ;
   opacity: 0.7;
   line-height: var(--line-height-normal);
 }
 
 .hero-location {
-  font-size: clamp(1.6rem, 2vw + 0.5rem, 1.5rem);
+  font-size: clamp(1.4rem, 2vw + 0.5rem, 1.5rem);
   color: inherit;
   max-width: 50ch;
   opacity: 0.7;
