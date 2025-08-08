@@ -9,7 +9,7 @@ module Explore
       cta_href: nil,
       taglines: [
         "¡Tu batalla diaria, para forjar un gran destino!",
-        "Disciplina, carácter y confianza en un ambiente de respeto y valores."
+        "Disciplina, carácter y confianza en un ambiente de respeto."
       ]
     )
       @title = title

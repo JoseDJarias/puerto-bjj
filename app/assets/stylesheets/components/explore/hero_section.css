@@ -38,7 +38,7 @@
   font-weight: var(--font-bold);
   color: inherit;
   line-height: var(--line-height-tight);
-  margin: 0 0 var(--size-16) 0;
+  margin: 0 0 var(--size-8) 0;
 }
 
 .hero-description {
