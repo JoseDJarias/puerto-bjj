@@ -37,7 +37,8 @@
   --color-border-light: #f3f4f6;          /* Very light borders */
   --color-border: #e5e7eb;                /* Standard borders */
   --color-border-dark: #d1d5db;           /* Darker borders */
-  --color-border-focus: #dc2626;          /* Focus state */
+  --color-border-focus: #dc2626; 
+  --color-border-focus-light: #d7caca;         /* Focus state */
   
   /* Interactive States */
   --color-selected: #fef2f2;              /* Very light red background */
@@ -91,6 +92,7 @@
   --section-spacing-lg: var(--size-16);
   --section-spacing-xl: var(--size-24);
   --section-spacing-2xl: var(--size-32);
+  --section-spacing-3xl: var(--size-40);
 
   /* Font weights */
   --font-light: 300;
