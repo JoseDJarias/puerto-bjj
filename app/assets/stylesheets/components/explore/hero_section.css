@@ -73,7 +73,7 @@
 }
 
 .hero-location-links .btn{
-  border: 1.5px solid var(--color-border-focus-light);
+  border: 1.5px solid var(--color-accent);
   border-radius: 10px;
   box-shadow: 4px 4px 4px var(--color-primary);
   padding: clamp(0.75rem, 2vw, 1.25rem) !important; /* Responsive padding */
@@ -113,7 +113,7 @@
 
 @media (min-width: 390px) {
   .hero-container {
-    padding: var(--section-spacing-3xl) var(--section-spacing-sm);
+    padding: var(--section-spacing-2xl) var(--section-spacing-sm);
   }
 
   .hero-description {
