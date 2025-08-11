@@ -10,6 +10,7 @@
   padding: var(--section-spacing-md) var(--size-4);
   text-align: center;
   border-bottom: 1px dashed var(--color-border);
+  background-color: var(--color-primary-light);
   /* Add component spacing */
   margin-bottom: var(--section-spacing-sm);
 }

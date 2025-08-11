@@ -6,12 +6,6 @@
   overflow: hidden; 
   max-height: fit-content;
 }
-
-@media (min-width: 1024px) {
-  .explore-container {
-    padding-top: 150px;
-  }
-}
 /* All component styles moved to their respective component files:
  * - HeroSectionComponent styles moved to components/explore/hero_section.css
  * - CarouselComponent styles moved to components/carousel.css

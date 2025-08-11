@@ -240,7 +240,7 @@
 @media (min-width: 1024px) {
   .schedule-container {
     padding: var(--section-spacing-xl) var(--size-8);
-    margin-bottom: var(--section-spacing-lg);
+    margin-bottom: var(--size-8);
   }
 
   .schedule-title {
@@ -261,16 +261,16 @@
 }
 
 @media (min-width: 1280px) {
+  .schedule-container {
+    margin-bottom: var(--size-4);
+  }
+
   .schedule-info-grid {
     gap: var(--size-8);
   }
 }
 
 @media (min-width: 1440px) {
-  .schedule-container {
-    padding: var(--section-spacing-2xl) var(--size-8);
-  }
-
   .schedule-card-content {
     padding: var(--size-12);
   }

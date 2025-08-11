@@ -155,8 +155,8 @@
 /* Responsive Design - Mobile First */
 @media (min-width: 768px) {
   .smoothcomp-container {
-    padding: var(--section-spacing-md) var(--size-6); /* Reduced from xl to md */
-    margin-bottom: var(--section-spacing-md); /* Reduced from md to sm */
+    padding: var(--section-spacing-2xl) var(--size-10); /* Reduced from xl to md */
+    margin-bottom: var(--size-16); /* Reduced from md to sm */
   }
 
   .smoothcomp-title {
@@ -192,7 +192,6 @@
 @media (min-width: 1024px) {
   .smoothcomp-container {
     padding: var(--section-spacing-lg) var(--size-8); /* Reduced from xl to lg */
-    margin-bottom: var(--section-spacing-md); /* Reduced from lg to md */
   }
 
   .smoothcomp-title {
