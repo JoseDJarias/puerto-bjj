@@ -1,10 +1,15 @@
+/* Header Wrapper for Menu Overlay Positioning */
+.header-wrapper {
+  position: relative;
+  z-index: 1000;
+}
+
 .styled-header {
-    height: 120px;
-    border-bottom: 1px solid white; /* Borde inferior blanco */
-    box-shadow: 0px 4px 10px rgba(255, 255, 255, 0.5); /* Resalta sin que parezca un rectángulo */
-    z-index: 1000; /* Asegura que siempre esté encima */
-    transition: padding 0.3s ease;
-  }
+  height: 100px;
+  z-index: 1000; /* Asegura que siempre esté encima */
+  transition: padding 0.3s ease;
+  color: var(--color-bg-secondary);
+}
   
 /* Fixed Hide/show animation for sticky header - works on all screen sizes */
 .styled-header {
@@ -17,7 +22,9 @@
   z-index: 1000;
   transition: transform 0.35s cubic-bezier(0.4, 0, 0.2, 1), background 0.3s, height 0.3s;
   will-change: transform;
-  background-color: var(--color-bg);
+  background-color: var(--color-primary);
+  /* Necesario para que el menu overlay se posicione correctamente */
+  position: relative;
 }
 
 .header--hidden {
@@ -49,31 +56,66 @@
 }
 
 .header-social-link svg {
-  color: var(--color-text);
+  color: var(--color-text-reversed); /* Iconos blancos sobre fondo negro */
   transition: all 0.2s ease-in-out;
 }
 
 .header-social-link:hover svg {
-  color: var(--color-positive);
+  color: var(--color-primary-light); /* Color más claro al hacer hover */
   transform: scale(1.2) translateY(-2px); /* Efecto más pronunciado */
 }
   
+/* Mobile Menu Overlay Styles */
 .mobile-menu-overlay {
-  margin-top: 75px;
-  z-index: 2000;
+  position: absolute;
+  top: 100%;
+  left: 0;
+  right: 0;
+  background: var(--color-bg);
+  padding: var(--section-spacing-sm);
+  z-index: 1001; /* Por encima del header */
+  box-shadow: var(--shadow-xl);
+  border-top: 1px solid var(--color-border);
 }
 
-  @media (max-width: 425px){
+.mobile-menu-overlay-nav {
+  display: flex;
+  flex-direction: column;
+  gap: var(--size-4);
+}
+
+.mobile-menu-overlay-nav a {
+  padding: var(--size-3) var(--size-4);
+  border-radius: var(--rounded-md);
+  transition: all 0.2s ease;
+  color: var(--color-text);
+  text-decoration: none;
+}
+
+.mobile-menu-overlay-nav a:hover {
+  background-color: var(--color-primary-light);
+  color: var(--color-primary);
+  transform: translateX(var(--size-2));
+}
+
+.ham-menu svg{
+  color: var(--color-bg);
+  width: 40px;
+  height: 40px;
+}
+
+  @media (min-width: 390px){
     .styled-header{
-      height: 100px;
+      height: 130px;
     }
     .header-logo-image {
-      height: 80px; /* Aumentamos la altura del logo */
+      height: 115px; /* Aumentamos la altura del logo */
       width: auto; /* El ancho se ajusta automáticamente */
     }
+
     .ham-menu svg{
-      width: 30px;
-      height: 30px;
+      width: 65px;
+      height: 65px;
     }
 
   }
@@ -84,6 +126,10 @@
       font-size: 1.4rem;
     }
 
+    .mobile-menu-overlay-nav a {
+      font-size: 1.4rem;
+      padding: var(--size-4) var(--size-6);
+    }
   }
 
   /* Large Screens (≥1024px) */
