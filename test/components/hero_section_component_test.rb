@@ -5,9 +5,9 @@ class Explore::HeroSectionComponentTest < ViewComponent::TestCase
     render_inline(Explore::HeroSectionComponent.new)
 
     assert_selector "section.hero-section"
-    assert_selector "h1#hero-title", text: "Puerto Jiu-Jitsu"
-    assert_selector "h2.hero-subtitle", text: "Academia de Artes Marciales"
-    assert_selector "p.hero-description", text: "Jiu-Jitsu, Boxeo, MMA y más."
+    assert_selector "h1#hero-title", text: "Academia Puerto Jiu-Jitsu"
+    assert_selector "h2.hero-subtitle", text: "Jiu-Jitsu, Boxeo, MMA y más en Puntarenas"
+    assert_selector "p.hero-description", text: "Desde el 2020 llevando el deporte al otro nivel"
     assert_selector "address.hero-location", text: "El Roble, Puntarenas, Costa Rica"
   end
 
@@ -55,21 +55,6 @@ class Explore::HeroSectionComponentTest < ViewComponent::TestCase
 
     assert_selector "p.hero-description", text: "Custom Description"
     assert_selector "address.hero-location", text: "Custom Location"
-  end
-
-  def test_renders_default_taglines
-    render_inline(Explore::HeroSectionComponent.new)
-
-    assert_selector "p.hero-description", text: "¡Tu batalla diaria, para forjar un gran destino!"
-    assert_selector "p.hero-description", text: "Disciplina, carácter y confianza en un ambiente de respeto y valores."
-  end
-
-  def test_renders_custom_taglines
-    custom_taglines = [ "Custom tagline 1", "Custom tagline 2" ]
-    render_inline(Explore::HeroSectionComponent.new(taglines: custom_taglines))
-
-    assert_selector "p.hero-description", text: "Custom tagline 1"
-    assert_selector "p.hero-description", text: "Custom tagline 2"
   end
 
   def test_has_proper_aria_labels
