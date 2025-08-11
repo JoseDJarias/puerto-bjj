@@ -20,7 +20,7 @@
 
 ## 📋 Reglas Importantes
 1. **NO usar Tailwind CSS** - Usar CSS-Zero exclusivamente
-2. **CSS Variables:** Usar --color-bg, --color-text, --color-primary, --color-text-reversed
+2. **CSS Variables:** Usar --color-bg, --color-text
 3. **Mantener consistencia** con el sistema de colores existente
 4. **Stimulus:** Usar para toda interactividad JavaScript
 5. **Seguir patrones de Kamal** para deploy
@@ -28,8 +28,6 @@
 
 ## 🐛 Problemas Conocidos
 - **Variables CSS en modo oscuro** mal configuradas en base.css
-- **Deploy con Kamal** requiere KAMAL_REGISTRY_PASSWORD configurado
-- **Textos en blanco** aparecen en algunos navegadores/dispositivos
 
 ## 📁 Estructura de Archivos Clave
 - `app/assets/stylesheets/css-zero/base.css` - Variables CSS principales
