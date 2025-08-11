@@ -6,6 +6,7 @@
   overflow: hidden;
   border-radius: var(--rounded-lg);
   margin: 0 auto; /* Center the carousel */
+  background-color: var(--color-primary-light);
 }
 
 .carousel-track {
@@ -118,20 +119,32 @@
 /* Desktop adjustments */
 @media (min-width: 1024px) {
   .carousel-container {
-    max-width: 1200px; /* Fixed max width for very large screens */
     max-height: 800px; /* Fixed max height */
   }
   
   .carousel-image {
+    margin-bottom: var(--size-16);
+    padding: var(--size-4);
     object-fit:contain;
+    max-height: 700px;
+  }
+}
+
+@media (min-width: 1280px) {
+  .carousel-container {
+    max-height: 1000px;
+    margin-bottom: var(--size-24);
+  }
+
+  .carousel-image {
     max-height: 800px;
+    margin-bottom: var(--size-32);
   }
 }
 
 /* Extra Large Desktop */
 @media (min-width: 1920px) {
   .carousel-container {
-    max-width: 1400px;
     max-height: 1000px;
   }
   
