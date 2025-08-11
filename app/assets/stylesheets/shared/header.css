@@ -139,7 +139,7 @@
     }
     .styled-header {
       position: relative; /* Needed for absolute positioning of children */
-      height: 150px;
+      height: 130px;
     }
   
     .center-box {
