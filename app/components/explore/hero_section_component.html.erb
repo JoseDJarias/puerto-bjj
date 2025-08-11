@@ -4,15 +4,11 @@
     <%= raw structured_data.to_json %>
   </script>
 
-  <div class="hero-content">
+  <div class="hero-container">
     <header class="hero-header">
       <h1 id="hero-title" class="hero-title"><%= @title %></h1>
       <h2 class="hero-subtitle"><%= @subtitle %></h2>
       <p class="hero-description"><%= @description %></p>
-      
-      <% @taglines.each do |tagline| %>
-        <p class="hero-description"><%= tagline %></p>
-      <% end %>
       
       <address class="hero-location">
         <span class="location-text"><%= @location %></span>

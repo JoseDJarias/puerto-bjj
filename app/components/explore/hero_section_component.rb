@@ -1,16 +1,12 @@
 module Explore
   class HeroSectionComponent < ViewComponent::Base
     def initialize(
-      title: "Puerto Jiu-Jitsu",
-      subtitle: "Academia de Artes Marciales",
-      description: "Jiu-Jitsu, Boxeo, MMA en Puntarenas",
+      title: "Academia Puerto Jiu-Jitsu",
+      subtitle: "Jiu-Jitsu, Boxeo, MMA y más en Puntarenas",
+      description: "Desde el 2020 llevando el deporte al otro nivel",
       location: "El Roble, Puntarenas, Costa Rica",
       cta_text: "¡Conócenos mejor!",
-      cta_href: nil,
-      taglines: [
-        "¡Tu batalla diaria, para forjar un gran destino!",
-        "Disciplina, carácter y confianza en un ambiente de respeto."
-      ]
+      cta_href: nil
     )
       @title = title
       @subtitle = subtitle
@@ -18,7 +14,6 @@ module Explore
       @location = location
       @cta_text = cta_text
       @cta_href = cta_href
-      @taglines = taglines
     end
 
     private
