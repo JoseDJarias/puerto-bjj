@@ -1,72 +1,77 @@
 <div class="programs-page-container">
   <!-- Hero Section -->
-  <section class="programs-hero">
-    <h1 class="programs-title">Nuestros Programas</h1>
-    <p class="programs-subtitle">¿Qué te parece si exploramos juntos las opciones disponibles para ti? </p>
-  </section>
-
-  <!-- Programs Grid -->
-  <section class="programs-grid-section">
-    <div class="program-list">
-      <!-- Card 1: Kids Program -->
-      <div class="program-list-card">
-        <div class="program-list-card__image">
-          <%= image_tag 'programs/kids1.jpg', alt: 'Clase de Jiu-Jitsu para niños' %>
-        </div>
-        <div class="program-list-card__content">
-          <h3 class="program-list-card__title">Programa para Niños</h3>
-          <p class="program-list-card__description">Confianza, disciplina y diversión. Un ambiente seguro para que los más pequeños forjen su carácter y hagan amigos.</p>
-          <%= link_to "Ver Detalles", kids_program_path, class: "btn" %>
-        </div>
-      </div>
-      <!-- Card 2: Jiu-Jitsu (Gi) -->
-      <div class="program-list-card">
-        <div class="program-list-card__image">
-          <%= image_tag 'programs/gi1.jpg', alt: 'Clase de Jiu-Jitsu con Kimono' %>
-        </div>
-        <div class="program-list-card__content">
-          <h3 class="program-list-card__title">Jiu-Jitsu (con Kimono)</h3>
-          <p class="program-list-card__description">El "arte suave". Aprende a controlar a tu oponente con técnicas y estrategias efectivas, sin necesidad de usar la fuerza bruta.</p>
-          <a href="#" class="btn" disabled>Ver Detalles (Próximamente)</a>
-        </div>
-      </div>
-
-      <!-- Card 3: No-Gi Jiu-Jitsu -->
-      <div class="program-list-card">
-        <div class="program-list-card__image">
-          <%= image_tag 'programs/nogi1.jpg', alt: 'Clase de Jiu-Jitsu sin Kimono' %>
-        </div>
-        <div class="program-list-card__content">
-          <h3 class="program-list-card__title">Jiu-Jitsu (No-Gi)</h3>
-          <p class="program-list-card__description">Una versión más rápida y dinámica del Jiu-Jitsu, donde el agarre y el control se adaptan a tu propio ritmo.</p>
-          <a href="#" class="btn" disabled>Ver Detalles (Próximamente)</a>
-        </div>
-      </div>
-
-      <!-- Card 4: Boxeo -->
-      <div class="program-list-card">
-        <div class="program-list-card__image">
-          <%= image_tag 'programs/boxeo1.jpg', alt: 'Clase de Boxeo' %>
-        </div>
-        <div class="program-list-card__content">
-          <h3 class="program-list-card__title">Boxeo</h3>
-          <p class="program-list-card__description">Desarrolla poder, velocidad y una condición física de élite mientras aprendes y perfeccionas tus habilidades de defensa personal.</p>
-          <a href="#" class="btn" disabled>Ver Detalles (Próximamente)</a>
-        </div>
-      </div>
-
-      <!-- Card 5: MMA -->
-      <div class="program-list-card">
-        <div class="program-list-card__image">
-          <%= image_tag 'programs/mma1.jpg', alt: 'Clase de Artes Marciales Mixtas' %>
-        </div>
-        <div class="program-list-card__content">
-          <h3 class="program-list-card__title">MMA</h3>
-          <p class="program-list-card__description">¡La prueba definitiva! Combina lo mejor del grappling y el striking en un sistema de combate integral.</p>
-          <a href="#" class="btn" disabled>Ver Detalles (Próximamente)</a>
-        </div>
-      </div>
+  <section class="programs-hero" aria-labelledby="programs-hero-title">
+    <div class="programs-hero-content">
+      <h1 id="programs-hero-title" class="programs-title">Nuestros Programas</h1>
+      <p class="programs-subtitle">¿Qué te parece si exploramos juntos las opciones disponibles para ti?</p>
     </div>
   </section>
+
+  <!-- Programs  Section -->
+  <section class="programs-section" aria-labelledby="programs-section-title">
+    <h2 id="programs-section-title" class="sr-only">Catálogo de Programas</h2>
+    <div class="program-list">
+      <!-- Card 1: Kids Program -->
+      <article class="program-list-card" aria-labelledby="kids-program-title">
+        <div class="program-list-card__image">
+          <%= image_tag 'programs/kids1.jpg', alt: 'Clase de Jiu-Jitsu para niños', loading: 'lazy' %>
+        </div>
+        <div class="program-list-card__content">
+          <h3 id="kids-program-title" class="program-list-card__title">Programa para Niños</h3>
+          <p class="program-list-card__description">Confianza, disciplina y diversión. Un ambiente seguro para que los más pequeños forjen su carácter y hagan amigos.</p>
+          <%= link_to "Ver Detalles", kids_program_path, class: "btn", aria_label: "Ver detalles del programa para niños" %>
+        </div>
+      </article>
+
+      <!-- Card 2: Jiu-Jitsu (Gi) -->
+      <article class="program-list-card" aria-labelledby="gi-program-title">
+        <div class="program-list-card__image">
+          <%= image_tag 'programs/gi1.jpg', alt: 'Clase de Jiu-Jitsu con Kimono', loading: 'lazy' %>
+        </div>
+        <div class="program-list-card__content">
+          <h3 id="gi-program-title" class="program-list-card__title">Jiu-Jitsu (con Kimono)</h3>
+          <p class="program-list-card__description">El "arte suave". Aprende a controlar a tu oponente con técnicas y estrategias efectivas, sin necesidad de usar la fuerza bruta.</p>
+          <span class="btn" aria-disabled="true" role="button" tabindex="-1">Ver Detalles (Próximamente)</span>
+        </div>
+      </article>
+
+      <!-- Card 3: No-Gi Jiu-Jitsu -->
+      <article class="program-list-card" aria-labelledby="nogi-program-title">
+        <div class="program-list-card__image">
+          <%= image_tag 'programs/nogi1.jpg', alt: 'Clase de Jiu-Jitsu sin Kimono', loading: 'lazy' %>
+        </div>
+        <div class="program-list-card__content">
+          <h3 id="nogi-program-title" class="program-list-card__title">Jiu-Jitsu (No-Gi)</h3>
+          <p class="program-list-card__description">Una versión más rápida y dinámica del Jiu-Jitsu, donde el agarre y el control se adaptan a tu propio ritmo.</p>
+          <span class="btn" aria-disabled="true" role="button" tabindex="-1">Ver Detalles (Próximamente)</span>
+        </div>
+      </article>
+
+      <!-- Card 4: Boxeo -->
+      <article class="program-list-card" aria-labelledby="boxing-program-title">
+        <div class="program-list-card__image">
+          <%= image_tag 'programs/boxeo1.jpg', alt: 'Clase de Boxeo', loading: 'lazy' %>
+        </div>
+        <div class="program-list-card__content">
+          <h3 id="boxing-program-title" class="program-list-card__title">Boxeo</h3>
+          <p class="program-list-card__description">Desarrolla poder, velocidad y una condición física de élite mientras aprendes y perfeccionas tus habilidades de defensa personal.</p>
+          <span class="btn" aria-disabled="true" role="button" tabindex="-1">Ver Detalles (Próximamente)</span>
+        </div>
+      </article>
+
+      <!-- Card 5: MMA -->
+      <article class="program-list-card" aria-labelledby="mma-program-title">
+        <div class="program-list-card__image">
+          <%= image_tag 'programs/mma1.jpg', alt: 'Clase de Artes Marciales Mixtas', loading: 'lazy' %>
+        </div>
+        <div class="program-list-card__content">
+          <h3 id="mma-program-title" class="program-list-card__title">MMA</h3>
+          <p class="program-list-card__description">¡La prueba definitiva! Combina lo mejor del grappling y el striking en un sistema de combate integral.</p>
+          <span class="btn" aria-disabled="true" role="button" tabindex="-1">Ver Detalles (Próximamente)</span>
+        </div>
+      </article>
+    </div>
+  </section>
+
   <%= render(FreeTrialComponent.new) %>
 </div> 

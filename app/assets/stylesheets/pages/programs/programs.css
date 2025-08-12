@@ -5,33 +5,34 @@
 
 .programs-page-container {
   width: 100%;
-  margin-top: var(--size-32);
+  background: linear-gradient(160deg, var(--color-primary), var(--color-accent));
 }
 
 /* Hero Section */
 .programs-hero {
+  margin-top: var(--size-32);
   text-align: center;
-  padding: 4rem 1rem 3rem;
-  background-color: var(--color-surface);
+  padding: var(--section-spacing-sm) var(--size-4);
+  margin-bottom: var(--section-spacing-sm);
 }
 
 .programs-title {
   font-size: clamp(2.5rem, 6vw, 4rem);
   font-weight: var(--font-black);
   margin-bottom: 1rem;
-  color: var(--color-text);
+  color: var(--color-text-reversed);
 }
 
 .programs-subtitle {
-  font-size: clamp(1rem, 3vw, 1.25rem);
-  color: var(--color-text-muted);
+  font-size: clamp(1.5rem, 3vw, 2rem);
+  color: var(--color-text-reversed);
   max-width: 55ch;
   margin: 0 auto;
 }
 
-/* Programs Grid Section */
-.programs-grid-section {
-  padding: 4rem 1rem;
+/* Programs Section */
+.programs-section {
+  padding: 0 1rem 6rem 1rem;
 }
 
 .program-list {
@@ -47,7 +48,7 @@
   display: flex;
   flex-direction: column;
   flex: 0 1 360px; /* Let cards have a base width and wrap */
-  background: var(--color-primary-light);
+  background: var(--color-bg);
   border-radius: var(--rounded-xl);
   border: 1px solid var(--color-border);
   overflow: hidden;
@@ -99,12 +100,15 @@
   text-align: center;
   padding: 0.8rem 1rem;
   font-size: 1rem;
+  background-color: var(--color-primary-light);
+  border-radius: var(--rounded-md);
+  border: 1px solid var(--color-border);
+  transition: background-color 0.3s ease, color 0.3s ease;
 }
 
 .program-list-card .btn[disabled] {
   background-color: rgba(0,0,0,0.2);
   border-color: var(--color-border);
-  color: var(--color-text-muted);
   cursor: not-allowed;
 }
 
@@ -115,23 +119,46 @@
 }
 
 @media (min-width: 768px) {
-    .programs-grid-section {
-        padding: 5rem 2rem;
-    }
     .programs-subtitle{
       font-size: clamp(1.6rem, 1rem, 2.5rem);
     }
 } 
 
 @media (min-width: 1024px) {
-  .programs-page-container {
-    margin-top: var(--size-64);
-  }
   .programs-title{
     font-size: clamp(2.5rem, 4vw, 3rem);
 
   }
   .programs-subtitle{
     font-size: clamp(1.8rem, 1rem, 2.5rem);
+  }
+
+  .program-list{
+    gap: 4rem;
+  }
+
+  .program-list-card{
+    flex: 0 1 420px;
+  }
+
+  .program-list-card__image{
+    height: 380px;
+  }
+
+  @media (min-width: 1920px) {
+    .programs-hero{
+      margin-top: var(--size-64);
+    }
+    .programs-title{
+      font-size: clamp(3rem, 4vw, 4rem);
+    }
+    .programs-subtitle{
+      font-size: clamp(2.2rem, 1rem, 2.5rem);
+    }
+    .program-list-card__description{
+      font-size: clamp(1.4rem, 1rem, 1.5rem);
+    }
+    .program-list-card .btn{}
+    
   }
 } 

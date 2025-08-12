@@ -4,14 +4,14 @@
    CONTAINER PRINCIPAL
    ======================================== */
 .about-container {
-  padding: var(--section-spacing-sm) var(--size-4);
-  margin-top: 10rem;
+  padding: var(--section-spacing-xs) var(--size-4);
 }
 
 /* ========================================
    HERO SECTION
    ======================================== */
 .about-hero {
+  margin-top: 8rem;
   text-align: center;
   padding: var(--section-spacing-lg) var(--size-4);
   background: var(--color-primary);
@@ -300,7 +300,6 @@
 @media (min-width: 768px) {
   .about-container {
     padding: var(--section-spacing-md) var(--size-6);
-    margin-top: 8rem;
   }
 
   .about-hero {
@@ -503,7 +502,6 @@
 @media (min-width: 1280px) {
   .about-container {
     padding: var(--section-spacing-xl) var(--size-10);
-    margin-top: 5rem;
   }
 
   .about-hero {
@@ -521,10 +519,6 @@
 
 /* Large Desktop (≥1440px) */
 @media (min-width: 1440px) {
-  .about-container {
-    padding: var(--section-spacing-2xl) var(--size-12);
-  }
-
   .about-hero-title {
     font-size: var(--text-4xl);
   }

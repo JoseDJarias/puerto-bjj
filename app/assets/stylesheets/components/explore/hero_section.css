@@ -73,7 +73,7 @@
 }
 
 .hero-location-links .btn{
-  border: 1.5px solid var(--color-accent);
+  border: 1.5px solid var(--color-bg);
   border-radius: 10px;
   box-shadow: 4px 4px 4px var(--color-primary);
   padding: clamp(0.75rem, 2vw, 1.25rem) !important; /* Responsive padding */

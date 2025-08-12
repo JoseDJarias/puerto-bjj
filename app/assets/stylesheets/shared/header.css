@@ -149,13 +149,6 @@
     }
   }
 
-  @media (min-width: 1600px) {
-    .styled-header {
-      position: relative; /* Needed for absolute positioning of children */
-      height: 200px;
-    }
-  }
-
 /* 
 *********************************************
  * Components: Header Dropdown
