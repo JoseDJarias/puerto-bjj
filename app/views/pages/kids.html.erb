@@ -5,7 +5,20 @@
     <div class="kids-hero-content">
       <h1 id="hero-title-kids" class="kids-hero-title">Programa de Jiu-Jitsu para Niños</h1>
       <p class="kids-hero-subtitle">Formando campeones(as) dentro y fuera del tatami. Confianza, disciplina y respeto para toda una vida.</p>
+      
+      <!-- CTA Button -->
+      <div class="kids-hero-cta">
+        <%= link_to "https://wa.me/50672026863", 
+            target: "_blank", 
+            class: "kids-hero-button",
+            aria: { label: "Contactar por WhatsApp" } do %>
+          <%= lucide_icon "message-circle", class: "kids-hero-button-icon" %>
+          <span>¡Inscríbete Ahora!</span>
+        <% end %>
+      </div>
     </div>
+    
+    <!-- Hero Image -->
     <div class="kids-hero-image" aria-hidden="true">
       <%= image_tag 'home/kids-home-photo.jpeg', alt: 'Niños entrenando Jiu-Jitsu en Puerto BJJ', loading: 'lazy' %>
     </div>
