@@ -34,17 +34,8 @@
 
       <!-- Right Side: Social Icons & Hamburger Menu -->
       <div class="header-right flex items-center justify-end mi-8" style="flex: 1;">
-        <!-- Hamburger menu for mobile and tablet -->
-        <div class="hide@lg cursor-grab ham-menu"
-             data-controller="mobile-menu"
-             data-action="click->mobile-menu#toggle"
-             data-mobile-menu-target="trigger"
-             data-menu-id="mobile-menu">
-          <%= lucide_icon('square-menu', width: 50, height: 50) %>
-        </div>
-
         <!-- Social Icons for desktop -->
-        <div class="show@lg flex items-center gap-6">
+        <div class="show@lg header-social-link-container">
           <%= link_to "https://www.facebook.com/puertojiujitsu/", target: "_blank", class: "header-social-link", aria: { label: "Facebook" } do %>
             <%= lucide_icon "facebook", class: "w-8 h-8" %>
           <% end %>
@@ -58,9 +49,18 @@
             <%= lucide_icon "map-pin", class: "w-8 h-8" %>
           <% end %>
         </div>
+
+          <!-- Hamburger menu for all screen sizes -->
+        <div class="cursor-grab ham-menu mr-4"
+             data-controller="mobile-menu"
+             data-action="click->mobile-menu#toggle"
+             data-mobile-menu-target="trigger"
+             data-menu-id="mobile-menu">
+          <%= lucide_icon('square-menu', width: 50, height: 50) %>
+        </div>
       </div>
 
-      <!-- Mobile Navbar -->
+      <!-- Navbar -->
       <div id="mobile-menu" class="mobile-menu-overlay hidden">
         <nav class="flex flex-col text-base gap mobile-menu-overlay-nav">
           <%= link_to "Inicio", root_path, class: "hover:underline" %>

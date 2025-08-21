@@ -445,7 +445,7 @@
   }
 
   .kids-hero-image img {
-   max-height: 1200px;
+   max-height: 700px;
    border-radius: 0;
    padding: var(--size-6);
   }
