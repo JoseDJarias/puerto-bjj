@@ -30,7 +30,7 @@
               
               <% if info[:cta_text].present? %>
                 <div class="contact-card-cta">
-                  <%= render(ButtonComponent.new(
+                  <%= render(UI::ButtonComponent.new(
                     variant: :plain,
                     text: info[:cta_text],
                     href: info[:cta_href],
@@ -55,7 +55,7 @@
           <p class="feedback-cta-description"><%= @feedback_cta[:text] %></p>
         </div>
         <div class="feedback-cta-button">
-          <%= render(ButtonComponent.new(
+          <%= render(UI::ButtonComponent.new(
             variant: :primary,
             text: @feedback_cta[:cta_text],
             href: resolve_path(@feedback_cta[:cta_href]),

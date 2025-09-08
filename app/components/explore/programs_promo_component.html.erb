@@ -22,7 +22,7 @@
           <%= program[:description] %>
         </p>
         
-        <%= render(ButtonComponent.new(
+        <%= render(UI::ButtonComponent.new(
           variant: :primary,
           text: program[:cta_text],
           href: resolve_path(program[:cta_href])

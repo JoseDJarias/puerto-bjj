@@ -7,7 +7,7 @@
   
   <nav class="social-links" role="navigation" aria-label="Enlaces de redes sociales">
     <% @social_links.each do |link| %>
-      <%= render(ButtonComponent.new(
+      <%= render(UI::ButtonComponent.new(
         variant: :plain,
         text: link[:name],
         href: link[:href],
