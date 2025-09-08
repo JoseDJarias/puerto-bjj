@@ -4,7 +4,6 @@
 
   align-items: center;
   background-color: var(--btn-background);
-  block-size: var(--btn-block-size, auto);
   border-radius: var(--btn-radius, var(--rounded-md));
   border: 1px solid var(--btn-border-color, var(--color-border));
   box-shadow: var(--btn-box-shadow, var(--shadow-xs));
@@ -53,7 +52,7 @@
 }
 
 .btn--primary:hover {
-  box-shadow: var(--shadow-md);
+  box-shadow: var(--shadow-xs);
 }
 
 .btn--secondary {
