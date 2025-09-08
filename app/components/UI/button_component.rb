@@ -58,6 +58,7 @@ class UI::ButtonComponent < ViewComponent::Base
     else "btn--secondary"
     end
   end
+
   def render_icon
     return unless @icon
       render(IconComponent.new(
