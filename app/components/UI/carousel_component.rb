@@ -1,4 +1,4 @@
-class CarouselComponent < ViewComponent::Base
+class UI::CarouselComponent < ViewComponent::Base
   def initialize(
     images: [],
     auto_slide: true,
@@ -18,10 +18,6 @@ class CarouselComponent < ViewComponent::Base
   end
 
   private
-
-  def carousel_id
-    @carousel_id ||= "carousel_#{SecureRandom.hex(4)}"
-  end
 
   def has_multiple_slides?
     @images.length > 1

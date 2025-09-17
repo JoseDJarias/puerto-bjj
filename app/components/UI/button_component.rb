@@ -4,7 +4,6 @@ class UI::ButtonComponent < ViewComponent::Base
     text: "",
     href: nil,
     icon: nil,
-    loading: false,
     disabled: false,
     **options
   )
