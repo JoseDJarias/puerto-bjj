@@ -17,10 +17,9 @@
 # @example With custom styling
 #   <%= render(FreeTrialComponent.new(
 #     variant: :secondary,
-#     size: :large
 #   )) %>
-class FreeTrialComponent < ViewComponent::Base
-  attr_reader :title, :subtitle, :cta_text, :whatsapp_message, :variant, :size, :show_on
+class UI::FreeTrialComponent < ViewComponent::Base
+  attr_reader :title, :subtitle, :cta_text, :whatsapp_message, :variant, :show_on
 
   def initialize(
     title: "¿Listos para empezar tu aventura?",
@@ -28,7 +27,6 @@ class FreeTrialComponent < ViewComponent::Base
     cta_text: "¡Quiero mi clase de prueba!",
     whatsapp_message: "Hola, me gustaría obtener información sobre las clases de Puerto Jiu Jitsu.",
     variant: :primary,
-    size: :medium,
     show_on: :all
   )
     @title = title
@@ -36,9 +34,39 @@ class FreeTrialComponent < ViewComponent::Base
     @cta_text = cta_text
     @whatsapp_message = whatsapp_message
     @variant = variant
-    @size = size
     @show_on = show_on
   end
+
+  erb_template <<~ERB
+  <section class="<%= container_classes %>" aria-labelledby="<%= component_id %>-title">
+    <header class="free-trial-header">
+      <h2 id="<%= component_id %>-title" class="free-trial-title">
+        <%= @title %>
+      </h2>
+      <p class="free-trial-subtitle">
+        <%= @subtitle %>
+      </p>
+    </header>
+
+    <div class="free-trial-action">
+      <%= link_to whatsapp_url,
+          class: button_classes,
+          target: "_blank",
+          rel: "noopener noreferrer",
+          aria: {
+            label: "Abrir WhatsApp para solicitar clase de prueba gratuita"
+          } do %>
+        <span class="free-trial-button-text">
+          <%= @cta_text %>
+        </span>
+        <%= render(IconComponent.new(
+          name: "mouse-pointer-click",
+          aria_label: "Icono de clic"
+        )) %>
+      <% end %>
+    </div>
+  </section>
+  ERB
 
   private
 
@@ -64,8 +92,7 @@ class FreeTrialComponent < ViewComponent::Base
     [
       "free-trial-button",
       "btn",
-      "btn--#{@variant}",
-      "btn--#{@size}"
+      "btn--#{@variant}"
     ].compact.join(" ")
   end
 
