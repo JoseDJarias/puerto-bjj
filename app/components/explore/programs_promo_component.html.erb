@@ -7,7 +7,7 @@
     <% @programs.each_with_index do |program, index| %>
       <article class="program-card" aria-labelledby="program-title-<%= index %>">
         <div class="program-card-icon">
-          <%= render(IconComponent.new(
+          <%= render(UI::IconComponent.new(
             name: program[:icon],
             size: :xl,
             aria_label: "#{program[:title]} icon"

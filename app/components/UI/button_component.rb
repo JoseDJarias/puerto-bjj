@@ -60,7 +60,7 @@ class UI::ButtonComponent < ViewComponent::Base
 
   def render_icon
     return unless @icon
-      render(IconComponent.new(
+      render(UI::IconComponent.new(
         name: @icon,
       ))
   end

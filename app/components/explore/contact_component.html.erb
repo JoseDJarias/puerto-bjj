@@ -13,7 +13,7 @@
           <article class="contact-card" role="article" aria-labelledby="contact-card-<%= index %>">
             <header class="contact-card-header">
               <div class="contact-card-icon">
-                <%= render(IconComponent.new(
+                <%= render(UI::IconComponent.new(
                   name: info[:icon],
                   size: :large,
                   aria_label: "#{info[:title]} icon"

@@ -59,7 +59,7 @@ class UI::FreeTrialComponent < ViewComponent::Base
         <span class="free-trial-button-text">
           <%= @cta_text %>
         </span>
-        <%= render(IconComponent.new(
+        <%= render(UI::IconComponent.new(
           name: "mouse-pointer-click",
           aria_label: "Icono de clic"
         )) %>

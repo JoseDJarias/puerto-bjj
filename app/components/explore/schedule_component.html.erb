@@ -8,7 +8,7 @@
     <article class="schedule-card" role="article" aria-labelledby="schedule-card-title">
       <header class="schedule-card-header">
         <h3 id="schedule-card-title" class="schedule-card-title">
-          <%= render(IconComponent.new(
+          <%= render(UI::IconComponent.new(
             name: "calendar",
             size: :large,
             class_name: "mr-2"
@@ -21,7 +21,7 @@
         <!-- Kids Program Section -->
         <section class="schedule-group" aria-labelledby="<%= kids_schedule_id %>">
           <h4 id="<%= kids_schedule_id %>" class="schedule-group-title">
-            <%= render(IconComponent.new(
+            <%= render(UI::IconComponent.new(
               name: @schedule_data[:kids_program][:icon],
               size: :small,
               class_name: "inline-block mr-2"
@@ -42,7 +42,7 @@
         <!-- Adults Program Section -->
         <section class="schedule-group" aria-labelledby="<%= adults_schedule_id %>">
           <h4 id="<%= adults_schedule_id %>" class="schedule-group-title">
-            <%= render(IconComponent.new(
+            <%= render(UI::IconComponent.new(
               name: @schedule_data[:adults_program][:icon],
               size: :small,
               class_name: "inline-block mr-2"

@@ -4,29 +4,29 @@
 # with standardized sizes, colors, and accessibility features.
 #
 # @example Basic usage
-#   <%= render(IconComponent.new(name: "heart")) %>
+#   <%= render(UI::IconComponent.new(name: "heart")) %>
 #
 # @example With custom size and color
-#   <%= render(IconComponent.new(
+#   <%= render(UI::IconComponent.new(
 #     name: "star",
 #     size: :large,
 #     color: :primary
 #   )) %>
 #
 # @example With accessibility
-#   <%= render(IconComponent.new(
+#   <%= render(UI::IconComponent.new(
 #     name: "check",
 #     aria_label: "Success indicator"
 #   )) %>
 #
 # @example With custom classes
-#   <%= render(IconComponent.new(
+#   <%= render(UI::IconComponent.new(
 #     name: "arrow-right",
 #     class_name: "mr-2 inline-block"
 #   )) %>
 #
 # @example With medal colors and effects
-#   <%= render(IconComponent.new(
+#   <%= render(UI::IconComponent.new(
 #     name: "award",
 #     color: :gold,
 #     effects: :medal
@@ -36,7 +36,7 @@
 # Available colors: :primary, :secondary, :success, :warning, :error, :muted, :current, :gold, :silver, :bronze
 # Available effects: :medal (for award icons with hover effects)
 # Or pass any CSS class string for custom colors
-class IconComponent < ViewComponent::Base
+class UI::IconComponent < ViewComponent::Base
   attr_reader :name, :size, :color, :class_name, :aria_label, :effects
 
   def initialize(name:, size: :medium, color: nil, class_name: nil, aria_label: nil, effects: nil)
@@ -47,6 +47,10 @@ class IconComponent < ViewComponent::Base
     @aria_label = aria_label
     @effects = effects
   end
+
+   erb_template <<~ERB
+    <%= helpers.lucide_icon @name, class: icon_classes, **aria_attributes %>#{' '}
+   ERB
 
   private
 

@@ -15,7 +15,7 @@
         <% @stats.each_with_index do |stat, index| %>
           <div class="stat-item" role="listitem">
             <div class="stat-icon-wrapper">
-              <%= render(IconComponent.new(
+              <%= render(UI::IconComponent.new(
                 name: stat[:icon],
                 size: :custom,
                 color: stat[:type],
