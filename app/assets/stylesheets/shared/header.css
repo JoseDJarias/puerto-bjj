@@ -5,14 +5,6 @@
 }
 
 .styled-header {
-  height: 100px;
-  z-index: 1000; /* Asegura que siempre esté encima */
-  transition: padding 0.3s ease;
-  color: var(--color-bg-secondary);
-}
-  
-/* Fixed Hide/show animation for sticky header - works on all screen sizes */
-.styled-header {
   position: fixed !important;
   top: 0;
   left: 0;
