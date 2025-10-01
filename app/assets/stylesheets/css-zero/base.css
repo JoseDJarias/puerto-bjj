@@ -142,33 +142,6 @@
   --opacity-50: 0.5;
   --opacity-75: 0.75;
   --opacity-100: 1;
-
-  /* Dark mode - TEMPORARILY DISABLED */
-  /* Uncomment when you want to enable dark mode toggle */
-  /*
-  @media (prefers-color-scheme: dark) {
-    --color-bg: var(--zinc-900);
-    --color-text: var(--zinc-50);
-    --color-text-reversed: var(--zinc-900);
-    --color-text-subtle: var(--zinc-400);
-    --color-link: var(--blue-400);
-    --color-border-light: var(--zinc-800);
-    --color-border: var(--zinc-700);
-    --color-border-dark: var(--zinc-600);
-    --color-selected: var(--blue-950);
-    --color-selected-dark: var(--blue-800);
-    --color-highlight: var(--yellow-900);
-    --color-primary: var(--zinc-50);
-    --color-primary-light: rgb(145, 223, 249);
-    --color-secondary: var(--zinc-800);
-    --color-negative: var(--red-400);
-    --color-positive: var(--green-400);
-    --color-filter-text: invert(1);
-    --color-filter-text-reversed: invert(0);
-    --color-filter-negative: invert(15%) sepia(65%) saturate(2067%) hue-rotate(339deg) brightness(102%) contrast(97%);
-    --color-filter-positive: invert(23%) sepia(62%) saturate(554%) hue-rotate(91deg) brightness(93%) contrast(91%);
-  }
-  */
 }
 
 * {
