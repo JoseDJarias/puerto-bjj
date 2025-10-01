@@ -19,21 +19,20 @@
     show_navigation: false,
     show_indicators: false
   )) %>
-   <!-- Free Trial Component -->
   <%= render(UI::FreeTrialComponent.new(show_on: :mobile_tablet)) %>
-  <!-- Programs Promo Component -->
+
   <%= render(Explore::ProgramsPromoComponent.new) %>
-  <!-- Mobile Banner Component -->
+
   <%= render(Explore::MobileBannerComponent.new) %>
-  <!-- Social Links Component -->
+
   <%= render(Explore::SocialLinksComponent.new) %>
-  <!-- Schedule Component -->
+
   <%= render(Explore::ScheduleComponent.new) %>
-  <!-- Smoothcomp Component -->
+
   <%= render(Explore::SmoothcompComponent.new) %>
-  <!-- Contact Component -->
+
   <%= render(Explore::ContactComponent.new) %>
-  <!-- Free Trial Component -->
+
   <%= render(UI::FreeTrialComponent.new(show_on: :all)) %>
 </div>
 
