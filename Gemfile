@@ -63,4 +63,7 @@ gem "kaminari-actionview"
 
 gem "sitemap_generator", "~> 6.3.0"
 
+# UI design
 gem "view_component", "~> 4.0"
+gem "lucide-rails"
+gem "css-zero", "~> 1.1"
