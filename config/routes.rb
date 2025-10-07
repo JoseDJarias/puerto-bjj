@@ -6,8 +6,8 @@ Rails.application.routes.draw do
   get "/acerca-de-nosotros", to: "pages#about"
 
   # Programs routes
-  get "programas/kids", to: "pages#kids", as: :kids_program
-  get "programas", to: "pages#programs", as: :programs
+  get "program/kids", to: "pages#kids", as: :kids_program
+  get "programs", to: "pages#programs", as: :programs
 
   get "/feedback", to: "feedbacks#new"
   post "/feedback", to: "feedbacks#create"
