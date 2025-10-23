@@ -118,10 +118,10 @@ class Explore::ProgramsPromoComponentTest < ViewComponent::TestCase
     render_inline(Explore::ProgramsPromoComponent.new)
 
     # The Kids Program CTA should have the correct resolved path
-    assert_selector "a[href='/programas/kids']", text: "¡Quiero conocer más!"
+    assert_selector "a[href='/program/kids']", text: "¡Quiero conocer más!"
 
     # The Adults Program CTA should have the correct resolved path
-    assert_selector "a[href='/programas']", text: "Explorar Programas"
+    assert_selector "a[href='/programs']", text: "Explorar Programas"
   end
 
   def test_path_resolver_fallback_for_paths_ending_with_path

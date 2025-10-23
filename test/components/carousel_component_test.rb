@@ -7,7 +7,7 @@ class CarouselComponentTest < ViewComponent::TestCase
       { src: "home/jiujitsu-nogi.jpeg", alt: "Test Image 2" }
     ]
 
-    render_inline(CarouselComponent.new(images: images))
+    render_inline(UI::CarouselComponent.new(images: images))
 
     assert_selector ".carousel-container"
     assert_selector ".carousel-track"
@@ -21,7 +21,7 @@ class CarouselComponentTest < ViewComponent::TestCase
   def test_renders_single_image_without_carousel_functionality
     images = [ { src: "home/jiujitsu-gi.jpeg", alt: "Single Image" } ]
 
-    render_inline(CarouselComponent.new(images: images))
+    render_inline(UI::CarouselComponent.new(images: images))
 
     assert_selector ".carousel-container"
     assert_selector ".carousel-slide", count: 1
@@ -34,7 +34,7 @@ class CarouselComponentTest < ViewComponent::TestCase
       { src: "home/jiujitsu-nogi.jpeg", alt: "Test 2" }
     ]
 
-    render_inline(CarouselComponent.new(
+    render_inline(UI::CarouselComponent.new(
       images: images,
       show_navigation: true
     ))
@@ -52,7 +52,7 @@ class CarouselComponentTest < ViewComponent::TestCase
       { src: "home/brazilian-jiujitsu.jpeg", alt: "Test 3" }
     ]
 
-    render_inline(CarouselComponent.new(
+    render_inline(UI::CarouselComponent.new(
       images: images,
       show_indicators: true
     ))
@@ -68,7 +68,7 @@ class CarouselComponentTest < ViewComponent::TestCase
   def test_does_not_render_navigation_for_single_image
     images = [ { src: "home/jiujitsu-gi.jpeg", alt: "Single" } ]
 
-    render_inline(CarouselComponent.new(
+    render_inline(UI::CarouselComponent.new(
       images: images,
       show_navigation: true
     ))
@@ -79,7 +79,7 @@ class CarouselComponentTest < ViewComponent::TestCase
   def test_does_not_render_indicators_for_single_image
     images = [ { src: "home/jiujitsu-gi.jpeg", alt: "Single" } ]
 
-    render_inline(CarouselComponent.new(
+    render_inline(UI::CarouselComponent.new(
       images: images,
       show_indicators: true
     ))
@@ -90,7 +90,7 @@ class CarouselComponentTest < ViewComponent::TestCase
   def test_renders_with_custom_height
     images = [ { src: "home/jiujitsu-gi.jpeg", alt: "Test" } ]
 
-    render_inline(CarouselComponent.new(
+    render_inline(UI::CarouselComponent.new(
       images: images,
       height: "400px"
     ))
@@ -101,7 +101,7 @@ class CarouselComponentTest < ViewComponent::TestCase
   def test_renders_with_aspect_ratio
     images = [ { src: "home/jiujitsu-gi.jpeg", alt: "Test" } ]
 
-    render_inline(CarouselComponent.new(
+    render_inline(UI::CarouselComponent.new(
       images: images,
       aspect_ratio: "16/9"
     ))
@@ -115,7 +115,7 @@ class CarouselComponentTest < ViewComponent::TestCase
       { src: "home/jiujitsu-nogi.jpeg", alt: "Test 2" }
     ]
 
-    render_inline(CarouselComponent.new(
+    render_inline(UI::CarouselComponent.new(
       images: images,
       auto_slide: false,
       interval: 3000
@@ -129,7 +129,7 @@ class CarouselComponentTest < ViewComponent::TestCase
   def test_renders_with_lazy_loading
     images = [ { src: "home/jiujitsu-gi.jpeg", alt: "Test" } ]
 
-    render_inline(CarouselComponent.new(images: images))
+    render_inline(UI::CarouselComponent.new(images: images))
 
     assert_selector "img[loading='lazy']"
   end
@@ -137,7 +137,7 @@ class CarouselComponentTest < ViewComponent::TestCase
   def test_renders_with_default_alt_text
     images = [ { src: "home/jiujitsu-gi.jpeg" } ]
 
-    render_inline(CarouselComponent.new(images: images))
+    render_inline(UI::CarouselComponent.new(images: images))
 
     assert_selector "img[alt='Carousel image']"
   end
@@ -148,7 +148,7 @@ class CarouselComponentTest < ViewComponent::TestCase
       { src: "home/jiujitsu-nogi.jpeg", alt: "Test 2" }
     ]
 
-    render_inline(CarouselComponent.new(
+    render_inline(UI::CarouselComponent.new(
       images: images,
       show_indicators: true
     ))
