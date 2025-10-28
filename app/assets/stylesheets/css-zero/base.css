@@ -5,33 +5,54 @@
   --color-bg-tertiary: #f1f3f4;           /* Light gray for cards */
   --color-bg-dark: #1a1a1a;               /* Dark background for contrast */
   --color-bg-gray: #bfc3cb;
+  --color-bg-cream: #faf8f5;              /* NEW: Warm cream background */
   
   /* Text Colors - Perfect Contrast */
   --color-text: #000000;                  /* Pure black for main text */
   --color-text-secondary: #374151;        /* Dark gray for secondary text */
   --color-text-muted: #6b7280;            /* Medium gray for muted text */
   --color-text-reversed: #ffffff;         /* White text on dark backgrounds */
+  --color-text-charcoal: #2d2d2d;         /* NEW: Softer than pure black */
   
   /* Primary Brand Colors - Black & White */
   --color-primary: #000000;               /* Pure black from logo */
   --color-primary-light: #f5f5f4;         /* Subtle warm gray for backgrounds */
   --color-primary-dark: #000000;          /* For emphasis */
+  --color-charcoal: #2d2d2d;              /* NEW: Deep charcoal for depth */
   
-  /* Accent Colors - Minimal Red Usage */
-  --color-accent: #dc2626;                /* */
+  /* Accent Colors - Red Spectrum */
+  --color-accent: #dc2626;                /* Primary red accent */
   --color-accent-light: #ef4444;          /* Lighter red for hover */
   --color-accent-dark: #b91c1c;           /* Darker red for emphasis */
+  --color-accent-subtle: #fee2e2;         /* Very light red background */
+  --color-coral: #ff6b6b;                 /* NEW: Vibrant coral red */
   
-  /* Warm Colors - For Important CTAs */
-  --color-warm: #f59e0b;                  /* Warm orange for important CTAs */
+  /* Warm Colors - Orange/Amber Spectrum */
+  --color-warm: #f59e0b;                  /* Warm orange for CTAs */
   --color-warm-light: #fbbf24;            /* Light warm for hover */
   --color-warm-dark: #d97706;             /* Dark warm for emphasis */
   --color-warm-subtle: #fef3c7;           /* Very light warm for backgrounds */
+  --color-gold: #ffd93d;                  /* NEW: Energetic warm gold */
+  
+  /* Gradient Colors - For Visual Impact */
+  --gradient-primary: linear-gradient(135deg, #000000 0%, #374151 100%);
+  --gradient-accent: linear-gradient(135deg, #dc2626 0%, #b91c1c 100%);
+  --gradient-warm: linear-gradient(135deg, #f59e0b 0%, #d97706 100%);
+  --gradient-subtle: linear-gradient(180deg, #ffffff 0%, #f8f9fa 100%);
+  --gradient-coral: linear-gradient(135deg, #ff6b6b 0%, #dc2626 100%); /* NEW */
+  --gradient-gold: linear-gradient(135deg, #ffd93d 0%, #f59e0b 100%);   /* NEW */
+  
+  /* Depth & Layering Colors */
+  --color-overlay-dark: rgba(0, 0, 0, 0.6);
+  --color-overlay-darker: rgba(0, 0, 0, 0.8);
+  --color-overlay-light: rgba(255, 255, 255, 0.1);
+  --color-overlay-medium: rgba(0, 0, 0, 0.4);
   
   /* Neutral Colors - Grays for UI */
   --color-neutral: #374151;               /* Dark gray for secondary elements */
   --color-neutral-light: #6b7280;         /* Medium gray for tertiary elements */
   --color-neutral-subtle: #f3f4f6;        /* Very light gray for backgrounds */
+  --color-slate: #6c7a89;                 /* NEW: Sophisticated slate blue */
   
   /* Border System - Clean and Subtle */
   --color-border-light: #f3f4f6;          /* Very light borders */
@@ -52,8 +73,13 @@
   --color-info: #2563eb;                  /* Blue for info */
   --color-muted: #6b7280;                 /* Muted gray */
   
+  /* Pastel Accents - Fresh & Modern */
+  --color-mint: #b8e6d5;                  /* NEW: Fresh mint */
+  --color-peach: #ffcfb3;                 /* NEW: Warm peach */
+  --color-lavender: #e1d4f5;              /* NEW: Elegant lavender */
+  
   /* Medal Colors - Keep existing */
-  --color-gold: #fbbf24;
+  --color-medal-gold: #fbbf24;
   --color-silver: #9ca3af;
   --color-bronze: #d97706;
 

@@ -1,63 +1,73 @@
-/* HeroSectionComponent Styles */
+/* ========================================
+   HeroSectionComponent Styles
+   Mobile First Responsive Design
+   ======================================== */
 
+/* Base Styles - Mobile (320px+) */
 .hero-section {
   display: flex;
   flex-direction: column;
   align-items: center;
   justify-content: center;
   text-align: center;
-  color: var(--color-text);
   width: 100%;
-  margin-bottom: 0;
-  background-color: var(--color-primary-light);
+  min-height: 100dvh;
+  padding: var(--section-spacing-md) var(--section-spacing-sm);
+  background: var(--gradient-subtle);
+  color: var(--color-text);
+  will-change: transform;
+  contain: layout style paint;
 }
 
 .hero-container {
-  flex: 1;
-  padding: var(--section-spacing-md) var(--section-spacing-sm);
-  margin-top: 50px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  width: 100%;
+  max-width: 1200px;
+  padding-top: var(--size-16);
+  gap: var(--section-spacing-sm);
 }
 
 .hero-header {
-  margin-bottom: var(--section-spacing-xs);
+  display: flex;
+  flex-direction: column;
+  gap: var(--size-4);
 }
 
 .hero-title {
-  font-size: clamp(2.6rem, 3vw + 1rem, 3.4rem);
+  font-size: clamp(2.5rem, 8vmin, 3.5rem);
   font-weight: var(--font-bold);
-  color: inherit;
+  color: var(--color-text);
   line-height: var(--line-height-tight);
-  margin: 0 0 var(--section-spacing-xs) 0;
+  margin: 0;
+  letter-spacing: -0.02em;
 }
 
 .hero-subtitle {
-  font-size: var(--text-2xl);
+  font-size: clamp(1.5rem, 5vmin, 2.25rem);
   font-weight: var(--font-semibold);
-  color: inherit;
+  color: var(--color-text-secondary);
   line-height: var(--line-height-tight);
-  margin: clamp(1.5rem, 1vw + 1rem, 1.5rem) 0;
+  margin: var(--size-4) 0;
 }
 
 .hero-description {
-  margin-top: clamp(1rem, 2vw + 2rem, 1rem);
-  margin-bottom: clamp(1rem, 2vw + 2rem, 1rem);
-  font-size: var(--text-xl);
-  color: inherit;
+  font-size: clamp(1rem, 3vmin, 1.25rem);
+  color: var(--color-text-secondary);
   max-width: 50ch;
-  padding: 0;
-  opacity: 0.8;
+  margin: var(--section-spacing-sm) 0;
   line-height: var(--line-height-normal);
+  opacity: 0.9;
 }
 
 .hero-location {
-  margin-top: clamp(2rem, 1vw + 2rem, 2rem);
-  margin-bottom: clamp(2rem, 1vw + 2rem, 2rem);
-  font-size: var(--text-xl);
-  color: inherit;
+  font-size: clamp(1rem, 3vmin, 1.25rem);
+  color: var(--color-text-muted);
   max-width: 50ch;
-  opacity: 0.7;
-  font-style: normal;
+  margin: var(--section-spacing-xs) 0;
   line-height: var(--line-height-normal);
+  font-style: normal;
 }
 
 .hero-location .location-text {
@@ -68,27 +78,30 @@
   display: flex;
   justify-content: center;
   align-items: center;
-  gap: var(--size-8);
-  margin-bottom: clamp(2rem, 1vw + 2rem, 2rem);
+  gap: var(--size-6);
+  margin: var(--section-spacing-md) 0;
 }
 
-.hero-location-links .btn{
-  border: 1.5px solid var(--color-bg);
-  border-radius: 10px;
-  box-shadow: 4px 4px 4px var(--color-primary);
-  padding: clamp(0.75rem, 2vw, 1.25rem) !important; /* Responsive padding */
+.hero-location-links .btn {
+  padding: var(--size-3);
+  border: 2px solid var(--color-border);
+  border-radius: var(--rounded-md);
+  background-color: var(--color-bg);
+  box-shadow: var(--shadow-sm);
+  transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+  will-change: transform;
 }
 
 .hero-location-links .btn:hover {
-  transform: scale(1.15);
-  background: transparent;
-  border: none;
-  box-shadow: none;
+  transform: scale(1.1);
+  border-color: var(--color-accent);
+  box-shadow: var(--shadow-md);
+  background-color: var(--color-bg);
 }
 
 .hero-location-links .btn svg {
-  width: clamp(32px, 4vw, 48px) !important;
-  height: clamp(32px, 4vw, 48px) !important;
+  width: var(--size-8);
+  height: var(--size-8);
   transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
 }
 
@@ -111,141 +124,109 @@
 }
 
 
-@media (min-width: 390px) {
-  .hero-container {
-    padding: var(--section-spacing-2xl) var(--section-spacing-sm);
-  }
-
-  .hero-description {
-    margin-top: clamp(3rem, 2vw + 2rem, 3rem);
-    margin-bottom: clamp(3rem, 2vw + 2rem, 2rem);
-  }
-
-  .hero-location-links {
-    margin-bottom: clamp(4rem, 1vw + 2rem, 2rem);
-  }
-}
-
-/* Responsive Design - Mobile First */
+/* ======================================== 
+   Tablet Breakpoint (768px+)
+   ======================================== */
 @media (min-width: 768px) {
   .hero-section {
-    padding: var(--size-10);
+    padding: var(--section-spacing-lg) var(--section-spacing-md);
   }
   
-  .hero-title {
-    font-size: clamp(3.4rem, 4vw + 1rem, 3.5rem);
-    margin-bottom: var(--section-spacing-sm);
-  }
-  
-  .hero-subtitle {
-    font-size: clamp(2.2rem, 2vw + 0.5rem, 2.5rem);
-    margin-bottom: var(--section-spacing-md);
-  }
-  
-  .hero-description {
-    font-size: clamp(1.4rem, 1.5vw + 0.5rem, 1.4rem);
-    margin-bottom: var(--section-spacing-lg);
-  }
-  
-  .hero-location {
-    font-size: clamp(1.4rem, 1.5vw + 0.5rem, 1.4rem);
-    margin-top: var(--section-spacing-md);
+  .hero-container {
+    padding-top: var(--size-24);
+    gap: var(--section-spacing-md);
   }
   
   .hero-location-links {
-    margin: var(--section-spacing-md) 0 var(--section-spacing-md) 0;
-    gap: var(--size-14);
+    gap: var(--size-8);
   }
   
-  .hero-cta .btn{
-    padding: var(--size-6) var(--size-14);
-    font-size: var(--text-xl);
-    
+  .hero-location-links .btn svg {
+    width: var(--size-10);
+    height: var(--size-10);
   }
   
-  .hero-cta {
-    margin-top: var(--section-spacing-md);
+  .hero-cta .btn {
+    padding: var(--size-5) var(--size-12);
+    font-size: var(--text-lg);
   }
 }
 
+/* ======================================== 
+   Desktop Breakpoint (1024px+)
+   ======================================== */
 @media (min-width: 1024px) {
-    .hero-container {
-    padding: var(--section-spacing-xs) var(--section-spacing-md);
-    margin-top: 100px;
-  }
-}
-
-@media (min-width: 1280px) {
   .hero-section {
-    height: 60rem;
+    min-height: 90dvh;
+    padding: var(--section-spacing-xl) var(--section-spacing-lg);
   }
   
   .hero-container {
-    padding: var(--section-spacing-md) var(--section-spacing-xl);
+    padding-top: var(--size-32);
+    gap: var(--section-spacing-lg);
   }
-
-  .hero-description {
-    font-size: clamp(1.6rem, 1.5vw + 0.5rem, 1.6rem);
-    justify-self: center;
+  
+  .hero-description,
+  .hero-location {
+    max-width: 60ch;
   }
-
-  .hero-title{
-    font-size: clamp(3.7rem, 4vw + 1rem, 3.5rem);
+  
+  .hero-location-links {
+    gap: var(--size-10);
   }
-
-  .hero-subtitle{
-    font-size: clamp(2.5rem, 2vw + 0.5rem, 2.5rem);
+  
+  .hero-location-links .btn svg {
+    width: var(--size-12);
+    height: var(--size-12);
   }
-
-  .hero-location{
-    font-size: clamp(1.5rem, 1.5vw + 0.5rem, 1.5rem);
-    justify-self: center;
+  
+  .hero-cta .btn {
+    padding: var(--size-6) var(--size-16);
+    font-size: var(--text-xl);
   }
-
-  .hero-location-links{
-    margin-bottom: 5rem;
-  }
-
 }
 
-@media (min-width: 1440px) {
- 
-}
-
-@media (min-width: 1920px) {
-  .hero-section {
-    height: 80rem;
-  }
-
+/* ======================================== 
+   Large Desktop (1280px+)
+   ======================================== */
+@media (min-width: 1280px) {
   .hero-container {
-    padding: var(--section-spacing-2xl  ) var(--section-spacing-xl);
-    margin: 200px 0 100px 0;
+    max-width: 1400px;
+    padding-top: var(--size-40);
+  }
+  
+  .hero-description,
+  .hero-location {
+    max-width: 70ch;
   }
 }
 
-/* Performance optimizations */
-.hero-section {
-  will-change: transform;
-  contain: layout style paint;
+/* ======================================== 
+   Extra Large Desktop (1536px+)
+   ======================================== */
+@media (min-width: 1536px) {
+  .hero-container {
+    max-width: 1600px;
+  }
 }
 
-.hero-location-links .btn {
-  will-change: transform;
-}
-
-/* Accessibility improvements */
+/* ======================================== 
+   Accessibility & Performance
+   ======================================== */
 .hero-container:focus-within {
-  outline: 2px solid var(--color-selected-light);
-  outline-offset: 2px;
+  outline: 2px solid var(--color-border-focus);
+  outline-offset: 4px;
 }
 
 /* Reduced motion support */
 @media (prefers-reduced-motion: reduce) {
-  .hero-location-links .btn {
+  .hero-location-links .btn,
+  .hero-cta .btn {
     transition: none;
   }
   
-  .hero-location-links .btn:hover {
+  .hero-location-links .btn:hover,
+  .hero-cta .btn:hover {
     transform: none;
   }
-} 
+}
