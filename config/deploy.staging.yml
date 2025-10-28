@@ -7,7 +7,7 @@ servers:
 proxy:
   ssl: true
   hosts:
-    - staging.puertojiujitsu.com  # Subdominio específico para staging
+    - staging.puertojiujitsu.com
 
 env:
   secret:
@@ -19,5 +19,6 @@ env:
     DATABASE_URL: sqlite3:/rails/db/staging.sqlite3
 
 volumes:
-  - "puerto_bjj_staging_storage:/rails/storage"  # Volume separado de producción
-  - "puerto_bjj_staging_uploads:/rails/public/uploads"  # Uploads separados
+  - "puerto_bjj_staging_storage:/rails/storage"
+  - "puerto_bjj_staging_uploads:/rails/public/uploads"
+
