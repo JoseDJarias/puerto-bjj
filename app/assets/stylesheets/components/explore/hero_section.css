@@ -1,3 +1,8 @@
+/* ========================================
+   HeroSectionComponent Styles
+   Mobile First Responsive Design
+   ======================================== */
+
 /* Base Styles - Mobile (320px+) */
 .hero-section {
   display: flex;
@@ -118,6 +123,10 @@
   box-shadow: var(--shadow-lg);
 }
 
+
+/* ======================================== 
+   Tablet Breakpoint (768px+)
+   ======================================== */
 @media (min-width: 768px) {
   .hero-section {
     padding: var(--section-spacing-lg) var(--section-spacing-md);
@@ -143,6 +152,9 @@
   }
 }
 
+/* ======================================== 
+   Desktop Breakpoint (1024px+)
+   ======================================== */
 @media (min-width: 1024px) {
   .hero-section {
     min-height: 90dvh;
@@ -174,6 +186,9 @@
   }
 }
 
+/* ======================================== 
+   Large Desktop (1280px+)
+   ======================================== */
 @media (min-width: 1280px) {
   .hero-container {
     max-width: 1400px;
@@ -186,12 +201,18 @@
   }
 }
 
+/* ======================================== 
+   Extra Large Desktop (1536px+)
+   ======================================== */
 @media (min-width: 1536px) {
   .hero-container {
     max-width: 1600px;
   }
 }
 
+/* ======================================== 
+   Accessibility & Performance
+   ======================================== */
 .hero-container:focus-within {
   outline: 2px solid var(--color-border-focus);
   outline-offset: 4px;
