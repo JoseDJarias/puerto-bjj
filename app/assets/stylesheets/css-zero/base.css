@@ -191,8 +191,7 @@ html {
 body {
   background-color: var(--color-bg);
   color: var(--color-text);
-  font-synthesis-weight
-  : none;
+  font-synthesis-weight: none;
   overscroll-behavior: none;
   text-rendering: optimizeLegibility;
 }
@@ -218,12 +217,12 @@ body {
   background-color: var(--color-primary);
 }
 
-.bg-positive {
-  background-color: var(--color-positive);
+.bg-success {
+  background-color: var(--color-success);
 }
 
-.bg-negative {
-  background-color: var(--color-negative);
+.bg-error {
+  background-color: var(--color-error);
 }
 
 .bg-border {

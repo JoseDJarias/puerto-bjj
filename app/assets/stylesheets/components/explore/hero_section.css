@@ -11,11 +11,9 @@
   justify-content: center;
   text-align: center;
   width: 100%;
-  min-height: 100dvh;
-  padding: var(--section-spacing-md) var(--section-spacing-sm);
+  padding: var(--section-spacing-3xl) var(--section-spacing-sm);
   background: var(--gradient-subtle);
   color: var(--color-text);
-  will-change: transform;
   contain: layout style paint;
 }
 
@@ -157,8 +155,7 @@
    ======================================== */
 @media (min-width: 1024px) {
   .hero-section {
-    min-height: 90dvh;
-    padding: var(--section-spacing-xl) var(--section-spacing-lg);
+    padding: var(--section-spacing-3xl) var(--section-spacing-lg);
   }
   
   .hero-container {
