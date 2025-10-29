@@ -11,10 +11,8 @@
   justify-content: center;
   text-align: center;
   width: 100%;
-  padding: var(--section-spacing-3xl) var(--section-spacing-sm);
+  padding: var(--section-spacing-xl) var(--section-spacing-sm);
   background: var(--gradient-subtle);
-  color: var(--color-text);
-  contain: layout style paint;
 }
 
 .hero-container {
@@ -131,7 +129,7 @@
   }
   
   .hero-container {
-    padding-top: var(--size-24);
+    padding-top: var(--size-32);
     gap: var(--section-spacing-md);
   }
   
@@ -147,6 +145,16 @@
   .hero-cta .btn {
     padding: var(--size-5) var(--size-12);
     font-size: var(--text-lg);
+  }
+}
+
+/* ======================================== 
+   Larger Tablet Breakpoint (820px+)
+   iPad Air and similar
+   ======================================== */
+@media (min-width: 820px) {
+  .hero-section {
+    
   }
 }
 
