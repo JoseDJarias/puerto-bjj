@@ -149,21 +149,11 @@
 }
 
 /* ======================================== 
-   Larger Tablet Breakpoint (820px+)
-   iPad Air and similar
-   ======================================== */
-@media (min-width: 820px) {
-  .hero-section {
-    
-  }
-}
-
-/* ======================================== 
    Desktop Breakpoint (1024px+)
    ======================================== */
 @media (min-width: 1024px) {
   .hero-section {
-    padding: var(--section-spacing-3xl) var(--section-spacing-lg);
+    padding: var(--section-spacing-2xl) var(--section-spacing-lg);
   }
   
   .hero-container {
@@ -197,9 +187,8 @@
 @media (min-width: 1280px) {
   .hero-container {
     max-width: 1400px;
-    padding-top: var(--size-40);
   }
-  
+
   .hero-description,
   .hero-location {
     max-width: 70ch;
