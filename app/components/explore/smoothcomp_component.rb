@@ -20,7 +20,7 @@ module Explore
       [
         {
           type: :gold,
-          count: 13,
+          count: 14,
           label: "Oro",
           icon: "award",
           color_class: "gold"
