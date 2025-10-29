@@ -1,18 +1,9 @@
-/* ========================================
-   HeroSectionComponent Styles
-   Mobile First Responsive Design
-   ======================================== */
-
-/* Base Styles - Mobile (320px+) */
 .hero-section {
   display: flex;
   flex-direction: column;
-  align-items: center;
-  justify-content: center;
   text-align: center;
   width: 100%;
   padding: var(--section-spacing-xl) var(--section-spacing-sm);
-  background: var(--gradient-subtle);
 }
 
 .hero-container {
@@ -204,15 +195,11 @@
   }
 }
 
-/* ======================================== 
-   Accessibility & Performance
-   ======================================== */
 .hero-container:focus-within {
   outline: 2px solid var(--color-border-focus);
   outline-offset: 4px;
 }
 
-/* Reduced motion support */
 @media (prefers-reduced-motion: reduce) {
   .hero-location-links .btn,
   .hero-cta .btn {
