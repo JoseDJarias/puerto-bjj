@@ -1,10 +1,21 @@
-<section class="schedule-container" aria-labelledby="schedule-title">
+<section class="schedule-container" aria-labelledby="schedule-title" data-controller="collapsible">
   <header class="schedule-header">
     <h2 id="schedule-title" class="schedule-title"><%= @title %></h2>
     <p class="schedule-subtitle"><%= @subtitle %></p>
+    
+    <button type="button" class="schedule-toggle-btn" data-action="collapsible#toggle" aria-expanded="false" aria-controls="schedule-content">
+      <%= render(UI::IconComponent.new(
+        name: "chevron-down",
+        size: :medium,
+        class_name: "schedule-toggle-icon"
+      )) %>
+      <span>Ver Horarios</span>
+    </button>
   </header>
 
-  <div class="schedule-grid">
+  <details data-collapsible-target="details" id="schedule-content">
+    <summary hidden="hidden"></summary>
+    <div class="schedule-grid">
     <article class="schedule-card" role="article" aria-labelledby="schedule-card-title">
       <header class="schedule-card-header">
         <h3 id="schedule-card-title" class="schedule-card-title">
@@ -69,10 +80,10 @@
         </section>
       </div>
     </article>
-  </div>
+    </div>
 
-  <!-- Additional Information Section -->
-  <aside class="schedule-info" role="complementary" aria-labelledby="schedule-info-title">
+    <!-- Additional Information Section -->
+    <aside class="schedule-info" role="complementary" aria-labelledby="schedule-info-title">
     <h3 id="schedule-info-title" class="visually-hidden">Información adicional</h3>
     <div class="schedule-info-grid">
       <% @additional_info.each_with_index do |info, index| %>
@@ -81,5 +92,6 @@
         </div>
       <% end %>
     </div>
-  </aside>
-</section> 
+    </aside>
+  </details>
+</section>
