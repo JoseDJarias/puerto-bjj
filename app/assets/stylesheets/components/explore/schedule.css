@@ -6,8 +6,6 @@
   align-items: center;
   width: 100%;
   padding: var(--section-spacing-md) var(--size-4);
-  /* Add component spacing */
-  margin-bottom: var(--section-spacing-xs);
 }
 
 .schedule-header {
@@ -27,7 +25,43 @@
 .schedule-subtitle {
   font-size: var(--text-lg);
   line-height: var(--line-height-normal);
-  margin: 0;
+  margin: 0 0 var(--size-6) 0;
+}
+
+.schedule-toggle-btn {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: var(--size-2);
+  padding: var(--size-3) var(--size-6);
+  background: var(--color-warm);
+  color: var(--color-text-reversed);
+  border: none;
+  border-radius: var(--rounded-lg);
+  font-size: var(--text-base);
+  font-weight: var(--font-semibold);
+  cursor: pointer;
+  transition: all 0.3s ease;
+  box-shadow: var(--shadow-md);
+}
+
+.schedule-toggle-btn:hover {
+  background: var(--color-accent);
+  transform: translateY(-2px);
+  box-shadow: var(--shadow-lg);
+}
+
+.schedule-toggle-btn:active {
+  transform: translateY(0);
+}
+
+.schedule-toggle-icon {
+  transition: transform 0.3s ease;
+}
+
+details[open] + * .schedule-toggle-icon,
+[aria-expanded="true"] .schedule-toggle-icon {
+  transform: rotate(180deg);
 }
 
 .schedule-grid {
