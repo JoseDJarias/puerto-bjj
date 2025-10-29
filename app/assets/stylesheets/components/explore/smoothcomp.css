@@ -5,9 +5,7 @@
   flex-direction: column;
   align-items: center;
   width: 100%;
-  padding: var(--section-spacing-lg) var(--size-4);
-  /* Add component spacing */
-  margin-bottom: var(--section-spacing-sm);
+  padding: var(--section-spacing-sm) var(--size-4);
 }
 
 .smoothcomp-header {
@@ -155,8 +153,7 @@
 /* Responsive Design - Mobile First */
 @media (min-width: 768px) {
   .smoothcomp-container {
-    padding: var(--section-spacing-2xl) var(--size-10); /* Reduced from xl to md */
-    margin-bottom: var(--size-16); /* Reduced from md to sm */
+    padding: var(--section-spacing-xl) var(--size-10); /* Reduced from xl to md */
   }
 
   .smoothcomp-title {
