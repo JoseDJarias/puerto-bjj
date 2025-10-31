@@ -1,13 +1,10 @@
-<%# Main container for feedback messages %>
 <div class="container">
   <div class="flex flex-col gap mb-6">
-    <%# Primera fila: Título  %>
     <div class="flex p-2">
       <h1 class="text-2xl font-bold">Comentarios</h1>
     
     </div>
 
-    <%# Segunda fila: Barra de búsqueda %>
     <div class="flex gap">
       <div class="flex-1">
         <%= form_with url: admin_feedback_messages_path, 
@@ -19,7 +16,6 @@
               turbo_frame: "feedback-messages-table"
             } do |f| %>
           
-          <%# Mantener otros parámetros %>
           <%= f.hidden_field :per_page, value: @per_page %>
           
           <div class="search-input-wrapper">
@@ -50,12 +46,10 @@
     </div>
   </div>
 
-  <%# Flash messages container %>
   <div id="flash-messages">
     <%= render "shared/flash" %>
   </div>
 
-  <%# Render the table partial %>
   <%= render "table", messages: @messages %>
 
     
@@ -70,7 +64,6 @@
     </div>
   </div>
 
-  <%# Pagination %>
   <div class="mt-4 flex justify-center">
     <div class="pagination-wrapper">
       <%= paginate @messages %>
@@ -78,7 +71,6 @@
   </div>
 </div>
 
-<%# Estilos para la búsqueda %>
 <style>
   .search-form {
     inline-size: 100%;
