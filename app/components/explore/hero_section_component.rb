@@ -34,30 +34,5 @@ module Explore
         }
       ]
     end
-
-    def structured_data
-      {
-        "@context": "https://schema.org",
-        "@type": "SportsActivityLocation",
-        "name": @title,
-        "description": @description,
-        "address": {
-          "@type": "PostalAddress",
-          "addressLocality": "El Roble",
-          "addressRegion": "Puntarenas",
-          "addressCountry": "CR"
-        },
-        "geo": {
-          "@type": "GeoCoordinates",
-          "latitude": 9.9831908,
-          "longitude": -84.7323239
-        },
-        "url": "https://puertojiujitsu.com",
-        "sameAs": [
-          "https://www.facebook.com/puertojiujitsu/",
-          "https://www.instagram.com/puertojiujitsu/"
-        ]
-      }
-    end
   end
 end
