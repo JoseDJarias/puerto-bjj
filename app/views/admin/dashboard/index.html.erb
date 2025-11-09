@@ -2,7 +2,6 @@
   <h1 class="text-2xl font-bold mb-6">Panel Administrativo</h1>
 
   <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3">
-    <!-- Tarjeta de Feedback -->
     <div class="rounded-lg shadow p-6">
       <div class="flex items-center justify-between mb-4">
         <h2 class="text-xl font-semibold">Feedback</h2>
@@ -12,10 +11,8 @@
           class: "inline-block rounded hover:bg-blue-700 btn" %>
     </div>
 
-    <!-- Aquí podemos agregar más tarjetas para otras secciones administrativas -->
   </div>
 
-  <!-- Sección de Feedback Reciente -->
   <div class="rounded-lg shadow p-6">
     <h2 class="text-xl font-semibold mb-4">Feedback Reciente</h2>
     <% if @recent_feedbacks.any? %>
@@ -35,7 +32,6 @@
                 </time>
               </div>
 
-              <%# Mensaje %>
               <div class="feedback-message">
                 <%= lucide_icon "message-square", class: "w-4 h-4" %>
                 <p><%= truncate(feedback.message, length: 100) %></p>
@@ -58,10 +54,8 @@
     <% end %>
   </div>
 
-   <!-- Tarjeta para Media Items -->
 </div>
 
-<%# Estilos para la sección de feedback reciente %>
 <style>
   .feedback-item {
     background-color: var(--color-surface);

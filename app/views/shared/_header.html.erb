@@ -3,38 +3,28 @@
     <div class="styled-header flex justify-between items-center"
          data-controller="sticky-hide-header"
          data-sticky-hide-header-target="header">
-      <!-- Left Side: Logo (and a spacer to balance the social icons) -->
       <div class="header-left flex items-center justify-start mi-6" style="flex: 1;">
         <%= link_to root_path, class: "header-logo" do %>
           <%= image_tag 'home/logo.svg', alt: 'Puerto Jiu-Jitsu Logo', class: 'header-logo-image' %>
         <% end %>
       </div>
 
-    <!-- Center Navigation (Only for large screens) -->
     <div class="show@md flex-grow text-center text-xl flex justify-center items-center gap-4 center-navigation">
       <%= link_to "Home", root_path, class: "rounded p-4" %>
 
-      <!-- Programs Dropdown -->
       <div class="header-dropdown" data-controller="dropdown">
         <%= link_to programs_path, class: "rounded p-4 header-dropdown-trigger" do %>
           <span>Programas</span>
           <%= lucide_icon('chevron-down', size: 20, "data-action": "click->dropdown#toggle") %>
         <% end %>
         <div class="header-dropdown-menu hidden" data-dropdown-target="menu">
-        <!--
-          <%= link_to "Jiu-Jitsu (Gi/No-Gi)" %>
-          <%= link_to "Boxeo"%>
-          <%= link_to "MMA" %>
-        -->
         <%= link_to "Todos los Programas", programs_path, class: "hover:underline" %>
         <%= link_to "Programa de Niños", kids_program_path, class: "hover:underline" %>        </div>
       </div>
       <%= link_to "Feedback", feedback_path, class: "rounded p-4" %>
     </div>
 
-      <!-- Right Side: Social Icons & Hamburger Menu -->
       <div class="header-right flex items-center justify-end mi-8" style="flex: 1;">
-        <!-- Social Icons for desktop -->
         <div class="show@lg header-social-link-container">
           <%= link_to "https://www.facebook.com/puertojiujitsu/", target: "_blank", class: "header-social-link", aria: { label: "Facebook" } do %>
             <%= lucide_icon "facebook", class: "" %>
@@ -50,7 +40,6 @@
           <% end %>
         </div>
 
-          <!-- Hamburger menu for all screen sizes -->
         <div class="cursor-grab ham-menu mr-4"
              data-controller="mobile-menu"
              data-action="click->mobile-menu#toggle"
@@ -60,7 +49,6 @@
         </div>
       </div>
 
-      <!-- Navbar -->
       <div id="mobile-menu" class="mobile-menu-overlay hidden">
         <nav class="flex flex-col text-base gap mobile-menu-overlay-nav">
           <%= link_to "Inicio", root_path, class: "hover:underline" %>

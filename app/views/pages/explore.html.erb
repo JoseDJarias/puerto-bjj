@@ -3,11 +3,9 @@
 <% end %>
 
 <div class="explore-container">
-  <!-- Hero Section Component -->
   <%= render(Explore::HeroSectionComponent.new(
     cta_href: acerca_de_nosotros_path
   )) %>
-  <!-- Carousel Component -->
   <%= render(UI::CarouselComponent.new(
     images: [
       { src: 'home/jiujitsu-gi.jpeg', alt: 'Jiu-Jitsu con Gi - Entrenamiento tradicional' },
