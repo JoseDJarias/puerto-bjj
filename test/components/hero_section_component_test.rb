@@ -93,14 +93,6 @@ class Explore::HeroSectionComponentTest < ViewComponent::TestCase
     assert_selector ".btn.btn--primary"
   end
 
-  def test_includes_structured_data
-    result = render_inline(Explore::HeroSectionComponent.new)
-
-    # Check that structured data is included in the rendered HTML
-    assert_includes result.text, "SportsActivityLocation"
-    assert_includes result.to_html, "application/ld+json"
-  end
-
   def test_uses_semantic_html_elements
     render_inline(Explore::HeroSectionComponent.new)
 

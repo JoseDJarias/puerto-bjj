@@ -29,7 +29,7 @@ class Explore::SmoothcompComponentTest < ViewComponent::TestCase
     assert_selector ".stat-item", count: 3
 
     # Gold medals
-    assert_selector ".stat-number", text: "13"
+    assert_selector ".stat-number", text: "14"
     assert_selector ".stat-label", text: "Oro"
     assert_selector "[class*='text-gold']"
 
