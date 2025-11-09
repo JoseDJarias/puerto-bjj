@@ -6,7 +6,7 @@ class User < ApplicationRecord
   
   validates :password, length: { minimum: 8 }, 
                       format: { with: /\A(?=.*[a-z])(?=.*[A-Z])(?=.*\d)(?=.*[@$!%*?&])[A-Za-z\d@$!%*?&]{8,}\z/,
-                               message: "debe contener al menos una letra mayúscula, una minúscula, un número y un carácter especial" },
+                               message: "Debe contener al menos una letra mayúscula, una minúscula, un número y un carácter especial" },
                       if: -> { password.present? }
   
   def admin?
