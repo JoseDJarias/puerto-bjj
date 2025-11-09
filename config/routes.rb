@@ -17,7 +17,7 @@ Rails.application.routes.draw do
 
   # Admin routes
   namespace :admin do
-    root to: "dashboard#index"  # Esto hace que el dashboard sea la página principal del área admin
+    root to: "dashboard#index"
     resources :feedback_messages, only: [ :index, :show, :destroy ] do
       collection do
         delete :batch_destroy
