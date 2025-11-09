@@ -1,6 +1,4 @@
-<%# Contenedor principal %>
 <div class="feedback-detail">
-  <%# Encabezado con navegación %>
   <div class="feedback-header">
     <div class="feedback-nav">
       <%= link_to admin_feedback_messages_path, class: "back-link" do %>
@@ -22,9 +20,7 @@
     </div>
   </div>
 
-  <%# Tarjeta de detalle %>
   <div class="feedback-card">
-    <%# Información del remitente %>
     <div class="sender-info">
       <div class="sender-header">
         <div class="sender-name">
@@ -43,7 +39,6 @@
       </div>
     </div>
 
-    <%# Contenido del mensaje %>
     <div class="message-content">
       <div class="message-header">
         <%= lucide_icon "message-square", class: "w-5 h-5" %>
@@ -56,7 +51,6 @@
   </div>
 </div>
 
-<%# Estilos %>
 <style>
   .feedback-detail {
     max-inline-size: 800px;
