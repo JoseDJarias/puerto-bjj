@@ -3,24 +3,20 @@ module Searchable
 
   class_methods do
     def searchable_by(*columns, **options)
-      # Opciones por defecto
       options = {
-        case_sensitive: false,  # búsqueda case-insensitive por defecto
-        exact_match: false,     # búsqueda parcial por defecto
-        prefix: '%',            # prefijo para LIKE
-        suffix: '%'             # sufijo para LIKE
+        case_sensitive: false,
+        exact_match: false,
+        prefix: '%',
+        suffix: '%'           
       }.merge(options)
 
       scope :search, ->(query) {
         return all unless query.present?
 
-        # Construir la condición de búsqueda
         conditions = columns.map do |column|
           if options[:exact_match]
-            # Búsqueda exacta
             arel_table[column].eq(query)
           else
-            # Búsqueda parcial
             pattern = "#{options[:prefix]}#{query}#{options[:suffix]}"
             if options[:case_sensitive]
               arel_table[column].matches(pattern)
@@ -33,7 +29,6 @@ module Searchable
         where(conditions)
       }
 
-      # Scope para búsqueda exacta
       scope :exact_search, ->(query) {
         return all unless query.present?
         
@@ -44,7 +39,6 @@ module Searchable
         where(conditions)
       }
 
-      # Scope para búsqueda que comienza con
       scope :starts_with, ->(query) {
         return all unless query.present?
         
