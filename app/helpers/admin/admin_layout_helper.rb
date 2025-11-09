@@ -1,7 +1,6 @@
 module Admin::AdminLayoutHelper
     def hide_admin_header_footer?
-      # Aquí defines los controladores y acciones donde NO quieres mostrar header y footer
-      ["sessions", "passwords"].include?(controller_name) && ["new", "new"].include?(action_name)
+      # Controllers and actions where you want to hide the header and footer
+      ["sessions", "passwords"].include?(controller_name) && ["new"].include?(action_name)
     end
-  end
-  
+end
