@@ -46,21 +46,21 @@
       </div>
     </div>
 
-    <!-- Feedback Dialog -->      
-    <div data-controller="dialog" class="contact-feedback-cta" role="complementary" aria-labelledby="<%= feedback_cta_id %>">
+    <!-- Feedback Modal -->      
+    <div data-controller="modal" class="contact-feedback-cta" role="complementary" aria-labelledby="<%= feedback_cta_id %>">
       <h3 id="<%= feedback_cta_id %>" class="visually-hidden">Sección de feedback</h3>
       <div class="feedback-cta-content">
         <div class="feedback-cta-text">
           <h4 class="feedback-cta-title"><%= @feedback_cta[:title] %></h4>
           <p class="feedback-cta-description"><%= @feedback_cta[:text] %></p>
         </div>
-        <button type="button" class="btn btn--primary feedback-cta-button" data-action="dialog#showModal">
+        <button type="button" class="btn btn--primary feedback-cta-button" data-action="modal#showModal">
           <span class="feedback-cta-button-text"><%= @feedback_cta[:cta_text] %></span>
           <%= helpers.lucide_icon "mouse-pointer-click", class: "feedback-cta-button-icon" %>
         </button>
       </div>
-      <dialog class="sheet sheet--right" data-dialog-target="content" data-action="click->dialog#closeOnClickOutside" aria-label="Feedback Form">
-        <button type="button" class="sheet__close" data-action="dialog#close" aria-label="Cerrar">
+      <dialog class="sheet sheet--right" data-modal-target="content" data-action="click->modal#closeOnClickOutside" aria-label="Feedback Form">
+        <button type="button" class="sheet__close" data-action="modal#close" aria-label="Cerrar">
           <%= helpers.lucide_icon "x", class: "sheet__close-icon" %>
         </button>
         <div class="sheet__content">

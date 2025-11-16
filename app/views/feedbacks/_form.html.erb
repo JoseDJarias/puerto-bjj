@@ -1,19 +1,19 @@
 <% feedback_message ||= FeedbackMessage.new %>
 
-<div class="feedback-dialog-wrapper">
+<div id="feedback_container" class="feedback-modal-wrapper">
   <!-- Main Form Section -->
   <%= form_with model: feedback_message,
                 url: feedback_path,
                 method: :post,
                 data: { turbo: true, controller: "feedback-form" },
-                class: "feedback-dialog-form" do |f| %>
-    <div class="feedback-dialog-header">
-      <h1 class="feedback-dialog-title">Déjanos tu feedback</h1>
-      <p class="feedback-dialog-subtitle">Apreciamos tu opinión</p>
+                class: "feedback-modal-form" do |f| %>
+    <div class="feedback-modal-header">
+      <h1 class="feedback-modal-title">Déjanos tu feedback</h1>
+      <p class="feedback-modal-subtitle">Apreciamos tu opinión</p>
     </div>
 
-    <div class="feedback-dialog-fields">
-      <div class="feedback-dialog-field">
+    <div class="feedback-modal-fields">
+      <div class="feedback-modal-field">
         <%= f.label :name, "Nombre" %>
         <%= f.text_field :name,
               class: "input",
@@ -21,7 +21,7 @@
               data: { "feedback-form-target": "name", action: "input->feedback-form#validate" } %>
       </div>
 
-      <div class="feedback-dialog-field">
+      <div class="feedback-modal-field">
         <%= f.label :email, "Correo" %>
         <%= f.email_field :email,
               class: "input",
@@ -29,7 +29,7 @@
               data: { "feedback-form-target": "email", action: "input->feedback-form#validate" } %>
       </div>
 
-      <div class="feedback-dialog-field">
+      <div class="feedback-modal-field">
         <%= f.label :message, "Comentario" %>
         <%= f.text_area :message,
               class: "input",
@@ -39,13 +39,13 @@
       </div>
     </div>
 
-    <p class="feedback-dialog-hint" data-feedback-form-target="infoMessage">
-      <%= lucide_icon "info", class: "feedback-dialog-hint-icon" %>
+    <p class="feedback-modal-hint" data-feedback-form-target="infoMessage">
+      <%= lucide_icon "info", class: "feedback-modal-hint-icon" %>
       <span>Todos los campos son requeridos</span>
     </p>
 
-    <div class="feedback-dialog-actions">
-      <button type="button" class="btn btn--secondary" data-action="dialog#close">Cancelar</button>
+    <div class="feedback-modal-actions">
+      <button type="button" class="btn btn--secondary" data-action="modal#close">Cancelar</button>
       <%= f.submit "Enviar comentario",
             class: "btn btn--primary",
             data: { "feedback-form-target": "submit" },
@@ -54,27 +54,27 @@
   <% end %>
 
   <!-- Secondary Info Cards (Lower Priority) -->
-  <div class="feedback-dialog-info">
-    <h2 class="feedback-dialog-info-title">Tu opinión es valiosa</h2>
-    <div class="feedback-dialog-info-card">
-      <%= lucide_icon "heart", class: "feedback-dialog-info-icon" %>
-      <div class="feedback-dialog-info-text">
+  <div class="feedback-modal-info">
+    <h2 class="feedback-modal-info-title">Tu opinión es valiosa</h2>
+    <div class="feedback-modal-info-card">
+      <%= lucide_icon "heart", class: "feedback-modal-info-icon" %>
+      <div class="feedback-modal-info-text">
         <strong>Mejora continua</strong>
         <span>Nos ayuda a mejorar nuestros servicios</span>
       </div>
     </div>
 
-    <div class="feedback-dialog-info-card">
-      <%= lucide_icon "users", class: "feedback-dialog-info-icon" %>
-      <div class="feedback-dialog-info-text">
+    <div class="feedback-modal-info-card">
+      <%= lucide_icon "users", class: "feedback-modal-info-icon" %>
+      <div class="feedback-modal-info-text">
         <strong>¡Tu eres importante!</strong>
         <span>¿Qué idea te gustaría que implementemos?</span>
       </div>
     </div>
 
-    <div class="feedback-dialog-info-card">
-      <%= lucide_icon "shield", class: "feedback-dialog-info-icon" %>
-      <div class="feedback-dialog-info-text">
+    <div class="feedback-modal-info-card">
+      <%= lucide_icon "shield", class: "feedback-modal-info-icon" %>
+      <div class="feedback-modal-info-text">
         <strong>Confidencialidad</strong>
         <span>Tratamos tus comentarios con total respeto</span>
       </div>

@@ -276,18 +276,18 @@
 }
 
 /* Feedback Dialog Form Styles - Mobile First */
-.feedback-dialog-wrapper {
+.feedback-modal-wrapper {
   height: 100%;
 }
 
-.feedback-dialog-header {
+.feedback-modal-header {
   margin-bottom: var(--size-5);
   text-align: center ;
   padding-bottom: var(--size-4);
   border-bottom: 1px solid var(--color-border);
 }
 
-.feedback-dialog-title {
+.feedback-modal-title {
   font-size: var(--text-lg);
   font-weight: var(--font-bold);
   color: var(--color-text);
@@ -295,43 +295,43 @@
   line-height: var(--line-height-tight);
 }
 
-.feedback-dialog-subtitle {
+.feedback-modal-subtitle {
   font-size: var(--text-sm);
   color: var(--color-text-muted);
   margin: 0;
   line-height: var(--line-height-normal);
 }
 
-.feedback-dialog-fields {
+.feedback-modal-fields {
   display: flex;
   flex-direction: column;
   gap: var(--size-4);
   margin-bottom: var(--size-4);
 }
 
-.feedback-dialog-field {
+.feedback-modal-field {
   display: flex;
   flex-direction: column;
   gap: var(--size-1-5);
 }
 
-.feedback-dialog-field label {
+.feedback-modal-field label {
   font-size: var(--text-sm);
   font-weight: var(--font-medium);
   color: var(--color-text);
 }
 
-.feedback-dialog-field .input {
+.feedback-modal-field .input {
   width: 100%;
   font-size: var(--text-base);
   padding: var(--size-3);
 }
 
-.feedback-dialog-field textarea.input {
+.feedback-modal-field textarea.input {
   min-height: 100px;
 }
 
-.feedback-dialog-hint {
+.feedback-modal-hint {
   display: flex;
   align-items: flex-start;
   gap: var(--size-2);
@@ -344,7 +344,7 @@
   line-height: var(--line-height-normal);
 }
 
-.feedback-dialog-hint-icon {
+.feedback-modal-hint-icon {
   flex-shrink: 0;
   width: var(--size-4);
   height: var(--size-4);
@@ -353,7 +353,7 @@
 }
 
 /* Mobile: Buttons stacked vertically (block style) */
-.feedback-dialog-actions {
+.feedback-modal-actions {
   display: flex;
   flex-direction: column;
   gap: var(--size-3);
@@ -362,14 +362,14 @@
   margin-bottom: 0;
 }
 
-.feedback-dialog-actions .btn {
+.feedback-modal-actions .btn {
   width: 100%;
   justify-content: center;
   font-size: var(--text-base);
 }
 
 /* Hide info cards on mobile */
-.feedback-dialog-info {
+.feedback-modal-info {
   display: none;
 }
 
@@ -378,33 +378,33 @@
     padding: var(--size-6) var(--size-4);
   }
 
-  .feedback-dialog-wrapper {
+  .feedback-modal-wrapper {
     display: flex;
     flex-direction: column;
     height: 100%;
   }
 
-  .feedback-dialog-header {
+  .feedback-modal-header {
     padding-bottom: 0;
     margin-bottom: var(--size-2);
   }
 
-  .feedback-dialog-fields{
+  .feedback-modal-fields{
     margin-bottom: 0;
   }
 
-  .feedback-dialog-hint{
+  .feedback-modal-hint{
     margin-bottom: 0;
   }
 
-  .feedback-dialog-actions{
+  .feedback-modal-actions{
     padding-top: 0;
     margin-top: 0;
     gap: var(--size-4);
     margin-bottom: var(--size-8);
   }
 
-  .feedback-dialog-info {
+  .feedback-modal-info {
     display: block;
     gap: var(--size-2);
     padding: var(--size-6) 0;
@@ -413,7 +413,7 @@
     margin-top: var(--size-2);
   }
 
-  .feedback-dialog-info-title {
+  .feedback-modal-info-title {
     text-align: center;
     font-size: var(--text-sm);
     font-weight: var(--font-semibold);
@@ -422,7 +422,7 @@
     padding: var(--size-2);
   }
 
-  .feedback-dialog-info-card {
+  .feedback-modal-info-card {
     display: flex;
     align-items: flex-start;
     gap: var(--size-3);
@@ -432,11 +432,11 @@
     transition: background-color 0.2s ease;
   }
 
-  .feedback-dialog-info-card:hover {
+  .feedback-modal-info-card:hover {
     background: var(--color-bg-hover);
   }
 
-  .feedback-dialog-info-icon {
+  .feedback-modal-info-icon {
     flex-shrink: 0;
     width: var(--size-5);
     height: var(--size-5);
@@ -444,20 +444,20 @@
     opacity: 0.7;
   }
 
-  .feedback-dialog-info-text {
+  .feedback-modal-info-text {
     display: flex;
     flex-direction: column;
     gap: var(--size-1);
   }
 
-  .feedback-dialog-info-text strong {
+  .feedback-modal-info-text strong {
     font-size: var(--text-sm);
     font-weight: var(--font-semibold);
     color: var(--color-text);
     line-height: var(--line-height-tight);
   }
 
-  .feedback-dialog-info-text span {
+  .feedback-modal-info-text span {
     font-size: var(--text-xs);
     color: var(--color-text-muted);
     line-height: var(--line-height-normal);
@@ -521,37 +521,37 @@
     padding: var(--size-10);
   }
 
-  .feedback-dialog-header {
+  .feedback-modal-header {
     margin-bottom: var(--size-6);
   }
 
-  .feedback-dialog-fields{
+  .feedback-modal-fields{
     gap: var(--size-4);
   }
 
-  .feedback-dialog-field {
+  .feedback-modal-field {
     gap: var(--size-2);
   }
 
-  .feedback-dialog-field label, .feedback-dialog-field .input {
+  .feedback-modal-field label, .feedback-modal-field .input {
     font-size: var(--text-lg);
   }
 
-  .feedback-dialog-title {
+  .feedback-modal-title {
     font-size: var(--text-2xl);
   }
 
-  .feedback-dialog-subtitle {
+  .feedback-modal-subtitle {
     margin-bottom: var(--size-4);
     font-size: var(--text-xl);
   }
   
-  .feedback-dialog-hint{
+  .feedback-modal-hint{
     font-size: var(--text-lg);
     margin: var(--size-6) 0;
     justify-content: center;
   }
-  .feedback-dialog-actions {
+  .feedback-modal-actions {
     flex-direction: row;
     justify-content: center;
     margin-bottom: var(--size-6);
@@ -559,11 +559,11 @@
     border-top: 1px solid var(--color-border);
   }
   
-  .feedback-dialog-actions .btn {
+  .feedback-modal-actions .btn {
     width: 100%;
   }
   
-  .feedback-dialog-info {
+  .feedback-modal-info {
     display: flex;
     flex-direction: column;
     gap: var(--size-4);
@@ -571,12 +571,12 @@
     border-radius: var(--rounded-lg);
   }
 
-  .feedback-dialog-info-title {
+  .feedback-modal-info-title {
     font-size: var(--text-lg);
     text-align: center;
   }
   
-  .feedback-dialog-info-card {
+  .feedback-modal-info-card {
     display: flex;
     align-items: flex-start;
     gap: var(--size-3);
@@ -586,11 +586,11 @@
     transition: background-color 0.2s ease;
   }
   
-  .feedback-dialog-info-card:hover {
+  .feedback-modal-info-card:hover {
     background: var(--color-bg-hover);
   }  
   
-  .feedback-dialog-info-icon {
+  .feedback-modal-info-icon {
     flex-shrink: 0;
     width: var(--size-5);
     height: var(--size-5);
@@ -598,20 +598,20 @@
     opacity: 0.7;
   }
   
-  .feedback-dialog-info-text {
+  .feedback-modal-info-text {
     display: flex;
     flex-direction: column;
     gap: var(--size-1);
   }
   
-  .feedback-dialog-info-text strong {
+  .feedback-modal-info-text strong {
     font-size: var(--text-sm);
     font-weight: var(--font-semibold);
     color: var(--color-text);
     line-height: var(--line-height-tight);
   }
   
-  .feedback-dialog-info-text span {
+  .feedback-modal-info-text span {
     font-size: var(--text-xs);
     color: var(--color-text-muted);
     line-height: var(--line-height-normal);
@@ -659,35 +659,35 @@
     padding: var(--size-6);
     padding-bottom: var(--size-2);
   }
-  .feedback-dialog-wrapper{
+  .feedback-modal-wrapper{
     height: auto;
   }
-  .feedback-dialog-hint{
+  .feedback-modal-hint{
     margin: var(--size-2) 0;
   }
 
-  .feedback-dialog-info {
+  .feedback-modal-info {
     display: flex;
     flex-direction: column;
     gap: 0;
     border: 1px solid var(--color-border);
   }
   
-  .feedback-dialog-info-card {
+  .feedback-modal-info-card {
     flex-direction: column;
     align-items: center;
     text-align: center;
     padding: var(--size-4);
   }
   
-  .feedback-dialog-info-icon {
+  .feedback-modal-info-icon {
     width: var(--size-6);
     height: var(--size-6);
   }
 }
 
 @media (min-width: 1280px) {
-  .feedback-dialog-info {
+  .feedback-modal-info {
     margin-bottom: var(--size-2);
   }
 }
