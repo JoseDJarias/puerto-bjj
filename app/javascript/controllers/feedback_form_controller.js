@@ -20,4 +20,11 @@ export default class extends Controller {
       this.infoMessageTarget.classList.toggle('hidden', isValid)
     }
   }
+
+  closeModal() {
+    const dialog = this.element.closest('dialog')
+    if (dialog) {
+      dialog.close()
+    }
+  }
 } 

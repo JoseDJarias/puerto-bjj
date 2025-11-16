@@ -9,8 +9,10 @@ class FeedbacksController < ApplicationController
 
     if @feedback_message.save
       respond_to do |format|
-        format.turbo_stream
-        format.html { redirect_to feedback_path, notice: "Gracias por tu opinión" }
+        format.turbo_stream {
+          redirect_to root_path, notice: "¡Gracias por tu feedback! 🥋"
+        }
+        format.html { redirect_to root_path, notice: "Gracias por tu opinión" }
       end
     else
       render :new, status: :unprocessable_entity

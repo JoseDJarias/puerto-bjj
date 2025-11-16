@@ -1,11 +1,15 @@
 <% feedback_message ||= FeedbackMessage.new %>
 
-<div id="feedback_container" class="feedback-modal-wrapper">
+<div class="feedback-modal-wrapper">
   <!-- Main Form Section -->
   <%= form_with model: feedback_message,
                 url: feedback_path,
                 method: :post,
-                data: { turbo: true, controller: "feedback-form" },
+                data: { 
+                 turbo: true,
+                 controller: "feedback-form",
+                 action: "turbo:submit-end->feedback-form#closeModal"
+                },
                 class: "feedback-modal-form" do |f| %>
     <div class="feedback-modal-header">
       <h1 class="feedback-modal-title">Déjanos tu feedback</h1>
