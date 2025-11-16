@@ -10,9 +10,7 @@
       </div>
 
     <div class="show@md flex-grow text-center text-xl flex justify-center items-center gap-4 center-navigation">
-      <%= link_to "Home", root_path, class: "rounded p-4" %>
-
-      <div class="header-dropdown" data-controller="dropdown">
+      <!-- <div class="header-dropdown" data-controller="dropdown">
         <%= link_to programs_path, class: "rounded p-4 header-dropdown-trigger" do %>
           <span>Programas</span>
           <%= lucide_icon('chevron-down', size: 20, "data-action": "click->dropdown#toggle") %>
@@ -20,8 +18,7 @@
         <div class="header-dropdown-menu hidden" data-dropdown-target="menu">
         <%= link_to "Todos los Programas", programs_path, class: "hover:underline" %>
         <%= link_to "Programa de Niños", kids_program_path, class: "hover:underline" %>        </div>
-      </div>
-      <%= link_to "Feedback", feedback_path, class: "rounded p-4" %>
+      </div> -->
     </div>
 
       <div class="header-right flex items-center justify-end mi-8" style="flex: 1;">
@@ -54,7 +51,6 @@
           <%= link_to "Inicio", root_path, class: "hover:underline" %>
           <%= link_to "Todos los Programas", programs_path, class: "hover:underline" %>
           <%= link_to "Programa de Niños", kids_program_path, class: "hover:underline" %>
-          <%= link_to "Feedback", feedback_path, class: "hover:underline" %>
           <%= link_to "Sobre Nosotros", acerca_de_nosotros_path, class: "hover:underline" %>
         </nav>
       </div>

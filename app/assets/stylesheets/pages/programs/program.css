@@ -33,22 +33,19 @@
 }
 
 .kids-hero-title {
-  font-size: clamp(2rem, 8vw, 4rem);
+  font-size: clamp(2rem, 6vmin, 3rem);
   font-weight: var(--font-bold);
-  line-height: var(--line-height-tight);
   color: var(--color-text);
+  line-height: var(--line-height-tight);
   margin: 0;
-  letter-spacing: -0.02em; /* Match explore hero */
 }
 
 .kids-hero-subtitle {
-  font-size: clamp(1.1rem, 4vw, 1.5rem);
-  font-weight: var(--font-semibold); /* Match explore hero emphasis */
-  line-height: var(--line-height-relaxed);
+  font-size: clamp(1.5rem, 5vmin, 2.25rem);
+  font-weight: var(--font-semibold);
   color: var(--color-text-secondary);
-  margin: 0;
-  max-width: 600px;
-  letter-spacing: -0.01em;
+  line-height: var(--line-height-relaxed);
+  margin: var(--size-4) 0;
 }
 
 /* CTA Button */
@@ -361,17 +358,12 @@
     padding: var(--section-spacing-xs) var(--size-6);
   }
 
+  .kids-hero-title{
+    font-size: clamp(2.5rem, 8vmin, 3.5rem);
+  }
+
   .kids-hero-content {
     gap: var(--size-8);
-  }
-
-  .kids-hero-title {
-    font-size: clamp(2.5rem, 6vw, 3.5rem);
-  }
-
-  .kids-hero-subtitle {
-    font-size: clamp(1.25rem, 3vw, 1.75rem);
-    max-width: 700px;
   }
 
   .kids-hero-button {
@@ -469,15 +461,6 @@
   .kids-hero-content {
     gap: var(--size-10);
     max-width: 900px;
-  }
-
-  .kids-hero-title {
-    font-size: clamp(3rem, 5vw, 4.5rem);
-  }
-
-  .kids-hero-subtitle {
-    font-size: clamp(1.5rem, 2.5vw, 2rem);
-    max-width: 800px;
   }
 
   .kids-hero-button {

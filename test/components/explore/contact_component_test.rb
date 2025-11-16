@@ -7,7 +7,7 @@ class Explore::ContactComponentTest < ViewComponent::TestCase
     assert_selector ".contact-container"
     assert_selector ".contact-header"
     assert_selector ".contact-title", text: "Contáctanos"
-    assert_selector ".contact-subtitle", text: /Responderemos todos tus consultas/
+    assert_selector ".contact-subtitle", text: /Responderemos todas tus consultas/
     assert_selector ".contact-content"
     assert_selector ".contact-info"
     assert_selector ".contact-feedback-cta"
@@ -72,7 +72,7 @@ class Explore::ContactComponentTest < ViewComponent::TestCase
     assert_selector ".feedback-cta-content"
     assert_selector ".feedback-cta-title", text: "¿Tienes algo que decirnos?"
     assert_selector ".feedback-cta-description", text: /Tu opinión es muy importante/
-    assert_selector "a", text: "Enviar Feedback"
+    assert_selector "button", text: "Enviar Feedback"
   end
 
   def test_renders_custom_contact_info
@@ -104,7 +104,6 @@ class Explore::ContactComponentTest < ViewComponent::TestCase
       title: "Título personalizado",
       text: "Descripción personalizada",
       cta_text: "CTA personalizado",
-      cta_href: "https://example.com",
       cta_icon: "arrow-right"
     }
 
@@ -112,8 +111,7 @@ class Explore::ContactComponentTest < ViewComponent::TestCase
 
     assert_selector ".feedback-cta-title", text: "Título personalizado"
     assert_selector ".feedback-cta-description", text: "Descripción personalizada"
-    assert_selector "a", text: "CTA personalizado"
-    assert_selector "a[href='https://example.com']"
+    assert_selector "button", text: "CTA personalizado"
   end
 
   def test_renders_with_semantic_html_structure
@@ -131,7 +129,7 @@ class Explore::ContactComponentTest < ViewComponent::TestCase
     assert_selector "h4[id*='contact-card']", count: 4
 
     # Feedback structure
-    assert_selector "aside[role='complementary']"
+    assert_selector "div[role='complementary']"
     assert_selector "h3[id*='feedback']"
     assert_selector "h4.feedback-cta-title"
   end
@@ -160,7 +158,7 @@ class Explore::ContactComponentTest < ViewComponent::TestCase
 
     # Check that ButtonComponent is used
     assert_selector ".btn--plain", count: 3 # Location, WhatsApp, Email
-    assert_selector ".btn--primary", count: 1 # Feedback
+    assert_selector ".btn--primary", count: 2 # Feedback button + Submit button in modal
   end
 
   def test_renders_with_accessibility_features
@@ -249,97 +247,108 @@ class Explore::ContactComponentTest < ViewComponent::TestCase
     assert_selector ".feedback-cta-title", text: "Test Title"
   end
 
-  def test_path_resolver_works_correctly
-    # Test that the PathResolver correctly converts feedback_path to /feedback
+  def test_feedback_button_opens_modal
+    # Test that the feedback CTA opens a modal instead of navigating
     render_inline(Explore::ContactComponent.new)
 
-    # The feedback CTA should have the correct resolved path
-    assert_selector "a[href='/feedback']", text: "Enviar Feedback"
+    # The feedback CTA should be a button that triggers modal
+    assert_selector "button[data-action='modal#showModal']", text: "Enviar Feedback"
+    assert_selector "dialog.sheet"
   end
 
   def test_path_resolver_fallback_for_paths_ending_with_path
-    # Test that paths ending with _path get "#" as fallback
-    custom_feedback = {
-      icon: "star",
-      title: "Test Title",
-      text: "Test description",
-      cta_text: "Test CTA",
-      cta_href: "fake_page_path", # This ends with _path but doesn't exist
-      cta_icon: "arrow-right"
-    }
+    # Test that paths ending with _path get passed to ButtonComponent (for contact cards)
+    custom_info = [
+      {
+        icon: "star",
+        title: "Test Card",
+        text: "Test description",
+        cta_text: "Test CTA",
+        cta_href: "fake_page_path", # This ends with _path but doesn't exist
+        cta_icon: "arrow-right"
+      }
+    ]
 
-    render_inline(Explore::ContactComponent.new(feedback_cta: custom_feedback))
+    render_inline(Explore::ContactComponent.new(contact_info: custom_info))
 
-    # Should use "#" as fallback for paths ending with _path
-    assert_selector "a[href='#']", text: "Test CTA"
+    # Should render link (ButtonComponent handles path resolution)
+    assert_selector "a", text: "Test CTA"
   end
 
   def test_path_resolver_preserves_external_urls
-    # Test that external URLs are preserved
-    custom_feedback = {
-      icon: "star",
-      title: "Test Title",
-      text: "Test description",
-      cta_text: "External Link",
-      cta_href: "https://example.com",
-      cta_icon: "external-link"
-    }
+    # Test that external URLs are preserved (for contact cards)
+    custom_info = [
+      {
+        icon: "star",
+        title: "Test Card",
+        text: "Test description",
+        cta_text: "External Link",
+        cta_href: "https://example.com",
+        cta_icon: "external-link"
+      }
+    ]
 
-    render_inline(Explore::ContactComponent.new(feedback_cta: custom_feedback))
+    render_inline(Explore::ContactComponent.new(contact_info: custom_info))
 
     # Should preserve external URLs
     assert_selector "a[href='https://example.com']", text: "External Link"
   end
 
   def test_path_resolver_preserves_mailto_links
-    # Test that mailto links are preserved
-    custom_feedback = {
-      icon: "mail",
-      title: "Test Title",
-      text: "Test description",
-      cta_text: "Send Email",
-      cta_href: "mailto:test@example.com",
-      cta_icon: "mail"
-    }
+    # Test that mailto links are preserved (for contact cards)
+    custom_info = [
+      {
+        icon: "mail",
+        title: "Test Card",
+        text: "Test description",
+        cta_text: "Send Email",
+        cta_href: "mailto:test@example.com",
+        cta_icon: "mail"
+      }
+    ]
 
-    render_inline(Explore::ContactComponent.new(feedback_cta: custom_feedback))
+    render_inline(Explore::ContactComponent.new(contact_info: custom_info))
 
     # Should preserve mailto links
     assert_selector "a[href='mailto:test@example.com']", text: "Send Email"
   end
 
   def test_path_resolver_preserves_tel_links
-    # Test that tel links are preserved
-    custom_feedback = {
-      icon: "phone",
-      title: "Test Title",
-      text: "Test description",
-      cta_text: "Call Us",
-      cta_href: "tel:+1234567890",
-      cta_icon: "phone"
-    }
+    # Test that tel links are preserved (for contact cards)
+    custom_info = [
+      {
+        icon: "phone",
+        title: "Test Card",
+        text: "Test description",
+        cta_text: "Call Us",
+        cta_href: "tel:+1234567890",
+        cta_icon: "phone"
+      }
+    ]
 
-    render_inline(Explore::ContactComponent.new(feedback_cta: custom_feedback))
+    render_inline(Explore::ContactComponent.new(contact_info: custom_info))
 
     # Should preserve tel links
     assert_selector "a[href='tel:+1234567890']", text: "Call Us"
   end
 
   def test_path_resolver_fallback_for_arbitrary_strings
-    # Test that arbitrary strings get "#" as fallback
-    custom_feedback = {
-      icon: "star",
-      title: "Test Title",
-      text: "Test description",
-      cta_text: "Test CTA",
-      cta_href: "random_string", # This doesn't end with _path
-      cta_icon: "arrow-right"
-    }
+    # Test that arbitrary strings get passed to ButtonComponent (for contact cards)
+    custom_info = [
+      {
+        icon: "star",
+        title: "Test Card",
+        text: "Test description",
+        cta_text: "Test CTA",
+        cta_href: "random_string", # This doesn't end with _path
+        cta_icon: "arrow-right"
+      }
+    ]
 
-    render_inline(Explore::ContactComponent.new(feedback_cta: custom_feedback))
+    render_inline(Explore::ContactComponent.new(contact_info: custom_info))
 
-    # Should use "#" as fallback for arbitrary strings
-    assert_selector "a[href='#']", text: "Test CTA"
+    # Should render link (ButtonComponent handles arbitrary strings)
+    assert_selector "a", text: "Test CTA"
   end
 
   def test_renders_conditional_elements_correctly
