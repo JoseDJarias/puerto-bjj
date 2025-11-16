@@ -14,7 +14,7 @@ module PathResolver
       programs_path
     else
       # Try to call the path helper dynamically
-      send(path_string)
+      send(explore_path(path_string))
     end
   rescue NoMethodError => e
     handle_path_error(path_string, e)
