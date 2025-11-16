@@ -188,7 +188,7 @@
 
 @media (min-width: 1024px) {
   .smoothcomp-container {
-    padding: var(--section-spacing-lg) var(--size-8); /* Reduced from xl to lg */
+    padding: var(--section-spacing-md) var(--size-8);
   }
 
   .smoothcomp-title {
@@ -218,7 +218,7 @@
 
 @media (min-width: 1440px) {
   .smoothcomp-container {
-    padding: var(--section-spacing-2xl) var(--size-8);
+    padding: var(--section-spacing-lg) var(--size-8);
   }
 
   .smoothcomp-card {

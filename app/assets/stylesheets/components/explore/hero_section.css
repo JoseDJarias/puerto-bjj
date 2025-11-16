@@ -28,7 +28,6 @@
   color: var(--color-text);
   line-height: var(--line-height-tight);
   margin: 0;
-  letter-spacing: -0.02em;
 }
 
 .hero-subtitle {
