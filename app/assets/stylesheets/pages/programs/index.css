@@ -147,7 +147,7 @@
 
   @media (min-width: 1920px) {
     .programs-hero{
-      margin-top: var(--size-64);
+      margin-top: var(--size-40);
     }
     .programs-title{
       font-size: clamp(3rem, 4vw, 4rem);
