@@ -264,11 +264,6 @@
   color: var(--color-text);
 }
 
-.sheet__close:focus-visible {
-  outline: 2px solid var(--color-primary);
-  outline-offset: 2px;
-}
-
 .sheet__close-icon {
   width: var(--size-5);
   height: var(--size-5);
