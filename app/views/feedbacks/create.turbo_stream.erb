@@ -4,11 +4,10 @@
       <h2 class="text-2xl font-bold">¡Gracias por tu mensaje!</h2>
       <p class="">Tu opinión nos ayuda a mejorar 🥋</p>
 
-      <%= link_to "Enviar otro comentario ",
-            feedback_path,
+      <%= link_to "Seguir explorando",
+            root_path,
             form: { data: { turbo_frame: "_top" } }, 
-            class: "btn",
-            style:  "cursor:grab"
+            class: "btn btn--primary"
       %>
     </div>
   </template>
