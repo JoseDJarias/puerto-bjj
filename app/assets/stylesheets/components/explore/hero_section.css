@@ -11,7 +11,6 @@
   flex-direction: column;
   align-items: center;
   width: 100%;
-  max-width: 1200px;
   padding-top: var(--size-16);
   gap: var(--section-spacing-sm);
 }
@@ -175,9 +174,7 @@
    Large Desktop (1280px+)
    ======================================== */
 @media (min-width: 1280px) {
-  .hero-container {
-    max-width: 1400px;
-  }
+
 
   .hero-description,
   .hero-location {
@@ -189,9 +186,7 @@
    Extra Large Desktop (1536px+)
    ======================================== */
 @media (min-width: 1536px) {
-  .hero-container {
-    max-width: 1600px;
-  }
+
 }
 
 .hero-container:focus-within {
