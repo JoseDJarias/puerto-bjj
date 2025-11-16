@@ -4,7 +4,7 @@ module Explore
 
     def initialize(
       title: "Contáctanos",
-      subtitle: "Responderemos todos tus consultas e inquietudes, escucharemos tus comentarios. Estamos aca para servirte y ser parte de tu crecimiento personal.",
+      subtitle: "Responderemos todas tus consultas, escucharemos tus comentarios. Estamos aca para servirte y ser parte de tu crecimiento personal.",
       contact_info: default_contact_info,
       feedback_cta: default_feedback_cta
     )
@@ -61,7 +61,7 @@ module Explore
         title: "¿Tienes algo que decirnos?",
         text: "Tu opinión es muy importante para nosotros. Comparte tus comentarios, sugerencias o preguntas a través de nuestro formulario de feedback.",
         cta_text: "Enviar Feedback",
-        cta_href: "feedback_path",
+        # NO REDIRECT TO, INSTEAD SHOW A MODAL WITH THE FORM
         cta_icon: "send"
       }
     end
