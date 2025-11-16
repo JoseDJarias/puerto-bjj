@@ -259,6 +259,11 @@
   z-index: 10;
 }
 
+.sheet__close:focus-visible {
+  outline: 0;
+  outline-offset: 0;
+}
+
 .sheet__close:hover {
   background: var(--color-bg-subtle);
   color: var(--color-text);
