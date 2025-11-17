@@ -1,4 +1,5 @@
 <div class="program-page-wrapper">
+  <!-- TODO: Check this logic, is needed the parameterize to symbol? -->
   <% key = (@program_key || params[:program] || params[:id] || :kids).to_s.parameterize.underscore.to_sym %>
   <%= render(Programs::ProgramComponent.new(key: key)) %>
 </div>
