@@ -3,7 +3,7 @@ module Explore
     include PathResolver
 
     def initialize(
-      title: "Info sobre nuestros programas",
+      title: "Conoce más sobre nuestros programas",
       programs: default_programs
     )
       @title = title
