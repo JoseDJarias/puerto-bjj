@@ -8,10 +8,10 @@ module PathResolver
     case path_string
     when "feedback_path"
       feedback_path
-    when "kids_program_path"
-      kids_program_path
     when "programs_path"
       programs_path
+    when "kids_program_path"
+      program_path(:kids)
     else
       # Try to call the path helper dynamically
       send(explore_path(path_string))
