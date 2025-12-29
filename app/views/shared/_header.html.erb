@@ -46,13 +46,26 @@
         </div>
       </div>
 
-      <div id="mobile-menu" class="mobile-menu-overlay hidden">
+      <div id="mobile-menu" class="mobile-menu-overlay hidden" data-controller="modal">
         <nav class="flex flex-col text-base gap mobile-menu-overlay-nav">
           <%= link_to "Inicio", root_path, class: "hover:underline" %>
           <%= link_to "Todos los Programas", programs_path, class: "hover:underline" %>
           <%= link_to "Programa de Niños", program_path(:kids), class: "hover:underline" %>
           <%= link_to "Sobre Nosotros", about_us_path, class: "hover:underline" %>
+          <button type="button" class="mobile-menu-feedback-btn" data-action="modal#showModal mobile-menu#close">
+            <%= lucide_icon "message-square", class: "mobile-menu-feedback-icon" %>
+            <span>Feedback</span>
+          </button>
         </nav>
+
+        <dialog class="sheet sheet--right" data-modal-target="content" data-action="click->modal#closeOnClickOutside" aria-label="Feedback Form">
+          <button type="button" class="sheet__close" data-action="modal#close" aria-label="Cerrar">
+            <%= lucide_icon "x", class: "sheet__close-icon" %>
+          </button>
+          <div class="sheet__content">
+            <%= render "feedbacks/form" %>
+          </div>
+        </dialog>
       </div>
     </div>
   </div>
