@@ -3,11 +3,12 @@ Rails.application.routes.draw do
 
   root "pages#explore"
 
-  get "/acerca-de-nosotros", to: "pages#about"
+  get "/about-us", to: "pages#about_us"
 
   # Programs routes
-  get "program/kids", to: "pages#kids", as: :kids_program
   get "programs", to: "pages#programs", as: :programs
+  # Program details with specific key
+  get "program/:id", to: "pages#program", as: :program
 
   get "/feedback", to: "feedbacks#new"
   post "/feedback", to: "feedbacks#create"

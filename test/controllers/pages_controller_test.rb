@@ -7,7 +7,7 @@ class PagesControllerTest < ActionDispatch::IntegrationTest
   end
 
   test "should get about" do
-    get "/acerca-de-nosotros"
+    get "/about-us"
     assert_response :success
   end
 end
