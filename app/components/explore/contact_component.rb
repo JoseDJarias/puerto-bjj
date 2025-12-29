@@ -1,7 +1,5 @@
 module Explore
   class ContactComponent < ViewComponent::Base
-    include PathResolver
-
     def initialize(
       title: "Contáctanos",
       subtitle: "Responderemos todas tus consultas, escucharemos tus comentarios. Estamos aca para servirte y ser parte de tu crecimiento personal.",
