@@ -6,7 +6,7 @@ class Explore::ProgramsPromoComponentTest < ViewComponent::TestCase
 
     assert_selector ".programs-promo-section"
     assert_selector ".programs-promo-header"
-    assert_selector ".promo-section-title", text: "Info sobre nuestros programas"
+    assert_selector ".promo-section-title", text: "Conoce más sobre nuestros programas"
     assert_selector ".programs-promo-grid"
     assert_selector ".program-card", count: 2
   end
