@@ -1,14 +1,14 @@
 <% feedback_message ||= FeedbackMessage.new %>
 
-<div class="feedback-modal-wrapper">
+<turbo-frame id="feedback-form-frame">
+  <div class="feedback-modal-wrapper">
   <!-- Main Form Section -->
   <%= form_with model: feedback_message,
                 url: feedback_path,
                 method: :post,
                 data: { 
                  turbo: true,
-                 controller: "feedback-form",
-                 action: "turbo:submit-end->feedback-form#closeModal"
+                 controller: "feedback-form"
                 },
                 class: "feedback-modal-form" do |f| %>
     <div class="feedback-modal-header">
@@ -84,4 +84,5 @@
       </div>
     </div>
   </div>
-</div>
+  </div>
+</turbo-frame>
