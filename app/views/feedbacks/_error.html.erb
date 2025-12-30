@@ -1,0 +1,11 @@
+<turbo-frame id="feedback-form-frame">
+  <div class="feedback-modal-wrapper feedback-result feedback-error">
+    <div class="feedback-result-icon feedback-error-icon">
+      <%= lucide_icon "circle-x", class: "feedback-result-svg" %>
+    </div>
+    <h2 class="feedback-result-title">¡Ups! Algo salió mal</h2>
+    <p class="feedback-result-message">No pudimos enviar tu feedback. Por favor, intenta de nuevo más tarde.</p>
+    <button type="button" class="btn btn--secondary" data-action="modal#close">Cerrar</button>
+  </div>
+</turbo-frame>
+
