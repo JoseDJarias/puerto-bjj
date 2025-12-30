@@ -8,14 +8,9 @@ class FeedbacksController < ApplicationController
     @feedback_message = FeedbackMessage.new(feedback_message_params)
 
     if @feedback_message.save
-      respond_to do |format|
-        format.turbo_stream {
-          redirect_to root_path, notice: "¡Gracias por tu feedback! 🥋"
-        }
-        format.html { redirect_to root_path, notice: "Gracias por tu opinión" }
-      end
+      render partial: "feedbacks/success"
     else
-      render :new, status: :unprocessable_entity
+      render partial: "feedbacks/error", status: :unprocessable_entity
     end
   end
 
