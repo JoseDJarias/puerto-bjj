@@ -790,4 +790,75 @@
   .feedback-cta-button {
     border: 2px solid var(--color-primary);
   }
+}
+
+/* Feedback Result States (Success & Error) */
+.feedback-result {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+  padding: var(--size-8);
+  height: 100%;
+  min-height: 50vh;
+  gap: var(--size-4);
+  animation: fadeIn 0.3s ease-out;
+}
+
+.feedback-result-icon {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 80px;
+  height: 80px;
+  border-radius: var(--rounded-full);
+  margin-bottom: var(--size-2);
+}
+
+.feedback-success-icon {
+  background: var(--color-success-light, #dcfce7);
+}
+
+.feedback-error-icon {
+  background: var(--color-danger-light, #fee2e2);
+}
+
+.feedback-result-svg {
+  width: 48px;
+  height: 48px;
+}
+
+.feedback-success-icon .feedback-result-svg {
+  color: var(--color-success, #22c55e);
+}
+
+.feedback-error-icon .feedback-result-svg {
+  color: var(--color-danger, #ef4444);
+}
+
+.feedback-result-title {
+  font-size: var(--text-2xl);
+  font-weight: var(--font-bold);
+  color: var(--color-text);
+  margin: 0;
+}
+
+.feedback-result-message {
+  font-size: var(--text-base);
+  color: var(--color-text-muted);
+  max-width: 300px;
+  line-height: var(--line-height-relaxed);
+  margin: 0;
+}
+
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+    transform: scale(0.95);
+  }
+  to {
+    opacity: 1;
+    transform: scale(1);
+  }
 } 
