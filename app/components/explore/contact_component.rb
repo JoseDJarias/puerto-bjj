@@ -19,9 +19,9 @@ module Explore
         {
           icon: "map-pin",
           title: "Ubicación",
-          text: "Gimnasio In Line, Puntarenas, Costa Rica",
+          text: "Bienestar Total Salud, Puntarenas, Costa Rica",
           cta_text: "Ver en Google Maps",
-          cta_href: "https://www.google.com/maps/place/Gimnasio+In+Line/@9.9831961,-84.7348988,17z/data=!3m1!4b1!4m6!3m5!1s0x8fa031a7c3d77b43:0x934fb6fd5800c8dc!8m2!3d9.9831908!4d-84.7323239!16s%2Fg%2F11g6nbwflh?entry=ttu",
+          cta_href: "https://maps.google.com/?q=9.973693,-84.737694",
           cta_icon: "map",
           target: "_blank",
           rel: "noopener noreferrer"

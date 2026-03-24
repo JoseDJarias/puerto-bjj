@@ -31,7 +31,7 @@ class Explore::ContactComponentTest < ViewComponent::TestCase
 
     # Location card
     assert_selector ".contact-card-title", text: "Ubicación"
-    assert_selector ".contact-card-text", text: "Gimnasio In Line, Puntarenas, Costa Rica"
+    assert_selector ".contact-card-text", text: "Bienestar Total Salud, Puntarenas, Costa Rica"
     assert_selector "a", text: "Ver en Google Maps"
 
     # WhatsApp card
