@@ -15,9 +15,8 @@ class Explore::HeroSectionComponentTest < ViewComponent::TestCase
     render_inline(Explore::HeroSectionComponent.new)
 
     assert_selector "nav.hero-location-links", count: 1
-    assert_selector "nav.hero-location-links .btn", count: 2
-    assert_selector "a[href*='google.com/maps']"
-    assert_selector "a[href*='waze.com']"
+    assert_selector "nav.hero-location-links .btn", count: 1
+    assert_selector "a[href*='maps.google.com']"
   end
 
   def test_renders_cta_button_when_href_provided
@@ -70,10 +69,7 @@ class Explore::HeroSectionComponentTest < ViewComponent::TestCase
     render_inline(Explore::HeroSectionComponent.new)
 
     # Google Maps link
-    assert_selector "a[href*='google.com/maps'][target='_blank'][rel='noopener noreferrer'][aria-label*='Google Maps']"
-
-    # Waze link
-    assert_selector "a[href*='waze.com'][target='_blank'][rel='noopener noreferrer'][aria-label*='Waze']"
+    assert_selector "a[href*='maps.google.com'][target='_blank'][rel='noopener noreferrer'][aria-label*='Google Maps']"
   end
 
   def test_uses_button_component_for_location_links
