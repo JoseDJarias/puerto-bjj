@@ -1,12 +1,13 @@
 class Program
-  KEYS = %i[kids jiu_jitsu no_gi boxing mma].freeze
+  KEYS = %i[kids jiu_jitsu no_gi boxing mma private_class].freeze
 
   IMAGES = {
     kids: "programs/kids1.jpg",
     jiu_jitsu: "programs/gi1.jpg",
     no_gi: "programs/nogi1.jpg",
     boxing: "programs/boxeo1.jpg",
-    mma: "programs/mma1.jpg"
+    mma: "programs/mma1.jpg",
+    private_class: "programs/private_class.jpg"
   }.freeze
 
   INSTRUCTOR_IMAGES = {

@@ -82,6 +82,7 @@ es:
     schedule_eyebrow: "Horarios"
     schedule_title: "Cuándo entrenamos"
     schedule_note: "Las clases duran de 60 a 90 minutos. Llega 15 minutos antes para calentar."
+    schedule_note_eyebrow: "Importante"
     schedule_days: "Días"
     schedule_time: "Hora"
     location_eyebrow: "VISÍTANOS"
@@ -192,6 +193,18 @@ es:
         - { days: "Martes", time: "5:00 PM" }
         - { days: "Miércoles", time: "5:00 PM" }
         - { days: "Viernes", time: "5:00 PM" }
-
       benefits:
         - { title: "Versatilidad", text: "Domina las transiciones entre golpeo y grappling." }
+    private_class:
+      title: "Clases Privadas"
+      summary: "Instrucción personalizada 1 a 1 o en grupos reducidos, adaptada a tus objetivos."
+      subtitle: "Atención enfocada y ritmo personalizado para acelerar tu desarrollo técnico."
+      schedule:
+        - { days: "Lunes a Sábado", time: "Horario a coordinar" }
+      benefits:
+        - { title: "Atención personalizada", text: "Corrección técnica inmediata y enfoque en tus puntos débiles." }
+        - { title: "Ritmo adaptado", text: "Progresión ajustada a tu nivel, condición física y metas específicas." }
+        - { title: "Flexibilidad de agenda", text: "Sesiones programadas según tu disponibilidad de tiempo." }
+
+
+

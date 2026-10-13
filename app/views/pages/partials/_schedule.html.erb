@@ -14,6 +14,15 @@
         </dl>
       </article>
     <% end %>
-    <p class="flex items-end bg-blood p-6 text-lg font-semibold leading-snug lg:p-8"><%= t("home.schedule_note") %></p>
+
+    <div class="bg-blood p-6 lg:p-8 md:col-span-2 lg:col-span-3 flex flex-col justify-center">
+      <span class="eyebrow text-xs uppercase tracking-widest text-bone/70 mb-2">
+        <%= t("home.schedule_note_eyebrow") %>
+      </span>
+      <p class="text-lg lg:text-xl font-bold leading-snug text-bone">
+        <%= t("home.schedule_note") %>
+      </p>
+    </div>    
   </div>
 </section>
+
