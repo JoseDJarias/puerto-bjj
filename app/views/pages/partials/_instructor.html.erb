@@ -1,0 +1,8 @@
+<article class="grid gap-5 sm:grid-cols-[10rem_1fr]">
+  <%= image_tag instructor[:image], alt: instructor[:name], class: "aspect-square w-full object-cover grayscale contrast-125", loading: "lazy" %>
+  <div>
+    <h3 class="display text-3xl"><%= instructor[:name] %></h3>
+    <p class="eyebrow mt-2"><%= instructor[:role] %></p>
+    <p class="mt-3 text-sm text-bone/70"><%= instructor[:bio] %></p>
+  </div>
+</article>

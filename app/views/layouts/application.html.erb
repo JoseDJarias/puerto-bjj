@@ -1,64 +1,42 @@
 <!DOCTYPE html>
 <html lang="es">
   <head>
-    <title><%= content_for(:title) || "Puerto Bjj" %></title>
+    <title><%= content_for(:title) || t("meta.title") %></title>
     <meta name="viewport" content="width=device-width,initial-scale=1">
-    
-    <%# SEO Meta Tags %>
-    <meta name="description" content="<%= content_for(:description) || 'Academia de Jiu-Jitsu Brasileño, Boxeo y MMA en Puntarenas, Costa Rica. Únete a nuestra comunidad y aprende de los mejores.' %>">
-    <link rel="canonical" href="<%= content_for(:canonical_url) || request.original_url %>" />
-    <meta name="keywords" content="bjj, jiu jitsu, jiu jitsu costa rica, puerto jiu jitsu, bjj costa rica, bjj kids, jiu jitsu kids, boxeo, mma, sparring, entrenamiento ">
+    <meta name="description" content="<%= content_for(:description) || t("meta.description") %>">
+    <meta name="keywords" content="<%= t("meta.keywords") %>">
+    <meta name="theme-color" content="#0a0a0a">
+    <link rel="canonical" href="<%= content_for(:canonical_url) || request.original_url %>">
 
-    <%# Open Graph / Facebook Meta Tags %>
     <meta property="og:type" content="website">
     <meta property="og:url" content="<%= content_for(:canonical_url) || request.original_url %>">
-    <meta property="og:title" content="<%= content_for(:title) || 'Puerto Bjj' %>">
-    <meta property="og:description" content="<%= content_for(:description) || 'Academia de Jiu-Jitsu Brasileño, Boxeo y MMA en Puntarenas, Costa Rica.' %>">
-    <meta property="og:image" content="<%= content_for(:og_image) || image_url('og_image.jpg') %>"> <%# CAMBIO TEMPORAL: Usando una imagen existente para evitar el crash. Reemplazar con una imagen og-image.png dedicada. %>
-    <meta name="apple-mobile-web-app-capable" content="yes">
-    <meta name="mobile-web-app-capable" content="yes">
+    <meta property="og:title" content="<%= content_for(:title) || t("meta.title") %>">
+    <meta property="og:description" content="<%= content_for(:description) || t("meta.description") %>">
+    <meta property="og:image" content="<%= content_for(:og_image) || image_url("og_image.jpg") %>">
     <%= csrf_meta_tags %>
     <%= csp_meta_tag %>
 
     <%= yield :head %>
 
-    <%# Enable PWA manifest for installable apps (make sure to enable in config/routes.rb too!) %>
-    <%#= tag.link rel: "manifest", href: pwa_manifest_path(format: :json) %>
-
-    <link rel="icon" type="image/png" href="<%= image_path('home/logo.png') %>">
-    <link rel="apple-touch-icon" href="<%= image_path('home/logo.png') %>">
-
-    <%#= tag.meta name: "theme-color", content: pwa.theme_color %>
-    <%#= tag.meta name: "background-color", content: pwa.background_color %>
+    <link rel="icon" type="image/png" href="<%= image_path("home/logo.png") %>">
+    <link rel="apple-touch-icon" href="<%= image_path("home/logo.png") %>">
 
     <%= yield :structured_data %>
 
-    <%= stylesheet_link_tag "css-zero/reset", "data-turbo-track": "reload" %>
-    <%= stylesheet_link_tag "css-zero/variables", "data-turbo-track": "reload" %>
-    <%= stylesheet_link_tag :app, "data-turbo-track": "reload" %>
-    <%= stylesheet_link_tag "css-zero/utilities", "data-turbo-track": "reload" %>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Anton&family=Inter:wght@400;500;600;700&display=swap">
+    <%= stylesheet_link_tag "tailwind", "data-turbo-track": "reload" %>
     <%= javascript_importmap_tags %>
   </head>
 
-   <body class="body-layout">
-  
-    <%= render "shared/header" %>
-    <main id="main">
-      <% if notice.present? %>
-        <div popover
-            class="flash flash-notice flash--lg"
-            style="--flash-position: 5rem;"
-            data-controller="element-removal"
-            data-action="animationend->element-removal#remove"
-            role="alert">
-          <%= notice %>
-        </div>
-      <% end %>
-      <div class="container">
-        <%= yield %>
-      </div>
+  <body class="flex min-h-dvh flex-col overflow-x-hidden overscroll-none bg-ink font-sans text-bone antialiased">
+    <a href="#main" class="sr-only focus:not-sr-only focus:absolute focus:left-3 focus:top-3 focus:z-50 focus:bg-blood focus:px-4 focus:py-2"><%= t("nav.skip") %></a>
+    <%= render "layouts/partials/header" %>
+    <main id="main" class="mx-auto w-full max-w-7xl flex-1 space-y-20 px-3.5 py-8 sm:px-6 lg:space-y-28 lg:px-8 lg:py-12">
+      <%= render "layouts/partials/flash_messages" %>
+      <%= yield %>
     </main>
-    <%= render "shared/footer" %>
-
+    <%= render "layouts/partials/footer" %>
   </body>
 </html>

@@ -1,0 +1,19 @@
+<section aria-labelledby="schedule-title">
+  <%= render "pages/partials/section_heading", id: "schedule-title", eyebrow: t("home.schedule_eyebrow"), title: t("home.schedule_title") %>
+  <div class="grid gap-px border border-bone/15 bg-bone/15 md:grid-cols-2 lg:grid-cols-3">
+    <% programs.each do |program| %>
+      <article class="bg-ink p-6 lg:p-8">
+        <h3 class="display text-3xl"><%= program.title %></h3>
+        <dl class="mt-6 space-y-3">
+          <% program.schedule.each do |slot| %>
+            <div class="flex items-baseline justify-between gap-4 border-b border-bone/10 pb-3 text-sm">
+              <dt class="text-bone/60"><%= slot[:days] %></dt>
+              <dd class="font-semibold"><%= slot[:time] %></dd>
+            </div>
+          <% end %>
+        </dl>
+      </article>
+    <% end %>
+    <p class="flex items-end bg-blood p-6 text-lg font-semibold leading-snug lg:p-8"><%= t("home.schedule_note") %></p>
+  </div>
+</section>

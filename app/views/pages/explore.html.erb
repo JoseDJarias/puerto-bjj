@@ -1,34 +1,8 @@
 <% content_for :structured_data do %>
-  <%= render 'shared/structured_data' %>
+  <%= render "shared/structured_data" %>
 <% end %>
 
-<div class="explore-container">
-  <%= render(Explore::HeroSectionComponent.new(
-    cta_href: about_us_path
-  )) %>
-  <%= render(UI::CarouselComponent.new(
-    images: [
-      { src: 'home/jiujitsu-gi.jpeg', alt: 'Jiu-Jitsu con Gi - Entrenamiento tradicional' },
-      { src: 'home/jiujitsu-nogi.jpeg', alt: 'Jiu-Jitsu No-Gi - Entrenamiento moderno' },
-      { src: 'home/brazilian-jiujitsu.jpeg', alt: 'Brazilian Jiu-Jitsu - Arte marcial completo' }
-    ],
-    auto_slide: true,
-    interval: 5000,
-    show_navigation: false,
-    show_indicators: false
-  )) %>
-  <%= render(UI::FreeTrialComponent.new(show_on: :mobile_tablet)) %>
-
-  <%= render(Explore::ProgramsPromoComponent.new) %>
-
-  <%= render(Explore::ScheduleComponent.new) %>
-
-  <%= render(Explore::SocialLinksComponent.new) %>
-
-  <%= render(Explore::SmoothcompComponent.new) %>
-
-  <%= render(Explore::ContactComponent.new) %>
-
-  <%= render(UI::FreeTrialComponent.new(show_on: :all)) %>
-</div>
-
+<%= render "pages/partials/hero", slides: carousel_slides %>
+<%= render "pages/partials/programs_index", programs: @programs %>
+<%= render "pages/partials/schedule", programs: @programs %>
+<%= render "pages/partials/contact" %>

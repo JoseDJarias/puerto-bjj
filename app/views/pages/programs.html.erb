@@ -1,77 +1,26 @@
-<div class="programs-page-container">
-  <!-- Hero Section -->
-  <section class="programs-hero" aria-labelledby="programs-hero-title">
-    <div class="programs-hero-content">
-      <h1 id="programs-hero-title" class="programs-title">Nuestros Programas</h1>
-      <p class="programs-subtitle">¿Qué te parece si exploramos juntos las opciones disponibles para ti?</p>
-    </div>
-  </section>
+<% content_for :title, t("meta.programs_title") %>
+<% content_for :description, t("meta.programs_description") %>
 
-  <!-- Programs  Section -->
-  <section class="programs-section" aria-labelledby="programs-section-title">
-    <h2 id="programs-section-title" class="sr-only">Catálogo de Programas</h2>
-    <div class="program-list">
-      <!-- Card 1: Kids Program -->
-      <article class="program-list-card" aria-labelledby="kids-program-title">
-        <div class="program-list-card__image">
-          <%= image_tag 'programs/kids1.jpg', alt: 'Clase de Jiu-Jitsu para niños', loading: 'lazy' %>
-        </div>
-        <div class="program-list-card__content">
-          <h3 id="kids-program-title" class="program-list-card__title">Programa para Niños</h3>
-          <p class="program-list-card__description">Confianza, disciplina y diversión. Un ambiente seguro para que los más pequeños forjen su carácter y hagan amigos.</p>
-          <%= link_to "Ver Detalles", program_path(:kids), class: "btn", aria_label: "Ver detalles del programa para niños" %>
-        </div>
-      </article>
+<section aria-labelledby="programs-page-title" style="margin-bottom: 0px">
+  <p class="eyebrow"><%= t("programs_page.eyebrow") %></p>
+  <h1 id="programs-page-title" class="display mt-5 text-6xl sm:text-8xl lg:text-9xl"><%= t("programs_page.title") %></h1>
+  <p class="mt-6 max-w-xl text-lg text-bone/70"><%= t("programs_page.lead") %></p>
+</section>
 
-      <!-- Card 2: Jiu-Jitsu (Gi) -->
-      <article class="program-list-card" aria-labelledby="gi-program-title">
-        <div class="program-list-card__image">
-          <%= image_tag 'programs/gi1.jpg', alt: 'Clase de Jiu-Jitsu con Kimono', loading: 'lazy' %>
-        </div>
-        <div class="program-list-card__content">
-          <h3 id="gi-program-title" class="program-list-card__title">Jiu-Jitsu (con Kimono)</h3>
-          <p class="program-list-card__description">El "arte suave". Aprende a controlar a tu oponente con técnicas y estrategias efectivas, sin necesidad de usar la fuerza bruta.</p>
-          <span class="btn" aria-disabled="true" role="button" tabindex="-1">Ver Detalles (Próximamente)</span>
-        </div>
-      </article>
-
-      <!-- Card 3: No-Gi Jiu-Jitsu -->
-      <article class="program-list-card" aria-labelledby="nogi-program-title">
-        <div class="program-list-card__image">
-          <%= image_tag 'programs/nogi1.jpg', alt: 'Clase de Jiu-Jitsu sin Kimono', loading: 'lazy' %>
-        </div>
-        <div class="program-list-card__content">
-          <h3 id="nogi-program-title" class="program-list-card__title">Jiu-Jitsu (No-Gi)</h3>
-          <p class="program-list-card__description">Una versión más rápida y dinámica del Jiu-Jitsu, donde el agarre y el control se adaptan a tu propio ritmo.</p>
-          <span class="btn" aria-disabled="true" role="button" tabindex="-1">Ver Detalles (Próximamente)</span>
-        </div>
-      </article>
-
-      <!-- Card 4: Boxeo -->
-      <article class="program-list-card" aria-labelledby="boxing-program-title">
-        <div class="program-list-card__image">
-          <%= image_tag 'programs/boxeo1.jpg', alt: 'Clase de Boxeo', loading: 'lazy' %>
-        </div>
-        <div class="program-list-card__content">
-          <h3 id="boxing-program-title" class="program-list-card__title">Boxeo</h3>
-          <p class="program-list-card__description">Desarrolla poder, velocidad y una condición física de élite mientras aprendes y perfeccionas tus habilidades de defensa personal.</p>
-          <span class="btn" aria-disabled="true" role="button" tabindex="-1">Ver Detalles (Próximamente)</span>
-        </div>
-      </article>
-
-      <!-- Card 5: MMA -->
-      <article class="program-list-card" aria-labelledby="mma-program-title">
-        <div class="program-list-card__image">
-          <%= image_tag 'programs/mma1.jpg', alt: 'Clase de Artes Marciales Mixtas', loading: 'lazy' %>
-        </div>
-        <div class="program-list-card__content">
-          <h3 id="mma-program-title" class="program-list-card__title">MMA</h3>
-          <p class="program-list-card__description">¡La prueba definitiva! Combina lo mejor del grappling y el striking en un sistema de combate integral.</p>
-          <span class="btn" aria-disabled="true" role="button" tabindex="-1">Ver Detalles (Próximamente)</span>
-        </div>
-      </article>
-    </div>
-  </section>
-
-  <%= render(UI::FreeTrialComponent.new) %>
-</div>
+<section class="space-y-px bg-bone/15" aria-label="<%= t("programs_page.title") %>">
+  <% @programs.each_with_index do |program, index| %>
+    <article class="grid gap-6 bg-ink py-8 lg:grid-cols-2 lg:gap-12">
+      <div class="aspect-[4/3] overflow-hidden <%= "lg:order-2" if index.odd? %>">
+        <%= image_tag program.image, alt: program.title, class: "size-full object-cover grayscale contrast-125 transition duration-500 hover:grayscale-0", loading: "lazy" %>
+      </div>
+      <div class="flex flex-col justify-center">
+        <p class="display text-xl text-blood"><%= format("%02d", index + 1) %></p>
+        <h2 class="display mt-2 text-5xl sm:text-6xl"><%= program.title %></h2>
+        <p class="mt-4 max-w-md text-bone/70"><%= program.subtitle %></p>
+        <%= link_to program_path(program), class: "btn-ghost mt-8 w-fit" do %>
+          <%= t("programs_page.view") %><%= lucide_icon "arrow-up-right", class: "size-5" %>
+        <% end %>
+      </div>
+    </article>
+  <% end %>
+</section>

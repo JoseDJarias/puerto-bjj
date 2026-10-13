@@ -1,0 +1,15 @@
+<section id="disciplinas" aria-labelledby="programs-title">
+  <%= render "pages/partials/section_heading", id: "programs-title", eyebrow: t("home.programs_eyebrow"), title: t("home.programs_title") %>
+  <ol class="border-t border-bone/15">
+    <% programs.each_with_index do |program, index| %>
+      <li class="border-b border-bone/15">
+        <%= link_to program_path(program, from: :home), class: "group grid grid-cols-[2.5rem_1fr_auto] items-center gap-4 py-6 transition-colors hover:bg-bone/5 sm:grid-cols-[4rem_1fr_auto] sm:py-8 lg:grid-cols-[4rem_1fr_20rem_auto]" do %>
+          <span class="display text-xl text-blood sm:text-2xl"><%= format("%02d", index + 1) %></span>
+          <span class="display text-4xl transition-colors group-hover:text-blood sm:text-6xl lg:text-7xl"><%= program.title %></span>
+          <span class="hidden text-sm text-bone/60 lg:block"><%= program.summary %></span>
+          <%= lucide_icon "arrow-up-right", class: "size-6 transition-transform group-hover:-translate-y-1 group-hover:translate-x-1 group-hover:text-blood sm:size-8" %>
+        <% end %>
+      </li>
+    <% end %>
+  </ol>
+</section>

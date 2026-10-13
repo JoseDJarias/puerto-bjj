@@ -1,0 +1,41 @@
+@import "tailwindcss";
+
+@theme {
+  --color-ink: #0a0a0a;
+  --color-bone: #f2f0eb;
+  --color-blood: #d7261e;
+  --font-sans: "Inter", ui-sans-serif, system-ui, sans-serif;
+  --font-display: "Anton", "Oswald", Impact, sans-serif;
+}
+
+@layer base {
+  html {
+    scroll-behavior: smooth;
+    scroll-padding-top: 5rem;
+    background-color: var(--color-ink);
+  }
+
+  @media (prefers-reduced-motion: reduce) {
+    html {
+      scroll-behavior: auto;
+    }
+  }
+}
+
+@layer components {
+  .btn-primary {
+    @apply inline-flex items-center justify-center gap-2 bg-blood px-6 py-4 text-sm font-bold uppercase tracking-wider text-bone transition-colors hover:bg-bone hover:text-ink focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-bone;
+  }
+
+  .btn-ghost {
+    @apply inline-flex items-center justify-center gap-2 border border-bone/30 px-6 py-4 text-sm font-bold uppercase tracking-wider transition-colors hover:border-bone hover:bg-bone hover:text-ink focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-bone;
+  }
+
+  .eyebrow {
+    @apply text-xs font-bold uppercase tracking-[0.3em] text-blood;
+  }
+
+  .display {
+    @apply font-display uppercase leading-[0.92] tracking-tight;
+  }
+}

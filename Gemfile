@@ -8,6 +8,8 @@ gem "importmap-rails"
 gem "turbo-rails"
 gem "stimulus-rails"
 gem "jbuilder"
+gem "tailwindcss-rails"
+gem "json", "~> 2.7.4"
 
 gem "bcrypt", "~> 3.1.7"
 

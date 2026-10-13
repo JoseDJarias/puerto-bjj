@@ -3,7 +3,7 @@ es:
   dojo:
     name: "Puerto Jiu Jitsu"
     description: "Academia de Jiu Jitsu Brasileño en El Roble, Puntarenas. Clases para principiantes, avanzados y niños."
-    street_address: "150 metros este de la Foto Salazar" # O la dirección más exacta que tengas
+    street_address: "El Roble de Puntarenas, entrando por Fiestas del Mar, 200 metros oeste pasando por Tri Frío y 25 metros sur."
     locality: "El Roble"
     region: "Puntarenas"
     postal_code: "60115"
@@ -20,3 +20,178 @@ es:
     abbr_month_names: [~, Ene, Feb, Mar, Abr, May, Jun, Jul, Ago, Sep, Oct, Nov, Dic]
     day_names: [Domingo, Lunes, Martes, Miércoles, Jueves, Viernes, Sábado]
     abbr_day_names: [Dom, Lun, Mar, Mié, Jue, Vie, Sáb]    
+
+  meta:
+    title: "Puerto BJJ"
+    description: "Academia de Jiu-Jitsu Brasileño, Boxeo y MMA en Puntarenas, Costa Rica. Únete a nuestra comunidad y aprende de los mejores."
+    keywords: "bjj, jiu jitsu, jiu jitsu costa rica, puerto jiu jitsu, bjj costa rica, bjj kids, jiu jitsu kids, boxeo, mma, sparring, entrenamiento"
+    programs_title: "Programas"
+    programs_description: "Jiu-Jitsu Brasileño (Gi y No-Gi), Boxeo, MMA y Kids en Puntarenas para todas las edades y niveles."
+    about_title: "Sobre nosotros"
+    about_description: "Conoce la historia, la misión y los instructores de Puerto Jiu-Jitsu en El Roble, Puntarenas."
+  academy:
+    name: "Puerto BJJ"
+    whatsapp_message: "Hola, me gustaría obtener información sobre las clases."
+    join_message: "Hola, quiero información sobre los planes mensuales y horarios disponibles."
+    address: "El Roble de Puntarenas, entrando por Fiestas del Mar, 200 metros oeste pasando por Tri Frío y 25 metros sur."
+    hours_week: "Lunes a Viernes, 8:00 AM a 9:00 PM"
+    hours_saturday: "Sábados, 9:00 AM a 5:00 PM"
+    phone: "+506 7202-6863"
+  nav:
+    label: "Navegación principal"
+    home: "Inicio"
+    programs: "Programas"
+    about: "Nosotros"
+    contact_us: "Contáctanos"
+    open_menu: "Abrir menú"
+    close_menu: "Cerrar menú"
+    skip: "Saltar al contenido"
+  footer:
+    tagline: "Jiu-Jitsu, Boxeo y MMA en El Roble, Puntarenas. Desde 2020."
+    follow: "Síguenos"
+    rights: "Todos los derechos reservados."
+    instagram: "Instagram"
+    facebook: "Facebook"
+    whatsapp: "WhatsApp"
+    location: "Ubicación en Google Maps"
+  home:
+    eyebrow: "El Roble, Puntarenas. Desde 2020"
+    title_line: "Aquí se entrena"
+    title_accent: "en serio"
+    lead: "Jiu-Jitsu, Boxeo y MMA para niños y adultos. Tu primera clase es gratis."
+    cta_primary: "Reserva tu espacio para la proxima clase"
+    cta_secondary: "Ver programas"
+    carousel_label: "Galería de entrenamientos"
+    carousel_previous: "Imagen anterior"
+    carousel_next: "Imagen siguiente"
+    carousel_goto: "Ir a la imagen %{number}"
+    carousel_slide: "%{number} de %{total}"
+    slides:
+      - label: "Jiu-Jitsu con Gi"
+        alt: "Alumnos entrenando Jiu-Jitsu con kimono"
+      - label: "Clase Grupal"
+        alt: "Instrucción técnica y práctica grupal en el tatami"
+      - label: "Kids BJJ"
+        alt: "Clases de Jiu-Jitsu infantil y disciplina deportiva"
+      - label: "MMA"
+        alt: "Entrenamiento de artes marciales mixtas"
+      - label: "Jiu-Jitsu No-Gi"
+        alt: "Alumnos entrenando Jiu-Jitsu sin kimono"
+    programs_eyebrow: "Disciplinas"
+    programs_title: "Elige tu camino"
+    schedule_eyebrow: "Horarios"
+    schedule_title: "Cuándo entrenamos"
+    schedule_note: "Las clases duran de 60 a 90 minutos. Llega 15 minutos antes para calentar."
+    schedule_days: "Días"
+    schedule_time: "Hora"
+    location_eyebrow: "VISÍTANOS"
+    location_title: "Ven a entrenar"
+    map_title: "Mapa con la ubicación de Puerto Jiu-Jitsu"
+  contact:
+    address: "Dirección"
+    whatsapp: "WhatsApp"
+    email: "Correo"
+    hours: "Horario de atención"
+    social: "Redes"
+    feedback: "Déjanos tu opinión"
+    cta: "Escríbenos por WhatsApp"
+  programs_page:
+    eyebrow: "Programas"
+    title: "Todas las disciplinas"
+    lead: "Un solo equipo, cinco formas de entrenar. Todos los niveles son bienvenidos."
+    view: "Ver programa"
+    schedule: "Horarios"
+    benefits: "Lo que ganas"
+    instructors: "Instructores"
+    back: "Todos los programas"
+    back_home: "Volver al inicio"
+    cta: "Quiero probar"
+  about:
+    eyebrow: "Nosotros"
+    title: "Sobre nosotros"
+    lead: "Conoce PuertoBJJ y nuestra misión."
+    history_title: "Nuestra historia"
+    history_text: "Alrededor del año 2020, un grupo de apasionados por el Jiu-Jitsu Brasileño soñaba con crear un espacio donde este arte marcial pudiera darse a conocer y florecer en Puntarenas. Así fundaron la academia, que hoy es un centro de excelencia para el aprendizaje y desarrollo de las artes marciales."
+    mission_title: "Misión"
+    mission_text: "Promover el desarrollo personal y físico a través del Jiu-Jitsu, creando una comunidad inclusiva donde cada estudiante pueda alcanzar su máximo potencial, tanto en el tatami como en la vida."
+    values_title: "Valores"
+    values:
+      - title: "Comunidad"
+        text: "Un equipo unido por el respeto y la pasión por las artes marciales."
+      - title: "Excelencia"
+        text: "Buscamos la excelencia en cada aspecto de la formación y la convivencia diaria."
+      - title: "Respeto"
+        text: "Un ambiente de respeto mutuo, disciplina y humildad en cada clase."
+    team_title: "Instructores"
+    team_text: "Un equipo de instructores calificados, apasionados y comprometidos con la enseñanza y el desarrollo de cada estudiante."
+    cta_title: "¿Listo para construir una mejor versión de ti?"
+    cta_text: "Únete a nuestra comunidad y descubre el poder transformador del Jiu-Jitsu."
+    cta: "ASEGURA TU LUGAR"
+  programs:
+    kids:
+      title: "Kids"
+      summary: "Programa para niños de 5 a 13 años."
+      subtitle: "Disciplina, respeto y diversión en el tatami."
+      schedule:
+        - { days: "Lunes", time: "5:00 PM" }
+        - { days: "Sábado", time: "9:30 AM" }
+      benefits:
+        - { title: "Disciplina y respeto", text: "Valores fundamentales que les servirán en la escuela y en la vida." }
+        - { title: "Condición física", text: "Mejoran su coordinación, fuerza y agilidad en un ambiente divertido y seguro." }
+        - { title: "Salud mental", text: "El Jiu-Jitsu reduce el estrés y la ansiedad, y mejora el enfoque." }
+        - { title: "Habilidades sociales", text: "Hacen nuevos amigos y aprenden a trabajar en equipo." }
+      instructors:
+        - name: "Kevin Matarrita Lara"
+          role: "Instructor principal"
+          bio: "Más de 10 años de experiencia en Jiu-Jitsu y una gran pasión por la enseñanza. Certificado y dedicado a crear un ambiente de aprendizaje positivo y seguro para que cada niño alcance su potencial."
+        - name: "Jose Daniel Arias"
+          role: "Instructor asistente"
+          bio: "Más de 5 años de experiencia en Jiu-Jitsu. Su rol es fundamental para el desarrollo individual de los alumnos: apoyo constante para que nadie se quede atrás."
+    jiu_jitsu:
+      title: "Jiu-Jitsu Gi"
+      summary: "Con kimono: técnica, estrategia y control."
+      subtitle: "El arte suave: técnica, estrategia y control."
+      schedule:
+        - { days: "Lunes", time: "6:30 PM" }
+        - { days: "Miércoles", time: "12:00 PM y 6:30 PM" }
+        - { days: "Viernes", time: "6:30 PM" }
+      benefits:
+        - { title: "Estrategia", text: "Aprende a resolver problemas bajo presión." }
+        - { title: "Comunidad", text: "Entrena en un ambiente de respeto y camaradería." }
+    no_gi:
+      title: "Jiu-Jitsu No-Gi"
+      summary: "Sin kimono: rápido, dinámico y funcional."
+      subtitle: "Dinámico, rápido y muy funcional."
+      schedule:
+        - { days: "Lunes", time: "12:00 PM" }
+        - { days: "Martes", time: "12:00 PM y 6:00 PM" }
+        - { days: "Jueves", time: "6:30 PM" }
+        - { days: "Viernes", time: "12:00 PM" }
+        - { days: "Sábado", time: "12:00 PM (Open Mat)" }
+      benefits:
+        - { title: "Movimiento y control", text: "Desarrolla control corporal y timing sin agarres del kimono." }
+    boxing:
+      title: "Boxeo"
+      summary: "Potencia, técnica y condición física."
+      subtitle: "Potencia, técnica y condición física en cada golpe."
+      schedule:
+        - { days: "Lunes", time: "9:00 AM" }
+        - { days: "Martes", time: "11:00 AM" }
+        - { days: "Miércoles", time: "11:00 AM" }
+        - { days: "Viernes", time: "9:00 AM" }
+        - { days: "Sábado", time: "11:00 AM (Sparring)" }
+      benefits:
+        - { title: "Velocidad y potencia", text: "Mejora reflejos, coordinación y explosividad." }
+        - { title: "Cardio y resistencia", text: "Incrementa tu capacidad aeróbica y anaeróbica." }
+        - { title: "Autodefensa", text: "Técnicas efectivas de defensa personal y control de distancia." }
+    mma:
+      title: "MMA"
+      summary: "Grappling y striking en un solo sistema."
+      subtitle: "Combina grappling y striking en un sistema integral."
+      schedule:
+        - { days: "Martes", time: "5:00 PM" }
+        - { days: "Miércoles", time: "5:00 PM" }
+        - { days: "Viernes", time: "5:00 PM" }
+
+      benefits:
+        - { title: "Versatilidad", text: "Domina las transiciones entre golpeo y grappling." }

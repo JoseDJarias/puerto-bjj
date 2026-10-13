@@ -1,0 +1,32 @@
+<section id="contacto" class="grid gap-10 lg:grid-cols-2" aria-labelledby="contact-title">
+  <div class="relative group aspect-[4/3] w-full overflow-hidden border border-bone/15 lg:aspect-auto lg:min-h-[32rem]">
+    <iframe class="size-full grayscale contrast-125" src="<%= Academy.maps_embed_url %>" title="<%= t("home.map_title") %>" loading="lazy" referrerpolicy="no-referrer-when-downgrade" allowfullscreen></iframe>
+    <%# Overlay pointer events pass-through to allow scrolling the page without map zooming catching it %>
+    <div class="pointer-events-none absolute inset-0 z-10 bg-transparent group-hover:hidden"></div>
+  </div>
+
+  <div>
+    <%= render "pages/partials/section_heading", id: "contact-title", eyebrow: t("home.location_eyebrow"), title: t("home.location_title") %>
+    <dl class="space-y-6">
+      <div>
+        <dt class="eyebrow"><%= t("contact.address") %></dt>
+        <dd class="mt-2 text-lg"><%= link_to t("academy.address"), Academy.maps_url, target: "_blank", rel: "noopener noreferrer", class: "underline decoration-blood decoration-2 underline-offset-4 hover:text-blood" %></dd>
+      </div>
+      <div>
+        <dt class="eyebrow"><%= t("contact.whatsapp") %></dt>
+        <dd class="mt-2 text-lg"><%= link_to t("academy.phone"), Academy.whatsapp_url, target: "_blank", rel: "noopener noreferrer", class: "underline decoration-blood decoration-2 underline-offset-4 hover:text-blood" %></dd>
+      </div>
+      <div>
+        <dt class="eyebrow"><%= t("contact.email") %></dt>
+        <dd class="mt-2 text-lg"><%= mail_to Academy::EMAIL, nil, class: "underline decoration-blood decoration-2 underline-offset-4 hover:text-blood" %></dd>
+      </div>
+      <div>
+        <dt class="eyebrow"><%= t("contact.hours") %></dt>
+        <dd class="mt-2 text-lg"><%= t("academy.hours_week") %><br><%= t("academy.hours_saturday") %></dd>
+      </div>
+    </dl>
+    <%= link_to Academy.whatsapp_url, target: "_blank", rel: "noopener noreferrer", class: "btn-primary mt-10" do %>
+      <%= t("contact.cta") %><%= lucide_icon "arrow-up-right", class: "size-5" %>
+    <% end %>
+  </div>
+</section>

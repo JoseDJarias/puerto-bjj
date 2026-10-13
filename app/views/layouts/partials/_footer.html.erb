@@ -1,0 +1,24 @@
+<footer class="border-t border-bone/10">
+  <div class="mx-auto flex w-full max-w-7xl flex-col gap-10 px-3.5 py-12 sm:px-6 lg:flex-row lg:items-end lg:justify-between lg:px-8">
+    <div class="max-w-md space-y-4">
+      <p class="display text-5xl"><%= t("academy.name") %></p>
+      <p class="text-sm text-bone/60"><%= t("footer.tagline") %></p>
+    </div>
+
+    <div class="space-y-4">
+      <p class="eyebrow"><%= t("footer.follow") %></p>
+      <ul class="flex gap-3">
+        <li><%= link_to lucide_icon("instagram", class: "size-5"), Academy::INSTAGRAM_URL, target: "_blank", rel: "noopener noreferrer", class: "flex size-11 items-center justify-center border border-bone/30 transition-colors hover:bg-blood hover:border-blood", aria: { label: t("footer.instagram") } %></li>
+        <li><%= link_to lucide_icon("facebook", class: "size-5"), Academy::FACEBOOK_URL, target: "_blank", rel: "noopener noreferrer", class: "flex size-11 items-center justify-center border border-bone/30 transition-colors hover:bg-blood hover:border-blood", aria: { label: t("footer.facebook") } %></li>
+        <li><%= link_to lucide_icon("message-circle", class: "size-5"), Academy.whatsapp_url, target: "_blank", rel: "noopener noreferrer", class: "flex size-11 items-center justify-center border border-bone/30 transition-colors hover:bg-blood hover:border-blood", aria: { label: t("footer.whatsapp") } %></li>
+        <li><%= link_to lucide_icon("map-pin", class: "size-5"), Academy.maps_url, target: "_blank", rel: "noopener noreferrer", class: "flex size-11 items-center justify-center border border-bone/30 transition-colors hover:bg-blood hover:border-blood", aria: { label: t("footer.location") } %></li>
+      </ul>
+    </div>
+  </div>
+
+  <div class="border-t border-bone/10">
+    <p class="mx-auto w-full max-w-7xl px-3.5 py-5 text-xs text-bone/50 sm:px-6 lg:px-8">
+      &copy; <%= Time.zone.now.year %> <%= t("academy.name") %>. <%= t("footer.rights") %>
+    </p>
+  </div>
+</footer>

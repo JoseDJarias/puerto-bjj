@@ -1,0 +1,31 @@
+<div class="group relative overflow-hidden bg-ink [clip-path:polygon(0_0,100%_0,100%_100%,10%_100%,0_calc(100%-2rem))]" aria-roledescription="carousel" aria-label="<%= t("home.carousel_label") %>" tabindex="0" data-controller="carousel" data-action="mouseenter->carousel#stop mouseleave->carousel#start focusin->carousel#stop focusout->carousel#start touchstart->carousel#touchStart touchend->carousel#touchEnd keydown.left->carousel#previous keydown.right->carousel#next">
+  <ul class="flex transition-transform duration-700 ease-out motion-reduce:transition-none" data-carousel-target="track">
+    <% slides.each_with_index do |slide, index| %>
+      <li class="relative aspect-[4/3] min-w-full sm:aspect-[4/3] md:aspect-[4/5] lg:aspect-[4/5]" role="group" aria-roledescription="slide" aria-label="<%= t("home.carousel_slide", number: index + 1, total: slides.size) %>" data-carousel-target="slide">
+        <%= image_tag slide[:image], alt: slide[:alt], class: "size-full object-cover grayscale contrast-125 transition duration-500 group-hover:grayscale-0", loading: (index.zero? ? "eager" : "lazy"), fetchpriority: (index.zero? ? "high" : "auto") %>
+        <div class="absolute inset-0 bg-gradient-to-t from-ink via-ink/20 to-transparent"></div>
+        <p class="display absolute bottom-5 left-5 text-2xl sm:text-3xl md:text-3xl lg:bottom-6 lg:left-6 lg:text-4xl"><%= slide[:label] %></p>
+      </li>
+    <% end %>
+  </ul>
+
+  <div class="absolute bottom-4 right-4 flex items-center gap-3 lg:bottom-6 lg:right-6">
+    <p class="display text-sm text-bone/80" aria-hidden="true">
+      <span class="text-blood" data-carousel-target="counter">01</span> / <%= format("%02d", slides.size) %>
+    </p>
+    <div class="flex">
+      <button type="button" class="flex size-9 items-center justify-center border border-bone/30 bg-ink/70 transition-colors hover:border-blood hover:bg-blood sm:size-10" aria-label="<%= t("home.carousel_previous") %>" data-action="carousel#previous">
+        <%= lucide_icon "chevron-left", class: "size-4" %>
+      </button>
+      <button type="button" class="-ml-px flex size-9 items-center justify-center border border-bone/30 bg-ink/70 transition-colors hover:border-blood hover:bg-blood sm:size-10" aria-label="<%= t("home.carousel_next") %>" data-action="carousel#next">
+        <%= lucide_icon "chevron-right", class: "size-4" %>
+      </button>
+    </div>
+  </div>
+
+  <div class="absolute inset-x-0 bottom-0 flex">
+    <% slides.each_with_index do |_slide, index| %>
+      <button type="button" class="h-1 flex-1 bg-bone/20 transition-colors aria-[current=true]:bg-blood" aria-label="<%= t("home.carousel_goto", number: index + 1) %>" aria-current="<%= index.zero? %>" data-carousel-target="dot" data-action="carousel#go" data-carousel-index-param="<%= index %>"></button>
+    <% end %>
+  </div>
+</div>

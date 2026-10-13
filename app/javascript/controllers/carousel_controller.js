@@ -1,135 +1,77 @@
 import { Controller } from "@hotwired/stimulus"
 
+const SWIPE_THRESHOLD = 40
+
 export default class extends Controller {
-  static targets = ["slides"]
+  static targets = ["track", "slide", "dot", "counter"]
   static values = {
-    autoSlide: { type: Boolean, default: true },
-    interval: { type: Number, default: 5000 },
-    id: { type: String, default: "" }
+    index: { type: Number, default: 0 },
+    interval: { type: Number, default: 6000 },
+    autoplay: { type: Boolean, default: true }
   }
 
   connect() {
-    this.isTransitioning = false
-    this.currentSlide = 0
-    this.slideCount = this.slidesTarget.children.length
-    
-    if (this.slideCount <= 1) { 
-      return 
-    }
-
-    if (this.autoSlideValue) {
-      this.startAutoSlide()
-    }
+    this.reducedMotion = window.matchMedia("(prefers-reduced-motion: reduce)").matches
+    this.render()
+    this.start()
   }
 
   disconnect() {
-    clearInterval(this.interval)
+    this.stop()
   }
 
   next() {
-    if (this.isTransitioning) { return }
-    this.isTransitioning = true
-
-    // Animate to the next slide
-    this.slidesTarget.style.transition = 'transform 0.5s ease-in-out'
-    this.slidesTarget.style.transform = 'translateX(-100%)'
-
-    const handleTransitionEnd = () => {
-      // Move the first (now hidden) slide to the end of the list
-      this.slidesTarget.appendChild(this.slidesTarget.firstElementChild)
-
-      // Instantly reset position without animation
-      this.slidesTarget.style.transition = 'none'
-      this.slidesTarget.style.transform = 'translateX(0)'
-
-      // Clean up and allow the next transition
-      this.slidesTarget.removeEventListener('transitionend', handleTransitionEnd)
-      this.isTransitioning = false
-      
-      // Update current slide index
-      this.currentSlide = (this.currentSlide + 1) % this.slideCount
-      this.updateIndicators()
-    }
-
-    this.slidesTarget.addEventListener('transitionend', handleTransitionEnd)
+    this.indexValue = (this.indexValue + 1) % this.slideTargets.length
   }
 
-  prev() {
-    if (this.isTransitioning) { return }
-    this.isTransitioning = true
-
-    // To go backwards, first move the last slide to the beginning
-    this.slidesTarget.insertBefore(this.slidesTarget.lastElementChild, this.slidesTarget.firstElementChild)
-    
-    // Instantly position it before the current slide (ready for animation)
-    this.slidesTarget.style.transition = 'none'
-    this.slidesTarget.style.transform = 'translateX(-100%)'
-
-    // Force the browser to apply the style change immediately
-    this.slidesTarget.offsetHeight
-
-    // Animate it into view
-    this.slidesTarget.style.transition = 'transform 0.5s ease-in-out'
-    this.slidesTarget.style.transform = 'translateX(0)'
-
-    const handleTransitionEnd = () => {
-      this.slidesTarget.removeEventListener('transitionend', handleTransitionEnd)
-      this.isTransitioning = false
-      
-      // Update current slide index
-      this.currentSlide = (this.currentSlide - 1 + this.slideCount) % this.slideCount
-      this.updateIndicators()
-    }
-    this.slidesTarget.addEventListener('transitionend', handleTransitionEnd)
+  previous() {
+    this.indexValue = (this.indexValue - 1 + this.slideTargets.length) % this.slideTargets.length
   }
 
-  goToSlide(event) {
-    const targetSlide = parseInt(event.params.slide)
-    if (targetSlide === this.currentSlide || this.isTransitioning) { return }
-    
-    this.isTransitioning = true
-    
-    // Calculate how many slides to move
-    const slidesToMove = targetSlide - this.currentSlide
-    
-    if (slidesToMove > 0) {
-      // Move forward
-      for (let i = 0; i < slidesToMove; i++) {
-        this.slidesTarget.appendChild(this.slidesTarget.firstElementChild)
-      }
-    } else {
-      // Move backward
-      for (let i = 0; i < Math.abs(slidesToMove); i++) {
-        this.slidesTarget.insertBefore(this.slidesTarget.lastElementChild, this.slidesTarget.firstElementChild)
-      }
-    }
-    
-    this.currentSlide = targetSlide
-    this.updateIndicators()
-    this.isTransitioning = false
+  go({ params: { index } }) {
+    this.indexValue = index
   }
 
-  startAutoSlide() {
-    clearInterval(this.interval)
-    this.interval = setInterval(() => {
-      this.next()
-    }, this.intervalValue)
+  start() {
+    if (!this.autoplayValue || this.reducedMotion || this.timer) return
+    this.timer = setInterval(() => this.next(), this.intervalValue)
   }
 
-  stopAutoSlide() {
-    clearInterval(this.interval)
+  stop() {
+    clearInterval(this.timer)
+    this.timer = null
   }
 
-  updateIndicators() {
-    const indicators = this.element.querySelectorAll('.carousel-indicator')
-    indicators.forEach((indicator, index) => {
-      if (index === this.currentSlide) {
-        indicator.classList.add('carousel-indicator--active')
-        indicator.setAttribute('aria-selected', 'true')
-      } else {
-        indicator.classList.remove('carousel-indicator--active')
-        indicator.setAttribute('aria-selected', 'false')
-      }
+  touchStart(event) {
+    this.touchX = event.changedTouches[0].clientX
+    this.stop()
+  }
+
+  touchEnd(event) {
+    const delta = event.changedTouches[0].clientX - this.touchX
+    if (Math.abs(delta) > SWIPE_THRESHOLD) delta < 0 ? this.next() : this.previous()
+    this.start()
+  }
+
+  indexValueChanged() {
+    if (this.hasTrackTarget) this.render()
+  }
+
+  render() {
+    this.trackTarget.style.transform = `translateX(-${this.indexValue * 100}%)`
+
+    this.slideTargets.forEach((slide, i) => {
+      const active = i === this.indexValue
+      slide.setAttribute("aria-hidden", String(!active))
+      slide.inert = !active
     })
+
+    this.dotTargets.forEach((dot, i) => {
+      dot.setAttribute("aria-current", String(i === this.indexValue))
+    })
+
+    if (this.hasCounterTarget) {
+      this.counterTarget.textContent = String(this.indexValue + 1).padStart(2, "0")
+    }
   }
 }

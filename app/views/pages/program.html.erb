@@ -1,3 +1,55 @@
-<div class="program-page-wrapper">
-  <%= render(Programs::ProgramComponent.new(key: @program_key)) %>
+<% content_for :title, "#{@program.title} | #{t("meta.title")}" %>
+<% content_for :description, @program.subtitle %>
+
+<section aria-labelledby="program-title">
+  <%= link_to program_back_path, class: "inline-flex items-center gap-2 text-xs font-bold uppercase tracking-widest text-bone/60 transition-colors hover:text-blood" do %>
+    <%= lucide_icon "chevron-left", class: "size-4" %><%= program_back_label %>
+  <% end %>
+  <h1 id="program-title" class="display mt-6 text-6xl sm:text-8xl lg:text-9xl"><%= @program.title %></h1>
+  <p class="mt-6 max-w-xl text-lg text-bone/70"><%= @program.subtitle %></p>
+  <%= link_to Academy.whatsapp_url(t("academy.join_message")), target: "_blank", rel: "noopener noreferrer", class: "btn-primary mt-8" do %>
+    <%= t("programs_page.cta") %><%= lucide_icon "arrow-up-right", class: "size-5" %>
+  <% end %>
+</section>
+
+<div class="aspect-[4/3] overflow-hidden sm:aspect-[16/9] lg:aspect-[21/9] [clip-path:polygon(0_0,100%_0,100%_100%,8%_100%,0_calc(100%-3rem))]">
+  <%= image_tag @program.image, alt: @program.title, class: "size-full object-cover grayscale contrast-125", fetchpriority: "high" %>
 </div>
+
+<section class="grid gap-10 lg:grid-cols-3" aria-labelledby="program-schedule-title">
+  <h2 id="program-schedule-title" class="display text-4xl lg:text-5xl"><%= t("programs_page.schedule") %></h2>
+  <dl class="space-y-3 lg:col-span-2">
+    <% @program.schedule.each do |slot| %>
+      <div class="flex items-baseline justify-between gap-4 border-b border-bone/15 pb-3 text-lg">
+        <dt class="text-bone/60"><%= slot[:days] %></dt>
+        <dd class="font-semibold"><%= slot[:time] %></dd>
+      </div>
+    <% end %>
+  </dl>
+</section>
+
+<section class="grid gap-10 lg:grid-cols-3" aria-labelledby="program-benefits-title">
+  <h2 id="program-benefits-title" class="display text-4xl lg:text-5xl"><%= t("programs_page.benefits") %></h2>
+  <ol class="space-y-6 lg:col-span-2">
+    <% @program.benefits.each_with_index do |benefit, index| %>
+      <li class="grid grid-cols-[3rem_1fr] gap-4 border-b border-bone/15 pb-6">
+        <span class="display text-2xl text-blood"><%= format("%02d", index + 1) %></span>
+        <div>
+          <h3 class="text-lg font-semibold"><%= benefit[:title] %></h3>
+          <p class="mt-1 text-bone/70"><%= benefit[:text] %></p>
+        </div>
+      </li>
+    <% end %>
+  </ol>
+</section>
+
+<%# if @program.instructors.any? %>
+  <!-- <section aria-labelledby="program-instructors-title">
+    <h2 id="program-instructors-title" class="display mb-8 text-4xl lg:text-5xl"><%#= t("programs_page.instructors") %></h2>
+    <div class="grid gap-8 md:grid-cols-2">
+      <%# @program.instructors.each do |instructor| %>
+        <%#= render "pages/partials/instructor", instructor: instructor %>
+      <%# end %>
+    </div>
+  </section> -->
+<%# end %>
