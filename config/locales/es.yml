@@ -144,10 +144,10 @@ es:
       instructors:
         - name: "Kevin Matarrita Lara"
           role: "Instructor principal"
-          bio: "Más de 10 años de experiencia en Jiu-Jitsu y una gran pasión por la enseñanza. Certificado y dedicado a crear un ambiente de aprendizaje positivo y seguro para que cada niño alcance su potencial."
+          bio: "Más de 10 años de experiencia en el tatami y un enfoque riguroso en la enseñanza. Su metodología prioriza la técnica limpia, la disciplina y el desarrollo integral de cada practicante, sin importar su punto de partida."
         - name: "Jose Daniel Arias"
           role: "Instructor asistente"
-          bio: "Más de 5 años de experiencia en Jiu-Jitsu. Su rol es fundamental para el desarrollo individual de los alumnos: apoyo constante para que nadie se quede atrás."
+          bio: "Más de 5 años de trayectoria en Jiu-Jitsu. Enfocado en el acompañamiento técnico y la corrección de detalles para asegurar que cada alumno progrese de forma sólida y constante."
     jiu_jitsu:
       title: "Jiu-Jitsu Gi"
       summary: "Con kimono: técnica, estrategia y control."
