@@ -1,0 +1,46 @@
+<section class="border-y border-bone/15 bg-bone/[0.02] py-8 lg:py-10" aria-label="<%= t("home.quick_nav.title") %>">
+  <div class="flex flex-col gap-6 lg:flex-row lg:items-center lg:justify-between">
+    <div>
+      <p class="eyebrow"><%= t("home.quick_nav.eyebrow") %></p>
+      <h2 class="display mt-2 text-2xl sm:text-3xl text-bone"><%= t("home.quick_nav.title") %></h2>
+    </div>
+
+    <div class="grid grid-cols-2 gap-3 sm:grid-cols-4 lg:gap-4">
+      <%# Acceso a Disciplinas %>
+      <%= link_to "#disciplinas", class: "group flex flex-col justify-between border border-bone/15 bg-ink p-4 transition-all hover:border-blood hover:bg-bone/[0.03]" do %>
+        <div class="flex items-center justify-between">
+          <span class="text-xs font-bold uppercase tracking-wider text-bone group-hover:text-blood transition-colors"><%= t("home.quick_nav.programs") %></span>
+          <%= lucide_icon "arrow-down-right", class: "size-4 text-bone/40 transition-transform group-hover:translate-y-0.5 group-hover:translate-x-0.5 group-hover:text-blood" %>
+        </div>
+        <p class="mt-2 text-[11px] text-bone/50 line-clamp-1"><%= t("home.quick_nav.programs_desc") %></p>
+      <% end %>
+
+      <%# Acceso a Horarios %>
+      <%= link_to "#schedule-title", class: "group flex flex-col justify-between border border-bone/15 bg-ink p-4 transition-all hover:border-blood hover:bg-bone/[0.03]" do %>
+        <div class="flex items-center justify-between">
+          <span class="text-xs font-bold uppercase tracking-wider text-bone group-hover:text-blood transition-colors"><%= t("home.quick_nav.schedule") %></span>
+          <%= lucide_icon "arrow-down-right", class: "size-4 text-bone/40 transition-transform group-hover:translate-y-0.5 group-hover:translate-x-0.5 group-hover:text-blood" %>
+        </div>
+        <p class="mt-2 text-[11px] text-bone/50 line-clamp-1"><%= t("home.quick_nav.schedule_desc") %></p>
+      <% end %>
+
+      <%# Acceso a Precios %>
+      <%= link_to "#precios", class: "group flex flex-col justify-between border border-bone/15 bg-ink p-4 transition-all hover:border-blood hover:bg-bone/[0.03]" do %>
+        <div class="flex items-center justify-between">
+          <span class="text-xs font-bold uppercase tracking-wider text-bone group-hover:text-blood transition-colors"><%= t("home.quick_nav.pricing") %></span>
+          <%= lucide_icon "arrow-down-right", class: "size-4 text-bone/40 transition-transform group-hover:translate-y-0.5 group-hover:translate-x-0.5 group-hover:text-blood" %>
+        </div>
+        <p class="mt-2 text-[11px] text-bone/50 line-clamp-1"><%= t("home.quick_nav.pricing_desc") %></p>
+      <% end %>
+
+      <%# Acceso a Ubicación / Mapa %>
+      <%= link_to "#contacto", class: "group flex flex-col justify-between border border-blood/50 bg-ink p-4 transition-all hover:border-blood hover:bg-blood/10" do %>
+        <div class="flex items-center justify-between">
+          <span class="text-xs font-bold uppercase tracking-wider text-blood"><%= t("home.quick_nav.location") %></span>
+          <%= lucide_icon "map-pin", class: "size-4 text-blood" %>
+        </div>
+        <p class="mt-2 text-[11px] text-bone/60 line-clamp-1"><%= t("home.quick_nav.location_desc") %></p>
+      <% end %>
+    </div>
+  </div>
+</section>

@@ -1,28 +1,82 @@
-<section aria-labelledby="schedule-title">
-  <%= render "pages/partials/section_heading", id: "schedule-title", eyebrow: t("home.schedule_eyebrow"), title: t("home.schedule_title") %>
-  <div class="grid gap-px border border-bone/15 bg-bone/15 md:grid-cols-2 lg:grid-cols-3">
-    <% programs.each do |program| %>
-      <article class="bg-ink p-6 lg:p-8">
-        <h3 class="display text-3xl"><%= program.title %></h3>
-        <dl class="mt-6 space-y-3">
-          <% program.schedule.each do |slot| %>
-            <div class="flex items-baseline justify-between gap-4 border-b border-bone/10 pb-3 text-sm">
-              <dt class="text-bone/60"><%= slot[:days] %></dt>
-              <dd class="font-semibold"><%= slot[:time] %></dd>
-            </div>
-          <% end %>
-        </dl>
-      </article>
-    <% end %>
+<section id="schedule-section" aria-labelledby="schedule-title"
+         data-controller="section-toggle"
+         data-section-toggle-open-value="false"
+         data-section-toggle-open-text-value="<%= t("home.section_collapse.schedule_open") %>"
+         data-section-toggle-close-text-value="<%= t("home.section_collapse.schedule_close") %>">
 
-    <div class="bg-blood p-6 lg:p-8 md:col-span-2 lg:col-span-3 flex flex-col justify-center">
-      <span class="eyebrow text-xs uppercase tracking-widest text-bone/70 mb-2">
-        <%= t("home.schedule_note_eyebrow") %>
-      </span>
-      <p class="text-lg lg:text-xl font-bold leading-snug text-bone">
-        <%= t("home.schedule_note") %>
-      </p>
-    </div>    
+  <%# Encabezado %>
+  <div class="flex flex-col justify-between gap-4 md:flex-row md:items-end">
+    <%= render "pages/partials/section_heading", id: "schedule-title", eyebrow: t("home.schedule_eyebrow"), title: t("home.schedule_title") %>
+
+    <%# Botón/control de cierre cuando está abierto en mobile %>
+    <div class="mb-4 lg:hidden hidden" data-section-toggle-target="closeButtonWrapper">
+      <button type="button"
+              class="btn-ghost w-full inline-flex items-center justify-center gap-2 py-3 px-5 text-xs"
+              data-action="section-toggle#toggle">
+        <span data-section-toggle-target="buttonText"><%= t("home.section_collapse.schedule_close") %></span>
+        <%= lucide_icon "chevron-up", class: "size-4" %>
+      </button>
+    </div>
+  </div>
+
+  <%# Tarjeta interactiva completa cuando está cerrada en mobile %>
+  <div class="lg:hidden mb-6" data-section-toggle-target="teaserBadge">
+    <button type="button"
+            class="group w-full text-left border border-bone/20 bg-bone/[0.03] p-5 transition-all hover:border-blood hover:bg-bone/[0.06] active:scale-[0.99] focus-visible:outline-2 focus-visible:outline-blood"
+            data-action="section-toggle#toggle"
+            aria-expanded="false">
+      <div class="flex items-start gap-4">
+        <div class="p-3 border border-blood bg-blood/10 text-blood shrink-0 transition-colors group-hover:bg-blood group-hover:text-bone">
+          <%= lucide_icon "calendar", class: "size-6" %>
+        </div>
+        <div class="flex-1 min-w-0">
+          <div class="flex items-center justify-between gap-2">
+            <h3 class="text-base font-bold text-bone group-hover:text-blood transition-colors">
+              <%= t("home.section_collapse.schedule_teaser_title") %>
+            </h3>
+            <%= lucide_icon "arrow-down-right", class: "size-5 text-bone/40 shrink-0 transition-transform group-hover:translate-y-0.5 group-hover:translate-x-0.5 group-hover:text-blood" %>
+          </div>
+          <p class="mt-1 text-xs text-bone/65 leading-relaxed">
+            <%= t("home.section_collapse.schedule_teaser_desc") %>
+          </p>
+        </div>
+      </div>
+
+      <%# Botón primario integrado dentro de la misma tarjeta %>
+      <div class="mt-4 pt-4 border-t border-bone/10">
+        <div class="btn-primary w-full text-center text-xs py-3 pointer-events-none">
+          <span><%= t("home.section_collapse.schedule_open") %></span>
+          <%= lucide_icon "chevron-down", class: "size-4" %>
+        </div>
+      </div>
+    </button>
+  </div>
+
+  <%# Contenido de la sección %>
+  <div data-section-toggle-target="content" class="hidden lg:block space-y-4">
+    <div class="grid gap-px border border-bone/15 bg-bone/15 md:grid-cols-2 lg:grid-cols-3">
+      <% programs.each do |program| %>
+        <article class="bg-ink p-6 lg:p-8">
+          <h3 class="display text-3xl"><%= program.title %></h3>
+          <dl class="mt-6 space-y-3">
+            <% program.schedule.each do |slot| %>
+              <div class="flex items-baseline justify-between gap-4 border-b border-bone/10 pb-3 text-sm">
+                <dt class="text-bone/60"><%= slot[:days] %></dt>
+                <dd class="font-semibold"><%= slot[:time] %></dd>
+              </div>
+            <% end %>
+          </dl>
+        </article>
+      <% end %>
+
+      <div class="bg-blood p-6 lg:p-8 md:col-span-2 lg:col-span-3 flex flex-col justify-center">
+        <span class="eyebrow text-xs uppercase tracking-widest text-bone/70 mb-2">
+          <%= t("home.schedule_note_eyebrow") %>
+        </span>
+        <p class="text-lg lg:text-xl font-bold leading-snug text-bone">
+          <%= t("home.schedule_note") %>
+        </p>
+      </div>    
+    </div>
   </div>
 </section>
-
